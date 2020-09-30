@@ -10,7 +10,6 @@
 {
     
 <div class="form-horizontal">
-    <h4>MasterModel</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -20,8 +19,7 @@
             new
             {
                 @Class = "form-control",
-                @style = "width:100%",
-                @onchange = "ddlLOBHierarchy_onChange()"
+                @onchange = "MasterTypeData('G')"
             })
             @Html.ValidationMessageFor(model => model.MasterList, "", new { @class = "text-danger" })
         </div>
@@ -50,12 +48,15 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="button" value="Create" OnClick="MasterTypeData('I')" class="btn btn-default" />
         </div>
+    </div>
+    <div id="MasterList" class="form-group">
+        
     </div>
 </div>
 }
-
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+<script src="~/Include/Local/MasterDetails.js"></script>

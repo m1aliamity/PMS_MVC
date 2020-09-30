@@ -33,11 +33,25 @@ namespace PMS.Repository
         }
 
         public void MasterData(MasterModel model)
-        {
-            validate(model);
+        {if (model.Action != "G")
+            {
+                validate(model);
+            }
             if (model.MessageId == 0)
             {
-                _masterDAL.MasterData(model);
+                _ds=_masterDAL.MasterData(model);
+                if (_ds.Tables[1].Rows.Count>0)
+                {
+                    model.MasterDetails = (from DataRow row in _ds.Tables[0].Rows
+                                        select new MasterModel
+                                        {
+                                            Id = Convert.ToInt64(row["Id"]),
+                                            MID = Convert.ToInt64(row["Master_id"]),
+                                            Name = Convert.ToString(row["Name"]),
+                                            Rate = Convert.ToDecimal(row["Rate"]),
+                                            PrintName = Convert.ToString(row["PrintName"]),
+                                        }).ToList();
+                }
             }
         }
         private void validate(MasterModel model)

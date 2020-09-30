@@ -14,7 +14,7 @@ namespace DataAccess
         }
         public DataSet MasterData(MasterModel model)
         {
-            object[] _parameterValues = { model.Id, model.MID, model.Name, model.Rate, model.PrintName, model.IsActive, model.Remarks, model.CID, model.UserId, model.Action };
+            object[] _parameterValues = { model.Id, model.MID, model.Name, model.Rate, model.PrintName, model.IsActive, model.CID, model.UserId, model.Action };
             return PMSDBContaxt.ExecuteQuery("SP_MasterDetails", _parameterValues);
         }
     }

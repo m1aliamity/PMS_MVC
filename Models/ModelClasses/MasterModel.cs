@@ -12,8 +12,8 @@ namespace Models.ModelClasses
         public string Name { get; set; }
         public decimal Rate { get; set; }
         public string PrintName { get; set; }
-        public string Remarks { get; set; }
         public List<DropdownModel> MasterList { get; set; }
+        public List<MasterModel> MasterDetails { get; set; }
 
     }
 }
