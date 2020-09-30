@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Models.ModelClasses.CompanyModel>
+@{
+    ViewBag.Title = "CompanyList";
+}
+
+<h2>CompanyList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateCompany")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            Lab Name
+        </th>
+        <th>
+            Slogan Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Phone No.
+        </th>
+        <th>
+            Email Id
+        </th>
+        <th>
+            Website
+        </th>
+        <th>
+            Show Details
+        </th>
+        <th>
+            Is Active
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SloganName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StreetAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WebSite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowDetail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditCompany", new { id = item.Id })|
+            @Html.ActionLink("Delete", "DeleteCompany", new { id = item.Id }, new { onclick = "return confirm('Are you sure? want to delete');" })
+        </td>
+    </tr>
+    }
+
+</table>

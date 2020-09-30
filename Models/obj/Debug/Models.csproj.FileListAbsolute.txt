@@ -1,0 +1,12 @@
+D:\Projects\Models\bin\Debug\Models.dll
+D:\Projects\Models\bin\Debug\Models.pdb
+D:\Projects\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\Projects\Models\obj\Debug\Models.dll
+D:\Projects\Models\obj\Debug\Models.pdb
+D:\Projects\Models\obj\Debug\Models.csprojAssemblyReference.cache
+D:\Projects\PMS_MVC\Models\bin\Debug\Models.dll
+D:\Projects\PMS_MVC\Models\bin\Debug\Models.pdb
+D:\Projects\PMS_MVC\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\Projects\PMS_MVC\Models\obj\Debug\Models.dll
+D:\Projects\PMS_MVC\Models\obj\Debug\Models.pdb
+D:\Projects\PMS_MVC\Models\obj\Debug\Models.csprojAssemblyReference.cache
