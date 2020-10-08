@@ -22,7 +22,7 @@ namespace PMS.Controllers
             return View(model);
         }
         [HttpPost]
-        public JsonResult GetMasterTypeData(MasterModel model)
+        public JsonResult MasterTypeData(MasterModel model)
         {
             //model.Action = "G";
             model.CID = 1;

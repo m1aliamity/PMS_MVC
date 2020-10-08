@@ -33,14 +33,14 @@ namespace PMS.Repository
         }
 
         public void MasterData(MasterModel model)
-        {if (model.Action != "G")
+        { if (model.Action == "I" && model.Action=="U")
             {
                 validate(model);
             }
             if (model.MessageId == 0)
             {
-                _ds=_masterDAL.MasterData(model);
-                if (_ds.Tables[1].Rows.Count>0)
+                _ds = _masterDAL.MasterData(model);
+                if (_ds.Tables[0].Rows.Count>0)
                 {
                     model.MasterDetails = (from DataRow row in _ds.Tables[0].Rows
                                         select new MasterModel
