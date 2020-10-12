@@ -36,12 +36,12 @@ namespace PMS.Controllers
             _companyRepository.Company(model);
             if (model.MessageId == 1)
             {
-                ViewBag.AlertType = Convert.ToString(ALertType.Error);
+                ViewBag.AlertType = Convert.ToString(AlertType.WARNING);
                 ViewBag.AlertMessage = model.MessageText;
             }
             else
             {
-                ViewBag.AlertType = Convert.ToString(ALertType.Success);
+                ViewBag.AlertType = Convert.ToString(AlertType.SUCCESS);
                 ViewBag.AlertMessage = Resource.ErrorMessage.SavedMessage;
                 ModelState.Clear();
             }
@@ -64,7 +64,7 @@ namespace PMS.Controllers
             _companyRepository.Company(model);
             if (model.MessageId == 1)
             {
-                ViewBag.AlertType = Convert.ToString(ALertType.Error);
+                ViewBag.AlertType = Convert.ToString(AlertType.WARNING);
                 ViewBag.AlertMessage = model.MessageText;
                 return View();
             }
@@ -72,7 +72,7 @@ namespace PMS.Controllers
             {
                 model.Action = "S";
                 _companyRepository.Company(model);
-                ViewBag.AlertType = Convert.ToString(ALertType.Success);
+                ViewBag.AlertType = Convert.ToString(AlertType.SUCCESS);
                 ViewBag.AlertMessage = Resource.ErrorMessage.UpdateMessage;
             }
             return View("CompanyList", model.CompanyList);
@@ -84,14 +84,14 @@ namespace PMS.Controllers
             _companyRepository.Company(model);
             if (model.MessageId == 1)
             {
-                ViewBag.AlertType = Convert.ToString(ALertType.Error);
+                ViewBag.AlertType = Convert.ToString(AlertType.WARNING);
                 ViewBag.AlertMessage = model.MessageText;
             }
             else
             {
                 model.Action = "S";
                 _companyRepository.Company(model);
-                ViewBag.AlertType = Convert.ToString(ALertType.Success);
+                ViewBag.AlertType = Convert.ToString(AlertType.SUCCESS);
                 ViewBag.AlertMessage = Resource.ErrorMessage.DeleteMessage;
             }
             return View("CompanyList", model.CompanyList);

@@ -47,7 +47,7 @@ namespace PMS.Controllers
                 //}
                return RedirectToAction("MainScreen", "MainScreen");
             }
-            ViewBag.AlertType = Convert.ToString(ALertType.Error);
+            ViewBag.AlertType = Convert.ToString(AlertType.WARNING);
             ViewBag.AlertMessage = model.MessageText;
             return View();
         }

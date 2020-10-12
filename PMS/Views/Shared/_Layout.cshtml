@@ -32,15 +32,18 @@
         @{
             if (@ViewBag.AlertType != null)
             { <!-- Display Aletr Type-->
-                <script type="text/javascript">
-                        $(function () {
-                            var dialog = new BootstrapDialog({
-                                title:'@ViewBag.AlertType',
-                                message:'@ViewBag.AlertMessage'
-                            });
-                            dialog.open();
-                        });
-                </script>
+        <script type="text/javascript">
+
+            $(function () {
+                var dialog = new BootstrapDialog({
+                    title: '@ViewBag.AlertType',
+                    message: '@ViewBag.AlertMessage',
+                    size: BootstrapDialog.SIZE_NORMAL,
+                    type: BootstrapDialog.TYPE_@ViewBag.AlertType
+                });
+                dialog.open();
+            });
+        </script>
             }
         }
         @Html.AntiForgeryToken()

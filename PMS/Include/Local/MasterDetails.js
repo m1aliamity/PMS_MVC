@@ -1,36 +1,33 @@
-﻿function MasterTypeData(id, val) {
+﻿function MasterTypeData(Id, value) {
     debugger;
     var token = $('input[name="__RequestVerificationToken"]').val();
     var headers = { '__RequestVerificationToken': token };
     var status = false;
-    BootstrapDialog.show({
-
-        title: 'WARNING',
-        message: 'Are You Sure.?',
-        type: BootstrapDialog.TYPE_WARNING,
-        size: BootstrapDialog.SIZE_NORMAL,
-        closable: true,
-        draggable: true,
-        closable: false,
-        buttons: [{
-            label: 'NO',
-            cssClass: 'btn-warning',
-            action: function (dialog, event) {
-                dialog.close();
-                allAction(id, val);
-            }
-        }, {
-            label: 'YES',
-            cssClass: 'btn-success',
-                action: function (dialogRef) {
-                    dialogRef.close();
-                    allAction(id, val);
-            },
-        }]
-    });
-}
-function allAction(Id, value) {
-    debugger;
+//    BootstrapDialog.show({
+//        title: 'WARNING',
+//        message: 'Are You Sure.?',
+//        type: BootstrapDialog.TYPE_WARNING,
+//        size: BootstrapDialog.SIZE_NORMAL,
+//        closable: true,
+//        draggable: true,
+//        closable: false,
+//        buttons: [{
+//            label: 'NO',
+//            cssClass: 'btn-warning',
+//            action: function (dialog, event) {
+//                dialog.close();
+//                allAction(id, val);
+//            }
+//        }, {
+//            label: 'YES',
+//            cssClass: 'btn-success',
+//                action: function (dialogRef) {
+//                    dialogRef.close();
+//                    allAction(id, val);
+//            },
+//        }]
+//    });
+//}
     model = {
         MID: $("#MID").val(),
         Name: $("#Name").val(),
