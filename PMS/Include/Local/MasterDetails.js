@@ -3,6 +3,31 @@
     var token = $('input[name="__RequestVerificationToken"]').val();
     var headers = { '__RequestVerificationToken': token };
     var status = false;
+    if (value == "D")
+    {
+        status = confirm('Are you sure? want to delete');
+        if (status = false)
+             return false;
+    }
+    model = {
+        MID: $("#MID").val(),
+        Name: $("#Name").val(),
+        Rate: $("#Rate").val(),
+        PrintName: $("#PrintName").val(),
+        Action:value,
+    };
+    $.ajax({
+        url: "../MasterData/MasterDataList",
+        type: "POST",
+        data: model,
+        cache: false,
+        headers: headers,
+    }).done(function (response) {
+        //$("#MasterList").empty();
+        $("#MasterList").html(response);
+    });
+}
+
 //    BootstrapDialog.show({
 //        title: 'WARNING',
 //        message: 'Are You Sure.?',
@@ -28,37 +53,3 @@
 //        }]
 //    });
 //}
-    model = {
-        MID: $("#MID").val(),
-        Name: $("#Name").val(),
-        Rate: $("#Rate").val(),
-        PrintName: $("#PrintName").val(),
-        Action: value,
-    };
-    $.ajax({
-        url: "../MasterData/GetMasterTypeData",
-        type: "POST",
-        data: model,
-        headers: headers,
-    }).done(function (response) {
-
-        $("#MasterList").empty();
-        var HTMLList = '';
-        HTMLList += '<div class="col-md-10"> <table class="table">';
-        HTMLList += '<thead><tr><th scope="col">Name</th><th scope="col">Rate</th><th scope="col">Print Name</th><th scope="col">Action</th></tr ></thead ></tbody>';
-        if (response.MasterDetails.length > 0) {
-            $.each(response.MasterDetails, function () {
-                HTMLList += '<tr><td>' + this.Name + '</td><td>' + this.Rate + '</td><td>' + this.PrintName + '</td>';
-                HTMLList += '<td><a onclick="MasterTypeData(' + this.Id + ',U)" > Edit</a> |'
-                HTMLList += '<a onclick = "MasterTypeData(' + this.Id + ',D)"> Delete</a> </td></tr> ';
-            });
-        }
-        else {
-            HTMLList += ' <tr><td colspan="4">Record Not Found</td >';
-        }
-        HTMLList += '</tbody>';
-        HTMLList += '</table></div>'
-        $("#MasterList").html(HTMLList);
-        return false;
-    });
-}

@@ -295,6 +295,7 @@
     <Content Include="Views\MainScreen\MainScreen.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\MasterData\Master.cshtml" />
+    <Content Include="Views\MasterData\MasterDataList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

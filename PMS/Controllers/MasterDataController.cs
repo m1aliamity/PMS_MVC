@@ -22,20 +22,20 @@ namespace PMS.Controllers
             return View(model);
         }
         [HttpPost]
-        public JsonResult MasterTypeData(MasterModel model)
+        public PartialViewResult MasterDataList(MasterModel model)
         {
             //model.Action = "G";
-            model.CID = 1;
+             model.CID = 1;
             _masterRepository.MasterData(model);
-            return Json(model, JsonRequestBehavior.AllowGet);
+            return PartialView("MasterDataList", model);
         }
-        [HttpPost]
-        public ActionResult SaveMaster(MasterModel model)
-        {
-            model.Action = "I";
-            model.CID = 1;
-            _masterRepository.MasterData(model);
-            return View();
-        }
+        //[HttpPost]
+        //public ActionResult SaveMaster(MasterModel model)
+        //{
+        //    model.Action = "I";
+        //    model.CID = 1;
+        //    _masterRepository.MasterData(model);
+        //    return View();
+        //}
     }
 }
