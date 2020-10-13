@@ -290,9 +290,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
-    <Content Include="Views\Company\CreateCompany.cshtml" />
+    <Content Include="Views\Company\Company.cshtml" />
     <Content Include="Views\Company\CompanyList.cshtml" />
-    <Content Include="Views\Company\EditCompany.cshtml" />
     <Content Include="Views\MainScreen\MainScreen.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\MasterData\Master.cshtml" />

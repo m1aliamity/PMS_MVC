@@ -1,16 +1,18 @@
 ﻿@model IEnumerable<Models.ModelClasses.CompanyModel>
 @{
-    ViewBag.Title = "CompanyList";
+    ViewBag.Title = "Company List";
 }
 
-<h2>CompanyList</h2>
+<h2>Lab List</h2>
 
 <p>
-    @Html.ActionLink("Create New", "CreateCompany")
+    @Html.ActionLink("Add Lab", "Company")
 </p>
 <table class="table">
     <tr>
-
+        <th>
+            Id
+        </th>
         <th>
             Lab Name
         </th>
@@ -42,36 +44,39 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SloganName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StreetAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WebSite)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShowDetail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditCompany", new { id = item.Id })|
-            @Html.ActionLink("Delete", "DeleteCompany", new { id = item.Id }, new { onclick = "return confirm('Are you sure? want to delete');" })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CompanyName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SloganName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetAddress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PhoneNo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.WebSite)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ShowDetail)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsActive)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "UpdateCompany", new { id = item.Id })|
+        @Html.ActionLink("Delete", "DeactivateCompany", new { id = item.Id }, new { onclick = "return confirm('Are you sure? want to delete');" })
+    </td>
+</tr>
     }
 
 </table>

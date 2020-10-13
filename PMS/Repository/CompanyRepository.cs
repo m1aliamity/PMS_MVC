@@ -37,7 +37,7 @@ namespace PMS.Repository
                                              CompanyName = Convert.ToString(row["CompanyName"]),
                                              StreetAddress = Convert.ToString(row["StreetAddress"]),
                                              SloganName = Convert.ToString(row["SloganName"]),
-                                             PhoneNo = Convert.ToString(row["Email"]),
+                                             PhoneNo = Convert.ToString(row["PhoneNo"]),
                                              Email = Convert.ToString(row["WebSite"]),
                                              WebSite = Convert.ToString(row["WebSite"]),
                                              ShowDetail = Convert.ToBoolean(row["ShowDetail"]),
@@ -51,7 +51,7 @@ namespace PMS.Repository
                     model.CompanyName = Convert.ToString(_ds.Tables[0].Rows[0]["CompanyName"]);
                     model.StreetAddress = Convert.ToString(_ds.Tables[0].Rows[0]["StreetAddress"]);
                     model.SloganName = Convert.ToString(_ds.Tables[0].Rows[0]["SloganName"]);
-                    model.PhoneNo = Convert.ToString(_ds.Tables[0].Rows[0]["Email"]);
+                    model.PhoneNo = Convert.ToString(_ds.Tables[0].Rows[0]["PhoneNo"]);
                     model.Email = Convert.ToString(_ds.Tables[0].Rows[0]["WebSite"]);
                     model.WebSite = Convert.ToString(_ds.Tables[0].Rows[0]["WebSite"]);
                     model.ShowDetail = Convert.ToBoolean(_ds.Tables[0].Rows[0]["ShowDetail"]);

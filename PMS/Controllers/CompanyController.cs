@@ -23,13 +23,13 @@ namespace PMS.Controllers
             return View(model.CompanyList);
         }
         // GET: Company/Create
-        public ActionResult CreateCompany()
+        public ActionResult Company()
         {
             return View();
         }
         // POST: Company/Create
         [HttpPost]
-        public ActionResult CreateCompany(CompanyModel model)
+        public ActionResult Company(CompanyModel model)
         {
             model.IsActive = true;
             model.Action = "I";
@@ -48,16 +48,16 @@ namespace PMS.Controllers
             return View();
         }
         // GET: Company/Edit/
-        public ActionResult EditCompany(CompanyModel model,int id)
+        public ActionResult UpdateCompany(CompanyModel model,int id)
         {
             model.Action = "G";
             model.Id = id;
             _companyRepository.Company(model);
-            return View(model);
+            return View("Company",model);
         }
         // POST: Company/Edit/5
         [HttpPost]
-        public ActionResult EditCompany(int id, CompanyModel model)
+        public ActionResult UpdateCompany(int id, CompanyModel model)
         {
             model.Action = "U";
             model.Id = id;
@@ -77,7 +77,7 @@ namespace PMS.Controllers
             }
             return View("CompanyList", model.CompanyList);
         }
-        public ActionResult DeleteCompany(int id, CompanyModel model)
+        public ActionResult DeactivateCompany(int id, CompanyModel model)
         {
             model.Action = "D";
             model.Id = id;
