@@ -158,7 +158,11 @@
     <Compile Include="Repository\Interface\IUserRepository.cs" />
     <Compile Include="Repository\MasterRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
-    <Compile Include="Resource\ErrorMessage.Designer.cs" />
+    <Compile Include="Resource\ErrorMessage1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessage.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -340,7 +344,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resource\ErrorMessage.resx" />
+    <EmbeddedResource Include="Resource\ErrorMessage.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>ErrorMessage1.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CompanyAddress" xml:space="preserve">
-    <value>Please Fill Lab Address</value>
+    <value>Please Enter Lab Address.</value>
   </data>
   <data name="CompanyName" xml:space="preserve">
     <value>Please Enter Lab Name.</value>
@@ -137,6 +137,9 @@
   </data>
   <data name="SavedMessage" xml:space="preserve">
     <value>Data Saved Successfully.</value>
+  </data>
+  <data name="SelectMaster" xml:space="preserve">
+    <value>Please Select Master First.</value>
   </data>
   <data name="UpdateMessage" xml:space="preserve">
     <value>Data Updated Successfully.</value>

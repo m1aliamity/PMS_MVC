@@ -33,31 +33,56 @@ namespace PMS.Repository
         }
 
         public void MasterData(MasterModel model)
-        { 
-            if (model.Action == "I" && model.Action=="U")
+        {
+            if (model.Action == "I" || model.Action == "U")
             {
                 validate(model);
             }
             if (model.MessageId == 0)
             {
                 _ds = _masterDAL.MasterData(model);
-                model.MasterDetails = (from DataRow row in _ds.Tables[0].Rows
-                                        select new MasterModel
-                                        {
-                                            Id = Convert.ToInt64(row["Id"]),
-                                            MID = Convert.ToInt64(row["Master_id"]),
-                                            Name = Convert.ToString(row["Name"]),
-                                            Rate = Convert.ToDecimal(row["Rate"]),
-                                            PrintName = Convert.ToString(row["PrintName"]),
-                                        }).ToList();
+                if (@model.Action == "E")
+                {
+                    model.Id = Convert.ToInt64(_ds.Tables[0].Rows[0]["Id"]);
+                    model.MID = Convert.ToInt64(_ds.Tables[0].Rows[0]["Master_id"]);
+                    model.Name = Convert.ToString(_ds.Tables[0].Rows[0]["Name"]);
+                    model.Rate = Convert.ToDecimal(_ds.Tables[0].Rows[0]["Rate"]);
+                    model.PrintName = Convert.ToString(_ds.Tables[0].Rows[0]["PrintName"]);
+                    model.MasterDetails = (from DataRow row in _ds.Tables[1].Rows
+                                           select new MasterModel
+                                           {
+                                               Id = Convert.ToInt64(row["Id"]),
+                                               MID = Convert.ToInt64(row["Master_id"]),
+                                               Name = Convert.ToString(row["Name"]),
+                                               Rate = Convert.ToDecimal(row["Rate"]),
+                                               PrintName = Convert.ToString(row["PrintName"]),
+                                           }).ToList();
+                }
+                else
+                {
+                    model.MasterDetails = (from DataRow row in _ds.Tables[0].Rows
+                                           select new MasterModel
+                                           {
+                                               Id = Convert.ToInt64(row["Id"]),
+                                               MID = Convert.ToInt64(row["Master_id"]),
+                                               Name = Convert.ToString(row["Name"]),
+                                               Rate = Convert.ToDecimal(row["Rate"]),
+                                               PrintName = Convert.ToString(row["PrintName"]),
+                                           }).ToList();
+                }
             }
         }
         private void validate(MasterModel model)
         {
-            if (string.IsNullOrEmpty(model.Name) || string.IsNullOrWhiteSpace(model.Name))
+            if (model.MID==0)
             {
                 model.MessageId = 1;
-               // model.MessageText = Resource.ErrorMessage.MasterName;
+                model.MessageText = Resource.ErrorMessage.SelectMaster;
+            }
+            else if (string.IsNullOrEmpty(model.Name) || string.IsNullOrWhiteSpace(model.Name))
+            {
+                model.MessageId = 1;
+                model.MessageText = Resource.ErrorMessage.MasterName;
             }
         }
     }
