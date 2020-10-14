@@ -31,6 +31,10 @@
         data: model,
         headers: headers,
     }).done(function (response) {
+        if (response.MessageId == 1)
+        {
+            alert(response.MessageText);
+        }
         if (value == "E") {
             $("#btnCreate").css("display", "none");
             $("#btnUpdate").css("display", "block");

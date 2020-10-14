@@ -1,4 +1,5 @@
 ﻿using Models.ModelClasses;
+using PMS.Keys;
 using PMS.Repository.Interface;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,32 @@ namespace PMS.Controllers
         {
             model.CID = 1;
             _masterRepository.MasterData(model);
+            if (model.MessageId == 1)
+            {
+                ViewBag.AlertType = Convert.ToString(AlertType.WARNING);
+                ViewBag.AlertMessage = model.MessageText;
+            }
+            else
+            { if (model.Action == "I")
+                {
+                    ViewBag.AlertType = Convert.ToString(AlertType.SUCCESS);
+                    model.MessageId = 1;
+                    model.MessageText = Resource.ErrorMessage.SavedMessage;
+                }
+                else if (model.Action == "U")
+                {
+                    ViewBag.AlertType = Convert.ToString(AlertType.SUCCESS);
+                    model.MessageId = 1;
+                    model.MessageText = Resource.ErrorMessage.UpdateMessage;
+                }
+                else if (model.Action == "D")
+                {
+                    ViewBag.AlertType = Convert.ToString(AlertType.SUCCESS);
+                    model.MessageId = 1;
+                    model.MessageText = Resource.ErrorMessage.DeleteMessage;
+                }
+
+            }
             return Json(model,JsonRequestBehavior.AllowGet);
         }
         //[HttpPost]
