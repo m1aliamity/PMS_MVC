@@ -14,7 +14,9 @@ namespace PMS
                         ));
 
             bundles.Add(new StyleBundle("~/bundles/Layoutcss").Include(
-                        "~/Content/bootstrap.min.css"
+                        "~/Content/bootstrap.min.css",
+                         "~/Include/Global/Header/CSS/sm-mint/sm-mint.css",
+                         "~/Include/Global/Header/CSS/sm-core-css.css"
                         ));
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Include/bootstrap/JS/jquery-{version}.js"));
@@ -28,7 +30,9 @@ namespace PMS
                         "~/Include/bootstrap/JS/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Include/bootstrap/JS/bootstrap.js"));
+                      "~/Include/bootstrap/JS/bootstrap.js",
+                      "~/Include/Global/Header/JS/jquery.smartmenus.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

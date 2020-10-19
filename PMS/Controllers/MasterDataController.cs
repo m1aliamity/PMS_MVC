@@ -23,31 +23,24 @@ namespace PMS.Controllers
             return View(model);
         }
         [HttpPost]
-        public JsonResult MasterDataList(MasterModel model)
+        public JsonResult MasterDetailsOperations(MasterModel model)
         {
             model.CID = 1;
             _masterRepository.MasterData(model);
-            if (model.MessageId == 1)
+            if (model.MessageId != 1)
             {
-                ViewBag.AlertType = Convert.ToString(AlertType.WARNING);
-                ViewBag.AlertMessage = model.MessageText;
-            }
-            else
-            { if (model.Action == "I")
+                if (model.Action == "I")
                 {
-                    ViewBag.AlertType = Convert.ToString(AlertType.SUCCESS);
                     model.MessageId = 1;
                     model.MessageText = Resource.ErrorMessage.SavedMessage;
                 }
                 else if (model.Action == "U")
                 {
-                    ViewBag.AlertType = Convert.ToString(AlertType.SUCCESS);
                     model.MessageId = 1;
                     model.MessageText = Resource.ErrorMessage.UpdateMessage;
                 }
                 else if (model.Action == "D")
                 {
-                    ViewBag.AlertType = Convert.ToString(AlertType.SUCCESS);
                     model.MessageId = 1;
                     model.MessageText = Resource.ErrorMessage.DeleteMessage;
                 }

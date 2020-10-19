@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ModelClasses\BaseModel.cs" />
+    <Compile Include="ModelClasses\CommonModule.cs" />
     <Compile Include="ModelClasses\CompanyModel.cs" />
     <Compile Include="ModelClasses\DropdownModel.cs" />
+    <Compile Include="ModelClasses\LabStaffModel.cs" />
     <Compile Include="ModelClasses\MasterModel.cs" />
     <Compile Include="ModelClasses\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -28,7 +28,34 @@ namespace PMS.Repository
             if (model.MessageId == 0)
             {
                 _ds = _companyDAL.Company(model);
-                if (model.Action == "S")
+                if (@model.Action == "E")
+                {
+                    model.Id = Convert.ToInt64(_ds.Tables[0].Rows[0]["Id"]);
+                    model.CompanyName = Convert.ToString(_ds.Tables[0].Rows[0]["CompanyName"]);
+                    model.StreetAddress = Convert.ToString(_ds.Tables[0].Rows[0]["StreetAddress"]);
+                    model.SloganName = Convert.ToString(_ds.Tables[0].Rows[0]["SloganName"]);
+                    model.PhoneNo = Convert.ToString(_ds.Tables[0].Rows[0]["PhoneNo"]);
+                    model.EmailId = Convert.ToString(_ds.Tables[0].Rows[0]["WebSite"]);
+                    model.WebSite = Convert.ToString(_ds.Tables[0].Rows[0]["WebSite"]);
+                    model.ShowDetail = Convert.ToBoolean(_ds.Tables[0].Rows[0]["ShowDetail"]);
+                    model.IsActive = Convert.ToBoolean(_ds.Tables[0].Rows[0]["IsActive"]);
+                    model.Logo = Convert.ToString(_ds.Tables[0].Rows[0]["Logo"]);
+                    model.CompanyList = (from DataRow row in _ds.Tables[1].Rows
+                                         select new CompanyModel
+                                         {
+                                             Id = Convert.ToInt64(row["Id"]),
+                                             CompanyName = Convert.ToString(row["CompanyName"]),
+                                             StreetAddress = Convert.ToString(row["StreetAddress"]),
+                                             SloganName = Convert.ToString(row["SloganName"]),
+                                             PhoneNo = Convert.ToString(row["PhoneNo"]),
+                                             EmailId = Convert.ToString(row["WebSite"]),
+                                             WebSite = Convert.ToString(row["WebSite"]),
+                                             ShowDetail = Convert.ToBoolean(row["ShowDetail"]),
+                                             IsActive = Convert.ToBoolean(row["IsActive"]),
+                                             Logo = Convert.ToString(row["Logo"]),
+                                         }).ToList();
+                }
+                else
                 {
                     model.CompanyList = (from DataRow row in _ds.Tables[0].Rows
                                          select new CompanyModel
@@ -38,27 +65,15 @@ namespace PMS.Repository
                                              StreetAddress = Convert.ToString(row["StreetAddress"]),
                                              SloganName = Convert.ToString(row["SloganName"]),
                                              PhoneNo = Convert.ToString(row["PhoneNo"]),
-                                             Email = Convert.ToString(row["WebSite"]),
+                                             EmailId = Convert.ToString(row["WebSite"]),
                                              WebSite = Convert.ToString(row["WebSite"]),
                                              ShowDetail = Convert.ToBoolean(row["ShowDetail"]),
                                              IsActive = Convert.ToBoolean(row["IsActive"]),
                                              Logo = Convert.ToString(row["Logo"]),
                                          }).ToList();
                 }
-                if (model.Action == "G")
-                {
-                    model.Id = Convert.ToInt64(_ds.Tables[0].Rows[0]["Id"]);
-                    model.CompanyName = Convert.ToString(_ds.Tables[0].Rows[0]["CompanyName"]);
-                    model.StreetAddress = Convert.ToString(_ds.Tables[0].Rows[0]["StreetAddress"]);
-                    model.SloganName = Convert.ToString(_ds.Tables[0].Rows[0]["SloganName"]);
-                    model.PhoneNo = Convert.ToString(_ds.Tables[0].Rows[0]["PhoneNo"]);
-                    model.Email = Convert.ToString(_ds.Tables[0].Rows[0]["WebSite"]);
-                    model.WebSite = Convert.ToString(_ds.Tables[0].Rows[0]["WebSite"]);
-                    model.ShowDetail = Convert.ToBoolean(_ds.Tables[0].Rows[0]["ShowDetail"]);
-                    model.IsActive = Convert.ToBoolean(_ds.Tables[0].Rows[0]["IsActive"]);
-                    model.Logo = Convert.ToString(_ds.Tables[0].Rows[0]["Logo"]);
-                }
             }
+                  
         }
         private void ConmpanyValidation(CompanyModel model)
         {
@@ -77,9 +92,9 @@ namespace PMS.Repository
                 model.MessageId = 1;
                 model.MessageText = Resource.ErrorMessage.ValidPhoneNo;
             }
-            if (!string.IsNullOrEmpty(model.Email))
+            if (!string.IsNullOrEmpty(model.EmailId))
             {
-                if (!Validation.Emailvalidation(model.Email))
+                if (!Validation.Emailvalidation(model.EmailId))
                 {
                     model.MessageId = 1;
                     model.MessageText = Resource.ErrorMessage.VaidEmailId;

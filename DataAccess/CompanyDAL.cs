@@ -14,7 +14,7 @@ namespace DataAccess
     {
         public DataSet Company(CompanyModel model)
         {
-            object[] _parameterValues = { model.Id,model.CompanyName,model.StreetAddress,model.SloganName,model.PhoneNo,model.Email,model.WebSite,model.ShowDetail,model.IsActive,model.Logo, model.Action };
+            object[] _parameterValues = { model.Id,model.CompanyName,model.StreetAddress,model.SloganName,model.PhoneNo,model.EmailId, model.WebSite,model.ShowDetail,model.IsActive,model.Logo, model.Action };
             return PMSDBContaxt.ExecuteQuery("SP_Company", _parameterValues);
         }
     }

@@ -50,8 +50,10 @@
     <Compile Include="CompanyDAL.cs" />
     <Compile Include="DBAccessClass\PMSDBContaxt.cs" />
     <Compile Include="Interface\ICompanyDAL.cs" />
+    <Compile Include="Interface\ILabStaffDAL.cs" />
     <Compile Include="Interface\IMasterDAL.cs" />
     <Compile Include="Interface\IUserDAL.cs" />
+    <Compile Include="LabStaffDAL.cs" />
     <Compile Include="MasterDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDAL.cs" />

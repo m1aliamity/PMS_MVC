@@ -142,6 +142,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LabStaffController.cs" />
     <Compile Include="Controllers\MainScreenController.cs" />
     <Compile Include="Controllers\MasterDataController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -154,8 +155,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CompanyRepository.cs" />
     <Compile Include="Repository\Interface\ICompanyRepository.cs" />
+    <Compile Include="Repository\Interface\ILabStaffRepository.cs" />
     <Compile Include="Repository\Interface\IMasterRepository.cs" />
     <Compile Include="Repository\Interface\IUserRepository.cs" />
+    <Compile Include="Repository\LabStaffRepository.cs" />
     <Compile Include="Repository\MasterRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Resource\ErrorMessage1.Designer.cs">
@@ -267,6 +270,9 @@
     <Content Include="Include\bootstrap\JS\jquery.validate.unobtrusive.js" />
     <Content Include="Include\bootstrap\JS\jquery.validate.unobtrusive.min.js" />
     <Content Include="Include\bootstrap\JS\modernizr-2.8.3.js" />
+    <Content Include="Include\Global\Header\CSS\sm-core-css.css" />
+    <Content Include="Include\Global\Header\CSS\sm-mint\sm-mint.css" />
+    <Content Include="Include\Global\Header\JS\jquery.smartmenus.js" />
     <Content Include="Include\Global\Login\css\animate-custom.css" />
     <Content Include="Include\Global\Login\css\demo.css" />
     <Content Include="Include\Global\Login\css\fonts\BebasNeue-webfont.svg" />
@@ -278,7 +284,9 @@
     <Content Include="Include\Global\Login\css\style3.css" />
     <Content Include="Include\Global\Login\images\bg.jpg" />
     <Content Include="Include\Global\Login\images\ImageAttribution.txt" />
-    <Content Include="Include\Local\MasterDetails.js" />
+    <Content Include="Include\Local\JS\Common.js" />
+    <Content Include="Include\Local\JS\Company.js" />
+    <Content Include="Include\Local\JS\MasterDetails.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -300,6 +308,7 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\MasterData\Master.cshtml" />
     <Content Include="Views\MasterData\MasterDataList.cshtml" />
+    <Content Include="Views\LabStaff\LabStaff.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -331,6 +340,11 @@
     <Content Include="Include\Global\Login\css\fonts\franchise-bold-webfont.eot" />
     <Content Include="Include\Global\Login\css\fonts\franchise-bold-webfont.ttf" />
     <Content Include="Include\Global\Login\css\fonts\franchise-bold-webfont.woff" />
+    <Content Include="Include\Global\Header\CSS\sm-mint\mixins\_sub-items-indentation.scss" />
+    <Content Include="Include\Global\Header\CSS\sm-mint\sm-mint.css.map" />
+    <Content Include="Include\Global\Header\CSS\sm-mint\sm-mint.scss" />
+    <Content Include="Include\Global\Header\CSS\sm-mint\_mixins.scss" />
+    <Content Include="Include\Global\Header\CSS\sm-mint\_sm-mint-theme.scss" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

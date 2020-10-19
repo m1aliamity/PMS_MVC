@@ -11,8 +11,6 @@ namespace Models.ModelClasses
         public string CompanyName { get; set; }
         public string StreetAddress { get; set; }
         public string SloganName { get; set; }
-        public string PhoneNo { get; set; }
-        public string Email { get; set; }
         public string WebSite { get; set; }
         public bool ShowDetail { get; set; }
         public string Logo { get; set; }

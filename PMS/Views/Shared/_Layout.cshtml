@@ -8,45 +8,13 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/bundles/Layoutcss")
     @Scripts.Render("~/bundles/Layoutjquery")
-    <link href="~/Include/bootstrap/CSS/bootstrap-dialog.min.css" rel="stylesheet" />
-    <script src="~/Include/bootstrap/JS/bootstrap-dialog.min.js"></script>
-    <style>
-        /*.navbar-inverse {
-            background-color: #006cb7;
-            border-color: #186cc3;
-        }*/
-        /*.navbar-inverse .navbar-nav > li > a {
-                color: #FFF;
-            }*/
-        .alert {
-            width: 40% !important;
-        }
-    </style>
 </head>
 <body>
-    @{
-        Html.RenderPartial("_Header");
-    }
+    @{ Html.RenderPartial("_Header"); }
 
     <div class="container body-content">
-        @{
-            if (@ViewBag.AlertType != null)
-            { <!-- Display Aletr Type-->
-        <script type="text/javascript">
-
-            $(function () {
-                var dialog = new BootstrapDialog({
-                    title: '@ViewBag.AlertType',
-                    message: '@ViewBag.AlertMessage',
-                    size: BootstrapDialog.SIZE_NORMAL,
-                    type: BootstrapDialog.TYPE_@ViewBag.AlertType
-                });
-                dialog.open();
-            });
-        </script>
-            }
-        }
         @Html.AntiForgeryToken()
+        <h4>PageTitle</h4>
         @RenderBody()
     </div>
     <!-- Footer -->
@@ -60,7 +28,17 @@
     </div>
     <!-- Footer -->
     @Scripts.Render("~/bundles/jquery")
+
     @Scripts.Render("~/bundles/bootstrap")
+    <!-- SmartMenus jQuery init -->
+    <script type="text/javascript">
+        $(function () {
+            $('#main-menu').smartmenus({
+                subMenusSubOffsetX: 6,
+                subMenusSubOffsetY: -8
+            });
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

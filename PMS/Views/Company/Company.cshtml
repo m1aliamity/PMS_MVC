@@ -2,101 +2,80 @@
 @{
     ViewBag.Title = "Create Company";
 }
-<h2>Add Lab</h2>
-
 @using (Html.BeginForm())
 {
-<div class="form-horizontal">
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        <label class="control-label col-md-2">Lab Name</label>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
-            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-2">Lab Slogan Name</label>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.SloganName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.SloganName, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-2">Phone No</label>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.PhoneNo, new { htmlAttributes = new { @class = "form-control", required = "required", onkeydown = "return ValidateMobileNumber(event,this.value);" } })
-            @Html.ValidationMessageFor(model => model.PhoneNo, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-md-2">Email Id</label>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-md-2">Website</label>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.WebSite, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.WebSite, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-2">Lab Address</label>
-        <div class="col-md-10">
-            @Html.TextAreaFor(model => model.StreetAddress, new { @class = "form-control", required = "required" })
-            @Html.ValidationMessageFor(model => model.StreetAddress, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-2">Show Detail On Print</label>
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.ShowDetail)
-                @Html.ValidationMessageFor(model => model.ShowDetail, "", new { @class = "text-danger" })
+    <div class="form-control">
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-sm-2">Lab Name</label>
+            <div class="col-md-4">
+                @Html.HiddenFor(model => model.Id)
+                @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            </div>
+            <label class="control-label col-sm-2">Lab Slogan Name</label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.SloganName, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
-    </div>
-     <div class="form-group">
-        <label class="control-label col-md-2">Is Active</label>
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.IsActive)
-                @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-sm-2">Phone No</label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.PhoneNo, new { htmlAttributes = new { @class = "form-control", required = "required", onkeydown = "return ValidateMobileNumber(event,this.value);" } })
+            </div>
+            <label class="control-label col-sm-2">Email Id</label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.EmailId, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            @if (@Model!=null)
-            {
-                <input type="submit" value="Update" class="btn btn-default" />
-            }
-            else
-            {
-                <input type="submit" value="Save" class="btn btn-default" />
-            }
+       
+        <div class="form-group">
+            <label class="control-label col-sm-2">Website</label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.WebSite, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <label class="control-label col-sm-2">Lab Address</label>
+            <div class="col-sm-4">
+                @Html.TextAreaFor(model => model.StreetAddress, new { @class = "form-control", required = "required" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Show Detail On Print</label>
+            <div class="col-sm-4">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.ShowDetail)
+                </div>
+            </div>
+            <label class="control-label col-sm-2">Is Active</label>
+            <div class="col-sm-4">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsActive)
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-8">
+                <input type="button" id="btnCreate" value="Save" OnClick="CompanyOperation(0,'I')" class="btn btn-default" />
+                <input type="button" id="btnUpdate" style="display:none;" value="Update" OnClick="CompanyOperation(0,'U')" class="btn btn-default" />
+            </div>
+        </div>
+        <div id="CompanyList" class="form-group">
+
         </div>
     </div>
-</div>
 }
-<div>
-    @Html.ActionLink("Lab List", "CompanyList")
-</div>
+<script src="~/Include/Local/JS/Company.js"></script>
 <script type="text/javascript">
     function validation() {
         debugger;
-        if ($("#CompanyName").val() == "" || $("#SPOCId").val() == " ")
-        {
+        if ($("#CompanyName").val() == "" || $("#SPOCId").val() == " ") {
             alert(ErrorMessage.CompanyName);
             return false;
         }
         return true;
     }
+    $(document).ready(function () {
+        debugger;
+        CompanyOperation(0,'');
+    });
 </script>
-
