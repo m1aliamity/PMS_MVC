@@ -24,3 +24,16 @@ D:\Projects\PMS_MVC\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cac
 D:\Projects\PMS_MVC\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 D:\Projects\PMS_MVC\DataAccess\obj\Debug\DataAccess.dll
 D:\Projects\PMS_MVC\DataAccess\obj\Debug\DataAccess.pdb
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\bin\Debug\DataAccess.dll
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\bin\Debug\DataAccess.pdb
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\bin\Debug\Models.dll
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\bin\Debug\Models.pdb
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\obj\Debug\DataAccess.dll
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\DataAccess\obj\Debug\DataAccess.pdb

@@ -47,8 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonDAL.cs" />
     <Compile Include="CompanyDAL.cs" />
     <Compile Include="DBAccessClass\PMSDBContaxt.cs" />
+    <Compile Include="Interface\ICommonDAL.cs" />
     <Compile Include="Interface\ICompanyDAL.cs" />
     <Compile Include="Interface\ILabStaffDAL.cs" />
     <Compile Include="Interface\IMasterDAL.cs" />

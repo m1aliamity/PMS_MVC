@@ -10,3 +10,9 @@ D:\Projects\PMS_MVC\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
 D:\Projects\PMS_MVC\Models\obj\Debug\Models.dll
 D:\Projects\PMS_MVC\Models\obj\Debug\Models.pdb
 D:\Projects\PMS_MVC\Models\obj\Debug\Models.csprojAssemblyReference.cache
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\Models\bin\Debug\Models.dll
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\Models\bin\Debug\Models.pdb
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\Models\obj\Debug\Models.csprojAssemblyReference.cache
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\Models\obj\Debug\Models.dll
+E:\IBCM_Group\MusharrafAli\PMS_MVC-master\PMS_MVC-master\Models\obj\Debug\Models.pdb

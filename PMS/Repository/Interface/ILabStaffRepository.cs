@@ -10,5 +10,6 @@ namespace PMS.Repository.Interface
     public interface ILabStaffRepository
     {
         void LabStaff(LabStaffModel model);
+        void BindMasterData(LabStaffModel model);
     }
 }

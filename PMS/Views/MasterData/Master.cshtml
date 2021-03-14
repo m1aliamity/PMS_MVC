@@ -1,8 +1,6 @@
 ﻿@model Models.ModelClasses.MasterModel
 @using (Html.BeginForm()) 
 {
-    
-<div class="form-control">
     <hr />
     <div class="form-group">
         @Html.HiddenFor(model => model.Id)
@@ -39,6 +37,5 @@
     <div id="MasterList" class="form-group">
 
     </div>
-</div>
 }
 <script src="~/Include/Local/JS/MasterDetails.js"></script>

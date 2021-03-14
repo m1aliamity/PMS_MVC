@@ -14,7 +14,7 @@ namespace DataAccess
     {
         public DataSet LabStaff(LabStaffModel model)
         {
-            object[] _parameterValues = { model.Id, model.FirstName, model.LastName, model.MobileNo, model.EmailId, model.Gander, model.Religion, model.MritalStatus, model.SpauseName, model.DateOfBirth, model.AnniversaryDate, model.StaffType, model.Address, model.CID, model.UserId, model.Action };
+            object[] _parameterValues = { model.Id,model.Title, model.FirstName, model.LastName, model.MobileNo, model.EmailId, model.Gender, model.Religion, model.MritalStatus, model.SpauseName, model.DateOfBirth, model.AnniversaryDate, model.StaffType, model.Address, model.CID, model.UserId, model.Action };
             return PMSDBContaxt.ExecuteQuery("SP_LabStaff", _parameterValues);
         }
     }

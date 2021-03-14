@@ -9,15 +9,20 @@ namespace PMS
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/Layoutjquery").Include(
-                        "~/Include/bootstrap/JS/jquery-{version}.js",
-                        "~/Include/bootstrap/JS/bootstrap.min.js"
+                        "~/Include/bootstrap/JS/jquery-{version}.js"
+                        //"~/Include/bootstrap/JS/jquery-ui.min.js"
                         ));
 
             bundles.Add(new StyleBundle("~/bundles/Layoutcss").Include(
                         "~/Content/bootstrap.min.css",
                          "~/Include/Global/Header/CSS/sm-mint/sm-mint.css",
                          "~/Include/Global/Header/CSS/sm-core-css.css"
+                        //"~/Include/bootstrap/CSS/themes/base/jquery-ui.css"
                         ));
+            bundles.Add(new ScriptBundle("~/bundles/LayoutjsSecond").Include(
+                                
+                                ));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Include/bootstrap/JS/jquery-{version}.js"));
 

@@ -16,12 +16,12 @@ namespace Models.ModelClasses
         public long UserId { get; set; }
         public long UserType { get; set; }
         public long CID { get; set; }
-        public int MobileNo { get; set; }
-        public string Religion { get; set; }
+        public string MobileNo { get; set; }
+        public long Religion { get; set; }
         public DateTime DateOfBirth { get; set; }
         public DateTime AnniversaryDate { get; set; }
-        public int Gander { get; set; }
-        public int MritalStatus { get; set; }
+        public long Gender { get; set; }
+        public long MritalStatus { get; set; }
         public string SpauseName { get; set; }
         public string PhoneNo { get; set; }
         public string EmailId { get; set; }

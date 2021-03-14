@@ -10,8 +10,8 @@ namespace Models.ModelClasses
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int StaffType { get; set; }
+        public long StaffType { get; set; }
         public string Address { get; set; }
-        
+        public List<LabStaffModel> LabStaffList { get; set; }
     }
 }

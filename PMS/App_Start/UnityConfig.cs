@@ -27,6 +27,12 @@ namespace PMS
               container.RegisterType<IMasterDAL, MasterDAL>();
               container.RegisterType<IMasterRepository, MasterRepository>();
 
+              container.RegisterType<ICommonDAL, CommonDAL>();
+              container.RegisterType<ICommonRepository, CommonRepository>();
+
+              container.RegisterType<ILabStaffDAL, LabStaffDAL>();
+              container.RegisterType<ILabStaffRepository, LabStaffRepository>();
+
               RegisterTypes(container);
               return container;
           });
