@@ -1,0 +1,76 @@
+﻿@model Models.Pathology.MaintainMasterModel;
+@{
+    ViewData["Title"] = "MaintainMaster";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5">
+            <form>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Master:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(m => m.MID, new SelectList(Model.MasterList, "Value", "Text"), "--Select--",
+                        new
+                        {
+                            @Class = "form-control form-control-sm",
+                            @onchange = "MaintainMasterOperation(0,'S')"
+                        })
+                        @*@Html.DropDownListFor(m => m.MID, new SelectList(Model.MasterList, "Value", "Text"), "--Select--",
+                new
+                {
+                    @Class = "form-control form-control-sm",
+                    @onchange = "MaintainMasterOperation(0,'G')"
+                })*@
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Name:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control form-control-sm" id="txtName" data-error="Please Enter Name." required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Print Name:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control form-control-sm" id="txtPrintName">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" id="lblRate" class="col-sm-3 col-form-label col-form-label-sm">Rate:<span class="mandatory"><b>*</b></span></label>
+                    <div id="divRate" class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm" value="0" id="txtRate">
+                    </div>
+                    <label for="colFormLabelSm" id="lblStatus" class="col-sm-2 col-form-label col-form-label-sm">Status:<span class="mandatory"><b>*</b></span></label>
+                    <div id="divStatus" class="col-sm-4">
+                        <select class="form-control form-control-sm" id="dpdStatus">
+                            <option value="0">--Select--</option>
+                            <option value="1" selected>Active</option>
+                            <option value="2">Deactive</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Remarks:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control form-control-sm" id="txtRemarks">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-8">
+                        <button type="button" id="btnCreate" OnClick="MaintainMasterOperation(0,'I')" class="btn btn-outline-primary">Save</button>
+                        <button type="button" id="btnUpdate" OnClick="MaintainMasterOperation(0,'U')" class="btn btn-outline-primary">Update</button>
+                        <button type="button" id="btnExit" class="btn btn-outline-primary">Exit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-7" id="tblMasterList">
+        </div>
+    </div>
+</div>
+<script src="~/lib/Script/Local/Pathology/MaintainMaster.js"></script>

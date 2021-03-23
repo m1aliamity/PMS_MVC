@@ -1,0 +1,8 @@
+D:\Projects\PMS_CoreMVC\Models\bin\Debug\netcoreapp3.1\Models.deps.json
+D:\Projects\PMS_CoreMVC\Models\bin\Debug\netcoreapp3.1\Models.dll
+D:\Projects\PMS_CoreMVC\Models\bin\Debug\netcoreapp3.1\Models.pdb
+D:\Projects\PMS_CoreMVC\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfoInputs.cache
+D:\Projects\PMS_CoreMVC\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfo.cs
+D:\Projects\PMS_CoreMVC\Models\obj\Debug\netcoreapp3.1\Models.csproj.CoreCompileInputs.cache
+D:\Projects\PMS_CoreMVC\Models\obj\Debug\netcoreapp3.1\Models.dll
+D:\Projects\PMS_CoreMVC\Models\obj\Debug\netcoreapp3.1\Models.pdb
