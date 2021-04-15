@@ -134,6 +134,3 @@ function ColumnsAdjustment(mid) {
         $("#divStatus").removeClass("col-sm-4").addClass("col-sm-9");
     }
 }
-$('#success2').click(function () {
-
-});

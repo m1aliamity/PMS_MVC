@@ -1,10 +1,7 @@
 ﻿@model Models.Pathology.MaintainMasterModel;
-@{
-    ViewData["Title"] = "MaintainMaster";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "MaintainMaster";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
-<div class="container">
     <div class="row">
         <div class="col-sm-5">
             <form>
@@ -12,17 +9,17 @@
                     <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Master:<span class="mandatory"><b>*</b></span></label>
                     <div class="col-sm-9">
                         @Html.DropDownListFor(m => m.MID, new SelectList(Model.MasterList, "Value", "Text"), "--Select--",
-                        new
-                        {
+                            new
+                            {
                             @Class = "form-control form-control-sm",
                             @onchange = "MaintainMasterOperation(0,'S')"
-                        })
+                            })
                         @*@Html.DropDownListFor(m => m.MID, new SelectList(Model.MasterList, "Value", "Text"), "--Select--",
-                new
-                {
-                    @Class = "form-control form-control-sm",
-                    @onchange = "MaintainMasterOperation(0,'G')"
-                })*@
+                            new
+                            {
+                            @Class = "form-control form-control-sm",
+                            @onchange = "MaintainMasterOperation(0,'G')"
+                            })*@
                     </div>
                 </div>
                 <div class="form-group row">
@@ -72,5 +69,4 @@
         <div class="col-sm-7" id="tblMasterList">
         </div>
     </div>
-</div>
 <script src="~/lib/Script/Local/Pathology/MaintainMaster.js"></script>

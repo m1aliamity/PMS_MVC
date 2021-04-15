@@ -61,6 +61,33 @@ namespace PMS.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please Enter Company Address.
+        /// </summary>
+        public static string CompanyAddress {
+            get {
+                return ResourceManager.GetString("CompanyAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Enter Company Name..
+        /// </summary>
+        public static string CompanyName {
+            get {
+                return ResourceManager.GetString("CompanyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Enter Phone No..
+        /// </summary>
+        public static string CompanyPhoneNo {
+            get {
+                return ResourceManager.GetString("CompanyPhoneNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Record Deleted Successfully..
         /// </summary>
         public static string Delete {
@@ -84,6 +111,15 @@ namespace PMS.Resources {
         public static string Master {
             get {
                 return ResourceManager.GetString("Master", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Enter Mobile No..
+        /// </summary>
+        public static string MobileNo {
+            get {
+                return ResourceManager.GetString("MobileNo", resourceCulture);
             }
         }
         
@@ -156,6 +192,15 @@ namespace PMS.Resources {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Enter Company Slogan Name..
+        /// </summary>
+        public static string SloganName {
+            get {
+                return ResourceManager.GetString("SloganName", resourceCulture);
             }
         }
         

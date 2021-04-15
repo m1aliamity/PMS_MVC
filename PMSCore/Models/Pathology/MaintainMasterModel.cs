@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Models.Pathology
 {
-    public class MaintainMasterModel : BaseModel
+    public class MaintainMasterModel :BaseModel 
     {
         public int MID { get; set; }
         public string Name { get; set; }

@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CompanyAddress" xml:space="preserve">
+    <value>Please Enter Company Address</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Please Enter Company Name.</value>
+  </data>
+  <data name="CompanyPhoneNo" xml:space="preserve">
+    <value>Please Enter Phone No.</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Record Deleted Successfully.</value>
   </data>
@@ -125,6 +134,9 @@
   </data>
   <data name="Master" xml:space="preserve">
     <value>Please Select Master.</value>
+  </data>
+  <data name="MobileNo" xml:space="preserve">
+    <value>Please Enter Mobile No.</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Please Enter Name.</value>
@@ -149,6 +161,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Recored Saved successfully.</value>
+  </data>
+  <data name="SloganName" xml:space="preserve">
+    <value>Please Enter Company Slogan Name.</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Please Select Status.</value>

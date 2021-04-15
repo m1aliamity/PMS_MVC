@@ -24,6 +24,14 @@ namespace PMS
         {
             services.AddSession();
             services.AddControllersWithViews();
+            services.AddScoped<ICommonRepository, CommonRepository>();
+            services.AddScoped<ICommonDAL, CommonDAL>();
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<ICompanyDAL, CompanyDAL>(); 
+            services.AddScoped<ILabStaffRepository, LabStaffRepository>();
+            services.AddScoped<IDoctorDAL, DoctorDAL>();
+            services.AddScoped<IDoctorRepository, DoctorRepository>();
+            services.AddScoped<ILabStaffDAL, LabStaffDAL>();
             services.AddScoped<ILoginRepository, LoginRepository>();
             services.AddScoped<ILoginDAL, LoginDAL>();
             services.AddScoped<IMaintainMasterRepository, MaintainMasterRepository>();

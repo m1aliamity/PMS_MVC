@@ -35,7 +35,7 @@ namespace PMS.Controllers
                 ViewBag.Age = HttpContext.Session.GetInt32("CID");
                 return RedirectToRoute(new { action = "MainScreen", controller = "MainScreen", area = "" });
             }
-            return View("");
+            return View("UserLogin");
         }
         public IActionResult CreateUser()
         {
