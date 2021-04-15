@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "ProfileMaster";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <form>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">TestList</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>mdo</td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>fat</td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td>Larry the Bird</td>
+                                <td>twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-6" id="tblMasterList">
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Profile:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-9">
+                        <select class="form-control form-control-sm" id="dtpGender">
+                            <option value="0" selected>--Select--</option>
+                            <option value="1">Single</option>
+                            <option value="2">Married</option>
+                        </select>
+                    </div>
+                </div>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Profile Details</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+

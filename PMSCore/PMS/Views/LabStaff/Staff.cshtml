@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewData["Title"] = "Staff";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <form>
+            <div class="form-group row">
+                <label for="txtFname" class="col-sm-2 col-form-label col-form-label-sm">First Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtFname">
+                </div>
+                <label for="txtLname" class="col-sm-2 col-form-label col-form-label-sm">Last Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtLname">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dpdGender" class="col-sm-2 col-form-label col-form-label-sm">Gender:</label>
+                <div class="col-sm-4">
+                    <select class="form-control form-control-sm" id="dpdGender">
+                        <option value="0" selected>--Select--</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                    </select>
+                </div>
+                <label for="txtDOB" class="col-sm-2 col-form-label col-form-label-sm">DOB:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtDOB">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtMobile" class="col-sm-2 col-form-label col-form-label-sm">Mobile No:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtMobile">
+                </div>
+                <label for="txtEmail" class="col-sm-2 col-form-label col-form-label-sm">Email Id:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtEmail">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dpdMeritalStatus" class="col-sm-2 col-form-label col-form-label-sm">Merital Status:</label>
+                <div class="col-sm-4">
+                    <select class="form-control form-control-sm" id="dpdMeritalStatus">
+                        <option value="0" selected>--Select--</option>
+                        <option value="1">Single</option>
+                        <option value="2">Married</option>
+                    </select>
+                </div>
+                <label for="dpdEmployeeType" class="col-sm-2 col-form-label col-form-label-sm">Employee Type:</label>
+                <div class="col-sm-4">
+                    <select class="form-control form-control-sm" id="dpdEmployeeType">
+                        <option value="0" selected>--Select--</option>
+                        <option value="1">Rception</option>
+                        <option value="2">LabTech</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtAddress" class="col-sm-2 col-form-label col-form-label-sm">Address:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtAddress">
+                </div>
+                <label for="dpdStatus" class="col-sm-2 col-form-label col-form-label-sm">Status:</label>
+                <div class="col-sm-4">
+                    <select class="form-control form-control-sm" id="dpdStatus">
+                        <option value="0" selected>--Select--</option>
+                        <option value="1">Active</option>
+                        <option value="2">Deactive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtSpauseName" class="col-sm-2 col-form-label col-form-label-sm">Spause Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtSpauseName">
+                </div>
+                <label for="txtAnniversaryDate" class="col-sm-2 col-form-label col-form-label-sm">Anniversary Date:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtAnniversaryDate">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                </div>
+                <div class="col-sm-7">
+                    <button type="button" id="btnCreate" OnClick="LabStaffOperations(0,'I')" class="btn btn-outline-primary">Save</button>
+                    <button type="button" id="btnUpdate" OnClick="LabStaffOperations(0,'I')" class="btn btn-outline-primary">Update</button>
+                    <button type="button" id="btnExit" class="btn btn-outline-primary">Exit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>twitter</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
