@@ -28,7 +28,6 @@ namespace PMS.Controllers
         {
             await _companyRepository.CompanyOperations(model);
             return Json(model);
-            //return View("Hello");
         }
 
         private string UploadedFile(CompanyModel model)

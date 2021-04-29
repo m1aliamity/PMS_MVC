@@ -38,14 +38,15 @@
     <script src="~/lib/Script/BootStrap/bootstrap.js"></script>
     <script src="~/lib/Script/BootStrap/popper.min.js"></script>
     <script src="~/lib/Script/Global/jquery-ui.min.js"></script>
-    <script src="~/lib/Script/Global/theme/js/main-2.3.0.js"></script>
-    @*<script>
-            $(document).ready(function () {
-                $('#example').DataTable();
-            });
-        </script>*@
+
+    @*<script src="~/lib/Script/Global/theme/js/main-2.3.0.js"></script>*@
     <script>
         $(document).ready(function () {
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
         });
     </script>
     @RenderSection("scripts", required: false)

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "DmWiOqKfli0sxZYqa2+BhknXHSCez6NiambobTeB9f5tpvjBx0BCCdAEHxvOTIa6Tmd+sFlRLkqnUGisYiqe5w==",
+  "dgSpecHash": "55OYoEMNhTZakF+abWNRgD6hqLvZfaFcKfitw3HU7tYTMxeJZzt8f7sISYdUe/MEF7j6D3CAnz0qxMAynZIRIg==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\PMSCore\\Models\\Models.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Musharraf Ali\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.5\\microsoft.aspnetcore.http.features.5.0.5.nupkg.sha512",
+    "C:\\Users\\Musharraf Ali\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Musharraf Ali\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\Musharraf Ali\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

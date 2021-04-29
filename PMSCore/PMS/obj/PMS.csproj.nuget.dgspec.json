@@ -1,24 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\PMS\\PMS.csproj": {}
+    "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\PMS\\PMS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\DAL\\DAL.csproj": {
+    "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\musharraf.ali.HCLTECH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\DAL\\obj\\",
+        "projectPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Musharraf Ali\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\musharraf.ali.HCLTECH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Musharraf Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -29,9 +33,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\Models\\Models.csproj"
+              "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj": {
+                "projectPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj"
               }
             }
           }
@@ -44,6 +49,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -73,25 +79,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\Models\\Models.csproj": {
+    "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\Models\\Models.csproj",
+        "projectUniqueName": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\musharraf.ali.HCLTECH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\Models\\obj\\",
+        "projectPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\Musharraf Ali\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\musharraf.ali.HCLTECH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Musharraf Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -102,6 +112,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -113,10 +124,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Microsoft.AspNetCore.Http": {
+            "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
-              "version": "[2.2.2, )"
+              "version": "[5.0.5, )"
             }
           },
           "imports": [
@@ -134,25 +146,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\PMS\\PMS.csproj": {
+    "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\PMS\\PMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\PMS\\PMS.csproj",
+        "projectUniqueName": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\PMS\\PMS.csproj",
         "projectName": "PMS",
-        "projectPath": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\PMS\\PMS.csproj",
-        "packagesPath": "C:\\Users\\musharraf.ali.HCLTECH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\PMS\\obj\\",
+        "projectPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\PMS\\PMS.csproj",
+        "packagesPath": "C:\\Users\\Musharraf Ali\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\PMS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\musharraf.ali.HCLTECH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Musharraf Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -163,12 +179,13 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\DAL\\DAL.csproj"
+              "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\musharraf.ali.HCLTECH\\Desktop\\PMSCore\\Models\\Models.csproj"
+              "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj": {
+                "projectPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj"
               }
             }
           }
@@ -181,12 +198,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[3.1.5, )"
-            }
-          },
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -205,7 +217,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

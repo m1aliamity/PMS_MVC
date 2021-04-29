@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\PMSCore\\Models\\Models.csproj": {}
+    "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\PMSCore\\Models\\Models.csproj": {
+    "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\PMSCore\\Models\\Models.csproj",
+        "projectUniqueName": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "D:\\Projects\\PMSCore\\Models\\Models.csproj",
+        "projectPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\Musharraf Ali\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\PMSCore\\Models\\obj\\",
+        "outputPath": "D:\\Projects\\PMS_MVC_OLD\\PMSCore\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -46,6 +46,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

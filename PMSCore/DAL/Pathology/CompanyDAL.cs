@@ -26,16 +26,18 @@ namespace DAL.Pathology
         {
             MySqlParameter[] cmdParams = {
                 new MySqlParameter("@P_Id", model.RowId),
-                //new MySqlParameter("@P_MID", model.MID),
-                //new MySqlParameter("@P_Name", model.Name),
-                //new MySqlParameter("@P_PtintName", model.PrintName),
-                //new MySqlParameter("@P_Status", model.Status),
-                //new MySqlParameter("@P_Rate", model.Rate),
-                //new MySqlParameter("@P_Remarks", model.Remarks),
-                //new MySqlParameter("@P_CID", model.CID),
-                //new MySqlParameter("@P_UserId", model.UserId),
+                new MySqlParameter("@P_LabName", model.CompanyName),
+                new MySqlParameter("@P_SloganName", model.SloganName),
+                new MySqlParameter("@P_PhoneNo", model.PhoneNo),
+                new MySqlParameter("@P_EmailId", model.EmailId),
+                new MySqlParameter("@P_Website", model.WebSite),
+                new MySqlParameter("@P_Status", model.Status),
+                new MySqlParameter("@P_Address", model.Address),
+                new MySqlParameter("@P_CompanyLogo", model.LabLogoPath),
+                new MySqlParameter("@P_ShowDetails", model.LabLogoPath),
+                new MySqlParameter("@P_UserId", model.UserId),
                 new MySqlParameter("@P_Action", model.Action),};
-            return await _objMySqlHelper.SP_DataSet("USP_MaintainMasterOperation", cmdParams);
+            return await _objMySqlHelper.SP_DataSet("USP_CompanyOperation", cmdParams);
         }
     }
 }
