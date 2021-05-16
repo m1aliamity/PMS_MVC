@@ -7,5 +7,7 @@ namespace PMS.Repository.Pathology.Interface
     {
         Task GetMaster(MaintainMasterModel model);
         Task MasterDetailOperations(MaintainMasterModel model);
+        Task TestHeadOperations(MaintainMasterModel model);
+        Task GetPathologyDepartment(MaintainMasterModel model);
     }
 }

@@ -13,9 +13,12 @@ namespace PMS.Controllers
     public class MaintainMasterController : Controller
     {
         private readonly IMaintainMasterRepository _maintainMasterRepository;
-        public MaintainMasterController(IMaintainMasterRepository maintainMasterRepository)
+
+        private readonly ICommonRepository _commonRepository;
+        public MaintainMasterController(ICommonRepository commonRepository, IMaintainMasterRepository maintainMasterRepository)
         {
             _maintainMasterRepository = maintainMasterRepository;
+            _commonRepository = commonRepository;
         }
         public async Task<IActionResult> MaintainMaster(MaintainMasterModel model)
         {
@@ -27,6 +30,11 @@ namespace PMS.Controllers
         {
             await _maintainMasterRepository.MasterDetailOperations(model);
             return Json(model);
+        }
+        public async Task<IActionResult> MaintainTestHead(MaintainMasterModel model)
+        {
+            await _maintainMasterRepository.GetPathologyDepartment(model);
+            return View(model);
         }
     }
 }

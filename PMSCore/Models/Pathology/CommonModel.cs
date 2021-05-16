@@ -10,5 +10,8 @@ namespace Models.Pathology
         public List<DropDownModel> ReligionList { get; set; }
         public List<DropDownModel> MritalStatusList { get; set; }
         public List<DropDownModel> StaffTypeList { get; set; }
+        public List<DropDownModel> PathologyDepartmentList { get; set; }
+        public List<DropDownModel> TestHeadList { get; set; }
+        public List<DropDownModel> TestTypeList { get; set; }
     }
 }
