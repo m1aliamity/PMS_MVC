@@ -1,8 +1,6 @@
 ﻿
-@{
-    ViewData["Title"] = "TestMaster";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "TestMaster";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <form>
     <div class="row">
@@ -26,7 +24,7 @@
                     </select>
                 </div>
                 <div class="col-sm-2">
-                    <button type="button" id="btnAddNew" class="form-control form-control-sm">Add New Test</button>
+                    <button type="button" id="btnAddNew" onclick="AddNewTest()" class="form-control form-control-sm">Add New Test</button>
                 </div>
             </div>
             <div class="col-sm-12" id="tblMasterList">
@@ -60,6 +58,9 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div id="AddNewTestMaster" class="modal fade">
+        </div>
     </div>
 </form>
-
+<script src="~/lib/Script/Local/Pathology/TestMaster.js"></script>

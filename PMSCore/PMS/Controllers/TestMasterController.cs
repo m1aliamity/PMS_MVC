@@ -20,5 +20,9 @@ namespace PMS.Controllers
             _testMasterRepository.GetMasterData(model);
             return View();
         }
+        public IActionResult AddNewTest(TestMasterModel model)
+        {
+            return PartialView("AddNewTest", model);
+        }
     }
 }

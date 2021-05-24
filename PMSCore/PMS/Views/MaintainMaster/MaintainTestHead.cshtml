@@ -1,6 +1,6 @@
 ﻿@model Models.Pathology.MaintainMasterModel;
 @{ ViewData["Title"] = "MaintainMaster";
-    Layout = "~/Views/Shared/_Layout.cshtml"; }
+    }
 
 <div class="row">
     <div class="col-sm-5">
@@ -12,7 +12,7 @@
                              new
                              {
                                  @Class = "form-control form-control-sm",
-                                 @onchange = "MaintainTestHeadOperation(0,'S')"
+                                 @onchange = "TestHeadOperation(0,'S')"
                              })
                     @*@Html.DropDownListFor(m => m.MID, new SelectList(Model.MasterList, "Value", "Text"), "--Select--",
                         new

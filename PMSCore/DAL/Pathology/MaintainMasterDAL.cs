@@ -38,7 +38,7 @@ namespace DAL.Pathology
             return await _objMySqlHelper.SP_DataSet("USP_MaintainMasterOperation", cmdParams);
         }
         public async Task<DataSet> TestHeadOperations(MaintainMasterModel model)
-        {
+        {//Need to create sp for this function
             MySqlParameter[] cmdParams = {
                 new MySqlParameter("@P_Id", model.RowId),
                 new MySqlParameter("@P_DepartmentId", model.MID),
@@ -48,7 +48,7 @@ namespace DAL.Pathology
                 new MySqlParameter("@P_CID", model.CID),
                 new MySqlParameter("@P_UserId", model.UserId),
                 new MySqlParameter("@P_Action", model.Action),};
-            return await _objMySqlHelper.SP_DataSet("USP_MaintainMasterOperation", cmdParams);
+            return await _objMySqlHelper.SP_DataSet("USP_TestHead", cmdParams);
         }
         
     }
