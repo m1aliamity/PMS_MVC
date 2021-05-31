@@ -15,16 +15,23 @@ namespace PMS.Controllers
         {
             _doctorRepository = doctorRepository;
         }
-        public IActionResult Doctor(DoctorModel model)
+        public async Task<IActionResult> Doctor(DoctorModel model)
         {
-            return View();
+            await _doctorRepository.GetMasterData(model);
+            await _doctorRepository.GetDoctorList(model);
+            return View(model);
+        }
+        public async Task<IActionResult> AddDoctor(DoctorModel model)
+        {
+            await _doctorRepository.GetMasterData(model);
+            //return View(model);
+            return PartialView("AddNewDoctor", model);
         }
         [HttpPost]
-        public async Task<JsonResult> DoctorOperatons(DoctorModel model)
+        public async Task<IActionResult> DoctorOperations(DoctorModel model)
         {
             await _doctorRepository.DoctorOperations(model);
             return Json(model);
-            //return View("Hello");
         }
     }
 }

@@ -18,11 +18,28 @@ namespace PMS.Controllers
         public IActionResult TestMaster(TestMasterModel model)
         {
             _testMasterRepository.GetMasterData(model);
-            return View();
+            return View(model);
         }
-        public IActionResult AddNewTest(TestMasterModel model)
+        public async Task<JsonResult> GetTestHeadMaster(TestMasterModel model)
         {
-            return PartialView("AddNewTest", model);
+            await _testMasterRepository.GetTestHeadMaster(model);
+            return Json(model);
+        }
+        //public async Task<JsonResult> MaintainMasterOperation(TestMasterModel model)
+        //{
+        //    await _testMasterRepository.GetTestHeadMaster(model);
+        //    return Json(model);
+        //}
+        public IActionResult AddTest(TestMasterModel model)
+        {
+            _testMasterRepository.GetMasterData(model);
+            return PartialView("AddTest", model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> TestOperations(TestMasterModel model)
+        {
+            await _testMasterRepository.TestMasterOperations(model);
+            return Json(model);
         }
     }
 }

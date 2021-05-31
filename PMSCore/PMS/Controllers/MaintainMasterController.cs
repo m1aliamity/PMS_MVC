@@ -36,6 +36,7 @@ namespace PMS.Controllers
             await _maintainMasterRepository.GetPathologyDepartment(model);
             return View(model);
         }
+        [HttpPost]
         public async Task<JsonResult> TestHeadOperation(MaintainMasterModel model)
         {
             await _maintainMasterRepository.TestHeadOperations(model);

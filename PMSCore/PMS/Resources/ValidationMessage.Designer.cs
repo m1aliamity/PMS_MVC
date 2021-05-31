@@ -97,6 +97,24 @@ namespace PMS.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please Select Department..
+        /// </summary>
+        public static string Department {
+            get {
+                return ResourceManager.GetString("Department", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Select Gender..
+        /// </summary>
+        public static string Gender {
+            get {
+                return ResourceManager.GetString("Gender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have Enter Invalid User Name Or Password..
         /// </summary>
         public static string InvalidUserPassword {

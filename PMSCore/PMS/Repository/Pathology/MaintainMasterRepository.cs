@@ -19,16 +19,9 @@ namespace PMS.Repository.Pathology
         }
         public async Task GetMaster(MaintainMasterModel model)
         {
-            DataTable dt = await _maintainMasterDAL.GetMaster(model);
-            if (dt.Rows.Count > 0)
-            {
-                model.MasterList = (from DataRow row in dt.Rows
-                                    select new DropDownModel
-                                    {
-                                        Value = Convert.ToString(row["Id"]),
-                                        Text = Convert.ToString(row["Name"]),
-                                    }).ToList();
-            }
+            CommonModel commonModel = new CommonModel();
+            await _commonRepository.GetMaster(commonModel);
+            model.MasterList = commonModel.MasterList;
         }
         public async Task MasterDetailOperations(MaintainMasterModel model)
         {
@@ -96,8 +89,8 @@ namespace PMS.Repository.Pathology
         {
             CommonModel commonModel = new CommonModel();
             //string masterId = (int)Keys.MasterData.PathologyDepartment + "|" + (int)Keys.MasterData.MritalStatus + "|" + (int)Keys.MasterData.NamePrefix + "|" + (int)Keys.MasterData.Relation + "|" + (int)Keys.MasterData.Religion + "|" + (int)Keys.MasterData.EmployeeType + "|";
-            string masterId = (int)Keys.MasterData.PathologyDepartment + "|";
-            await _commonRepository.GetMasterData(commonModel, masterId);
+            commonModel.MID = (int)Keys.MasterData.PathologyDepartment + ",";
+            await _commonRepository.GetMasterData(commonModel);
             model.PathologyDepartmentList = commonModel.PathologyDepartmentList;
         }
             
@@ -109,7 +102,7 @@ namespace PMS.Repository.Pathology
             }
             if (model.MessageId == 0)
             {
-                DataSet ds = await _maintainMasterDAL.MasterDetailOperations(model);
+                DataSet ds = await _maintainMasterDAL.TestHeadOperations(model);
                 if (model.Action == "I")
                 {
                     model.MessageId = 1;
@@ -141,9 +134,9 @@ namespace PMS.Repository.Pathology
                     else
                     {
                         model.RowId = Convert.ToInt64(ds.Tables[0].Rows[0]["Id"]);
-                        model.Name = Convert.ToString(ds.Tables[0].Rows[0]["Name"]);
+                        model.Name = Convert.ToString(ds.Tables[0].Rows[0]["HeadName"]);
                         model.PrintName = Convert.ToString(ds.Tables[0].Rows[0]["PrintName"]);
-                        model.Status = Convert.ToInt32(ds.Tables[0].Rows[0]["Status"]);
+                        model.Status = Convert.ToInt32(ds.Tables[0].Rows[0]["IsActive"]);
                         model.MasterDetailsList = (from DataRow row in ds.Tables[1].Rows
                                                    select new MaintainMasterModel
                                                    {
@@ -158,10 +151,10 @@ namespace PMS.Repository.Pathology
         }
         private void HeaderValidate(MaintainMasterModel model)
         {
-            if (model.MID == 0)
+            if (model.DepartmentId == 0)
             {
                 model.MessageId = 1;
-                model.MessageText = Resources.ValidationMessage.Master;
+                model.MessageText = Resources.ValidationMessage.Department;
             }
             else if (string.IsNullOrEmpty(model.Name) || string.IsNullOrWhiteSpace(model.Name))
             {

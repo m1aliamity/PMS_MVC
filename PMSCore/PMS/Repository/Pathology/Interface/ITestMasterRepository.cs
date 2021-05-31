@@ -8,7 +8,9 @@ namespace PMS.Repository.Pathology.Interface
 {
     public interface ITestMasterRepository
     {
-        Task TestMasterOperations(TestMasterModel model);
         Task GetMasterData(TestMasterModel model);
+        Task GetTestHeadMaster(TestMasterModel model);
+        Task TestMasterOperations(TestMasterModel model);
+
     }
 }

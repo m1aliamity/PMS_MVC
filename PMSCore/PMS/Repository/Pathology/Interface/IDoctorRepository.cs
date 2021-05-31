@@ -8,6 +8,8 @@ namespace PMS.Repository.Pathology.Interface
 {
     public interface IDoctorRepository
     {
+        Task GetMasterData(DoctorModel model);
+        Task GetDoctorList(DoctorModel model);
         Task DoctorOperations(DoctorModel model);
     }
 }

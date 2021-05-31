@@ -9,7 +9,6 @@ namespace DAL.Pathology.Interface
 {
     public interface IMaintainMasterDAL
     {
-        Task<DataTable> GetMaster(MaintainMasterModel model);
         Task<DataSet> MasterDetailOperations(MaintainMasterModel model);
         Task<DataSet> TestHeadOperations(MaintainMasterModel model);
     }

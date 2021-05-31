@@ -1,5 +1,6 @@
 ﻿using DAL.Connection;
 using DAL.Pathology.Interface;
+using Models.Pathology;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace DAL.Pathology
         {
             _objMySqlHelper = new MySqlHelperClass();
         }
-        public async Task<DataSet> GetMasterData(string MID)
+        public async Task<DataSet> GetCommonData(CommonModel model)
         {
             MySqlParameter[] cmdParams = {
-                new MySqlParameter("@P_MID", MID),};
-            return await _objMySqlHelper.SP_DataSet("USP_GetMaster");
+            new MySqlParameter("@P_MID", model.MID),
+            new MySqlParameter("@P_Id", model.Id),
+            new MySqlParameter("@P_Action", model.Action),};
+            return await _objMySqlHelper.SP_DataSet("USP_GetCommonData", cmdParams);
         }
     }
 }

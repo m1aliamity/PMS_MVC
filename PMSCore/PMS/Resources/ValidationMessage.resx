@@ -129,6 +129,12 @@
   <data name="Delete" xml:space="preserve">
     <value>Record Deleted Successfully.</value>
   </data>
+  <data name="Department" xml:space="preserve">
+    <value>Please Select Department.</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Please Select Gender.</value>
+  </data>
   <data name="InvalidUserPassword" xml:space="preserve">
     <value>You have Enter Invalid User Name Or Password.</value>
   </data>

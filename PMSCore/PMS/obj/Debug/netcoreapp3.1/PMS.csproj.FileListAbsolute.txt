@@ -338,7 +338,6 @@ D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\PMS.TagHelpers.input
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\PMS.TagHelpers.output.cache
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\PMS.RazorCoreGenerate.cache
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Company\Company.cshtml.g.cs
-D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Doctor.cshtml.g.cs
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\LabStaff\Staff.cshtml.g.cs
@@ -433,5 +432,7 @@ D:\Projects\PMS_MVC_OLD\PMSCore\PMS\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAna
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\TestMaster\AddNewTest.cshtml.g.cs
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\MaintainMaster\MaintainTestHead.cshtml.g.cs
+D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Doctor.cshtml.g.cs
+D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\AddNewDoctor.cshtml.g.cs
+D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\TestMaster\AddTest.cshtml.g.cs

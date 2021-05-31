@@ -1,0 +1,65 @@
+﻿@model Models.Pathology.DoctorModel;
+<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" style="width:800px">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="form-group row">
+                            <label for="txtDoctorName" class="col-sm-2 col-form-label col-form-label-sm">Doctor Name:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control form-control-sm" id="txtDoctorName">
+                            </div>
+                            <label for="dtpGender" class="col-sm-2 col-form-label col-form-label-sm">Gender:</label>
+                            <div class="col-sm-4">
+                                @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--",
+                                                                                              new
+                                                                                              {
+                                                                                                  @Class = "form-control form-control-sm"
+                                                                                              })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txtMobileNo" class="col-sm-2 col-form-label col-form-label-sm">Mobile No.:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control form-control-sm" id="txtMobileNo">
+                            </div>
+                            <label for="txtEmail" class="col-sm-2 col-form-label col-form-label-sm">Email Id:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control form-control-sm" id="txtEmail">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txtAddress" class="col-sm-2 col-form-label col-form-label-sm">Address:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control form-control-sm" id="txtAddress">
+                            </div>
+                            <label for="dtpSpecialization" class="col-sm-2 col-form-label col-form-label-sm">Specialization:</label>
+                            <div class="col-sm-4">
+                                @Html.DropDownListFor(m => m.Specialization, new SelectList(Model.SpecializationList, "Value", "Text"), "--Select--",
+                                                                                               new
+                                                                                               {
+                                                                                                   @Class = "form-control form-control-sm"
+                                                                                               })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-5">
+                            </div>
+                            <div class="col-sm-7">
+                                <button type="button" id="btnCreate" OnClick="DoctorOperations(0,'I')" class="btn btn-outline-primary">Save</button>
+                                <button type="button" id="btnUpdate" OnClick="DoctorOperations(0,'U')" class="btn btn-outline-primary">Update</button>
+                                <button type="button" id="btnExit" data-dismiss="modal" class="btn btn-outline-primary">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+<script src="~/lib/Script/Local/Pathology/Doctor.js"></script>

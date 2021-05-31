@@ -8,6 +8,7 @@ namespace Models.Pathology
     {
         public int UserId { get; set; }
         public long RowId { get; set; }
+        public string MID { get; set; }
         public string Action { get; set; }
         public int CID { get; set; }
         public int MessageId { get; set; }

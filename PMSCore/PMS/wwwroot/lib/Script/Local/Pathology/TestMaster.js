@@ -1,7 +1,7 @@
-﻿function AddNewTest() {
+﻿function AddTest() {
     debugger;
     $.ajax({
-        url: "../TestMaster/AddNewTest",
+        url: "../TestMaster/AddTest",
         type: "POST",
         success: function (Response) {
             $("#AddNewTestMaster").html(Response);
@@ -9,3 +9,163 @@
         }
     })
 }
+
+function GetTestHeadMaster(val) {
+    debugger;
+    var deptId = 0;
+    if (val == 'M') {
+        deptId = $("#DepartmentId").val();
+    }
+    else {
+        deptId = $("#Department_Id").val();
+    }
+    model = {
+        DepartmentId: deptId,
+    };
+    $.ajax({
+        url: "../TestMaster/GetTestHeadMaster",
+        type: "POST",
+        cache: false,
+        async: true,
+        data: model,
+        success: function (Response) {
+            if (val == 'M') {
+                $("#TestHeadId").empty();
+                $("#TestHeadId").append($("<option  value='0' selected>--Select--</option>"));
+                $.each(Response.testHeadMasterList, function () {
+                    $("#TestHeadId").append($("<option></option>").val(this.value).html(this.text));
+
+                });
+            }
+            else {
+                $("#TestHead_Id").empty();
+                $("#TestHead_Id").append($("<option  value='0' selected>--Select--</option>"));
+                $.each(Response.testHeadMasterList, function () {
+                    $("#TestHead_Id").append($("<option></option>").val(this.value).html(this.text));
+
+                });
+            }
+        }
+    })
+}
+function TestOperations(Id, value) {
+    debugger;
+    var Edit = "E";
+    var Delete = "D";
+    if (value == "D" || value == "E") {
+        $("#RowId").val(Id);
+    }
+    if (value == "D") {
+        status = confirm('Are you sure? want to delete');
+        if (!status) {
+            return false;
+        }
+    }
+    if (value == "E") {
+        AddNewDoctor();
+    }
+    //var ckValue = CKEDITOR.instances.interpretation.getData();
+    model = {
+        RowId: $("#RowId").val(),
+        DepartmentId: $("#DepartmentId").val(),
+        Department_Id: $("#TestHead_Id").val(),
+        TestHead_Id: $("#Department_Id").val(),
+        TestHeadId: $("#TestHeadId").val(),
+        TestName: $("#txtTestName").val(),
+        TestRate: $("#txtTestRate").val(),
+        Unit: $("#txtUnit").val(),
+        TestType: $("#TestType").val(),
+        DefaultRange: $("#txtDefaultRange").val(),
+        FromRange: $("#txtFromRange").val(),
+        ToRange:$("#txtToRange").val(),
+        TestUnder: $("#txtUnder").val(),
+        Formula: $("#txtFormula").val(),
+        Method: $("#txtMethod").val(),
+        Interpretation: CKEDITOR.instances.interpretation.getData(),
+
+           // $("#interpretation").val(),
+        Action: value,
+    };
+    $.ajax({
+        url: "../TestMaster/TestOperations",
+        type: "POST",
+        cache: false,
+        async: true,
+        data: model,
+
+    }).done(function (response) {
+        if (response.messageId == 1) {
+            alert(response.messageText);
+        }
+        else {
+            if (value == "E") {
+                $("#RowId").val(response.rowId);
+                $("#TestHead_Id").val(response.head_Id);
+                $("#Department_Id").val(response.department_Id);
+                $("#txtTestName").val(response.testName);
+                $("#txtTestRate").val(response, testRate);
+                $("#txtUnit").val(response.unit);
+                $("#TestType").val(response.testType);
+                $("#txtDefaultRange").val(response.defaultRange);
+                $("#txtFromRange").val(response.fromRange);
+                $("#txtToRange").val(response.toRange);
+                $("#txtUnder").val(response.testUnder);
+                $("#txtFormula").val(response.formula);
+                $("#txtMethod").val(response.method);
+                CKEDITOR.instances.interpretation.setData(response.interpretation);
+                //$("#interpretation").val(response.interpretation);
+            }
+            //SetDataTable();
+            if (value == "I" || value == "U" || value == "D") {
+                alert(response.messageText);
+                ClearField();
+            }
+            EnabledDisabled(value);
+        }
+    });
+}
+function SetDataTable() {
+    $('#example').DataTable({
+        responsive: {
+            details: {
+                display: $.fn.dataTable.Responsive.display.modal({
+                    header: function (row) {
+                        var data = row.data();
+                        // return 'Details for ' + data[0] + ' ' + data[1];
+                        return 'Details for ' + data[0];
+                    }
+                }),
+                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+            }
+        }
+    });
+}
+function ClearField() {
+    CKEDITOR.instances.editor1.setData('');
+    //$("#TestHead_Id").val('selectedIndex', 1);
+    //$("#Department_Id").val('selectedIndex', 1);
+    //$("#txtTestName").val("");
+    //$("#txtTestRate").val("");
+    //$("#txtUnit").val("");
+    //$("#TestType").val('selectedIndex', 1);
+    //$("#txtDefaultRange").val("");
+    //$("#txtFromRange").val("");
+    //$("#txtToRange").val("");
+    //$("#txtUnder").val("");
+    //$("#txtFormula").val("");
+    //$("#txtCondition").val("");
+    //$("#interpretation").val("");
+    //$("#Specialization").prop('selectedIndex', 1);
+}
+function EnabledDisabled(val) {
+    if (val == "E") {
+        $("#btnCreate").prop('disabled', true);
+        $("#btnUpdate").prop('disabled', false);
+    }
+    else {
+        $("#btnCreate").prop('disabled', false);
+        $("#btnUpdate").prop('disabled', true);
+    }
+}
+
+

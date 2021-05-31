@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.Pathology;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
@@ -8,6 +9,6 @@ namespace DAL.Pathology.Interface
 {
     public interface ICommonDAL
     {
-        Task<DataSet> GetMasterData(string MID);
+        Task<DataSet> GetCommonData(CommonModel model);
     }
 }

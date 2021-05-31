@@ -11,7 +11,7 @@ namespace Models.Pathology
         public string PrintName { get; set; }
         public decimal Rate { get; set; }
         public string Remarks { get; set; }
-        public string Department { get; set; }
+        public long DepartmentId { get; set; }
         public List<DropDownModel> MasterList { get; set; }
         public List<MaintainMasterModel> MasterDetailsList { get; set; }
         public List<DropDownModel> PathologyDepartmentList { get; set; }

@@ -1,7 +1,4 @@
-﻿
-@{ ViewData["Title"] = "TestMaster";
-    Layout = "~/Views/Shared/_Layout.cshtml"; }
-
+﻿@model Models.Pathology.TestMasterModel;
 <form>
     <div class="row">
 
@@ -9,57 +6,28 @@
             <div class="form-group row">
                 <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Department:<span class="mandatory"><b>*</b></span></label>
                 <div class="col-sm-3">
-                    <select class="form-control form-control-sm" id="dtpGender">
-                        <option value="0" selected>--Select--</option>
-                        <option value="1">Single</option>
-                        <option value="2">Married</option>
-                    </select>
+                    @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.PathologyDepartmentList, "Value", "Text"), "--Select--",
+                                       new
+                                       {
+                                           @Class = "form-control form-control-sm",
+                                           @onchange = "GetTestHeadMaster('M')"
+                                       })
                 </div>
                 <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Test Head:<span class="mandatory"><b>*</b></span></label>
                 <div class="col-sm-3">
-                    <select class="form-control form-control-sm" id="dtpGender">
+                    <select class="form-control form-control-sm" id="TestHeadId">
                         <option value="0" selected>--Select--</option>
-                        <option value="1">Single</option>
-                        <option value="2">Married</option>
                     </select>
                 </div>
                 <div class="col-sm-2">
-                    <button type="button" id="btnAddNew" onclick="AddNewTest()" class="form-control form-control-sm">Add New Test</button>
+                    <button type="button" id="btnAddNew" onclick="AddTest()" class="form-control form-control-sm">AddTest</button>
                 </div>
             </div>
             <div class="col-sm-12" id="tblMasterList">
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">Profile Details</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+
             </div>
         </div>
-        <div id="AddNewTestMaster" class="modal fade">
+        <div id="AddNewTestMaster" class="modal fade" data-keyboard="false" data-backdrop="static">
         </div>
     </div>
 </form>

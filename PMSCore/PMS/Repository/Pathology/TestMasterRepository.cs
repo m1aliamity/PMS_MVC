@@ -21,17 +21,21 @@ namespace PMS.Repository.Pathology
         public async Task GetMasterData(TestMasterModel model)
         {
             CommonModel commonModel = new CommonModel();
-            string masterId = (int)Keys.MasterData.PathologyDepartment + "|";
-            await _commonRepository.GetMasterData(commonModel, masterId);
+            commonModel.MID = (int)Keys.MasterData.PathologyDepartment + ","+ (int)Keys.MasterData.TestType + ",";
+            await _commonRepository.GetMasterData(commonModel);
             model.PathologyDepartmentList = commonModel.PathologyDepartmentList;
+            model.TestTypeMasterList = commonModel.TestTypeList;
+        }
+        public async Task GetTestHeadMaster(TestMasterModel model)
+        {
+            CommonModel commonModel = new CommonModel();
+            commonModel.Id = model.DepartmentId;
+            await _commonRepository.GetTestHeadMaster(commonModel);
+            model.TestHeadMasterList = commonModel.TestHeadMasterList;
         }
         public async Task TestMasterOperations(TestMasterModel model)
         {
-            CommonModel commonModel = new CommonModel();
-            //string masterId = (int)Keys.MasterData.PathologyDepartment + "|" + (int)Keys.MasterData.MritalStatus + "|" + (int)Keys.MasterData.NamePrefix + "|" + (int)Keys.MasterData.Relation + "|" + (int)Keys.MasterData.Religion + "|" + (int)Keys.MasterData.EmployeeType + "|";
-            string masterId = (int)Keys.MasterData.PathologyDepartment + "|";
-            await _commonRepository.GetMasterData(commonModel, masterId);
-            model.PathologyDepartmentList = commonModel.PathologyDepartmentList;
+            DataSet da=await _testMasterDAL.TestMasterOperations(model);
         }
     }
 }

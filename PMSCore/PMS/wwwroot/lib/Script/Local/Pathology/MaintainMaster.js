@@ -106,7 +106,7 @@ function ClearField() {
     $("#txtName").val("");
     $("#txtRate").val("0");
     $("#txtPrintName").val("");
-    $("#dpdStatus").prop('selectedIndex', 1);;
+    $("#dpdStatus").prop('selectedIndex', 1);
     $("#txtRemarks").val("");
 }
 function EnabledDisabled(val) {
@@ -133,4 +133,86 @@ function ColumnsAdjustment(mid) {
         $("#lblStatus").removeClass("col-sm-2 col-form-label col-form-label-sm").addClass("col-sm-3 col-form-label col-form-label-sm");
         $("#divStatus").removeClass("col-sm-4").addClass("col-sm-9");
     }
+}
+function MaintaiTestHeadOperation(Id, value) {
+    //var token = $('input[name="__RequestVerificationToken"]').val();
+    //var headers = { '__RequestVerificationToken': token };
+    var Edit = "E";
+    var Delete = "D";
+    var DepartmentId = $("#DepartmentId").val();
+    if (value == "D" || value == "E") {
+        $("#RowId").val(Id);
+    }
+    if (value == "D") {
+        status = confirm('Are you sure? want to delete');
+        if (!status) {
+            return false;
+        }
+    }
+    model = {
+        RowId: $("#RowId").val(),
+        DepartmentId: $("#DepartmentId").val(),
+        Name: $("#txtName").val(),
+        PrintName: $("#txtPrintName").val(),
+        Status: $("#dpdStatus").val(),
+        Action: value,
+    };
+    $.ajax({
+        url: "../MaintainMaster/TestHeadOperation",
+        type: "POST",
+        cache: false,
+        async: true,
+        //dataType: 'json',
+        //contentType: dataType,
+        data: model,
+
+    }).done(function (response) {
+        if (response.messageId == 1) {
+            alert(response.messageText);
+        }
+        if (value == "E") {
+            $("#RowId").val(response.rowId);
+            $("#txtName").val(response.name);
+            $("#txtPrintName").val(response.printName);
+            $("#dpdStatus").val(response.status);
+        }
+        $("#tblDepartmentDetailsList").empty();
+        var ListHtml = '';
+        ListHtml += '<table id="example" class="display nowrap cell-border" style="width:100%"><thead><tr>';
+        /*            ListHtml += '<table id="example" class="display" style="width:100%"><thead><tr>';*/
+        ListHtml += '<th scope="col">Name</th>';
+        ListHtml += '<th scope="col">Print Name</th>';
+        ListHtml += '<th scope="col">Status</th>';
+        ListHtml += '<th scope="col">Action</th>';
+        ListHtml += '</tr></thead> ';
+        ListHtml += '<tbody>';
+        if (response.masterDetailsList.length > 0) {
+            $.each(response.masterDetailsList, function () {
+                ListHtml += '<tr><td>' + this.name + '</td>'
+                ListHtml += '<td>' + this.printName + '</td>'
+               
+                ListHtml += '<td>' + this.statusName + '</td><td><a href="#" class="class="fa fa-pencil"" onclick="MaintaiTestHeadOperation(' + this.rowId + ',\'' + Edit + '\');"> Edit</a> | <a href="#" class="class="fa fa-trash" onclick="MaintaiTestHeadOperation(' + this.rowId + ',\'' + Delete + '\');"> Delete</a></td>';
+                ListHtml += '</tr > ';
+
+            });
+            ListHtml += '</tbody> </table>';
+        }
+        else {
+            ListHtml += '<tr><td colspan="7"> Record Not Found ...</td></tr>';
+        }
+        ListHtml += '</tbody>';
+        ListHtml += '</table>';
+        $("#tblDepartmentDetailsList").html(ListHtml);
+        SetDataTable();
+        if (value == "I" || value == "U" || value == "D") {
+            ClearTestHeadField();
+        }
+        EnabledDisabled(value);
+    });
+}
+function ClearTestHeadField() {
+    $("#RowId").val("");
+    $("#txtName").val("");
+    $("#txtPrintName").val("");
+    $("#dpdStatus").prop('selectedIndex', 1);
 }

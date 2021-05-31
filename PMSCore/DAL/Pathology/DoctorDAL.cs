@@ -21,16 +21,16 @@ namespace DAL.Pathology
         {
             MySqlParameter[] cmdParams = {
                 new MySqlParameter("@P_Id", model.RowId),
-                //new MySqlParameter("@P_MID", model.MID),
-                //new MySqlParameter("@P_Name", model.Name),
-                //new MySqlParameter("@P_PtintName", model.PrintName),
-                //new MySqlParameter("@P_Status", model.Status),
-                //new MySqlParameter("@P_Rate", model.Rate),
-                //new MySqlParameter("@P_Remarks", model.Remarks),
-                //new MySqlParameter("@P_CID", model.CID),
-                //new MySqlParameter("@P_UserId", model.UserId),
+                new MySqlParameter("@P_Name", model.DoctorName),
+                new MySqlParameter("@P_Gender", model.Gender),
+                new MySqlParameter("@P_MobileNo", model.MobileNo),
+                new MySqlParameter("@P_EmailId", model.EmailId),
+                new MySqlParameter("@P_Address", model.Address),
+                new MySqlParameter("@P_Specialization", model.Specialization),
+                new MySqlParameter("@P_CID", model.CID),
+                new MySqlParameter("@P_UserId", model.UserId),
                 new MySqlParameter("@P_Action", model.Action),};
-            return await _objMySqlHelper.SP_DataSet("USP_MaintainMasterOperation", cmdParams);
+            return await _objMySqlHelper.SP_DataSet("USP_DoctoreOperations", cmdParams);
         }
     }
 }

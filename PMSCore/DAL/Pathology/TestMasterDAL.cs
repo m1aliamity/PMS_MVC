@@ -21,16 +21,23 @@ namespace DAL.Pathology
         {
             MySqlParameter[] cmdParams = {
                 new MySqlParameter("@P_Id", model.RowId),
-                //new MySqlParameter("@P_MID", model.MID),
-                //new MySqlParameter("@P_Name", model.Name),
-                //new MySqlParameter("@P_PtintName", model.PrintName),
-                //new MySqlParameter("@P_Status", model.Status),
-                //new MySqlParameter("@P_Rate", model.Rate),
-                //new MySqlParameter("@P_Remarks", model.Remarks),
-                //new MySqlParameter("@P_CID", model.CID),
-                //new MySqlParameter("@P_UserId", model.UserId),
+                new MySqlParameter("@P_DepartmentId", model.DepartmentId),
+                new MySqlParameter("@P_Department_Id", model.Department_Id),
+                new MySqlParameter("@P_HeadId", model.TestHeadId),
+                new MySqlParameter("@P_Head_Id", model.TestHead_Id),
+                new MySqlParameter("@P_Name", model.TestName),
+                new MySqlParameter("@P_Rate", model.TestRate),
+                new MySqlParameter("@P_DefaultValue", model.DefaultRange),
+                new MySqlParameter("@P_RangeFrom", model.FromRange),
+                new MySqlParameter("@P_RangeTo", model.ToRange),
+                new MySqlParameter("@P_Unit", model.Unit),
+                new MySqlParameter("@P_Formula", model.Formula),
+                new MySqlParameter("@P_Method", model.Method),
+                new MySqlParameter("@P_Interpretations", model.Interpretation),
+                new MySqlParameter("@P_CID", model.CID),
+                new MySqlParameter("@P_UserId", model.UserId),
                 new MySqlParameter("@P_Action", model.Action),};
-            return await _objMySqlHelper.SP_DataSet("USP_MaintainMasterOperation", cmdParams);
+            return await _objMySqlHelper.SP_DataSet("USP_TestOperations", cmdParams);
         }
     }
 }
