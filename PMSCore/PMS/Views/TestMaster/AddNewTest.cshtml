@@ -1,5 +1,4 @@
-﻿@model Models.Pathology.TestMasterModel;
-<div class="modal-dialog modal-lg" role="document">
+﻿<div class="modal-dialog modal-lg" role="document">
     <div class="modal-content" style="width:800px">
         <div class="modal-header">
         </div>
@@ -10,91 +9,92 @@
                         <div class="form-group row">
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Department:<span class="mandatory"><b>*</b></span></label>
                             <div class="col-sm-4">
-                                @Html.DropDownListFor(m => m.Department_Id, new SelectList(Model.PathologyDepartmentList, "Value", "Text"), "--Select--",
-                                       new
-                                       {
-                                           @Class = "form-control form-control-sm",
-                                           @onchange = "GetTestHeadMaster('P')"
-                                       })
+                                <select class="form-control form-control-sm" id="dtpGender">
+                                    <option value="0" selected>--Select--</option>
+                                    <option value="1">Single</option>
+                                    <option value="2">Married</option>
+                                </select>
                             </div>
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Test Head:<span class="mandatory"><b>*</b></span></label>
                             <div class="col-sm-4">
-                                <select class="form-control form-control-sm" id="TestHead_Id">
+                                <select class="form-control form-control-sm" id="dtpGender">
                                     <option value="0" selected>--Select--</option>
+                                    <option value="1">Single</option>
+                                    <option value="2">Married</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Test Name:<span class="mandatory"><b>*</b></span></label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control form-control-sm" id="txtTestName">
+                                <input type="text" class="form-control form-control-sm" id="txtDOB">
                             </div>
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Test Rate:<span class="mandatory"><b>*</b></span></label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control form-control-sm" id="txtTestRate">
+                                <input type="text" class="form-control form-control-sm" id="txtDOB">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">From Range:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control form-control-sm" id="txtFromRange">
+                                <input type="text" class="form-control form-control-sm" id="txtDOB">
                             </div>
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">To Range:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control form-control-sm" id="txtToRange">
+                                <input type="text" class="form-control form-control-sm" id="txtDOB">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Default Range:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control form-control-sm" id="txtDefaultRange">
+                                <input type="text" class="form-control form-control-sm" id="txtDOB">
                             </div>
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Unit:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control form-control-sm" id="txtUnit">
+                                <input type="text" class="form-control form-control-sm" id="txtDOB">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Test Type:</label>
                             <div class="col-sm-4">
-                                @Html.DropDownListFor(m => m.TestType, new SelectList(Model.TestTypeMasterList, "Value", "Text"), "--Select--",
-                                      new
-                                      {
-                                          @Class = "form-control form-control-sm"
-                                      })
+                                <select class="form-control form-control-sm" id="dtpGender">
+                                    <option value="0" selected>--Select--</option>
+                                    <option value="1">Single</option>
+                                    <optio*n value="2">Married</optio*n>
+                                </select>
                             </div>
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Test Under:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control form-control-sm" id="txtUnder">
+                                <input type="text" class="form-control form-control-sm" id="txtDOB">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Formula:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control form-control-sm" id="txtFormula">
+                                <input type="text" class="form-control form-control-sm" id="txtDOB">
                             </div>
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Condition:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control form-control-sm" id="txtMethod">
+                                <input type="text" class="form-control form-control-sm" id="txtDOB">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Interpretation:</label>
                             <div class="col-sm-10">
-                                <textarea id="interpretation" role="dialog" name="interpretation"></textarea>
+                                <textarea id="interpretation" role="3" name="interpretation"></textarea>
                             </div>
                         </div>
                         <script>
                             CKEDITOR.replace("interpretation", {
                                 height: '170px',
-                            });
+                            } );
                         </script>
                         <div class="form-group row">
                             <div class="col-sm-4">
                             </div>
                             <div class="col-sm-8">
-                                <button type="button" id="btnCreate" OnClick="TestOperations(0,'I')" class="btn btn-outline-primary">Save</button>
-                                <button type="button" id="btnUpdate" OnClick="TestOperations(0,'U')" class="btn btn-outline-primary">Update</button>
+                                <button type="button" id="btnCreate" OnClick="LabStaffOperations(0,'I')" class="btn btn-outline-primary">Save</button>
+                                <button type="button" id="btnUpdate" OnClick="LabStaffOperations(0,'I')" class="btn btn-outline-primary">Update</button>
                                 <button type="button" id="btnExit" data-dismiss="modal" class="btn btn-outline-primary">Close</button>
                             </div>
                         </div>
@@ -104,4 +104,3 @@
         </div>
     </div><!-- /.modal-content -->
 </div>
-<script src="~/lib/Script/Local/Pathology/TestMaster.js"></script>

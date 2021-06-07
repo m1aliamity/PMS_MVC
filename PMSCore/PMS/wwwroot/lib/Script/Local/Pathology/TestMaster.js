@@ -4,8 +4,8 @@
         url: "../TestMaster/AddTest",
         type: "POST",
         success: function (Response) {
-            $("#AddNewTestMaster").html(Response);
-            $("#AddNewTestMaster").modal("show");
+            $("#AddMaster").html(Response);
+            $("#AddMaster").modal("show");
         }
     })
 }
@@ -62,9 +62,9 @@ function TestOperations(Id, value) {
         }
     }
     if (value == "E") {
-        AddNewDoctor();
+        AddTest();
     }
-    //var ckValue = CKEDITOR.instances.interpretation.getData();
+    //Avar ckValue = CKEDITOR.instances.interpretation.getData();
     model = {
         RowId: $("#RowId").val(),
         DepartmentId: $("#DepartmentId").val(),
@@ -82,8 +82,6 @@ function TestOperations(Id, value) {
         Formula: $("#txtFormula").val(),
         Method: $("#txtMethod").val(),
         Interpretation: CKEDITOR.instances.interpretation.getData(),
-
-           // $("#interpretation").val(),
         Action: value,
     };
     $.ajax({
@@ -141,21 +139,20 @@ function SetDataTable() {
     });
 }
 function ClearField() {
-    CKEDITOR.instances.editor1.setData('');
-    //$("#TestHead_Id").val('selectedIndex', 1);
-    //$("#Department_Id").val('selectedIndex', 1);
-    //$("#txtTestName").val("");
-    //$("#txtTestRate").val("");
-    //$("#txtUnit").val("");
-    //$("#TestType").val('selectedIndex', 1);
-    //$("#txtDefaultRange").val("");
-    //$("#txtFromRange").val("");
-    //$("#txtToRange").val("");
-    //$("#txtUnder").val("");
-    //$("#txtFormula").val("");
-    //$("#txtCondition").val("");
-    //$("#interpretation").val("");
-    //$("#Specialization").prop('selectedIndex', 1);
+    CKEDITOR.instances.interpretation.setData('');
+    $("#RowId").val("");
+    $("#Department_Id").val('selectedIndex', 0);
+    $("#TestHead_Id").val('selectedIndex', 0);
+    $("#txtTestName").val("");
+    $("#txtTestRate").val("");
+    $("#txtUnit").val("");
+    $("#TestType").val("");
+    $("#txtDefaultRange").val("");
+    $("#txtFromRange").val("");
+    $("#txtToRange").val("");
+    /*$("#txtUnder").val('selectedIndex', 1);*/
+    $("#txtFormula").val("");
+    $("#txtMethod").val("");
 }
 function EnabledDisabled(val) {
     if (val == "E") {

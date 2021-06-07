@@ -1,4 +1,16 @@
-﻿function CompanyOperation(Id, value) {
+﻿function AddCompany() {
+    // $("#AddDoctor").modal('show');
+    //debugger;
+    $.ajax({
+        url: "../Company/AddCompany",
+        type: "POST",
+        success: function (Response) {
+            $("#AddCompany").html(Response);
+            $("#AddCompany").modal("show");
+        }
+    });
+}
+function CompanyOperation(Id, value) {
     //var token = $('input[name="__RequestVerificationToken"]').val();
     //var headers = { '__RequestVerificationToken': token };
     var Edit = "E";

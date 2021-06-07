@@ -2,125 +2,128 @@
 @{
     ViewData["Title"] = "Doctor";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<div class="row">
-    <div class="col-sm-12">
-        <div class="form-group row">
-            <div class="col-sm-10">
-            </div>
-            <div class="col-sm-2">
-                <button type="button" id="btnOpenDialog" onclick="AddNewDoctor()" class="btn btn-outline-primary">Add Doctor</button>
-                @*<a href="../Doctor/AddDoctor" class="fa fa-plus">Add</a>*@
+}<form>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group row">
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" id="btnOpenDialog" onclick="AddNewDoctor()" class="btn btn-outline-primary">Add Doctor</button>
+                    @*<a href="../Doctor/AddDoctor" class="fa fa-plus">Add</a>*@
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-12" id="DoctoreList">
-        <table id="example" class="display nowrap cell-border" style="width:100%">
-            <thead>
-                <tr>
-                    <th scope="col">Doctore Name</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Mobile No.</th>
-                    <th scope="col">Specialization</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model.DoctorList.Count > 0)
-                {
-                    foreach (var item in Model.DoctorList)
-                    {
-                        <tr>
-                            <td>@item.DoctorName</td>
-                            <td>@item.GenderText</td>
-                            <td>@item.MobileNo</td>
-                            <td>@item.SpecializationText</td>
-                            <td>@item.Address</td>
-                            <td>
-                                <a href="#" class="class=" fa fa-pencil"" onclick="DoctorOperations(@item.RowId,'E' )"> Edit</a> |
-                                <a href="#" class="class=" fa fa-trash" onclick="DoctorOperations(@item.RowId,'D');"> Delete</a>
-                            </td>
-                        </tr>
-                    }
-                }
-                else
-                {
+    <div class="row">
+        <div class="col-sm-12" id="DoctoreList">
+            <table id="example" class="display nowrap cell-border" style="width:100%">
+                <thead>
                     <tr>
-                        <td colspan="7"> Record Not Found ...</td>
+                        <th scope="col">Doctore Name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Mobile No.</th>
+                        <th scope="col">Specialization</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Action</th>
                     </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div>
-@*Model popup for add new doctor*@
-<div id="AddDoctor" class="modal fade" data-keyboard="false" role="dialog" data-backdrop="static">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="width:800px">
-            <div class="modal-header">
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="row">
-                        <div class="col-sm-12">
-
-                            <div class="form-group row">
-                                <label for="txtDoctorName" class="col-sm-2 col-form-label col-form-label-sm">Doctor Name:<span class="mandatory"><b>*</b></span></label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm" id="txtDoctorName">
-                                </div>
-                                <label for="dtpGender" class="col-sm-2 col-form-label col-form-label-sm">Gender:<span class="mandatory"><b>*</b></span></label>
-                                <div class="col-sm-4">
-                                    @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--",
-                                                                                                  new
-                                                                                                  {
-                                                                                                      @Class = "form-control form-control-sm"
-                                                                                                  })
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="txtMobileNo" class="col-sm-2 col-form-label col-form-label-sm">Mobile No.:<span class="mandatory"><b>*</b></span></label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm" id="txtMobileNo">
-                                </div>
-                                <label for="txtEmail" class="col-sm-2 col-form-label col-form-label-sm">Email Id:</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm" id="txtEmail">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="txtAddress" class="col-sm-2 col-form-label col-form-label-sm">Address:</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm" id="txtAddress">
-                                </div>
-                                <label for="dtpSpecialization" class="col-sm-2 col-form-label col-form-label-sm">Specialization:<span class="mandatory"><b>*</b></span></label>
-                                <div class="col-sm-4">
-                                    @Html.DropDownListFor(m => m.Specialization, new SelectList(Model.SpecializationList, "Value", "Text"), "--Select--",
-                                                                                                   new
-                                                                                                   {
-                                                                                                       @Class = "form-control form-control-sm"
-                                                                                                   })
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-5">
-                                </div>
-                                <div class="col-sm-7">
-                                    <button type="button" id="btnCreate" OnClick="DoctorOperations(0,'I')" class="btn btn-outline-primary">Save</button>
-                                    <button type="button" id="btnUpdate" OnClick="DoctorOperations(0,'U')" class="btn btn-outline-primary">Update</button>
-                                    <button type="button" id="btnExit" data-dismiss="modal" class="btn btn-outline-primary">Close</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </form>
-            </div>
+                </thead>
+                <tbody>
+                    @if (Model.DoctorList.Count > 0)
+                    {
+                        foreach (var item in Model.DoctorList)
+                        {
+        <tr>
+            <td>@item.DoctorName</td>
+            <td>@item.GenderText</td>
+            <td>@item.MobileNo</td>
+            <td>@item.SpecializationText</td>
+            <td>@item.Address</td>
+            <td>
+                <a href="#" class="class=" fa fa-pencil"" onclick="DoctorOperations(@item.RowId,'E' )"> Edit</a> |
+                <a href="#" class="class=" fa fa-trash" onclick="DoctorOperations(@item.RowId,'D');"> Delete</a>
+            </td>
+        </tr>
+ }
+}
+else
+{
+    <tr>
+        <td colspan="7"> Record Not Found ...</td>
+    </tr>
+}
+                </tbody>
+            </table>
+        </div>
+        <div id="AddDoctor" class="modal fade" data-keyboard="false" data-backdrop="static">
         </div>
     </div>
-</div>
-<script src="~/lib/Script/Local/Pathology/Doctor.js"></script>
+    </form>
+    @*Model popup for add new doctor*@
+    <!--<div id="AddDoctor" class="modal fade" data-keyboard="false" role="dialog" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content" style="width:800px">
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                                <div class="form-group row">
+                                    <label for="txtDoctorName" class="col-sm-2 col-form-label col-form-label-sm">Doctor Name:<span class="mandatory"><b>*</b></span></label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-sm" id="txtDoctorName">
+                                    </div>
+                                    <label for="dtpGender" class="col-sm-2 col-form-label col-form-label-sm">Gender:<span class="mandatory"><b>*</b></span></label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--",
+                                                                                                           new
+                                                                                                           {
+                                                                                                               @Class = "form-control form-control-sm"
+                                                                                                           })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="txtMobileNo" class="col-sm-2 col-form-label col-form-label-sm">Mobile No.:<span class="mandatory"><b>*</b></span></label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-sm" id="txtMobileNo">
+                                    </div>
+                                    <label for="txtEmail" class="col-sm-2 col-form-label col-form-label-sm">Email Id:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-sm" id="txtEmail">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="txtAddress" class="col-sm-2 col-form-label col-form-label-sm">Address:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-sm" id="txtAddress">
+                                    </div>
+                                    <label for="dtpSpecialization" class="col-sm-2 col-form-label col-form-label-sm">Specialization:<span class="mandatory"><b>*</b></span></label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(m => m.Specialization, new SelectList(Model.SpecializationList, "Value", "Text"), "--Select--",
+                                                                                                            new
+                                                                                                            {
+                                                                                                                @Class = "form-control form-control-sm"
+                                                                                                            })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-5">
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <button type="button" id="btnCreate" OnClick="DoctorOperations(0,'I')" class="btn btn-outline-primary">Save</button>
+                                        <button type="button" id="btnUpdate" OnClick="DoctorOperations(0,'U')" class="btn btn-outline-primary">Update</button>
+                                        <button type="button" id="btnExit" data-dismiss="modal" class="btn btn-outline-primary">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <script src="~/lib/Script/Local/Pathology/Doctor.js"></script>
 

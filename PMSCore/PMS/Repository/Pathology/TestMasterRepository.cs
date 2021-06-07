@@ -35,7 +35,52 @@ namespace PMS.Repository.Pathology
         }
         public async Task TestMasterOperations(TestMasterModel model)
         {
-            DataSet da=await _testMasterDAL.TestMasterOperations(model);
+            if (model.Action == "I" || model.Action == "U")
+            {
+                TestMasterValidation(model);
+            }
+            if (model.MessageId == 0)
+            {
+                DataSet ds = await _testMasterDAL.TestMasterOperations(model);
+                if (model.Action == "I")
+                {
+                    model.MessageId = 0;
+                    model.MessageText = Resources.ValidationMessage.Save;
+                }
+                else if (model.Action == "U")
+                {
+                    model.MessageId = 0;
+                    model.MessageText = Resources.ValidationMessage.Update;
+                }
+                else if (model.Action == "D")
+                {
+                    model.MessageId = 0;
+                    model.MessageText = Resources.ValidationMessage.Delete;
+                }
+            }
+        }
+        private void TestMasterValidation(TestMasterModel model)
+        {
+            if (model.Department_Id == 0)
+            {
+                model.MessageId = 1;
+                model.MessageText = Resources.ValidationMessage.Department;
+            }
+            else if (model.TestHead_Id == 0)
+            {
+                model.MessageId = 1;
+                model.MessageText = Resources.ValidationMessage.TestHead;
+            }
+            else if (string.IsNullOrEmpty(model.TestName) || string.IsNullOrWhiteSpace(model.TestName))
+            {
+                model.MessageId = 1;
+                model.MessageText = Resources.ValidationMessage.TestName;
+            }
+            else if (string.IsNullOrEmpty(model.TestRate) || string.IsNullOrWhiteSpace(model.TestRate))
+            {
+                model.MessageId = 1;
+                model.MessageText = Resources.ValidationMessage.TestRate;
+            }
         }
     }
 }

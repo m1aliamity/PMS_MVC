@@ -23,6 +23,10 @@ namespace PMS.Controllers
         {
             return View();
         }
+        public IActionResult AddCompany(CompanyModel model)
+        {
+            return PartialView("AddCompany", model);
+        }
         [HttpPost]
         public async Task<JsonResult> CompanyOperatons(CompanyModel model)
         {

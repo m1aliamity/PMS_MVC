@@ -232,6 +232,33 @@ namespace PMS.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please Select Test Head..
+        /// </summary>
+        public static string TestHead {
+            get {
+                return ResourceManager.GetString("TestHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Enter Test Name..
+        /// </summary>
+        public static string TestName {
+            get {
+                return ResourceManager.GetString("TestName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Enter Test Rate..
+        /// </summary>
+        public static string TestRate {
+            get {
+                return ResourceManager.GetString("TestRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recored Updated successfully..
         /// </summary>
         public static string Update {

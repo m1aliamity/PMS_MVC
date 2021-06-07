@@ -436,3 +436,8 @@ D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Maintain
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Doctor.cshtml.g.cs
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\AddNewDoctor.cshtml.g.cs
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\TestMaster\AddTest.cshtml.g.cs
+D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Company\AddCompany.cshtml.g.cs
+D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\AddDoctor.cshtml.g.cs
+D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\LabStaff\AddStaff.cshtml.g.cs
+D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\TestMaster\AddNewTest.cshtml.g.cs
+D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\TestReport\TestReport.cshtml.g.cs

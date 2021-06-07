@@ -19,6 +19,11 @@ namespace PMS.Controllers
         {
             return View();
         }
+        public IActionResult AddStaff(TestMasterModel model)
+        {
+            //_labStaffRepository.GetMasterData(model);
+            return PartialView("AddStaff", model);
+        }
         [HttpPost]
         public async Task<JsonResult> CompanyOperatons(LabStaffModel model)
         {

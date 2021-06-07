@@ -1,14 +1,14 @@
 ﻿function AddNewDoctor() {
-    $("#AddDoctor").modal('show');
+   // $("#AddDoctor").modal('show');
     //debugger;
-    //$.ajax({
-    //    url: "../Doctor/AddDoctor",
-    //    type: "POST",
-    //    success: function (Response) {
-    //        $("#AddDoctor").html(Response);
-    //        $("#AddDoctor").modal("show");
-    //    }
-    //})
+    $.ajax({
+        url: "../Doctor/AddDoctor",
+        type: "POST",
+        success: function (Response) {
+            $("#AddDoctor").html(Response);
+            $("#AddDoctor").modal("show");
+        }
+    });
 }
 function DoctorOperations(Id, value) {
     debugger;

@@ -1,0 +1,70 @@
+﻿<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" style="width:800px">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form>
+                            <div class="form-group row">
+                                <label for="txtLabName" class="col-sm-2 col-form-label col-form-label-sm">Lab Name:<span class="mandatory"><b>*</b></span></label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-sm" id="txtLabName">
+                                </div>
+                                <label for="txtLabSloganName" class="col-sm-2 col-form-label col-form-label-sm">Slogan Name:<span class="mandatory"><b>*</b></span></label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-sm" id="txtLabSloganName">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="txtPhoneNo" class="col-sm-2 col-form-label col-form-label-sm">Phone No:<span class="mandatory"><b>*</b></span></label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-sm" id="txtPhoneNo">
+                                </div>
+                                <label for="txtEmailId" class="col-sm-2 col-form-label col-form-label-sm">Email Id:</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-sm" id="txtEmailId">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="txtWebSite" class="col-sm-2 col-form-label col-form-label-sm">WebSite:</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-sm" id="txtWebSite">
+                                </div>
+                                <label for="dpdStatus" class="col-sm-2 col-form-label col-form-label-sm">Status:<span class="mandatory"><b>*</b></span></label>
+                                <div class="col-sm-4">
+                                    <select class="form-control form-control-sm" id="dpdStatus">
+                                        <option value="0">--Select--</option>
+                                        <option value="1" selected>Active</option>
+                                        <option value="2">Deactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="txtAddress" class="col-sm-2 col-form-label col-form-label-sm">Address:<span class="mandatory"><b>*</b></span></label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-sm" id="txtAddress">
+                                </div>
+                                <label for="atchLabLogo" class="col-sm-2 col-form-label col-form-label-sm">Lab Logo:</label>
+                                <div class="col-sm-4">
+                                    <input type="file" class="form-control form-control-sm" id="atchLabLogo" name="filename">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                </div>
+                                <div class="col-sm-7">
+                                    <button type="button" id="btnCreate" OnClick="CompanyOperation(0,'I')" class="btn btn-outline-primary">Save</button>
+                                    <button type="button" id="btnUpdate" OnClick="CompanyOperation(0,'U')" class="btn btn-outline-primary">Update</button>
+                                    <button type="button" id="btnExit" data-dismiss="modal" class="btn btn-outline-primary">Close</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!-- /.modal-content -->
+</div>
+<script src="~/lib/Script/Local/Pathology/Company.js"></script>

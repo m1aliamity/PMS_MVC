@@ -36,7 +36,7 @@ namespace PMS.Controllers
             return PartialView("AddTest", model);
         }
         [HttpPost]
-        public async Task<IActionResult> TestOperations(TestMasterModel model)
+        public async Task<JsonResult> TestOperations(TestMasterModel model)
         {
             await _testMasterRepository.TestMasterOperations(model);
             return Json(model);
