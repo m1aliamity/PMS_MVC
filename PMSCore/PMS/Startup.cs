@@ -24,6 +24,8 @@ namespace PMS
         {
             services.AddSession();
             services.AddControllersWithViews();
+            services.AddScoped<ITestBookingRepository, TestBookingRepository>();
+            services.AddScoped<ITestBookingDAL, TestBookingDAL>();
             services.AddScoped<ITestMasterRepository, TestMasterRepository>();
             services.AddScoped<ITestMasterDAL, TestMasterDAL>();
             services.AddScoped<ICommonRepository, CommonRepository>();

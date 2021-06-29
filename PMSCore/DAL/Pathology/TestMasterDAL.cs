@@ -39,5 +39,17 @@ namespace DAL.Pathology
                 new MySqlParameter("@P_Action", model.Action),};
             return await _objMySqlHelper.SP_DataSet("USP_TestOperations", cmdParams);
         }
+        public async Task<DataSet> TestProfileOperations(TestMasterModel model)
+        {
+            MySqlParameter[] cmdParams = {
+                new MySqlParameter("@P_Id", model.RowId),
+                new MySqlParameter("@P_ProfileId", model.ProfileId),
+                new MySqlParameter("@P_TestId", model.TestId),
+                new MySqlParameter("@P_CID", model.CID),
+                new MySqlParameter("@P_UserId", model.UserId),
+                new MySqlParameter("@P_Action", model.Action),};
+            return await _objMySqlHelper.SP_DataSet("USP_GetProfileDetails", cmdParams);
+        }
+        
     }
 }

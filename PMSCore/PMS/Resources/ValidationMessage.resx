@@ -159,20 +159,47 @@
   <data name="Password" xml:space="preserve">
     <value>Please Enter Password</value>
   </data>
+  <data name="PatientName" xml:space="preserve">
+    <value>Please Fill Patient Name.</value>
+  </data>
   <data name="PrintName" xml:space="preserve">
     <value>Please Enter Print Name.</value>
+  </data>
+  <data name="ProfileAlredyExist" xml:space="preserve">
+    <value>This Profile Already Exists.</value>
   </data>
   <data name="Rate" xml:space="preserve">
     <value>Please Enter Rate.</value>
   </data>
+  <data name="ReferredBy" xml:space="preserve">
+    <value>Please Select Refferd By.</value>
+  </data>
+  <data name="SampleBy" xml:space="preserve">
+    <value>Please Select Sample By.</value>
+  </data>
+  <data name="SampleType" xml:space="preserve">
+    <value>Please Select Sample Type.</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Recored Saved successfully.</value>
+  </data>
+  <data name="SelectProfile" xml:space="preserve">
+    <value>Please Select Profile.</value>
+  </data>
+  <data name="SelectTest" xml:space="preserve">
+    <value>Please Select Test.</value>
+  </data>
+  <data name="SelectTitle" xml:space="preserve">
+    <value>Please Select Title.</value>
   </data>
   <data name="SloganName" xml:space="preserve">
     <value>Please Enter Company Slogan Name.</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Please Select Status.</value>
+  </data>
+  <data name="TestAlredyExist" xml:space="preserve">
+    <value>This Test Already Exists.</value>
   </data>
   <data name="TestHead" xml:space="preserve">
     <value>Please Select Test Head.</value>
@@ -182,6 +209,9 @@
   </data>
   <data name="TestRate" xml:space="preserve">
     <value>Please Enter Test Rate.</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Total Amount Can't be 0.</value>
   </data>
   <data name="Update" xml:space="preserve">
     <value>Recored Updated successfully.</value>

@@ -22,7 +22,11 @@ namespace DAL.Pathology
             MySqlParameter[] cmdParams = {
             new MySqlParameter("@P_MID", model.MID),
             new MySqlParameter("@P_Id", model.Id),
-            new MySqlParameter("@P_Action", model.Action),};
+            new MySqlParameter("@P_IsTestBooking", model.IsTestBooking),
+            new MySqlParameter("@P_CID", model.CID),
+            new MySqlParameter("@P_UserId", model.UserId),
+            new MySqlParameter("@P_Action", model.Action),
+            };
             return await _objMySqlHelper.SP_DataSet("USP_GetCommonData", cmdParams);
         }
     }

@@ -441,3 +441,5 @@ D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\A
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\LabStaff\AddStaff.cshtml.g.cs
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\TestMaster\AddNewTest.cshtml.g.cs
 D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\TestReport\TestReport.cshtml.g.cs
+D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\TestBooking\TestBooking.cshtml.g.cs
+D:\Projects\PMS_MVC_OLD\PMSCore\PMS\obj\Debug\netcoreapp3.1\Razor\Views\FillTestResults\BookingDetails.cshtml.g.cs

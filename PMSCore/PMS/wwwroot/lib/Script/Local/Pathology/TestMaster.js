@@ -49,11 +49,14 @@ function GetTestHeadMaster(val) {
     })
 }
 function TestOperations(Id, value) {
-    debugger;
     var Edit = "E";
     var Delete = "D";
-    if (value == "D" || value == "E") {
+    var Interpretations = "";
+    if (value == "D" || value == "E" || value == "") {
         $("#RowId").val(Id);
+    }
+    else {
+        Interpretations=CKEDITOR.instances.interpretation.getData()
     }
     if (value == "D") {
         status = confirm('Are you sure? want to delete');
@@ -68,8 +71,8 @@ function TestOperations(Id, value) {
     model = {
         RowId: $("#RowId").val(),
         DepartmentId: $("#DepartmentId").val(),
-        Department_Id: $("#TestHead_Id").val(),
-        TestHead_Id: $("#Department_Id").val(),
+        Department_Id: $("#Department_Id").val(),
+        TestHead_Id: $("#TestHead_Id").val(),
         TestHeadId: $("#TestHeadId").val(),
         TestName: $("#txtTestName").val(),
         TestRate: $("#txtTestRate").val(),
@@ -81,7 +84,7 @@ function TestOperations(Id, value) {
         TestUnder: $("#txtUnder").val(),
         Formula: $("#txtFormula").val(),
         Method: $("#txtMethod").val(),
-        Interpretation: CKEDITOR.instances.interpretation.getData(),
+        Interpretation: Interpretations,
         Action: value,
     };
     $.ajax({
@@ -96,6 +99,34 @@ function TestOperations(Id, value) {
             alert(response.messageText);
         }
         else {
+            $("#tblTestList").empty();
+            var ListHtml = '';
+            ListHtml += '<table id="example" class="display nowrap cell-border" style="width:100%"><thead><tr>';
+            /*            ListHtml += '<table id="example" class="display" style="width:100%"><thead><tr>';*/
+            ListHtml += '<th scope="col">Department</th>';
+            ListHtml += '<th scope="col">Test Head</th>';
+            ListHtml += '<th scope="col">Test Name</th>';
+            ListHtml += '<th scope="col">TestRate</th>';
+            ListHtml += '<th scope="col">Action</th>';
+            ListHtml += '</tr></thead> ';
+            ListHtml += '<tbody>';
+            if (response.testList.length > 0) {
+                $.each(response.testList, function () {
+                    ListHtml += '<tr><td>' + this.departmentName + '</td>';
+                    ListHtml += '<td>' + this.testHeadName + '</td>';
+                    ListHtml += '<td>' + this.testName + '</td>';
+                    ListHtml += '<td>' + this.testRate + '</td><td><a href="#" class="class="fa fa-pencil"" onclick="MaintaiTestHeadOperation(' + this.rowId + ',\'' + Edit + '\');"> Edit</a> | <a href="#" class="class="fa fa-trash" onclick="MaintaiTestHeadOperation(' + this.rowId + ',\'' + Delete + '\');"> Delete</a></td>';
+                    ListHtml += '</tr > ';
+
+                });
+                ListHtml += '</tbody> </table>';
+            }
+            else {
+                ListHtml += '<tr><td colspan="7"> Record Not Found ...</td></tr>';
+            }
+            ListHtml += '</tbody>';
+            ListHtml += '</table>';
+            $("#tblTestList").html(ListHtml);
             if (value == "E") {
                 $("#RowId").val(response.rowId);
                 $("#TestHead_Id").val(response.head_Id);
@@ -141,8 +172,8 @@ function SetDataTable() {
 function ClearField() {
     CKEDITOR.instances.interpretation.setData('');
     $("#RowId").val("");
-    $("#Department_Id").val('selectedIndex', 0);
-    $("#TestHead_Id").val('selectedIndex', 0);
+    $("#Department_Id").val('selectedIndex',1);
+    $("#TestHead_Id").val('selectedIndex', 1);
     $("#txtTestName").val("");
     $("#txtTestRate").val("");
     $("#txtUnit").val("");

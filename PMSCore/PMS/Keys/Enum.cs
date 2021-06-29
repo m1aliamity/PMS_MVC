@@ -25,6 +25,7 @@ namespace PMS.Keys
         ExpenseType = 10,
         MritalStatus = 11,
         TestType = 12,
+        SampleType = 13,
     }
     public static class AlertColor
     {

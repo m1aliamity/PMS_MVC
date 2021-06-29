@@ -43,6 +43,17 @@ namespace PMS.Repository.Pathology
                                         Text = Convert.ToString(row["Name"]),
                                     }).ToList();
             }
+            if (ds.Tables[1].Rows.Count > 0)
+                {
+                model.TestList = (from DataRow row in ds.Tables[1].Rows
+                                            select new TestBookingModel
+                                            {
+                                                RowId = Convert.ToInt64(row["Id"]),
+                                                TestName = Convert.ToString(row["Name"]),
+                                                Rate = Convert.ToDecimal(row["Rate"]),
+                                                HeadId = Convert.ToInt64(row["HeadId"]),
+                                            }).ToList();
+            }
         }
         public async Task GetTestHeadMasterData(CommonModel model)
         {
@@ -63,7 +74,8 @@ namespace PMS.Repository.Pathology
             model.Action = 2;
             DataSet ds = await _commonDAL.GetCommonData(model);
             string expression = "";
-            string[] ModelId = model.MID.Split(',');
+            string[] ModelId=(model.MID.Remove(model.MID.LastIndexOf(',')).Split(','));
+            //string[] ModelId = model.MID.Split(',');
             foreach (var value in ModelId)
             {
 
@@ -82,7 +94,7 @@ namespace PMS.Repository.Pathology
                 {
                     expression = "MID=" + (int)Keys.MasterData.Relation;
                     DataRow[] foundRows = ds.Tables[0].Select(expression);
-                    model.ReligionList = (from DataRow row in foundRows
+                    model.RelationList = (from DataRow row in foundRows
                                           select new DropDownModel
                                           {
                                               Value = Convert.ToString(row["Id"]),
@@ -115,7 +127,7 @@ namespace PMS.Repository.Pathology
                 {
                     expression = "MID=" + (int)Keys.MasterData.NamePrefix;
                     DataRow[] foundRows = ds.Tables[0].Select(expression);
-                    model.MritalStatusList = (from DataRow row in foundRows
+                    model.NamePrefixList = (from DataRow row in foundRows
                                             select new DropDownModel
                                             {
                                                 Value = Convert.ToString(row["Id"]),
@@ -166,6 +178,51 @@ namespace PMS.Repository.Pathology
                                               Text = Convert.ToString(row["Name"]),
                                           }).ToList();
                 }
+                else if (value == Convert.ToString((int)Keys.MasterData.ProfileName))
+                {
+                    expression = "MID=" + (int)Keys.MasterData.ProfileName;
+                    DataRow[] foundRows = ds.Tables[0].Select(expression);
+                    model.ProfileList = (from DataRow row in foundRows
+                                                select new DropDownModel
+                                                {
+                                                    Value = Convert.ToString(row["Id"]),
+                                                    Text = Convert.ToString(row["Name"]),
+                                                }).ToList();
+                }
+                else if (value == Convert.ToString((int)Keys.MasterData.SampleType))
+                {
+                    expression = "MID=" + (int)Keys.MasterData.SampleType;
+                    DataRow[] foundRows = ds.Tables[0].Select(expression);
+                    model.SampleTypeList = (from DataRow row in foundRows
+                                         select new DropDownModel
+                                         {
+                                             Value = Convert.ToString(row["Id"]),
+                                             Text = Convert.ToString(row["Name"]),
+                                         }).ToList();
+                }
+            }
+            if (model.IsTestBooking)
+            {
+                model.ReferredByList = (from DataRow row in ds.Tables[1].Rows
+                                            select new DropDownModel
+                                            {
+                                                Value = Convert.ToString(row["Id"]),
+                                                Text = Convert.ToString(row["DoctorName"]),
+                                            }).ToList();
+                model.SampleByList = (from DataRow row in ds.Tables[2].Rows
+                                      select new DropDownModel
+                                      {
+                                          Value = Convert.ToString(row["Id"]),
+                                          Text = Convert.ToString(row["StaffName"]),
+                                      }).ToList();
+                model.ProfileMasterList = (from DataRow row in ds.Tables[3].Rows
+                                      select new TestBookingModel
+                                      {
+                                          ProfileId = Convert.ToInt64(row["Id"]),
+                                          ProfileName = Convert.ToString(row["Name"]),
+                                          Rate = Convert.ToDecimal(row["Rate"]),
+                                      }).ToList();
+                
             }
         }
     }

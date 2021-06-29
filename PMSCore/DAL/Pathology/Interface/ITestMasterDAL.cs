@@ -10,5 +10,7 @@ namespace DAL.Pathology.Interface
     public interface ITestMasterDAL
     {
         Task<DataSet> TestMasterOperations(TestMasterModel model);
+        Task<DataSet> TestProfileOperations(TestMasterModel model);
+        
     }
 }

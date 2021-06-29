@@ -1,0 +1,204 @@
+﻿@model Models.Pathology.TestBookingModel;
+@{
+    ViewData["Title"] = "TestBooking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Patient Details</a></li>
+        <li><a href="#tabs-2">Test Details</a></li>
+    </ul>
+    <div id="tabs-1">
+        <div class="col-sm-12">
+            <div class="form-group row">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <input type="radio" name="radio-choice-1" id="rdbNewPatient" value="1" checked="checked" />
+                        <label for="radio-choice-1">New Patient</label>
+                        <input type="radio" name="radio-choice-1" id="rdbRegisterdPatient" value="2" />
+                        <label for="radio-choice-2">Registerd Patient</label>
+                    </fieldset>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label for="lblTitle" class="col-sm-2 col-form-label-sm">Title:<span class="mandatory"><b>*</b></span></label>
+                <div class="col-sm-4">
+                    @Html.DropDownListFor(m => m.TitleId, new SelectList(@Model.TitleList, "Value", "Text"), "--Select--",
+                        new
+                        {
+                            @Class = "form-control form-control-sm"
+                        })
+                </div>
+                <label for="lblPatientName" class="col-sm-2 col-form-label-sm">Patient Name:<span class="mandatory"><b>*</b></span></label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtPatientName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lblGendar" class="col-sm-2 col-form-label col-form-label-sm">Gender:<span class="mandatory"><b>*</b></span></label>
+                <div class="col-sm-4">
+                    @Html.DropDownListFor(m => m.GenderId, new SelectList(Model.GenderList, "Value", "Text"), "--Select--",
+                        new
+                        {
+                            @Class = "form-control form-control-sm"
+                        })
+                </div>
+                <label for="lblAge" class="col-sm-2 col-form-label col-form-label-sm">Age:</label>
+                <div class="col-sm-4">
+                    <input type="text" style="width:33%;float:left;" class="form-control form-control-sm" onclick="this.select();" onkeyup="CheckYear()" id="txtAgeYear" placeholder="Year">
+                    <input type="text" style="width:33%;float:left; margin-left:1.5px;" class="form-control form-control-sm" onclick="this.select();" onkeyup="CheckYear()" id="txtAgeMonth" placeholder="Month">
+                    <input type="text" style="width:33%;float:left; margin-left:1.5px;" class="form-control form-control-sm" onclick="this.select();" onkeyup="CheckYear()" id="txtAgeDay" placeholder="Days">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="lblMobileno" class="col-sm-2 col-form-label col-form-label-sm">Mobile No:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtMobileNo">
+                </div>
+                <label for="lblEmailId" class="col-sm-2 col-form-label col-form-label-sm">Email Id:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtEmailId">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lblAddress" class="col-sm-2 col-form-label col-form-label-sm">Address:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="txtAddress">
+                </div>
+                <label for="lblReferredBy" class="col-sm-2 col-form-label col-form-label-sm">Referred By:<span class="mandatory"><b>*</b></span></label>
+                <div class="col-sm-4">
+                    @Html.DropDownListFor(m => m.ReferredById, new SelectList(Model.ReferredByList, "Value", "Text"), "--Select--",
+                       new
+                       {
+                           @Class = "form-control form-control-sm"
+                       })
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lblSampleBy" class="col-sm-2 col-form-label col-form-label-sm">Sample By:<span class="mandatory"><b>*</b></span></label>
+                <div class="col-sm-4">
+                    @Html.DropDownListFor(m => m.SampleById, new SelectList(Model.SampleByList, "Value", "Text"), "--Select--",
+                      new
+                      {
+                          @Class = "form-control form-control-sm"
+                      })
+                </div>
+                <label for="lblSampleType" class="col-sm-2 col-form-label col-form-label-sm">Sample Type:<span class="mandatory"><b>*</b></span></label>
+                <div class="col-sm-4">
+                    @Html.DropDownListFor(m => m.SampleTypeId, new SelectList(Model.SampleTypeList, "Value", "Text"), "--Select--",
+                       new
+                       {
+                           @Class = "form-control form-control-sm"
+                       })
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" style="float:right;" id="btnCreate" class="btn btn-outline-primary">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tabs-2">
+        <div class="form-group row">
+            <div class="col-sm-7">
+                <div class="form-group row">
+                    <label for="lblDepartment" class="col-sm-2 col-form-label col-form-label-sm">Department:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-4">
+                        @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.DepartmentList, "Value", "Text"), "--Select--",
+                      new
+                      {
+                          @Class = "form-control form-control-sm",
+                          @onchange = "GetTestHeadMaster()"
+                      })
+                    </div>
+                    <label for="lblHeadName" class="col-sm-2 col-form-label col-form-label-sm">Test Head:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-4">
+                        <select class="form-control form-control-sm" id="TestHeadId" onchange="GetTestDetails('3')">
+                            <option value="0" selected>--Select--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12" id="tblTestList" style="width:100%;height: 150px; overflow-y: scroll;">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group row">
+                    <div class="col-sm-12" style="height: 193px; overflow-y: scroll;">
+                        <table id="example1" class="display nowrap cell-border" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Profile Name</th>
+                                    <th scope="col">Rate</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.ProfileMasterList.Count > 0)
+                                {
+                                    foreach (var item in Model.ProfileMasterList)
+                                    {
+                                        <tr style="height:15px;">
+                                            <td>@item.ProfileName</td>
+                                            <td>@item.Rate</td>
+                                            <td><a href="#" onclick="AddData(0,0,0,'@item.ProfileId',1)">Add</a></td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12" id="tblTestBookingList" style="height: 150px; overflow-y: scroll;">
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <div class="form-group row">
+                    <label for="txtDoctorName" class="col-sm-2 col-form-label col-form-label-sm">Total Amount:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control form-control-sm" id="txtTotalAmount" value="0" readonly>
+                    </div>
+                    <label for="txtMobileNo" class="col-sm-2 col-form-label col-form-label-sm" >Discount Amount:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control form-control-sm" id="txtDiscountAmount" value="0" onclick="this.select();" onkeyup="CalculateDiscount('D')">
+                    </div>
+                    <label for="txtMobileNo" class="col-sm-2 col-form-label col-form-label-sm">Paid Amount:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control form-control-sm" id="txtPaidAmount" value="0" onclick="this.select();" onkeyup="CalculateDiscount('P')">
+                    </div>
+                    <label for="txtMobileNo" class="col-sm-2 col-form-label col-form-label-sm">Balance Amount:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control form-control-sm" id="txtBalanceAmount" value="0" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-7">
+                <button type="button" id="btnCreate" class="btn btn-outline-primary">Back</button>
+                <button type="button" id="btnUpdate" onclick="TestBookingOperations(0,1)" class="btn btn-outline-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>
+<script src="~/lib/Script/Local/Pathology/TestBooking.js"></script>

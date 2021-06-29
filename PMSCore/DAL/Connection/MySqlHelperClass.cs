@@ -108,7 +108,7 @@ namespace DAL.Connection
         //for select result and return as DataTable  
         public async Task<DataTable> DataTable_return(string Querys)
         {
-          
+
             DataTable dt = new DataTable();
             //open connection  
             if (await OpenConnection() == true)
@@ -125,8 +125,8 @@ namespace DAL.Connection
                 {
                     await CloseConnection();
                 }
-            //close connection  
-            
+                //close connection  
+
             }
             return dt;
         }
@@ -138,38 +138,52 @@ namespace DAL.Connection
         public async Task<DataTable> SP_DataTable(string ProcName, params MySqlParameter[] commandParameters)
         {
             DataTable dt = new DataTable();
-            //open connection  
-            if (await OpenConnection() == true)
+            try
             {
-                //for Select Query   
-                MySqlCommand cmdSel = new MySqlCommand(ProcName, connection);
-                cmdSel.CommandType = CommandType.StoredProcedure;
-                // Assign the provided values to these parameters based on parameter order  
-                AssignParameterValues(commandParameters, commandParameters);
-                AttachParameters(cmdSel, commandParameters);
-                MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
-                await da.FillAsync(dt);
-                //close connection  
-                await CloseConnection();
+                //open connection  
+                if (await OpenConnection() == true)
+                {
+                    //for Select Query   
+                    MySqlCommand cmdSel = new MySqlCommand(ProcName, connection);
+                    cmdSel.CommandType = CommandType.StoredProcedure;
+                    // Assign the provided values to these parameters based on parameter order  
+                    AssignParameterValues(commandParameters, commandParameters);
+                    AttachParameters(cmdSel, commandParameters);
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+                    await da.FillAsync(dt);
+                    //close connection  
+                    await CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
             return dt;
         }
         public async Task<DataSet> SP_DataSet(string ProcName, params MySqlParameter[] commandParameters)
         {
             DataSet ds = new DataSet();
-            //open connection  
-            if (await OpenConnection() == true)
+            try
             {
-                //for Select Query   
-                MySqlCommand cmdSel = new MySqlCommand(ProcName, connection);
-                cmdSel.CommandType = CommandType.StoredProcedure;
-                // Assign the provided values to these parameters based on parameter order  
-                AssignParameterValues(commandParameters, commandParameters);
-                AttachParameters(cmdSel, commandParameters);
-                MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
-                await da.FillAsync(ds);
-                //close connection  
-                await CloseConnection();
+                //open connection  
+                if (await OpenConnection() == true)
+                {
+                    //for Select Query   
+                    MySqlCommand cmdSel = new MySqlCommand(ProcName, connection);
+                    cmdSel.CommandType = CommandType.StoredProcedure;
+                    // Assign the provided values to these parameters based on parameter order  
+                    AssignParameterValues(commandParameters, commandParameters);
+                    AttachParameters(cmdSel, commandParameters);
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+                    await da.FillAsync(ds);
+                    //close connection  
+                    await CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
             return ds;
         }

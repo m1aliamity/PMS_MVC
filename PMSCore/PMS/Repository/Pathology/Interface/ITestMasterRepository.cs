@@ -11,6 +11,7 @@ namespace PMS.Repository.Pathology.Interface
         Task GetMasterData(TestMasterModel model);
         Task GetTestHeadMaster(TestMasterModel model);
         Task TestMasterOperations(TestMasterModel model);
+        Task TestProfileOperations(TestMasterModel model);
 
     }
 }

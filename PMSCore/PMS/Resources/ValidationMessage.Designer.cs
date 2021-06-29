@@ -187,11 +187,29 @@ namespace PMS.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please Fill Patient Name..
+        /// </summary>
+        public static string PatientName {
+            get {
+                return ResourceManager.GetString("PatientName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please Enter Print Name..
         /// </summary>
         public static string PrintName {
             get {
                 return ResourceManager.GetString("PrintName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This Profile Already Exists..
+        /// </summary>
+        public static string ProfileAlredyExist {
+            get {
+                return ResourceManager.GetString("ProfileAlredyExist", resourceCulture);
             }
         }
         
@@ -205,11 +223,65 @@ namespace PMS.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please Select Refferd By..
+        /// </summary>
+        public static string ReferredBy {
+            get {
+                return ResourceManager.GetString("ReferredBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Select Sample By..
+        /// </summary>
+        public static string SampleBy {
+            get {
+                return ResourceManager.GetString("SampleBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Select Sample Type..
+        /// </summary>
+        public static string SampleType {
+            get {
+                return ResourceManager.GetString("SampleType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recored Saved successfully..
         /// </summary>
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Select Profile..
+        /// </summary>
+        public static string SelectProfile {
+            get {
+                return ResourceManager.GetString("SelectProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Select Test..
+        /// </summary>
+        public static string SelectTest {
+            get {
+                return ResourceManager.GetString("SelectTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Select Title..
+        /// </summary>
+        public static string SelectTitle {
+            get {
+                return ResourceManager.GetString("SelectTitle", resourceCulture);
             }
         }
         
@@ -228,6 +300,15 @@ namespace PMS.Resources {
         public static string Status {
             get {
                 return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This Test Already Exists..
+        /// </summary>
+        public static string TestAlredyExist {
+            get {
+                return ResourceManager.GetString("TestAlredyExist", resourceCulture);
             }
         }
         
@@ -255,6 +336,15 @@ namespace PMS.Resources {
         public static string TestRate {
             get {
                 return ResourceManager.GetString("TestRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Amount Can&apos;t be 0..
+        /// </summary>
+        public static string TotalAmount {
+            get {
+                return ResourceManager.GetString("TotalAmount", resourceCulture);
             }
         }
         

@@ -190,7 +190,6 @@ function MaintaiTestHeadOperation(Id, value) {
             $.each(response.masterDetailsList, function () {
                 ListHtml += '<tr><td>' + this.name + '</td>'
                 ListHtml += '<td>' + this.printName + '</td>'
-               
                 ListHtml += '<td>' + this.statusName + '</td><td><a href="#" class="class="fa fa-pencil"" onclick="MaintaiTestHeadOperation(' + this.rowId + ',\'' + Edit + '\');"> Edit</a> | <a href="#" class="class="fa fa-trash" onclick="MaintaiTestHeadOperation(' + this.rowId + ',\'' + Delete + '\');"> Delete</a></td>';
                 ListHtml += '</tr > ';
 
