@@ -1,0 +1,191 @@
+<!doctype html>
+<html class="invoices">
+
+<!-- Mirrored from themes.gootoboo.com/boo/v2/tmp-invoice-02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jul 2021 06:02:08 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>Invoice Type 2</title>
+    <link href="Content/css/bootstrap.css" rel="stylesheet">
+    <link href="Content/css/main.css" rel="stylesheet">    
+</head>
+<body>
+
+    <div class="hidden-print toolbar-print">
+        <button type="button" data-toggle="print" class="btn btn-primary">Print invoice</button>
+        <button type="button" data-toggle="edit" class="btn">Edit</button>
+        <button type="button" data-toggle="close" class="btn">Close</button>
+    </div>
+
+    <div class="print-reset type02">
+
+        <header>
+            <span class="pull-right clearfix">
+                <img alt="" src="Content/img/demo/your-logo.png">
+                <input type="file" accept="image/*"></span>
+            <h1>Invoice <small class="hidden-print">type 02</small></h1>
+            <address contenteditable="true">
+                <p><b>Your Company Name</b></p>
+                <p>
+                    Street Address<br>
+                    City, ST ZIP Code
+                </p>
+                <p><abbr title="Work Phone">Phone:</abbr> (012) 345-6789</p>
+                <p><abbr title="Office Email">Email:</abbr> (012) 345-6789</p>
+            </address>
+        </header>
+
+        <article>
+
+            <div><strong>BILL TO:</strong></div>
+            <address contenteditable="true">                
+                <p>
+                    Name<br>
+                    Company Name<br>
+                    Street Address<br>
+                    City, ST ZIP Code<br>
+                </p>
+                <p><abbr title="Work Phone">Phone:</abbr> (012) 345-6789</p>
+            </address>
+
+            <table class="meta">
+                <tr>
+                    <th><span contenteditable="true">Invoice #</span></th>
+                    <td><span contenteditable="true">101138</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable="true">Date</span></th>
+                    <td><span contenteditable="true">January 1, 2012</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable="true">Amount Due</span></th>
+                    <td><span id="prefix" contenteditable="true">$</span><span>6,004.00</span></td>
+                </tr>
+            </table>
+
+            <div class="clearfix"></div>
+
+            <table class="instruction">
+                <caption><span contenteditable="true">Comments or special instructions:</span></caption>
+                <thead>
+                    <tr>
+                        <th><span contenteditable="true">Salesperson</span></th>
+                        <th><span contenteditable="true">P.O.Number</span></th>
+                        <th><span contenteditable="true">Sent Date</span></th>
+                        <th><span contenteditable="true">Sent VIA</span></th>
+                        <th><span contenteditable="true">F.O.B.Point</span></th>
+                        <th><span contenteditable="true">Terms</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span contenteditable="true">Content</span></td>
+                        <td><span contenteditable="true">Content</span></td>
+                        <td><span contenteditable="true">Content</span></td>
+                        <td><span contenteditable="true">Content</span></td>
+                        <td><span contenteditable="true">Content</span></td>
+                        <td><span contenteditable="true">Content</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="inventory">
+                <thead>
+                    <tr>
+                        <th><span contenteditable="true">Item</span></th>
+                        <th><span contenteditable="true">Description</span></th>
+                        <th><span contenteditable="true">Rate</span></th>
+                        <th><span contenteditable="true">Quantity</span></th>
+                        <th><span contenteditable="true">Price</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a class="btn btn-mini btn-primary cut hidden-print ">-</a>
+                            <span contenteditable="true">Front End Consultation</span>
+                        </td>
+                        <td><span contenteditable="true">Experience Review</span></td>
+                        <td><span data-prefix="$"></span><span contenteditable="true">1,501.00</span></td>
+                        <td><span contenteditable="true">4</span></td>
+                        <td><span data-prefix="$"></span><span></span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a class="btn btn-mini btn-primary add hidden-print ">+</a>
+
+            <table class="balance">
+                <tr>
+                    <th><span contenteditable="true">Total</span></th>
+                    <td><span data-prefix="$"></span><span>6,004.00</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable="true">Amount Paid</span></th>
+                    <td><span data-prefix="$"></span><span contenteditable>0.00</span></td>
+                </tr>
+                <tr class="total">
+                    <th><span contenteditable="true">Balance Due</span></th>
+                    <td><span data-prefix="$"></span><span>6,004.00</span></td>
+                </tr>
+            </table>
+
+        </article>
+
+        <aside>
+            <h3><span contenteditable="true">Additional Notes</span></h3>
+            <div contenteditable="true">
+                <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Libraries -->
+    <script src="Content/libs/jquery/jquery-1.9.1/jquery.min.js"></script>
+    <script src="Content/libs/jquery/jquery.migrate-1.1.1/jquery-migrate.min.js"></script>
+    <script src="Content/libs/jquery/jquery.ui.combined-1.10.2/jquery-ui.min.js"></script>
+    <script src="Content/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!-- System -->
+    <script src="Content/libs/pl-system/jquery.nicescroll/js/jquery.nicescroll.min.js"></script>
+    <script src="Content/libs/pl-system/jquery-cookie/js/jquery.cookie.js"></script>
+    <script src="Content/libs/pl-system/jquery-mousewheel/js/jquery.mousewheel.js"></script>
+    <script src="Content/libs/pl-system/xbreadcrumbs/js/xbreadcrumbs.js"></script>
+    <!-- System info -->
+    <script src="Content/libs/pl-system-info/bootstrapx-clickover/js/bootstrapx-clickover.js"></script>
+    <script src="Content/libs/pl-system-info/gritter/js/jquery.gritter.min.js"></script>
+    <script src="Content/libs/pl-system-info/jquery.notyfy/js/jquery.notyfy.js"></script>
+    <script src="Content/libs/pl-system-info/qtip2/js/jquery.qtip.min.js"></script>
+
+    <!-- Edit Invoice -->
+    <script src="Content/js/app/invoice.js"></script>
+
+    <!-- Only This Demo Page -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // PRINT 
+            // ------------------------------------------------------------------------------------------------ * -->
+            $('[data-toggle="print"]').click(function (e) {
+                e.preventDefault();
+                window.print();
+            });
+
+            $('[data-toggle="edit"]').click(function (e) {
+                e.preventDefault();
+                window.location.href = "page-invoice-new.html";
+            });
+
+            $('[data-toggle="close"]').click(function (e) {
+                e.preventDefault();
+                window.close();
+            });
+
+        });
+    </script>
+
+</body>
+
+<!-- Mirrored from themes.gootoboo.com/boo/v2/tmp-invoice-02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jul 2021 06:02:08 GMT -->
+</html>

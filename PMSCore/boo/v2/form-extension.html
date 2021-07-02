@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+
+
+<!-- Mirrored from themes.gootoboo.com/boo/v2/form-extension.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jul 2021 05:58:00 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>Boo Admin - Form Extension</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="Content/css/bootstrap.css" rel="stylesheet">
+    <link href="Content/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="Content/css/extension.css" rel="stylesheet">
+    <link href="Content/css/main.css" rel="stylesheet">
+    <link href="Content/css/style.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="Content/libs/selectivizr/selectivizr-1.0.2/js/selectivizr.min.js"></script>
+        <script src="Content/libs/pl-visualization/excanvas/js/excanvas.min.js"></script>
+    <![endif]-->
+
+    <script src="Content/libs/modernizr/modernizr-2.6.2/js/modernizr-2.6.2.js"></script>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="Content/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="Content/ico/boo-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="Content/ico/boo-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="Content/ico/boo-72.png">
+    <link rel="apple-touch-icon-precomposed" href="Content/ico/boo-57.png">
+</head>
+
+<body class="sidebar-left ">
+    <div class="page-container">
+        <div id="header-container">
+            <div id="header">
+                <div class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="navbar-inner">
+                        <div class="container-fluid">
+                            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                            <a class="brand" href="javascript:void(0);">
+                                <img src="Content/img/demo/logo-brand.png"></a>
+                            <div class="search-global">
+                                <input id="globalSearch" class="search search-query input-medium" type="search">
+                                <a class="search-button" href="javascript:void(0);"><i class="fontello-icon-search-5"></i></a>
+                            </div>
+                            <div class="nav-collapse collapse">
+                                <ul class="nav user-menu visible-desktop">
+                                    <li><a class="btn-glyph fontello-icon-edit tip-bc" href="javascript:void(0);" title="Messages"><span class="badge badge-important">8</span></a></li>
+                                    <li><a class="btn-glyph fontello-icon-mail-1 tip-bc" href="javascript:void(0);" title="Emails"></a></li>
+                                    <li><a class="btn-glyph fontello-icon-lifebuoy tip-bc" href="javascript:void(0);" title="Support"><span class="badge badge-important">4</span></a></li>
+                                </ul>
+                                <ul class="nav">
+                                    <li><a href="dashboard-one.html">Dashboard</a> </li>
+                                    <li class="active"><a href="javascript:void(0);">Components</a> </li>
+                                    <li><a href="fullcalendar-demo.html"><span class="booico-calendar-3"></span>Calendar</a> </li>
+                                    <li><a href="contact-manager.html"><span class="booico-user"></span>Contacts</a> </li>
+                                    <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Customize Page <b class="caret"></b></a>
+                                        <ul class="dropdown-menu dropdown-bordered">
+                                            <li><a href="form-demo.html">Demo Form</a></li>
+                                            <li><a href="widgets-remember.html">Remember</a></li>
+                                            <li><a href="widgets-users.html">User List</a></li>
+                                            <li class="dropdown-submenu"><a tabindex="-1" href="javascript:void(0);">Login page</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a tabindex="-1" href="login-01.html">Type Horizontal</a></li>
+                                                    <li><a tabindex="-1" href="login-02.html">Type Vertical</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li><a href="contact-list.html">Contacts list</a></li>
+                                            <li><a href="page-invoice.html">Invoice Management</a></li>
+                                            <li><a href="tmp-base-boo-layout.html">Template blank pages</a></li>
+                                            <!--<li><a href="page-mailbox.html">Email</a></li>-->
+                                            <li class="divider"></li>
+                                            <li class="nav-header">Next Update</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // navbar -->
+
+                <div class="header-drawer">
+                    <div class="mobile-nav text-center visible-phone"><a href="javascript:void(0);" class="mobile-btn" data-toggle="collapse" data-target=".sidebar"><i class="aweso-icon-chevron-down"></i>Components</a> </div>
+                    <!-- // Resposive navigation -->
+                    <div class="breadcrumbs-nav hidden-phone">
+                        <ul id="breadcrumbs" class="breadcrumb">
+                            <li><a href="javascript:void(0);"><i class="fontello-icon-home f12"></i>Dashboard</a> <span class="divider">/</span></li>
+                            <li class="dropdown"><a href="javascript:void(0);">Table </a><span class="divider">/</span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);">Table</a></li>
+                                    <li><a href="javascript:void(0);">Elements</a></li>
+                                    <li><a href="javascript:void(0);">Elements</a></li>
+                                    <li><a href="javascript:void(0);">Elements</a></li>
+                                </ul>
+                            </li>
+                            <li class="active">Boo Admin </li>
+                        </ul>
+                    </div>
+                    <!-- // breadcrumbs -->
+                </div>
+                <!-- // drawer -->
+            </div>
+        </div>
+        <!-- // header-container -->
+
+        <div id="main-container">
+            <div id="main-sidebar" class="sidebar sidebar-inverse">
+                <div class="filler"></div>
+                <div class="sidebar-item">
+                    <div class="media profile">
+                        <div class="media-thumb media-left thumb-bordereb">
+                            <a class="img-shadow" href="javascript:void(0);">
+                                <img class="thumb" src="Content/img/demo/demo-avatar9604.jpg"></a>
+                        </div>
+                        <div class="media-body">
+                            <h5 class="media-heading">Twitter Bootstrap <small>as Administrator</small></h5>
+                            <p class="data">Last Access: 16 May 15:30</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- // sidebar item - profile -->
+
+                <ul id="mainSideMenu" class="nav nav-list nav-side">
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accDash" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe0bc;" aria-hidden="true"></span><i class="chevron"></i>Dashboards </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accDash">
+                            <li><a href="dashboard-one.html"><span class="hidden-tablet">Dashboard</span> Demo 1 </a></li>
+                            <li><a href="dashboard-two.html"><span class="hidden-tablet">Dashboard</span> Demo 2 </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Dashboard -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading active"><a href="#accForms" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xf016;" aria-hidden="true"></span><i class="chevron"></i>Form </a></div>
+                        <ul class="accordion-content nav nav-list collapse in" id="accForms">
+                            <li><a href="form-demo.html">Demo Form </a></li>
+                            <li><a href="form-elements.html">Form Element </a></li>
+                            <li class="active"><a href="form-extension.html">Form Extension</a> </li>
+                            <li><a href="form-wizard.html">Form Wizard</a> </li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Forms -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accComponents" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe016;" aria-hidden="true"></span><i class="chevron"></i>Components </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accComponents">
+                            <li><a href="notification.html">Notification </a></li>
+                            <li><a href="rangeslider.html">Rangeslider </a></li>
+                            <li><a href="file-upload.html">File upload </a></li>
+                            <li><a href="gallery.html">Gallery &amp; Image </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Components -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accTables" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xf039;" aria-hidden="true"></span><i class="chevron"></i>Tables </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accTables">
+                            <li><a href="table.html">Base Table </a></li>
+                            <li><a href="table-boo.html">Boo Table </a></li>
+                            <li><a href="table-datatable.html">DataTable </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Tables -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accStatistics" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe0ad;" aria-hidden="true"></span><i class="chevron"></i>Statistics </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accStatistics">
+                            <li><a href="statistic-flot.html">Charts </a></li>
+                            <li><a href="statistic-sparkline.html">Sparklines </a></li>
+                            <li><a href="statistic-circle.html">Circle </a></li>
+                            <li><a href="statistic-custom.html">Other Elements </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Statistics -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accWidgets" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe00e;" aria-hidden="true"></span><i class="chevron"></i>Widgets </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accWidgets">
+                            <li><a href="widget-style.html"><span class="hidden-tablet">Widgets </span>Style </a></li>
+                            <li><a href="widget-custom.html"><span class="hidden-tablet">Widgets </span>Custom </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Widgets -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accButtons" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xf0a0;" aria-hidden="true"></span><i class="chevron"></i>UI Elements </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accButtons">
+                            <li><a href="button.html">Button </a></li>
+                            <li><a href="dropdowns.html">Dropdowns</a></li>
+                            <li><a href="icon-font.html">Iconic fonts </a></li>
+                            <li><a href="icon-fugue-demo.html">Icon </a></li>
+                            <li><a href="wells.html">Wells </a></li>
+                            <li><a href="tabs.html">Tabs </a></li>
+                            <li><a href="modals.html">Modal </a></li>
+                            <li><a href="progressbar.html">Progressbar </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu UI Elements -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accCalendar" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe0dd;" aria-hidden="true"></span><i class="chevron"></i>Calendar </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accCalendar">
+                            <li><a href="fullcalendar-demo.html"><span class="hidden-tablet">Calendar </span>Demo </a></li>
+                            <li><a href="fullcalendar.html"><span class="hidden-tablet">Calendar </span>Style </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Calendar -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accAppPage" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe0e1;" aria-hidden="true"></span><i class="chevron"></i>Custom Page </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accAppPage">
+                            <li><a href="contact-manager.html">Contact Manager </a></li>
+                            <li><a href="page-invoice.html">Invoice Management </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Custom Page -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="dashboard-one.html" class="accordion-toggle"><span class="item-icon" data-icon="&#xf0c1;" aria-hidden="true"></span><i class="chevron"></i>Only link </a></div>
+                    </li>
+                    <!-- // item only link -->
+                </ul>
+                <!-- // sidebar menu -->
+
+                <div class="sidebar-item"></div>
+                <!-- // sidebar item -->
+
+            </div>
+            <!-- // sidebar -->
+
+            <div id="main-content" class="main-content container-fluid">
+                <div class="filler"></div>
+                <div class="row-fluid page-head">
+                    <h2 class="page-title heading-icon" data-icon="&#xf016;" aria-hidden="true">Forms Extension <small>next plugins for form</small></h2>
+                    <div class="page-bar">
+                        <div class="btn-toolbar"></div>
+                    </div>
+                </div>
+                <!-- // page head -->
+
+                <div id="page-content" class="page-content">
+                    <section>
+                        <div class="page-header">
+                            <h3><i class="fontello-icon-article-alt opaci35"></i>Wysiwg editors <small>edit content</small></h3>
+                        </div>
+                        <div class="row-fluid">
+                            <form class="span8 margin-00">
+                                <div class="well well-nice well-small">
+                                    <h4 class="simple-header">Wysihtml5 <small>Simple wysiwyg editors</small></h4>
+                                    <div class="control-group">
+                                        <textarea id="wysiBooEditor" class="input-block-level" style="height: 160px" placeholder="Enter text ..."></textarea>
+                                        <!-- // fieldset Input -->
+                                        <div class="btn-toolbar"><a class="btn btn-green pull-right" href="javascript:void(0);">Save</a></div>
+                                    </div>
+                                </div>
+                                <div class="well well-nice form-dark">
+                                    <div class="control-group">
+                                        <textarea id="wysiBooEditorBlack" class="input-block-level" style="height: 100px" placeholder="Enter text ..."></textarea>
+                                        <!-- // fieldset Input Grid Sizig -->
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- // Column -->
+
+                        </div>
+                        <!-- // Sample row - Wysiwyg editors -->
+
+                    </section>
+
+                    <section>
+                        <div class="page-header">
+                            <h3><i class="fontello-icon-article-alt opaci35"></i>CKEditor <small>standard</small></h3>
+                        </div>
+                        <div class="row-fluid">
+                            <form class="span8 margin-00">
+                                <div class="_well _well-nice">
+                                    <form action="http://themes.gootoboo.com/boo/v2/sample_posteddata.php" method="post">
+                                        <p>
+                                            <textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10"></textarea>
+                                        </p>
+                                        <p>
+                                            <button class="btn btn-green pull-right" type="submit">Submit</button>
+                                        </p>
+                                    </form>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="page-header">
+                            <h3><i class="fontello-icon-exchange opaci35"></i>Select DualBox <small>copy selected items</small></h3>
+                        </div>
+                        <div class="row-fluid">
+                            <form>
+                                <div class="well well-nice span4 padding-bottom5 clearfix">
+                                    <h4 class="simple-header"><span id="box1Counter" class="countLabel pull-right"></span>Item list </h4>
+                                    <div class="input-append append-percent block form-dark">
+                                        <input type="text" id="box1Filter" style="width: 70%" placeholder="Search filter">
+                                        <button id="box1Clear" class="btn btn-yellow" type="button" style="width: 30%"><i class="fontello-icon-filter hidden-tablet"></i>Clear</button>
+                                    </div>
+                                    <select id="box1View" multiple="multiple" class="input-block-level" style="height: 150px">
+                                        <option value="501649">2008-2009 "Mini" Baja</option>
+                                        <option value="501497">AAPA - Asian American Psychological Association</option>
+                                        <option value="501053">Academy of Film Geeks</option>
+                                        <option value="500001">Accounting Association</option>
+                                        <option value="501227">ACLU</option>
+                                        <option value="501610">Active Minds</option>
+                                        <option value="501514">Activism with A Reel Edge (A.W.A.R.E.)</option>
+                                        <option value="501656">Adopt a Grandparent Program</option>
+                                        <option value="501050">Africa Awareness Student Organization</option>
+                                        <option value="501075">African Diasporic Cultural RC Interns</option>
+                                        <option value="501493">Agape</option>
+                                        <option value="501562">AGE-Alliance for Graduate Excellence</option>
+                                        <option value="500676">AICHE (American Inst of Chemical Engineers)</option>
+                                        <option value="501460">AIDS Sensitivity Awareness Project ASAP</option>
+                                        <option value="500004">Aikido Club</option>
+                                        <option value="500336">Akanke</option>
+                                    </select>
+                                    <!-- // Select list 1 -->
+
+                                    <ul class="listbox-menu inline pull-right">
+                                        <li>
+                                            <button id="to2" class="btn" type="button" style="width: 75px"><i class="fontello-icon-to-end-1 hidden-phone"></i><span class="visible-phone">copy</span></button>
+                                        </li>
+                                        <li>
+                                            <button id="allTo2" class="btn" type="button"><i class="fontello-icon-to-end-alt hidden-phone"></i><span class="visible-phone">copy All</span></button>
+                                        </li>
+                                    </ul>
+                                    <!-- // Action for select 1 -->
+
+                                    <select id="box1Storage">
+                                    </select>
+                                </div>
+                                <!-- // Column -->
+
+                                <div class="well well-nice span4 padding-bottom5 clearfix">
+                                    <h4 class="simple-header"><span id="box2Counter" class="countLabel pull-right"></span>Selected items </h4>
+                                    <div class="input-append append-percent block form-dark">
+                                        <input type="text" id="box2Filter" style="width: 70%" placeholder="Search filter">
+                                        <button id="box2Clear" class="btn btn-yellow" type="button" style="width: 30%"><i class="fontello-icon-filter hidden-tablet"></i>Clear</button>
+                                    </div>
+                                    <select id="box2View" multiple="multiple" class="input-block-level" style="height: 150px">
+                                    </select>
+                                    <!-- // Select list 2 -->
+
+                                    <ul class="listbox-menu inline pull-left">
+                                        <li>
+                                            <button id="to1" class="btn" type="button" style="width: 75px"><i class="fontello-icon-to-start-1 hidden-phone"></i><span class="visible-phone">return</span></button>
+                                        </li>
+                                        <li>
+                                            <button id="allTo1" class="btn" type="button"><i class="fontello-icon-to-start-alt hidden-phone"></i><span class="visible-phone">return All</span></button>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-green" type="submit">Send data</button>
+                                        </li>
+                                    </ul>
+                                    <!-- // Action for select 2 -->
+
+                                    <select id="box2Storage">
+                                    </select>
+                                </div>
+                                <!-- // Column -->
+
+                                <div class="span4">
+                                    <p>Lorem ipsum dolor sit amet consectetuer morbi lobortis Phasellus porttitor et. Nibh tempus Integer mauris suscipit Proin Nam Duis odio laoreet Aenean. A eu augue wisi vel massa netus Nam congue neque cursus. Urna tempor Sed vitae magna tortor elit tortor est Nulla tincidunt. Dignissim at et laoreet In porta eleifend Ut In Nam magna. Pellentesque egestas auctor id id dui tincidunt vitae tempor Curabitur neque. </p>
+                                </div>
+                                <!-- // Column -->
+
+                            </form>
+                        </div>
+                        <!-- // Sample row - Dual select box -->
+
+                        <div class="row-fluid">
+                            <form class="form-dark span8">
+                                <div class="row-fluid">
+                                    <ul class="inline well well-nice">
+                                        <li class="listbox-left span6 grider-item">
+                                            <h4 class="simple-header"><i class="fontello-icon-list-4"></i>Item list</h4>
+                                            <div class="well well-small well-impressed bg-gray-light _margin-0m">
+                                                <input id="box3Filter" class="input-block-level" type="text" placeholder="Search filter">
+                                                <div class="btn-group margin-0m">
+                                                    <button id="box3Clear" class="btn btn-small btn-yellow" type="button"><i class="fontello-icon-filter"></i>Clear</button>
+                                                    <button id="to4" class="btn btn-small btn-boo" type="button" style="width: 60px;"><i class="fontello-icon-to-end-1"></i></button>
+                                                    <button id="allTo4" class="btn btn-small btn-boo" type="button" style="width: 35px;"><i class="fontello-icon-to-end-alt"></i></button>
+                                                </div>
+                                                <select id="box3View" multiple="multiple" class="input-block-level" style="height: 150px">
+                                                    <option value="501649">2008-2009 "Mini" Baja</option>
+                                                    <option value="501497">AAPA - Asian American Psychological Association</option>
+                                                    <option value="501053">Academy of Film Geeks</option>
+                                                    <option value="500001">Accounting Association</option>
+                                                    <option value="501227">ACLU</option>
+                                                    <option value="501610">Active Minds</option>
+                                                    <option value="501514">Activism with A Reel Edge (A.W.A.R.E.)</option>
+                                                    <option value="501656">Adopt a Grandparent Program</option>
+                                                    <option value="501050">Africa Awareness Student Organization</option>
+                                                    <option value="501075">African Diasporic Cultural RC Interns</option>
+                                                    <option value="501493">Agape</option>
+                                                    <option value="501562">AGE-Alliance for Graduate Excellence</option>
+                                                    <option value="500676">AICHE (American Inst of Chemical Engineers)</option>
+                                                    <option value="501460">AIDS Sensitivity Awareness Project ASAP</option>
+                                                    <option value="500004">Aikido Club</option>
+                                                    <option value="500336">Akanke</option>
+                                                </select>
+                                                <span id="box3Counter" class="countLabel"></span>
+                                                <select id="box3Storage">
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li class="listbox-right span6  grider-item">
+                                            <h4 class="simple-header"><i class="fontello-icon-list-add"></i>Selected items</h4>
+                                            <div class="well well-small well-impressed bg-gray-light margin-0m">
+                                                <div class="margin-0m">
+                                                    <input id="box4Filter" class="input-block-level" type="text" placeholder="Search filter">
+                                                    <div class="btn-group">
+                                                        <button id="allTo3" class="btn btn-small btn-boo" type="button tip-tc" style="width: 35px;" title="copy all items"><i class="fontello-icon-to-start-alt"></i></button>
+                                                        <button id="to3" class="btn btn-small btn-boo" type="button" style="width: 60px;"><i class="fontello-icon-to-start-1"></i></button>
+                                                        <button id="box4Clear" class="btn btn-small btn-yellow" type="button"><i class="fontello-icon-filter"></i>Clear</button>
+                                                    </div>
+                                                </div>
+                                                <select id="box4View" multiple="multiple" class="input-block-level" style="height: 150px">
+                                                </select>
+                                                <span id="box4Counter" class="countLabel"></span>
+                                                <select id="box4Storage">
+                                                </select>
+                                            </div>
+                                            <button class="btn btn-green pull-right" type="submit">Send selected data</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- // Sample row - Dual select box -->
+
+                        <div class="row-fluid">
+                            <form class="form-dark">
+                                <div class="well well-nice">
+                                    <ul class="inline">
+                                        <li class="listbox-left span5">
+                                            <h4 class="simple-header">
+                                                <button id="box5Clear" class="btn btn-small btn-yellow pull-right" type="button"><i class="fontello-icon-filter"></i>Clear</button>
+                                                Item list</h4>
+                                            <input id="box5Filter" class="input-block-level" type="text">
+                                            <select id="box5View" multiple="multiple" class="input-block-level" style="height: 210px">
+                                                <option value="501649">2008-2009 "Mini" Baja</option>
+                                                <option value="501497">AAPA - Asian American Psychological Association</option>
+                                                <option value="501053">Academy of Film Geeks</option>
+                                                <option value="500001">Accounting Association</option>
+                                                <option value="501227">ACLU</option>
+                                                <option value="501610">Active Minds</option>
+                                                <option value="501514">Activism with A Reel Edge (A.W.A.R.E.)</option>
+                                                <option value="501656">Adopt a Grandparent Program</option>
+                                                <option value="501050">Africa Awareness Student Organization</option>
+                                                <option value="501075">African Diasporic Cultural RC Interns</option>
+                                                <option value="501493">Agape</option>
+                                                <option value="501562">AGE-Alliance for Graduate Excellence</option>
+                                                <option value="500676">AICHE (American Inst of Chemical Engineers)</option>
+                                                <option value="501460">AIDS Sensitivity Awareness Project ASAP</option>
+                                                <option value="500004">Aikido Club</option>
+                                                <option value="500336">Akanke</option>
+                                            </select>
+                                            <span id="box5Counter" class="countLabel"></span>
+                                            <select id="box5Storage">
+                                            </select>
+                                        </li>
+                                        <li class="listbox-control span2 text-center">
+                                            <h4 class="simple-header">Actions</h4>
+                                            <ul class="listbox-menu well well-nice">
+                                                <li>
+                                                    <button id="to6" class="btn btn-block" type="button"><i class="fontello-icon-to-end-1"></i></button>
+                                                </li>
+                                                <li>
+                                                    <button id="allTo6" class="btn btn-block" type="button"><i class="fontello-icon-to-end-alt"></i></button>
+                                                </li>
+                                                <li class="divider"></li>
+                                                <li>
+                                                    <button id="allTo5" class="btn btn-block" type="button"><i class="fontello-icon-to-start-alt"></i></button>
+                                                </li>
+                                                <li>
+                                                    <button id="to5" class="btn btn-block" type="button"><i class="fontello-icon-to-start-1"></i></button>
+                                                </li>
+                                                <li class="divider"></li>
+                                                <li>
+                                                    <button class="btn btn-green btn-block" type="submit">Send selected data</button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="listbox-right span5">
+                                            <h4 class="simple-header">
+                                                <button id="box6Clear" class="btn btn-small btn-yellow pull-right" type="button"><i class="fontello-icon-filter"></i>Clear</button>
+                                                <i class="fontello-icon-list-4"></i>Selected items </h4>
+                                            <input id="box6Filter" class="input-block-level" type="text">
+                                            <select id="box6View" multiple="multiple" class="input-block-level" style="height: 210px">
+                                            </select>
+                                            <span id="box6Counter" class="countLabel"></span>
+                                            <select id="box6Storage">
+                                            </select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- // Sample row - Dual select box -->
+
+                    </section>
+
+                    <section>
+                        <div class="page-header">
+                            <h3><i class="fontello-icon-switch opaci35"></i>Multiselect plugin <small>optgroup, custom header & footer, controls ...</small></h3>
+                        </div>
+                        <div class="row-fluid margin-bottom30">
+
+                            <div class="span6 well well-nice grider-item">
+                                <h4 class='simple-header'>Item list</h4>
+                                <select id='optgroup' multiple='multiple'>
+                                    <optgroup label='Friends'>
+                                        <option value='1'>Yoda</option>
+                                        <option value='2'>Obiwan</option>
+                                    </optgroup>
+                                    <optgroup label='Enemies'>
+                                        <option value='3'>Palpatine</option>
+                                        <option value='4'>Darth Vader</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <div class="span6 form-dark grider-item">
+                                <select id='public-methods' multiple='multiple'>
+                                    <option value='elem_1'>elem 1</option>
+                                    <option value='elem_2'>elem 2</option>
+                                    <option value='elem_3'>elem 3</option>
+                                    <option value='elem_4'>elem 4</option>
+                                    <option value='elem_5'>elem 5</option>
+                                    <option value='elem_6'>elem 6</option>
+                                    <option value='elem_7'>elem 7</option>
+                                    <option value='elem_8'>elem 8</option>
+                                    <option value='elem_9'>elem 9</option>
+                                    <option value='elem_10'>elem 10</option>
+                                    <option value='elem_11'>elem 11</option>
+                                    <option value='elem_12'>elem 12</option>
+                                    <option value='elem_13'>elem 13</option>
+                                    <option value='elem_14'>elem 14</option>
+                                    <option value='elem_15'>elem 15</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row-fluid margin-bottom30">
+                            <div class="span6 well well-nice grider-item form-dark">
+                                <div class="well well-impressed well-small bg-gray-light">
+                                    <select id="searchable" multiple='multiple'>
+                                        <option value="United States">United States</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="Afghanistan">Afghanistan</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="American Samoa">American Samoa</option>
+                                        <option value="Andorra">Andorra</option>
+                                        <option value="Angola">Angola</option>
+                                        <option value="Anguilla">Anguilla</option>
+                                        <option value="Antarctica">Antarctica</option>
+                                        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Armenia">Armenia</option>
+                                        <option value="Aruba">Aruba</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Austria">Austria</option>
+                                        <option value="Azerbaijan">Azerbaijan</option>
+                                        <option value="Bahamas">Bahamas</option>
+                                        <option value="Bahrain">Bahrain</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Barbados">Barbados</option>
+                                        <option value="Belarus">Belarus</option>
+                                        <option value="Belgium">Belgium</option>
+                                        <option value="Belize">Belize</option>
+                                        <option value="Benin">Benin</option>
+                                        <option value="Bermuda">Bermuda</option>
+                                        <option value="Bhutan">Bhutan</option>
+                                        <option value="Bolivia">Bolivia</option>
+                                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                        <option value="Botswana">Botswana</option>
+                                        <option value="Bouvet Island">Bouvet Island</option>
+                                        <option value="Brazil">Brazil</option>
+                                        <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                        <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                        <option value="Bulgaria">Bulgaria</option>
+                                        <option value="Burkina Faso">Burkina Faso</option>
+                                        <option value="Burundi">Burundi</option>
+                                        <option value="Cambodia">Cambodia</option>
+                                        <option value="Cameroon">Cameroon</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Cape Verde">Cape Verde</option>
+                                        <option value="Cayman Islands">Cayman Islands</option>
+                                        <option value="Central African Republic">Central African Republic</option>
+                                        <option value="Chad">Chad</option>
+                                        <option value="Chile">Chile</option>
+                                        <option value="China">China</option>
+                                        <option value="Christmas Island">Christmas Island</option>
+                                        <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                                        <option value="Colombia">Colombia</option>
+                                        <option value="Comoros">Comoros</option>
+                                        <option value="Congo">Congo</option>
+                                        <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                                        <option value="Cook Islands">Cook Islands</option>
+                                        <option value="Costa Rica">Costa Rica</option>
+                                        <option value="Cote D'ivoire">Cote D'ivoire</option>
+                                        <option value="Croatia">Croatia</option>
+                                        <option value="Cuba">Cuba</option>
+                                        <option value="Cyprus">Cyprus</option>
+                                        <option value="Czech Republic">Czech Republic</option>
+                                        <option value="Denmark">Denmark</option>
+                                        <option value="Djibouti">Djibouti</option>
+                                        <option value="Dominica">Dominica</option>
+                                        <option value="Dominican Republic">Dominican Republic</option>
+                                        <option value="Ecuador">Ecuador</option>
+                                        <option value="Egypt">Egypt</option>
+                                        <option value="El Salvador">El Salvador</option>
+                                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                        <option value="Eritrea">Eritrea</option>
+                                        <option value="Estonia">Estonia</option>
+                                        <option value="Ethiopia">Ethiopia</option>
+                                        <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                                        <option value="Faroe Islands">Faroe Islands</option>
+                                        <option value="Fiji">Fiji</option>
+                                        <option value="Finland">Finland</option>
+                                        <option value="France">France</option>
+                                        <option value="French Guiana">French Guiana</option>
+                                        <option value="French Polynesia">French Polynesia</option>
+                                        <option value="French Southern Territories">French Southern Territories</option>
+                                        <option value="Gabon">Gabon</option>
+                                        <option value="Gambia">Gambia</option>
+                                        <option value="Georgia">Georgia</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="Ghana">Ghana</option>
+                                        <option value="Gibraltar">Gibraltar</option>
+                                        <option value="Greece">Greece</option>
+                                        <option value="Greenland">Greenland</option>
+                                        <option value="Grenada">Grenada</option>
+                                        <option value="Guadeloupe">Guadeloupe</option>
+                                        <option value="Guam">Guam</option>
+                                        <option value="Guatemala">Guatemala</option>
+                                        <option value="Guinea">Guinea</option>
+                                        <option value="Guinea-bissau">Guinea-bissau</option>
+                                        <option value="Guyana">Guyana</option>
+                                        <option value="Haiti">Haiti</option>
+                                        <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                                        <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                                        <option value="Honduras">Honduras</option>
+                                        <option value="Hong Kong">Hong Kong</option>
+                                        <option value="Hungary">Hungary</option>
+                                        <option value="Iceland">Iceland</option>
+                                        <option value="India">India</option>
+                                        <option value="Indonesia">Indonesia</option>
+                                        <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                                        <option value="Iraq">Iraq</option>
+                                        <option value="Ireland">Ireland</option>
+                                        <option value="Israel">Israel</option>
+                                        <option value="Italy">Italy</option>
+                                        <option value="Jamaica">Jamaica</option>
+                                        <option value="Japan">Japan</option>
+                                        <option value="Jordan">Jordan</option>
+                                        <option value="Kazakhstan">Kazakhstan</option>
+                                        <option value="Kenya">Kenya</option>
+                                        <option value="Kiribati">Kiribati</option>
+                                        <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                                        <option value="Korea, Republic of">Korea, Republic of</option>
+                                        <option value="Kuwait">Kuwait</option>
+                                        <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                        <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                        <option value="Latvia">Latvia</option>
+                                        <option value="Lebanon">Lebanon</option>
+                                        <option value="Lesotho">Lesotho</option>
+                                        <option value="Liberia">Liberia</option>
+                                        <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                                        <option value="Liechtenstein">Liechtenstein</option>
+                                        <option value="Lithuania">Lithuania</option>
+                                        <option value="Luxembourg">Luxembourg</option>
+                                        <option value="Macao">Macao</option>
+                                        <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                                        <option value="Madagascar">Madagascar</option>
+                                        <option value="Malawi">Malawi</option>
+                                        <option value="Malaysia">Malaysia</option>
+                                        <option value="Maldives">Maldives</option>
+                                        <option value="Mali">Mali</option>
+                                        <option value="Malta">Malta</option>
+                                        <option value="Marshall Islands">Marshall Islands</option>
+                                        <option value="Martinique">Martinique</option>
+                                        <option value="Mauritania">Mauritania</option>
+                                        <option value="Mauritius">Mauritius</option>
+                                        <option value="Mayotte">Mayotte</option>
+                                        <option value="Mexico">Mexico</option>
+                                        <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                                        <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                        <option value="Monaco">Monaco</option>
+                                        <option value="Mongolia">Mongolia</option>
+                                        <option value="Montserrat">Montserrat</option>
+                                        <option value="Morocco">Morocco</option>
+                                        <option value="Mozambique">Mozambique</option>
+                                        <option value="Myanmar">Myanmar</option>
+                                        <option value="Namibia">Namibia</option>
+                                        <option value="Nauru">Nauru</option>
+                                        <option value="Nepal">Nepal</option>
+                                        <option value="Netherlands">Netherlands</option>
+                                        <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                        <option value="New Caledonia">New Caledonia</option>
+                                        <option value="New Zealand">New Zealand</option>
+                                        <option value="Nicaragua">Nicaragua</option>
+                                        <option value="Niger">Niger</option>
+                                        <option value="Nigeria">Nigeria</option>
+                                        <option value="Niue">Niue</option>
+                                        <option value="Norfolk Island">Norfolk Island</option>
+                                        <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                        <option value="Norway">Norway</option>
+                                        <option value="Oman">Oman</option>
+                                        <option value="Pakistan">Pakistan</option>
+                                        <option value="Palau">Palau</option>
+                                        <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                                        <option value="Panama">Panama</option>
+                                        <option value="Papua New Guinea">Papua New Guinea</option>
+                                        <option value="Paraguay">Paraguay</option>
+                                        <option value="Peru">Peru</option>
+                                        <option value="Philippines">Philippines</option>
+                                        <option value="Pitcairn">Pitcairn</option>
+                                        <option value="Poland">Poland</option>
+                                        <option value="Portugal">Portugal</option>
+                                        <option value="Puerto Rico">Puerto Rico</option>
+                                        <option value="Qatar">Qatar</option>
+                                        <option value="Reunion">Reunion</option>
+                                        <option value="Romania">Romania</option>
+                                        <option value="Russian Federation">Russian Federation</option>
+                                        <option value="Rwanda">Rwanda</option>
+                                        <option value="Saint Helena">Saint Helena</option>
+                                        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                        <option value="Saint Lucia">Saint Lucia</option>
+                                        <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                                        <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                                        <option value="Samoa">Samoa</option>
+                                        <option value="San Marino">San Marino</option>
+                                        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                        <option value="Saudi Arabia">Saudi Arabia</option>
+                                        <option value="Senegal">Senegal</option>
+                                        <option value="Serbia and Montenegro">Serbia and Montenegro</option>
+                                        <option value="Seychelles">Seychelles</option>
+                                        <option value="Sierra Leone">Sierra Leone</option>
+                                        <option value="Singapore">Singapore</option>
+                                        <option value="Slovakia">Slovakia</option>
+                                        <option value="Slovenia">Slovenia</option>
+                                        <option value="Solomon Islands">Solomon Islands</option>
+                                        <option value="Somalia">Somalia</option>
+                                        <option value="South Africa">South Africa</option>
+                                        <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                                        <option value="Spain">Spain</option>
+                                        <option value="Sri Lanka">Sri Lanka</option>
+                                        <option value="Sudan">Sudan</option>
+                                        <option value="Suriname">Suriname</option>
+                                        <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                                        <option value="Swaziland">Swaziland</option>
+                                        <option value="Sweden">Sweden</option>
+                                        <option value="Switzerland">Switzerland</option>
+                                        <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                                        <option value="Taiwan, Province of China">Taiwan, Province of China</option>
+                                        <option value="Tajikistan">Tajikistan</option>
+                                        <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                                        <option value="Thailand">Thailand</option>
+                                        <option value="Timor-leste">Timor-leste</option>
+                                        <option value="Togo">Togo</option>
+                                        <option value="Tokelau">Tokelau</option>
+                                        <option value="Tonga">Tonga</option>
+                                        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                        <option value="Tunisia">Tunisia</option>
+                                        <option value="Turkey">Turkey</option>
+                                        <option value="Turkmenistan">Turkmenistan</option>
+                                        <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                                        <option value="Tuvalu">Tuvalu</option>
+                                        <option value="Uganda">Uganda</option>
+                                        <option value="Ukraine">Ukraine</option>
+                                        <option value="United Arab Emirates">United Arab Emirates</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="United States">United States</option>
+                                        <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                        <option value="Uruguay">Uruguay</option>
+                                        <option value="Uzbekistan">Uzbekistan</option>
+                                        <option value="Vanuatu">Vanuatu</option>
+                                        <option value="Venezuela">Venezuela</option>
+                                        <option value="Viet Nam">Viet Nam</option>
+                                        <option value="Virgin Islands, British">Virgin Islands, British</option>
+                                        <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                                        <option value="Wallis and Futuna">Wallis and Futuna</option>
+                                        <option value="Western Sahara">Western Sahara</option>
+                                        <option value="Yemen">Yemen</option>
+                                        <option value="Zambia">Zambia</option>
+                                        <option value="Zimbabwe">Zimbabwe</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="span6 well well-nice form-dark grider-item">
+                                <div class='btn-toolbar margin-0m'>
+                                    <a href='#' id='selectAll' class='btn btn-green'>select all</a>
+                                    <a href='#' id='deselectAll' class='btn btn-red pull-right'><i class='fontello-icon-to-start-alt'></i></a>
+                                    <a href='#' id='select-3' class='btn btn-boo'>select 1-3</a>
+                                    <a href='#' id='deselect-3' class='btn btn-boo'>deselect 3</a>
+                                </div>
+                                <div class="well well-impressed bg-gray-light margin-00 grider-item">
+                                    <select id='public-methods-custom' multiple='multiple'>
+                                        <option value='elem_1'>elem 1</option>
+                                        <option value='elem_2'>elem 2</option>
+                                        <option value='elem_3'>elem 3</option>
+                                        <option value='elem_4'>elem 4</option>
+                                        <option value='elem_5'>elem 5</option>
+                                        <option value='elem_6'>elem 6</option>
+                                        <option value='elem_7'>elem 7</option>
+                                        <option value='elem_8'>elem 8</option>
+                                        <option value='elem_9'>elem 9</option>
+                                        <option value='elem_10'>elem 10</option>
+                                        <option value='elem_11'>elem 11</option>
+                                        <option value='elem_12'>elem 12</option>
+                                        <option value='elem_13'>elem 13</option>
+                                        <option value='elem_14'>elem 14</option>
+                                        <option value='elem_15'>elem 15</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section>
+                        <div class="page-header">
+                            <h3><a href="file-upload.html" class="btn btn-green pull-right" data-dismiss="fileupload">File upload plugin here</a><i class="fontello-icon-doc-2 opaci35"></i> Files <small>file management</small></h3>
+                        </div>
+                        <div class="row-fluid margin-bottom30">
+                            <div class="span7">
+                                <p>The file upload plugin allows you to create a visually appealing file or image upload widgets.</p>
+                                <h4 class="simple-header">File upload <small>base</small></h4>
+                                <div class="well well-nice">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <span class="btn btn-file"><span class="fileupload-new">Select file</span> <span class="fileupload-exists">Change</span>
+                                            <input type="file" />
+                                        </span><span class="fileupload-preview"></span><a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+                                    </div>
+                                </div>
+                                <!-- // file upload -->
+
+                                <h4 class="simple-header">File upload <small>with file input</small> </h4>
+                                <div class="well well-nice">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <div class="input-append">
+                                            <div class="uneditable-input span4"><i class="fontello-icon-doc-2 fileupload-exists"></i><span class="fileupload-preview"></span></div>
+                                            <span class="btn btn-file"><span class="fileupload-new">Select file</span> <span class="fileupload-exists">Change</span>
+                                                <input type="file" />
+                                            </span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // file upload -->
+
+                                <p>When uploading an image, it's possible to show a thumbnail instead of the filename.</p>
+                                <div class="row-fluid margin-bottom20">
+                                    <div class="span6">
+                                        <h4 class="simple-header">Image upload <small>fix size</small> </h4>
+                                        <div class="well well-nice inline">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-preview thumbnail" style="width: 200px; height: 120px;"></div>
+                                                <div>
+                                                    <span class="btn btn-file"><span class="fileupload-new">Select image</span> <span class="fileupload-exists">Change</span>
+                                                        <input type="file" />
+                                                    </span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                                </div>
+                                            </div>
+                                            <!-- // image upload -->
+                                        </div>
+                                    </div>
+                                    <!-- // Column -->
+
+                                    <div class="span6">
+                                        <h4 class="simple-header">Image upload <small>adaptable size</small> </h4>
+                                        <div class="well well-black inline">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 120px;">
+                                                    <img src="http://www.placehold.it/200x120/EFEFEF/AAAAAA&amp;text=no+image" />
+                                                </div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                    <span class="btn btn-file"><span class="fileupload-new">Select image</span> <span class="fileupload-exists">Change</span>
+                                                        <input type="file" />
+                                                    </span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                                </div>
+                                            </div>
+                                            <!-- // image upload -->
+                                        </div>
+                                    </div>
+                                    <!-- // Column -->
+                                </div>
+                                <!-- // Example row -->
+
+                                <h4 class="simple-header">Image upload <small>floating</small> </h4>
+                                <div class="well well-nice">
+                                    <div class="fileupload fileupload-new pull-left" data-provides="fileupload">
+                                        <div class="fileupload-new thumbnail" style="width: 50px; height: 50px;">
+                                            <img src="http://www.placehold.it/50x50/EFEFEF/AAAAAA" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="width: 50px; height: 50px;"></div>
+                                        <span class="btn btn-file" style="vertical-align: top"><span class="fileupload-new">Select image</span> <span class="fileupload-exists">Change</span>
+                                            <input type="file" />
+                                        </span><a href="#" class="btn btn-red fileupload-exists" data-dismiss="fileupload" style="vertical-align: top">Remove</a>
+                                    </div>
+                                    <!-- // image upload -->
+
+                                    <div class="fileupload fileupload-new pull-right" data-provides="fileupload" style="text-align: right">
+                                        <span class="btn btn-file" style="vertical-align: top"><span class="fileupload-new">Select image</span> <span class="fileupload-exists">Change</span>
+                                            <input type="file" />
+                                        </span><a href="#" class="btn btn-red fileupload-exists" data-dismiss="fileupload" style="vertical-align: top">Remove</a>
+                                        <div class="fileupload-new thumbnail" style="width: 50px; height: 50px;">
+                                            <img src="http://www.placehold.it/50x50/EFEFEF/AAAAAA" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="width: 50px; height: 50px;"></div>
+                                    </div>
+                                    <!-- // image upload -->
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <!-- // Column -->
+
+                            <div class="span5"></div>
+                            <!-- // Column -->
+
+                        </div>
+                        <!-- // Example row -->
+                    </section>
+
+                </div>
+                <!-- // page content -->
+
+            </div>
+            <!-- // main-content -->
+
+        </div>
+        <!-- // main-container  -->
+
+        <footer id="footer-fix">
+            <div id="footer-sidebar" class="footer-sidebar">
+                <div class="navbar">
+                    <div class="btn-toolbar"><a class="btn btn-glyph btn-link" href="javascript:void(0);"><i class="fontello-icon-up-open-1"></i></a></div>
+                </div>
+            </div>
+            <!-- // footer sidebar -->
+
+            <div id="footer-content" class="footer-content">
+                <div class="navbar navbar-inverse">
+                    <div class="navbar-inner">
+                        <ul class="nav pull-left">
+                            <li class="divider-vertical hidden-phone"></li>
+                            <li><a id="btnToggleSidebar" class="btn-glyph fontello-icon-resize-full-2 tip hidden-phone" href="javascript:void(0);" title="show hide sidebar"></a></li>
+                            <li class="divider-vertical hidden-phone"></li>
+                            <li><a id="btnChangeSidebar" class="btn-glyph fontello-icon-login tip hidden-phone" href="javascript:void(0);" title="change sidebar position"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a id="btnChangeSidebarColor" class="btn-glyph fontello-icon-palette tip" href="javascript:void(0);" title="change sidebar color"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a class="btn-glyph fontello-icon-cw" href="javascript:void(0);"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a class="fontello-icon-home-3" href="dashboard-one.html"></a></li>
+                            <li class="divider-vertical"></li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li class="divider-vertical"></li>
+                            <li><a class="btn-glyph fontello-icon-help-2 tip" href="javascript:void(0);" title="help to page"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a class="btn-glyph fontello-icon-cog-4 tip" href="javascript:void(0);" title="settings app"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a id="btnLogout" class="btn-glyph fontello-icon-logout-1 tip" href="javascript:void(0);" title="logout"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a id="btnScrollup" class="scrollup btn-glyph fontello-icon-up-open-1" href="javascript:void(0);"><span class="hidden-phone">Scroll</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- // footer content -->
+
+        </footer>
+        <!-- // footer-fix  -->
+
+    </div>
+    <!-- // page-container  -->
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Libraries -->
+    <script src="Content/libs/jquery/jquery-1.9.1/jquery.min.js"></script>
+    <script src="Content/libs/jquery/jquery.migrate-1.1.1/jquery-migrate.min.js"></script>
+    <script src="Content/libs/jquery/jquery.ui.combined-1.10.2/jquery-ui.min.js"></script>
+    <script src="Content/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!-- System -->
+    <script src="Content/libs/pl-system/jquery.nicescroll/js/jquery.nicescroll.min.js"></script>
+    <script src="Content/libs/pl-system/jquery-cookie/js/jquery.cookie.js"></script>
+    <script src="Content/libs/pl-system/jquery-mousewheel/js/jquery.mousewheel.js"></script>
+    <script src="Content/libs/pl-system/xbreadcrumbs/js/xbreadcrumbs.js"></script>
+    <!-- System info -->
+    <script src="Content/libs/pl-system-info/bootstrapx-clickover/js/bootstrapx-clickover.js"></script>
+    <script src="Content/libs/pl-system-info/gritter/js/jquery.gritter.min.js"></script>
+    <script src="Content/libs/pl-system-info/jquery.notyfy/js/jquery.notyfy.js"></script>
+    <script src="Content/libs/pl-system-info/qtip2/js/jquery.qtip.min.js"></script>
+    <!-- Form -->
+    <script src="Content/libs/pl-form/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="Content/libs/pl-form/select2/js/select2.js"></script>
+    <script src="Content/libs/pl-form/jquery.dualListbox/js/jquery.dualListBox.min.js"></script>
+    <script src="Content/libs/pl-form/multi-select/js/jquery.multi-select.js"></script>
+    <script src="Content/libs/pl-form/multi-select/js/jquery.quicksearch.js"></script>
+    <!-- Editors -->
+    <script src="Content/libs/pl-editors/bootstrap-wysihtml5/js/lib/wysihtml5-0.3.0.min.js"></script>
+    <script src="Content/libs/pl-editors/bootstrap-wysihtml5/js/bootstrap-wysihtml5.js"></script>
+    <script src="Content/libs/pl-editors/ckeditor/ckeditor.js"></script>
+    <!-- Content -->
+    <!-- Component -->
+    <!-- File -->
+    <script src="Content/libs/bootstrap-jasny/js/bootstrap-fileupload.js"></script>
+    <!--<script src="Content/libs/pl-file/jquery.file.upload/js/jquery.fileupload.js"></script>-->
+    <!-- Gallery -->
+    <!-- Tables -->
+    <!-- Data Visualization -->
+    <!-- Only example -->
+    <script src="Content/libs/google-code-prettify/js/prettify.js"></script>
+    <!-- Main js -->
+    <script src="Content/js/app/core.js"></script>
+    <script src="Content/js/app/demo-common.js"></script>
+
+    <!-- Only This Demo Page -->
+    <script src="Content/js/app/demo-wisyhtml5.js"></script>
+    <script>
+        $(function () {
+            // ckeditor
+
+            // DUALLISTBOX
+            // ------------------------------------------------------------------------------------------------ * -->
+            // pl-form/jquery.dualListbox/js/jquery.dualListBox.js
+            $.configureBoxes({ selectOnSubmit: false });
+            $.configureBoxes({
+                box1View: 'box3View',
+                box1Storage: 'box3Storage',
+                box1Filter: 'box3Filter',
+                box1Clear: 'box3Clear',
+                box1Counter: 'box3Counter',
+                box2View: 'box4View',
+                box2Storage: 'box4Storage',
+                box2Filter: 'box4Filter',
+                box2Clear: 'box4Clear',
+                box2Counter: 'box4Counter',
+                to1: 'to3',
+                to2: 'to4',
+                allTo1: 'allTo3',
+                allTo2: 'allTo4',
+                selectOnSubmit: false
+            });
+            $.configureBoxes({
+                box1View: 'box5View',
+                box1Storage: 'box5Storage',
+                box1Filter: 'box5Filter',
+                box1Clear: 'box5Clear',
+                box1Counter: 'box5Counter',
+                box2View: 'box6View',
+                box2Storage: 'box6Storage',
+                box2Filter: 'box6Filter',
+                box2Clear: 'box6Clear',
+                box2Counter: 'box6Counter',
+                to1: 'to5',
+                to2: 'to6',
+                allTo1: 'allTo5',
+                allTo2: 'allTo6',
+                selectOnSubmit: false
+            });
+
+
+            // MULTISELECT
+            // ------------------------------------------------------------------------------------------------ * -->
+            // pl-form/multi-select/js/jquery.multi-select.js
+            // pl-form/multi-select/js/jquery.quicksearch.js
+            // multiselect - optgroup
+            $('#optgroup').multiSelect({
+                selectableOptgroup: true
+            });
+
+            // public methods
+            $('#public-methods').multiSelect({
+                selectableHeader: "<h4 class='simple-header'>Item list</h4>",
+                selectionHeader: "<h4 class='simple-header'>Selected list</h4>",
+                selectableFooter: "<div class='btn-toolbar margin-m0'><a href='#' id='select-all' class='btn pull-right margin-left5'> <i class='fontello-icon-to-end-alt'></i> </a> <a href='#' id='select-11' class='btn pull-right'>select elem 11</a></div>",
+                selectionFooter: "<div class='btn-toolbar margin-m0'><a href='#' id='deselect-all' class='btn'> <i class='fontello-icon-to-start-alt'></i> </a><a href='#' id='deselect-11' class='btn'>deselect elem 11</a></div>",
+
+                afterSelect: function (value, text) {
+                    $.gritter.add({
+                        title: 'Multiselect Event',
+                        text: "Selected value:" + value,
+                        sticky: false,
+                        time: 1500,
+                        position: 'bottom-right',
+                    });
+                    return false;
+                },
+                afterDeselect: function (value, text) {
+                    $.gritter.add({
+                        title: 'Multiselect Event',
+                        text: "Deselect value:" + value,
+                        sticky: false,
+                        time: 1500,
+                        position: 'bottom-right',
+                    });
+                    return false;
+                }
+            });
+
+            $('#select-all').click(function () {
+                $('#public-methods').multiSelect('select_all');
+                return false;
+            });
+            $('#deselect-all').click(function () {
+                $('#public-methods').multiSelect('deselect_all');
+                return false;
+            });
+            $('#select-11').click(function () {
+                $('#public-methods').multiSelect('select', 'elem_11');
+                return false;
+            });
+            $('#deselect-11').click(function () {
+                $('#public-methods').multiSelect('deselect', 'elem_11');
+                return false;
+            });
+
+            // multiselect - searchable
+            $('#searchable').multiSelect({
+                selectableHeader: '<div class="search-header"><input type="text" class="input-block-level" id="ms-search" autocomplete="off" placeholder="country name"></div>',
+                selectionHeader: "<div class='btn-toolbar margin-0m'><a href='#' id='select-all-country' class='btn btn-green'>select all</a><a href='#' id='deselect-all-country' class='btn btn-red'>deselect all</a></div>"
+            });
+
+            $('#select-all-country').click(function () {
+                $('#searchable').multiSelect('select_all');
+                return false;
+            });
+            $('#deselect-all-country').click(function () {
+                $('#searchable').multiSelect('deselect_all');
+                return false;
+            });
+
+            $('#ms-search').quicksearch($('.ms-elem-selectable', '#ms-searchable')).on('keydown', function (e) {
+                if (e.keyCode == 40) {
+                    $(this).trigger('focusout');
+                    $('#searchable').focus();
+                    return false;
+                }
+            }
+            );
+
+            // multiselect - public methods
+            $('#public-methods-custom').multiSelect();
+
+            $('#selectAll').click(function () {
+                $('#public-methods-custom').multiSelect('select_all');
+                return false;
+            });
+            $('#deselectAll').click(function () {
+                $('#public-methods-custom').multiSelect('deselect_all');
+                return false;
+            });
+            $('#select-3').click(function () {
+                $('#public-methods-custom').multiSelect('select', ['elem_1', 'elem_2', 'elem_3']);
+                return false;
+            });
+            $('#deselect-3').click(function () {
+                $('#public-methods-custom').multiSelect('deselect', ['elem_1', 'elem_2', 'elem_3']);
+                return false;
+            });
+
+            // FILEUPLOAD
+            // ------------------------------------------------------------------------------------------------ * -->
+            // bootstrap-jasny/js/bootstrap-fileupload.js
+            $('.fileupload').fileupload()
+
+        });
+
+
+    </script>
+</body>
+
+<!-- Mirrored from themes.gootoboo.com/boo/v2/form-extension.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jul 2021 05:58:03 GMT -->
+</html>

@@ -1,0 +1,1735 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+
+
+<!-- Mirrored from themes.gootoboo.com/boo/v2/page-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jul 2021 05:57:38 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>Boo Admin - Template page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="Content/css/bootstrap.css" rel="stylesheet">
+    <link href="Content/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="Content/css/extension.css" rel="stylesheet">
+    <link href="Content/css/main.css" rel="stylesheet">
+    <link href="Content/css/style.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="Content/libs/selectivizr/selectivizr-1.0.2/js/selectivizr.min.js"></script>
+        <script src="Content/libs/pl-visualization/excanvas/js/excanvas.min.js"></script>
+    <![endif]-->
+
+    <script src="Content/libs/modernizr/modernizr-2.6.2/js/modernizr-2.6.2.js"></script>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="Content/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="Content/ico/apple-touch-icon-144-precomposed.html">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="Content/ico/apple-touch-icon-114-precomposed.html">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="Content/ico/apple-touch-icon-72-precomposed.html">
+    <link rel="apple-touch-icon-precomposed" href="Content/ico/apple-touch-icon-57-precomposed.html">
+</head>
+
+<body class="header-sticky sidebar-left">
+    <div class="page-container">
+        <div id="header-container">
+            <div id="header">
+                <div class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="navbar-inner">
+                        <div class="container-fluid">
+                            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                            <a class="brand" href="javascript:void(0);">
+                                <img src="Content/img/demo/logo-brand.png"></a>
+                            <div class="search-global">
+                                <input id="globalSearch" class="search search-query input-medium" type="search">
+                                <a class="search-button" href="javascript:void(0);"><i class="fontello-icon-search-5"></i></a>
+                            </div>
+                            <div class="nav-collapse collapse">
+                                <ul class="nav user-menu visible-desktop">
+                                    <li><a class="btn-glyph fontello-icon-edit tip-bc" href="javascript:void(0);" title="Messages"><span class="badge badge-important">8</span></a></li>
+                                    <li><a class="btn-glyph fontello-icon-mail-1 tip-bc" href="javascript:void(0);" title="Emails"></a></li>
+                                    <li><a class="btn-glyph fontello-icon-lifebuoy tip-bc" href="javascript:void(0);" title="Support"><span class="badge badge-important">4</span></a></li>
+                                </ul>
+                                <ul class="nav">
+                                    <li><a href="dashboard-one.html">Dashboard</a> </li>
+                                    <li class="active"><a href="javascript:void(0);">Components</a> </li>
+                                    <li><a href="fullcalendar-demo.html"><span class="booico-calendar-3"></span>Calendar</a> </li>
+                                    <li><a href="contact-manager.html"><span class="booico-user"></span>Contacts</a> </li>
+                                    <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Customize Page <b class="caret"></b></a>
+                                        <ul class="dropdown-menu dropdown-bordered">
+                                            <li><a href="form-demo.html">Demo Form</a></li>
+                                            <li><a href="widgets-remember.html">Remember</a></li>
+                                            <li><a href="widgets-users.html">User List</a></li>
+                                            <li class="dropdown-submenu"><a tabindex="-1" href="javascript:void(0);">Login page</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a tabindex="-1" href="login-01.html">Type Horizontal</a></li>
+                                                    <li><a tabindex="-1" href="login-02.html">Type Vertical</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li><a href="contact-list.html">Contacts list</a></li>
+                                            <li><a href="page-invoice.html">Invoice Management</a></li>
+                                            <li><a href="tmp-base-boo-layout.html">Template blank pages</a></li>
+                                            <!--<li><a href="page-mailbox.html">Email</a></li>-->
+                                            <li class="divider"></li>
+                                            <li class="nav-header">Next Update</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // navbar -->
+
+                <div class="header-drawer">
+                    <div class="mobile-nav text-center visible-phone"><a href="javascript:void(0);" class="mobile-btn" data-toggle="collapse" data-target=".sidebar"><i class="aweso-icon-chevron-down"></i>Components</a> </div>
+                    <!-- // Resposive navigation -->
+                    <div class="breadcrumbs-nav hidden-phone">
+                        <ul id="breadcrumbs" class="breadcrumb">
+                            <li><a href="javascript:void(0);"><i class="fontello-icon-home f12"></i>Dashboard</a> <span class="divider">/</span></li>
+                            <li class="dropdown"><a href="javascript:void(0);">Invoice Managment </a><span class="divider">/</span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);">Table</a></li>
+                                    <li><a href="javascript:void(0);">Elements</a></li>
+                                    <li><a href="javascript:void(0);">Elements</a></li>
+                                    <li><a href="javascript:void(0);">Elements</a></li>
+                                </ul>
+                            </li>
+                            <li class="active">Invoice List </li>
+                        </ul>
+                    </div>
+                    <!-- // breadcrumbs -->
+
+                </div>
+                <!-- // drawer -->
+
+            </div>
+        </div>
+        <!-- // header-container -->
+
+        <div id="main-container">
+            <div id="main-sidebar" class="sidebar sidebar-inverse">
+                <div class="filler"></div>
+                <div class="sidebar-item">
+                    <div class="media profile">
+                        <div class="media-thumb media-left thumb-bordereb">
+                            <a class="img-shadow" href="javascript:void(0);">
+                                <img class="thumb" src="Content/img/demo/demo-avatar9604.jpg"></a>
+                        </div>
+                        <div class="media-body">
+                            <h5 class="media-heading">Twitter Bootstrap <small>as Administrator</small></h5>
+                            <p class="data">Last Access: 16 May 15:30</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- // sidebar item - profile -->
+
+                <ul id="mainSideMenu" class="nav nav-list nav-side">
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accDash" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe0bc;" aria-hidden="true"></span><i class="chevron"></i>Dashboards </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accDash">
+                            <li><a href="dashboard-one.html"><span class="hidden-tablet">Dashboard</span> Demo 1 </a></li>
+                            <li><a href="dashboard-two.html"><span class="hidden-tablet">Dashboard</span> Demo 2 </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Dashboard -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accForms" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xf016;" aria-hidden="true"></span><i class="chevron"></i>Form </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accForms">
+                            <li><a href="form-demo.html">Demo Form </a></li>
+                            <li><a href="form-elements.html">Form Element </a></li>
+                            <li><a href="form-extension.html">Form Extension</a> </li>
+                            <li><a href="form-wizard.html">Form Wizard</a> </li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Forms -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accComponents" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe016;" aria-hidden="true"></span><i class="chevron"></i>Components </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accComponents">
+                            <li><a href="notification.html">Notification </a></li>
+                            <li><a href="rangeslider.html">Rangeslider </a></li>
+                            <li><a href="file-upload.html">File upload </a></li>
+                            <li><a href="gallery.html">Gallery &amp; Image </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Components -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accTables" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xf039;" aria-hidden="true"></span><i class="chevron"></i>Tables </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accTables">
+                            <li><a href="table.html">Base Table </a></li>
+                            <li><a href="table-boo.html">Boo Table </a></li>
+                            <li><a href="table-datatable.html">DataTable </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Tables -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accStatistics" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe0ad;" aria-hidden="true"></span><i class="chevron"></i>Statistics </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accStatistics">
+                            <li><a href="statistic-flot.html">Charts </a></li>
+                            <li><a href="statistic-sparkline.html">Sparklines </a></li>
+                            <li><a href="statistic-circle.html">Circle </a></li>
+                            <li><a href="statistic-custom.html">Other Elements </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Statistics -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accWidgets" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe00e;" aria-hidden="true"></span><i class="chevron"></i>Widgets </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accWidgets">
+                            <li><a href="widget-style.html"><span class="hidden-tablet">Widgets </span>Style </a></li>
+                            <li><a href="widget-custom.html"><span class="hidden-tablet">Widgets </span>Custom </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Widgets -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accButtons" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xf0a0;" aria-hidden="true"></span><i class="chevron"></i>UI Elements </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accButtons">
+                            <li><a href="button.html">Button </a></li>
+                            <li><a href="dropdowns.html">Dropdowns</a></li>
+                            <li><a href="icon-font.html">Iconic fonts </a></li>
+                            <li><a href="icon-fugue-demo.html">Icon </a></li>
+                            <li><a href="wells.html">Wells </a></li>
+                            <li><a href="tabs.html">Tabs </a></li>
+                            <li><a href="modals.html">Modal </a></li>
+                            <li><a href="progressbar.html">Progressbar </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu UI Elements -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="#accCalendar" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe0dd;" aria-hidden="true"></span><i class="chevron"></i>Calendar </a></div>
+                        <ul class="accordion-content nav nav-list collapse" id="accCalendar">
+                            <li><a href="fullcalendar-demo.html"><span class="hidden-tablet">Calendar </span>Demo </a></li>
+                            <li><a href="fullcalendar.html"><span class="hidden-tablet">Calendar </span>Style </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Calendar -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading active"><a href="#acAppPage" data-parent="#mainSideMenu" data-toggle="collapse" class="accordion-toggle"><span class="item-icon" data-icon="&#xe0e1;" aria-hidden="true"></span><i class="chevron"></i>Custom Page </a></div>
+                        <ul class="accordion-content nav nav-list collapse in" id="accAppPage">
+                            <li><a href="contact-manager.html">Contact Manager </a></li>
+                            <li class="active"><a href="page-invoice.html">Invoice Management </a></li>
+                        </ul>
+                    </li>
+                    <!-- // item accordionMenu Custom Page -->
+                    <li class="accordion-group">
+                        <div class="accordion-heading"><a href="dashboard-one.html" class="accordion-toggle"><span class="item-icon" data-icon="&#xf0c1;" aria-hidden="true"></span><i class="chevron"></i>Only link </a></div>
+                    </li>
+                    <!-- // item only link -->
+                </ul>
+                <!-- // sidebar menu -->
+
+                <div class="sidebar-item"></div>
+                <!-- // sidebar item -->
+
+            </div>
+            <!-- // sidebar -->
+
+            <div id="main-content" class="main-content container-fluid">
+                <div class="filler"></div>
+                <div class="row-fluid page-head">
+                    <h2 class="page-title heading-icon" data-icon="&#xe008;" aria-hidden="true">Invoices <small>creating, managing, monitoring invoices</small></h2>
+                    <!--<p class="pagedesc">page desc here </p>-->
+                    <div class="page-bar">
+                        <div class="btn-toolbar"></div>
+                    </div>
+                </div>
+                <!-- // page head -->
+
+                <div id="page-content" class="page-content">
+                    <div class="navbar navbar-page">
+                        <div class="navbar-inner">
+                            <div class="container">
+                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+                                <div class="nav-collapse collapse navbar-responsive-collapse">
+                                    <ul class="nav pull-left">
+                                        <li class="active" id="demo1-tab"><a href="#TabTop1" data-toggle="tab">Sales Analysis</a> </li>
+                                        <li id="demo2-tab"><a href="#TabTop2" data-toggle="tab">Purchase Invoices</a> </li>
+                                        <li id="demo3-tab"><a href="#TabTop3" data-toggle="tab">Sales Invoices</a> </li>
+                                        <li><a href="page-invoice-new.html">New Invoice</a> </li>
+                                    </ul>
+                                    <ul class="nav pull-right">
+                                        <li class="divider-vertical"></li>
+                                        <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Action <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:void(0);">Create New Invoice</a></li>
+                                                <li><a href="javascript:void(0);">Create New Customer</a></li>
+                                                <li><a href="javascript:void(0);">Entr New Payment</a></li>
+                                                <li class="divider"></li>
+                                                <li class="nav-header">Setting</li>
+                                                <li><a href="javascript:void(0);">Setting Invoicing</a></li>
+                                                <li><a href="javascript:void(0);">Create New Temlate</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="divider-vertical"></li>
+                                    </ul>
+                                </div>
+                                <!-- /.nav-collapse -->
+                            </div>
+                        </div>
+                        <!-- /navbar-inner -->
+                    </div>
+                    <!-- /navbar -->
+
+                    <section>
+                        <div class="tab-content no-padding-top">
+                            <div id="TabTop1" class="tab-pane fade active in">
+
+                                <div class="page-header margin-0x">
+                                    <a class="btn btn-primary pull-right" href="page-invoice-new.html">New Invoice</a>
+                                    <h3 class="heading-icon margin-00" data-icon="&#xe0bc;" aria-hidden="true">Sales Dashboard <small>comment title</small></h3>
+                                </div>
+                                <!-- // page header -->
+
+                                <div class="row-fluid">
+
+                                    <div class="span8 grider-item">
+
+                                        <div class="row-fluid">
+
+                                            <div class="span4 well well-mini well-wrapp bg-blue-medium">
+                                                <div class="well well-nice text-center margin-00">
+                                                    <h3 class="simple-header">Total Due</h3>
+                                                    <div class="statistic-group">
+                                                        <h2 class="statistic-values heading-icon opacity-icon" data-icon="&#xf271">$299,005</h2>
+                                                        <p class="help-block">The content below are loaded</p>
+                                                    </div>
+
+                                                    <hr class="margin-mx">
+
+                                                    <div id="DueLine" class="margin-mx"></div>
+                                                    <!-- // Sparkline -->
+
+                                                </div>
+                                            </div>
+                                            <!-- // item -->
+
+                                            <div class="span4 well well-mini well-wrapp bg-blue-medium">
+                                                <div class="well well-nice text-center margin-00">
+                                                    <h3 class="simple-header">Ower Due </h3>
+                                                    <div class="statistic-group negative">
+                                                        <h2 class="statistic-values heading-icon opacity-icon" data-icon="&#xf233;">$108,208</h2>
+                                                        <p class="help-block">The content below are loaded</p>
+                                                    </div>
+
+                                                    <hr class="margin-mx">
+
+                                                    <table class="table boo-table table-striped table-condensed table-content bg-red-light">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><a href="javascript:void(0);">11/21/2012</a></td>
+                                                                <td class="text-right bold">2,200.50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="javascript:void(0);">11/29/2013</a></td>
+                                                                <td class="text-right bold">358.61</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="javascript:void(0);">4/1/2013</a></td>
+                                                                <td class="text-right bold">3,599.99</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <!-- // Table -->
+
+                                                </div>
+                                            </div>
+                                            <!-- // item -->
+
+                                            <div class="span4 well well-mini well-wrapp bg-blue-medium">
+                                                <div class="well well-nice text-center margin-00">
+                                                    <h3 class="simple-header">Current</h3>
+                                                    <div class="statistic-group positive">
+                                                        <h2 class="statistic-values heading-icon opacity-icon" data-icon="&#xf257;">$190,797</h2>
+                                                        <p class="help-block">The content below are loaded</p>
+                                                    </div>
+
+                                                    <hr class="margin-mx">
+
+                                                    <table class="table boo-table table-striped table-condensed table-content bg-blue-light">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><a href="javascript:void(0);">6/16/2013</a></td>
+                                                                <td class="text-right bold">232.38</td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><a href="javascript:void(0);">6/16/2013</a></td>
+                                                                <td class="text-right bold">111.61</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="javascript:void(0);">6/15/2013</a></td>
+                                                                <td class="text-right bold">1,265.83</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <!-- // Table -->
+
+                                                </div>
+                                            </div>
+                                            <!-- // item -->
+
+                                        </div>
+
+                                        <div class="row-fluid">
+
+                                            <div class="span4 well well-mini well-wrapp bg-blue-medium">
+                                                <div class="well well-nice margin-00">
+                                                    <h3 class="simple-header">Revenue</h3>
+                                                    <div class="statistic-group">
+                                                        <h2 class="statistic-values">$ 18,259<small>.00</small></h2>
+                                                        <h3 class="statistic-values secundary positive padding-left30"> 0.31% <i data-icon="&#xe138;"></i></h3>
+                                                    </div>
+
+                                                    <hr class="margin-mm">
+
+                                                    <h4 class="statistic-values"><label class="width100 text-right">Last Month</label> $ 55,259.00</h4>
+                                                    <h4 class="statistic-values"><label class="width100 text-right">Year To Date</label> $ 681,499.00</h4>
+                                                    <!-- // Sparkline -->
+
+                                                </div>
+                                            </div>
+                                            <!-- // item -->
+
+                                            <div class="span4 well well-mini well-wrapp bg-blue-medium">
+                                                <div class="well well-nice margin-00">
+                                                    <h3 class="simple-header">Payment Received</h3>
+                                                    <div class="statistic-group">
+                                                        <h2 class="statistic-values">$ 14,499<small>.00</small></h2>
+                                                        <h3 class="statistic-values secundary positive padding-left30"> 0.43% <i data-icon="&#xe138;"></i></h3>
+                                                    </div>
+
+                                                    <hr class="margin-mm">
+
+                                                    <h4 class="statistic-values"><label class="width100 text-right">Last Month</label> $ 68,847.00</h4>
+                                                    <h4 class="statistic-values"><label class="width100 text-right">Year To Date</label> $ 981,999.00</h4>
+                                                    <!-- // Sparkline -->
+
+                                                </div>
+                                            </div>
+                                            <!-- // item -->
+
+                                            <div class="span4 well well-mini well-wrapp bg-blue-medium">
+                                                <div class="well well-nice margin-00">
+                                                    <h3 class="simple-header">Outstanding Total</h3>
+                                                    <div class="statistic-group">
+                                                        <h2 class="statistic-values">$ 5,399<small>.00</small></h2>
+                                                        <h3 class="statistic-values secundary negative padding-left30"> 0.11% <i data-icon="&#xe137;"></i></h3>
+                                                    </div>
+
+                                                    <hr class="margin-mm">
+
+                                                    <h4 class="statistic-values"><label class="width100 text-right">0 - 30 Days</label> $ 14,629.00</h4>
+                                                    <h4 class="statistic-values"><label class="width100 text-right">31 + Days</label> $ 31,549.00</h4>
+                                                    <!-- // Sparkline -->
+
+                                                </div>
+                                            </div>
+                                            <!-- // item -->
+
+                                        </div>
+
+                                        <h4>Unpaid Invoices <span>by days overdue</span></h4>
+                                        <div class="well well-small">                                            
+                                            <table id="invoicePayed" class="table table-content table-center _well">
+                                                <tbody>
+                                                    <tr class="f16 bold">
+                                                        <td>0 - 15</td>
+                                                        <td>16 - 30</td>
+                                                        <td>31 - 45</td>
+                                                        <td>45 - 60</td>
+                                                        <td>60 +</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-green">
+                                                            <h3>$74,347 </h3>
+                                                            25%</td>
+                                                        <td class="text-green">
+                                                            <h3>$8,111 </h3>
+                                                            3%</td>
+                                                        <td>
+                                                            <h3>$8,855 </h3>
+                                                            3%</td>
+                                                        <td class="text-darkred bg-red-light">
+                                                            <h3>$3,214 </h3>
+                                                            1%</td>
+                                                        <td class="text-darkred bg-red-medium">
+                                                            <h3>$5,384 </h3>
+                                                            2%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        
+                                        <div class="table-wrapper">
+                                            <table class="table boo-table table-striped table-condensed table-content bg-blue-light">
+                                                <caption>
+                                                    Last Orders <span>last 48 hours</span>
+                                                </caption>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Order #</th>
+                                                        <th scope="col">Customer</th>
+                                                        <th scope="col">Customer ID</th>
+                                                        <th scope="col">Phone Number</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Order Date</th>
+                                                        <th scope="col">Amount</th>
+                                                        <th scope="col">Discount</th>
+                                                        <th scope="col">Shipping</th>
+                                                        <th scope="col">GTS</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="bold"><a href="javascript:void(0);">10248</a></td>
+                                                        <td>VINET</td>
+                                                        <td>VINET</td>
+                                                        <td>1234-567</td>
+                                                        <td>New</td>
+                                                        <td>22/02/2012 10:02</td>
+                                                        <td class="text-right">$3.000.00</td>
+                                                        <td class="text-right">$0.00</td>
+                                                        <td class="text-right">$20.00</td>
+                                                        <td class="text-right">$302.00</td>
+                                                        <td class="text-right">$3.322.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bold"><a href="javascript:void(0);">10248</a></td>
+                                                        <td>VINET</td>
+                                                        <td>VINET</td>
+                                                        <td>1234-567</td>
+                                                        <td>New</td>
+                                                        <td>22/02/2012 10:02</td>
+                                                        <td class="text-right">$1.000.00</td>
+                                                        <td class="text-right">$0.00</td>
+                                                        <td class="text-right">$20.00</td>
+                                                        <td class="text-right">$302.00</td>
+                                                        <td class="text-right">$1.322.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bold"><a href="javascript:void(0);">10248</a></td>
+                                                        <td>VINET</td>
+                                                        <td>VINET</td>
+                                                        <td>1234-567</td>
+                                                        <td>New</td>
+                                                        <td>22/02/2012 10:02</td>
+                                                        <td class="text-right">$3.000.00</td>
+                                                        <td class="text-right">$0.00</td>
+                                                        <td class="text-right">$20.00</td>
+                                                        <td class="text-right">$302.00</td>
+                                                        <td class="text-right">$3.322.00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- // Table -->
+                                        </div>
+                                        <!-- // Table wrapper -->
+
+                                    </div>
+
+                                    <div class="span4 grider-item">
+
+                                        <div class="statistic-box well well-black">
+                                            <div class="section-title">
+                                                <h4 class="heading-icon" data-icon="&#xf210;">Total day sales</h4>
+                                            </div>
+                                            <div class="section-content">
+                                                <h2 class="statistic-values">$11,524.33 <span class="positive"><i class="fontello-icon-up-dir"></i> <sup>+1,366.08</sup></span></h2>
+                                            </div>
+                                            <!-- // content --> 
+                                
+                                        </div>
+                                        <!-- // Statistic Box -->
+
+                                        <div class="statistic-box well well-nice">
+                                            <div class="section-title">
+                                                <h4 class="heading-icon" data-icon="&#xe0ad;">Sales last 30 days</h4>
+                                            </div>
+                                            <div class="section-content">
+                                                <div id="dashChartPayment" style="width:99%;height:75px"></div>
+                                            </div>
+                                        </div>
+                                        <!-- // Statistic Box -->
+
+                                        <div class="statistic-box well well-nice">
+                                            <div class="section-title">
+                                                <h4 class="heading-icon" data-icon="&#xf2e4;">5 Top sales representatives</h4>
+                                            </div>
+                                            <!-- // Header -->
+
+                                            <div class="section-content item">
+                                                <div id="top1" class="media thumb-small">
+                                                    <div class="media-thumb media-left">
+                                                        <span class="img-shadow">
+                                                            <img class="thumb media-object" src="Content/img/demo/demo-avatar9603.jpg"></span>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="row-fluid">
+                                                            <div class="span5 grider-item">
+                                                                <h4 class="replace margin-00"><a href="javascript:void(0);">John Marshal</a></h4>
+                                                                <span class="info-block">implementation the plan: <strong class="label-value">0</strong></span>
+                                                            </div>
+                                                            <div class="span7 grider-item text-right">
+                                                                <div class="progress progress-mini filled2 margin-ss">
+                                                                    <div class="filler">
+                                                                        <div class="bar bar-info six-sec-ease-in-out" data-amount-part="13996" data-amount-total="17000"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- // progress -->
+                                                                <h4 class="statistic-values"></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // representant -->
+
+                                            <div class="section-content item">
+                                                <div id="top2" class="media thumb-small">
+                                                    <div class="media-thumb media-left">
+                                                        <span class="img-shadow">
+                                                            <img class="thumb media-object" src="Content/img/demo/demo-avatar9602.jpg"></span>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="row-fluid">
+                                                            <div class="span5 grider-item">
+                                                                <h4 class="replace margin-00"><a href="javascript:void(0);">Tony Rogers</a></h4>
+                                                                <span class="info-block">implementation the plan: <strong class="label-value">0</strong></span>
+                                                            </div>
+                                                            <div class="span7 grider-item text-right">
+                                                                <div class="progress progress-mini filled2 margin-ss">
+                                                                    <div class="filler">
+                                                                        <div class="bar bar-info six-sec-ease-in-out" data-amount-part="13004" data-amount-total="17000"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- // progress -->
+                                                                <h4 class="statistic-values"></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // representant -->
+
+                                            <div class="section-content item">
+                                                <div id="top3" class="media thumb-small">
+                                                    <div class="media-thumb media-left">
+                                                        <span class="img-shadow">
+                                                            <img class="thumb media-object" src="Content/img/demo/demo-avatar9601.jpg"></span>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="row-fluid">
+                                                            <div class="span5 grider-item">
+                                                                <h4 class="replace margin-00"><a href="javascript:void(0);">Peter Johanson</a></h4>
+                                                                <span class="info-block">implementation the plan: <strong class="label-value">0</strong></span>
+                                                            </div>
+                                                            <div class="span7 grider-item text-right">
+                                                                <div class="progress progress-mini filled2 margin-ss">
+                                                                    <div class="filler">
+                                                                        <div class="bar bar-info six-sec-ease-in-out" data-amount-part="12764" data-amount-total="17000"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- // progress -->
+                                                                <h4 class="statistic-values"></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // representant -->
+
+                                            <div class="section-content item">
+                                                <div id="top4" class="media thumb-small">
+                                                    <div class="media-thumb media-left">
+                                                        <span class="img-shadow">
+                                                            <img class="thumb media-object" src="Content/img/demo/demo-avatar9605.jpg"></span>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="row-fluid">
+                                                            <div class="span5 grider-item">
+                                                                <h4 class="replace margin-00"><a href="javascript:void(0);">Paula Gates</a></h4>
+                                                                <span class="info-block">implementation the plan: <strong class="label-value">0</strong></span>
+                                                            </div>
+                                                            <div class="span7 grider-item text-right">
+                                                                <div class="progress progress-mini filled2 margin-ss">
+                                                                    <div class="filler">
+                                                                        <div class="bar bar-info six-sec-ease-in-out" data-amount-part="12334" data-amount-total="17000"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- // progress -->
+                                                                <h4 class="statistic-values"></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // representant -->
+
+                                            <div class="section-content">
+                                                <div id="top5" class="media thumb-small">
+                                                    <div class="media-thumb media-left">
+                                                        <span class="img-shadow">
+                                                            <img class="thumb media-object" src="Content/img/demo/demo-avatar9604.jpg"></span>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="row-fluid">
+                                                            <div class="span5 grider-item">
+                                                                <h4 class="replace margin-00"><a href="javascript:void(0);">John Doe</a></h4>
+                                                                <span class="info-block">implementation the plan: <strong class="label-value">0</strong></span>
+                                                            </div>
+                                                            <div class="span7 grider-item text-right">
+                                                                <div class="progress progress-mini filled2 margin-ss">
+                                                                    <div class="filler">
+                                                                        <div class="bar bar-info six-sec-ease-in-out" data-amount-part="11054" data-amount-total="17000"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- // progress -->
+                                                                <h4 class="statistic-values"></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // content  -->
+
+                                        </div>
+                                        <!-- // Statistic representatives Box -->  
+
+                                        <div class="table-wrapper">
+                                            <table class="table boo-table table-striped table-condensed table-content bg-blue-light">
+                                                <colgroup>
+                                                    <col class="col50">
+                                                    <col class="col25">
+                                                    <col class="col25">
+                                                </colgroup>
+                                                <caption>
+                                                    Top 5 Past Due Customers <span>Black List</span>
+                                                </caption>
+                                                <tbody>
+                                                    <tr">
+                                                        <td class="bold"><a href="javascript:void(0);">ToroMax Corporrate</a></td>
+                                                        <td>38%</td>
+                                                        <td class="text-right">-22,332.38</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bold"><a href="javascript:void(0);">SimFlash inc.</a></td>
+                                                        <td>14%</td>
+                                                        <td class="text-right">-19,332.38</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bold"><a href="javascript:void(0);">Coralls Manugacture</a></td>
+                                                        <td>8%</td>
+                                                        <td class="text-right">-14,332.38</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bold"><a href="javascript:void(0);">NaNa Consulting</a></td>
+                                                        <td>8%</td>
+                                                        <td class="text-right">-14,132.08</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bold"><a href="javascript:void(0);">Moneywarez inc.</a></td>
+                                                        <td>8%</td>
+                                                        <td class="text-right">-13,880.00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- // Table -->
+                                        </div>
+                                        <!-- // Table wrapper -->
+                                    </div>
+                                    <!-- // Column -->
+
+                                </div>
+                                <!-- // Example row -->
+
+                            </div>
+                            <!-- // Tab 1 -->
+
+                            <div id="TabTop2" class="tab-pane fade">
+
+                                <div class="page-header margin-00">
+                                    <a class="btn btn-primary pull-right" href="page-invoice-new.html">New Invoice</a>
+                                    <h3 class="heading-icon margin-00" data-icon="&#xe1ce;" aria-hidden="true">Purchase Invoice <small>comment title</small></h3>
+                                </div>
+                                <!-- // page header -->
+
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div class="invoice">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div class="_well _well-small">
+
+                                            <!--<a href="#invoice-modal" id="invoiceModal" class="btn btn-blue btn-large btn-block" data-toggle="modal">Long Modal</a>-->
+
+                                            <table id="PIL" class="table boo-table table-condensed table-striped table-content table-hover bg-blue-light">
+                                                <caption>Purchase Invoice list</caption>
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th scope="col">Issue date <span class="column-sorter"></span></th>
+                                                        <th scope="col">Invoice # <span class="column-sorter"></span></th>
+                                                        <th scope="col">From <span class="column-sorter"></span></th>
+                                                        <th scope="col">Total Amount <span class="column-sorter"></span></th>
+                                                        <th scope="col">Balance Due <span class="column-sorter"></span></th>
+                                                        <th scope="col">Status <span class="column-sorter"></span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini btn-primary">Pay</a>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>6/15/2013</td>
+                                                        <td>354</td>
+                                                        <td>ShopGate inc. </td>
+                                                        <td>3,855.00</td>
+                                                        <td>3,855.00</td>
+                                                        <td><span class="label label-warning">Due in 5 days</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini btn-primary">Pay</a>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>6/11/2013</td>
+                                                        <td>690</td>
+                                                        <td></td>
+                                                        <td>9,449.00</td>
+                                                        <td>1,583.00</td>
+                                                        <td><span class="label label-warning">Due tomorrow</span></td>
+                                                    </tr>
+                                                    <tr class="error">
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini btn-primary">Pay</a>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>6/8/2013</td>
+                                                        <td>68</td>
+                                                        <td></td>
+                                                        <td>5,799.00</td>
+                                                        <td class="text-darkred">2,770.00</td>
+                                                        <td><span class="label label-important">2 days overdue</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini disabled">Pay</a>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>6/8/2013</td>
+                                                        <td>451</td>
+                                                        <td></td>
+                                                        <td>278.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                    <tr class="error">
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini btn-primary">Pay</a>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>6/7/2013</td>
+                                                        <td>240</td>
+                                                        <td></td>
+                                                        <td>5,775.00</td>
+                                                        <td class="text-darkred">235.00</td>
+                                                        <td><span class="label label-important">3 days overdue</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini">Pay</a>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>6/7/2013</td>
+                                                        <td>85</td>
+                                                        <td></td>
+                                                        <td>8,276.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                    <tr class="error">
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini btn-primary">Pay</a>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>6/6/2013</td>
+                                                        <td>120</td>
+                                                        <td></td>
+                                                        <td>8,627.00</td>
+                                                        <td class="text-darkred">7,454.00</td>
+                                                        <td><span class="label label-important">4 days overdue</span></td>
+                                                    </tr>
+                                                    <tr class="error">
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini btn-primary">Pay</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/4/2013</td>
+                                                        <td>372</td>
+                                                        <td></td>
+                                                        <td>3,545.00</td>
+                                                        <td class="text-darkred">3,545.00</td>
+                                                        <td><span class="label label-important">6 days overdue</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini disabled">Pay</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/4/2013</td>
+                                                        <td>955</td>
+                                                        <td></td>
+                                                        <td>7,834.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                    <tr class="error">
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini btn-primary">Pay</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/3/2013</td>
+                                                        <td>519</td>
+                                                        <td></td>
+                                                        <td>5,981.00</td>
+                                                        <td class="text-darkred">5,981.00</td>
+                                                        <td><span class="label label-important">7 days overdue</span></td>
+                                                    </tr>
+                                                    <tr class="error">
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini btn-primary">Pay</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>5/28/2013</td>
+                                                        <td>668</td>
+                                                        <td></td>
+                                                        <td>9,774.00</td>
+                                                        <td class="text-darkred">9,774.00</td>
+                                                        <td><span class="label label-important">13 days overdue</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini disabled">Pay</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>5/27/2013</td>
+                                                        <td>295</td>
+                                                        <td></td>
+                                                        <td>1,996.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini disabled">Pay</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>5/26/2013</td>
+                                                        <td>890</td>
+                                                        <td></td>
+                                                        <td>3,315.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini disabled">Pay</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>5/24/2013</td>
+                                                        <td>554</td>
+                                                        <td></td>
+                                                        <td>7,738.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini disabled">Pay</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>5/23/2013</td>
+                                                        <td>783</td>
+                                                        <td></td>
+                                                        <td>1,110.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="#" class="btn btn-mini disabled">Pay</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>5/22/2013</td>
+                                                        <td>205</td>
+                                                        <td></td>
+                                                        <td>2,253.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- // Example row -->
+
+                            </div>
+                            <!-- // Tab 2 -->
+
+                            <div id="TabTop3" class="tab-pane fade">
+
+                                <div class="page-header margin-00">
+                                    <a class="btn btn-primary pull-right" href="page-invoice-new.html">New Invoice</a>
+                                    <h3 class="heading-icon margin-00" data-icon="&#xe1cd;" aria-hidden="true">Sales Invoice <small>comment title</small></h3>
+                                </div>
+                                <!-- // page header -->
+
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div class="invoice">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div class="invoice">
+
+                                            <!--<a href="#invoice-modal" id="invoiceModal" class="btn btn-blue btn-large btn-block" data-toggle="modal">Long Modal</a>-->
+
+                                            <table id="SIL" class="table boo-table table-condensed table-striped table-content table-hover bg-blue-light">
+                                                <caption>Sales Invoice list</caption>
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Issue date</th>
+                                                        <th>Invoice #</th>
+                                                        <th>To</th>
+                                                        <th>Amount</th>
+                                                        <th>Balance Due</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/15/2013</td>
+                                                        <td>6</td>
+                                                        <td>click button view invoice to show template invoice type 01 - Editable, Printable. </td>
+                                                        <td>3,855.00</td>
+                                                        <td>3,855.00</td>
+                                                        <td><span class="label label-important">No due date</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-02.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/11/2013</td>
+                                                        <td>5</td>
+                                                        <td>click button view invoice to show template invoice type 02 - Editable, Printable. </td>
+                                                        <td>1,100.00</td>
+                                                        <td>1,100.00</td>
+                                                        <td><span class="label label-warning">Due tomorrow</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-03.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/11/2013</td>
+                                                        <td>5</td>
+                                                        <td>click button view invoice to show template invoice type 03 - Printable. </td>
+                                                        <td>1,100.00</td>
+                                                        <td>1,100.00</td>
+                                                        <td><span class="label label-warning">Overdue yesterday</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/8/2013</td>
+                                                        <td>451</td>
+                                                        <td></td>
+                                                        <td>278.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/7/2013</td>
+                                                        <td>240</td>
+                                                        <td></td>
+                                                        <td>5,775.00</td>
+                                                        <td class="text-darkred">235.00</td>
+                                                        <td><span class="label label-important">3 days overdue</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/7/2013</td>
+                                                        <td>85</td>
+                                                        <td></td>
+                                                        <td>8,276.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/6/2013</td>
+                                                        <td>120</td>
+                                                        <td></td>
+                                                        <td>8,627.00</td>
+                                                        <td class="text-darkred">7,454.00</td>
+                                                        <td><span class="label label-important">4 days overdue</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/4/2013</td>
+                                                        <td>372</td>
+                                                        <td></td>
+                                                        <td>3,545.00</td>
+                                                        <td class="text-darkred">3,545.00</td>
+                                                        <td><span class="label label-important">6 days overdue</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/4/2013</td>
+                                                        <td>955</td>
+                                                        <td></td>
+                                                        <td>7,834.00</td>
+                                                        <td class="text-darkgray">0.00</td>
+                                                        <td><span class="label label-success">Paid in full</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>6/3/2013</td>
+                                                        <td>519</td>
+                                                        <td></td>
+                                                        <td>5,981.00</td>
+                                                        <td class="text-darkred">5,981.00</td>
+                                                        <td><span class="label label-important">7 days overdue</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>5/31/2013</td>
+                                                        <td>379</td>
+                                                        <td></td>
+                                                        <td>5,839.00</td>
+                                                        <td class="text-darkred">2,969.00</td>
+                                                        <td><span class="label label-important">10 days overdue</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>5/29/2013</td>
+                                                        <td>23</td>
+                                                        <td></td>
+                                                        <td>7,258.00</td>
+                                                        <td class="text-darkred">7,258.00</td>
+                                                        <td><span class="label label-important">12 days overdue</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <a href="page-invoice-new.html" class="btn btn-mini">Edit</a>
+                                                                <a href="tmp-invoice-01.html" target="_blank" class="btn btn-mini">View</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>5/28/2013</td>
+                                                        <td>668</td>
+                                                        <td></td>
+                                                        <td>9,774.00</td>
+                                                        <td class="text-darkred">9,774.00</td>
+                                                        <td><span class="label label-important">13 days overdue</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- // Example row -->
+
+                            </div>
+                            <!-- // Tab 3 -->
+                        </div>
+
+
+
+                    </section>
+                </div>
+                <!-- // page content -->
+
+            </div>
+            <!-- // main-content -->
+
+        </div>
+        <!-- // main-container  -->
+
+        <footer id="footer-fix">
+            <div id="footer-sidebar" class="footer-sidebar">
+                <div class="navbar">
+                    <div class="btn-toolbar"><a class="btn btn-glyph btn-link" href="javascript:void(0);"><i class="fontello-icon-up-open-1"></i></a></div>
+                </div>
+            </div>
+            <!-- // footer sidebar -->
+
+            <div id="footer-content" class="footer-content">
+                <div class="navbar navbar-inverse">
+                    <div class="navbar-inner">
+                        <ul class="nav pull-left">
+                            <li class="divider-vertical hidden-phone"></li>
+                            <li><a id="btnToggleSidebar" class="btn-glyph fontello-icon-resize-full-2 tip hidden-phone" href="javascript:void(0);" title="show hide sidebar"></a></li>
+                            <li class="divider-vertical hidden-phone"></li>
+                            <li><a id="btnChangeSidebar" class="btn-glyph fontello-icon-login tip hidden-phone" href="javascript:void(0);" title="change sidebar position"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a id="btnChangeSidebarColor" class="btn-glyph fontello-icon-palette tip" href="javascript:void(0);" title="change sidebar color"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a class="btn-glyph fontello-icon-cw" href="javascript:void(0);"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a class="fontello-icon-home-3" href="dashboard-one.html"></a></li>
+                            <li class="divider-vertical"></li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li class="divider-vertical"></li>
+                            <li><a class="btn-glyph fontello-icon-help-2 tip" href="javascript:void(0);" title="help to page"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a class="btn-glyph fontello-icon-cog-4 tip" href="javascript:void(0);" title="settings app"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a id="btnLogout" class="btn-glyph fontello-icon-logout-1 tip" href="javascript:void(0);" title="logout"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a id="btnScrollup" class="scrollup btn-glyph fontello-icon-up-open-1" href="javascript:void(0);"><span class="hidden-phone">Scroll</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- // footer content -->
+
+        </footer>
+        <!-- // footer-fix  -->
+
+    </div>
+    <!-- // page-container  -->
+
+
+    <div id="invoice-1modal" class="modal hide fade" tabindex="-1">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fontello-icon-cancel-1"></i></button>
+            <h4>A Fairly Long Modal</h4>
+        </div>
+        <div class="modal-body">
+            <div class="invoice-container">
+                <header>
+                    <h1>Invoice</h1>
+                    <address contenteditable>
+                        <p>Jonathan Neal</p>
+                        <p>
+                            101 E. Chapman Ave<br>
+                            Orange, CA 92866
+                        </p>
+                        <p>(800) 555-1234</p>
+                    </address>
+                    <span>
+                        <img alt="" src="logo.html"><input type="file" accept="image/*"></span>
+                </header>
+                <article>
+                    <h1>Recipient</h1>
+                    <address contenteditable>
+                        <p>
+                            Some Company<br>
+                            c/o Some Guy
+                        </p>
+                    </address>
+                    <table class="meta">
+                        <tr>
+                            <th><span contenteditable>Invoice #</span></th>
+                            <td><span contenteditable>101138</span></td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Date</span></th>
+                            <td><span contenteditable>January 1, 2012</span></td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Amount Due</span></th>
+                            <td><span id="prefix" contenteditable>$</span><span>600.00</span></td>
+                        </tr>
+                    </table>
+                    <table class="inventory">
+                        <thead>
+                            <tr>
+                                <th><span contenteditable>Item</span></th>
+                                <th><span contenteditable>Description</span></th>
+                                <th><span contenteditable>Rate</span></th>
+                                <th><span contenteditable>Quantity</span></th>
+                                <th><span contenteditable>Price</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a class="cut">-</a><span contenteditable>Front End Consultation</span></td>
+                                <td><span contenteditable>Experience Review</span></td>
+                                <td><span data-prefix>$</span><span contenteditable>150.00</span></td>
+                                <td><span contenteditable>4</span></td>
+                                <td><span data-prefix>$</span><span>600.00</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a class="add">+</a>
+                    <table class="balance">
+                        <tr>
+                            <th><span contenteditable>Total</span></th>
+                            <td><span data-prefix>$</span><span>600.00</span></td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Amount Paid</span></th>
+                            <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Balance Due</span></th>
+                            <td><span data-prefix>$</span><span>600.00</span></td>
+                        </tr>
+                    </table>
+                </article>
+                <aside>
+                    <h1><span contenteditable>Additional Notes</span></h1>
+                    <div contenteditable>
+                        <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn">Close</button>
+        </div>
+    </div>
+    <!-- // sample modal -->
+
+    <div id="invoice-modal" class="modal hide fade" tabindex="-1">
+    </div>
+    <!-- // sample modal -->
+
+    <!-- hide inject elements-->
+    <div class="hide">
+    </div>
+
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Libraries -->
+    <script src="Content/libs/jquery/jquery-1.9.1/jquery.min.js"></script>
+    <script src="Content/libs/jquery/jquery.migrate-1.1.1/jquery-migrate.min.js"></script>
+    <script src="Content/libs/jquery/jquery.ui.combined-1.10.2/jquery-ui.min.js"></script>
+    <script src="Content/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!-- System -->
+    <script src="Content/libs/pl-system/jquery.nicescroll/js/jquery.nicescroll.min.js"></script>
+    <script src="Content/libs/pl-system/jquery-cookie/js/jquery.cookie.js"></script>
+    <script src="Content/libs/pl-system/jquery-mousewheel/js/jquery.mousewheel.js"></script>
+    <script src="Content/libs/pl-system/xbreadcrumbs/js/xbreadcrumbs.js"></script>
+    <!-- System info -->
+    <script src="Content/libs/pl-system-info/bootstrapx-clickover/js/bootstrapx-clickover.js"></script>
+    <script src="Content/libs/pl-system-info/gritter/js/jquery.gritter.min.js"></script>
+    <script src="Content/libs/pl-system-info/jquery.notyfy/js/jquery.notyfy.js"></script>
+    <script src="Content/libs/pl-system-info/qtip2/js/jquery.qtip.min.js"></script>
+    <!-- Form -->
+    <script src="Content/libs/pl-form/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="Content/libs/pl-form/select2/js/select2.js"></script>
+    <script src="Content/libs/pl-form/uniform/js/jquery.uniform.min.js"></script>
+    <!-- Editors -->
+    <!-- Content -->
+    <script src="Content/libs/pl-content/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+    <script src="Content/libs/pl-content/bootstrap-modal/js/bootstrap-modal.js"></script>
+    <script src="Content/libs/pl-content/bootbox/js/bootbox.min.js"></script>
+    <!-- Component -->
+    <!-- File -->
+    <!-- Gallery -->
+    <!-- Tables -->
+    <script src="Content/libs/bootstrap-jasny/js/bootstrap-rowlink.js"></script>
+    <script src="Content/libs/pl-table/datatables/js/jquery.dataTables.js"></script>
+    <script src="Content/libs/pl-table/datatables/js/jquery.dataTables.plugins.js"></script>
+    <script src="Content/libs/pl-table/datatables/js/jquery.dataTables.columnFilter.js"></script>
+    <!-- Data Visualization -->
+    <script src="Content/libs/pl-visualization/bootstrap-progressbar/js/bootstrap-progressbar.min.js"></script>
+    <script src="Content/libs/pl-visualization/sparkline/js/jquery.sparkline.min.js"></script>
+
+    <script src="Content/libs/pl-visualization/flot/js/jquery.flot.js"></script>
+    <script src="Content/libs/pl-visualization/flot/js/jquery.flot.categories.js"></script>
+    <script src="Content/libs/pl-visualization/flot/js/jquery.flot.grow.js"></script>
+    <script src="Content/libs/pl-visualization/flot/js/jquery.flot.orderBars.js"></script>
+    <script src="Content/libs/pl-visualization/flot/js/jquery.flot.pie.js"></script>
+    <script src="Content/libs/pl-visualization/flot/js/jquery.flot.resize.js"></script>
+    <script src="Content/libs/pl-visualization/flot/js/jquery.flot.selection.js"></script>
+    <script src="Content/libs/pl-visualization/flot/js/jquery.flot.stack.js"></script>
+    <script src="Content/libs/pl-visualization/flot/js/jquery.flot.stackpercent.js"></script>
+    <script src="Content/libs/pl-visualization/flot/js/jquery.flot.time.js"></script>
+    <!-- Only example -->
+    <script src="Content/libs/google-code-prettify/js/prettify.js"></script>
+    <!-- Main js -->
+    <script src="Content/js/app/core.js"></script>
+    <script src="Content/js/app/demo-common.js"></script>
+    <script src="Content/js/app/demo-modal.js"></script>
+    <script src="Content/js/app/demo-statistic-sparkline.js"></script>
+    <script src="Content/js/app/demo-datatables.js"></script>
+
+    <!-- Only This Demo Page -->
+    <script>
+        $(document).ready(function () {
+
+
+            // TOP SALES REPRESENTATIVE
+            // -------------------------------------------------------------------------------- * -->
+            $('#top1 .progress .bar').progressbar({
+                use_percentage: false,
+                refresh_speed: 200,
+                update: function (current_percentage) {
+                    $('#top1 .label-value').text(current_percentage + '%');
+                },
+                done: function (current_percentage) {
+                    $('#top1 .statistic-values').html('<a class="btn btn-mini btn-yellow pull-left" href="javascript:void(0);">summary</a> <span class="positive"><sup>+526.00</sup><i data-icon="&#xe138;"></i></span> $13,993.30');
+                }
+            });
+            $('#top2 .progress .bar').progressbar({
+                use_percentage: false,
+                refresh_speed: 200,
+                update: function (current_percentage) {
+                    $('#top2 .label-value').text(current_percentage + '%');
+                },
+                done: function (current_percentage) {
+                    $('#top2 .statistic-values').html('<a class="btn btn-mini btn-yellow pull-left" href="javascript:void(0);">summary</a> <span class="negative"><sup>-156.00</sup><i data-icon="&#xe137;"></i></span> $13,004.00');
+                }
+            });
+            $('#top3 .progress .bar').progressbar({
+                use_percentage: false,
+                refresh_speed: 200,
+                update: function (current_percentage) {
+                    $('#top3 .label-value').text(current_percentage + '%');
+                },
+                done: function (current_percentage) {
+                    $('#top3 .statistic-values').html('<a class="btn btn-mini btn-yellow pull-left" href="javascript:void(0);">summary</a> <span class="positive"><sup>+164.30</sup><i data-icon="&#xe138;"></i></span> $12,764.25');
+                }
+            });
+            $('#top4 .progress .bar').progressbar({
+                use_percentage: false,
+                refresh_speed: 200,
+                update: function (current_percentage) {
+                    $('#top4 .label-value').text(current_percentage + '%');
+                },
+                done: function (current_percentage) {
+                    $('#top4 .statistic-values').html('<a class="btn btn-mini btn-yellow pull-left" href="javascript:void(0);">summary</a> <span class="positive"><sup>+1,026.08</sup><i data-icon="&#xe138;"></i></span> $12,334.33');
+                }
+            });
+            $('#top5 .progress .bar').progressbar({
+                use_percentage: false,
+                refresh_speed: 200,
+                update: function (current_percentage) {
+                    $('#top5 .label-value').text(current_percentage + '%');
+                },
+                done: function (current_percentage) {
+                    $('#top5 .statistic-values').html('<a class="btn btn-mini btn-yellow pull-left" href="javascript:void(0);">summary</a> <span class="negative"><sup>+1,666.08</sup><i data-icon="&#xe137;"></i></span> $11,054.33');
+                }
+            });
+
+
+            // DATATABLE exampleDTC
+            // -------------------------------------------------------------------------------- * -->
+            $(function () {
+                function GenerateSeries(added){
+                    var data = [];
+                    var start = 100 + added;
+                    var end = 600 + added;
+ 
+                    for(i=1;i<=30;i++){       
+                        var d = Math.floor(Math.random() * (end - start + 1) + start);       
+                        data.push([i, d]);
+                        start++;
+                        end++;
+                    }
+ 
+                    return data;
+                }
+
+                var options = {
+                    colors: ["#c83157", "#339bb9", "#1083c7", ],
+                    series: {
+                        stack:true,
+                        bars: {
+                            show: true,
+                            lineWidth: 10,
+                            barWidth: 0.0
+                        },
+                        shadowSize: 0,
+                        grow: {
+                            active: true,
+                            steps: 30,
+                            stepMode: "maximum",
+                            stepDirection: "up"
+                        },
+                    },
+                    xaxis: {
+                        ticks: [],
+                        mode: "time",
+                    },
+                    yaxis: {
+                        ticks: [],
+                        min: 0,
+                        autoscaleMargin: 0.1
+                    },
+                    grid: {
+                        color: "#D6D8DB",
+                        borderColor: "rgba(255,255,255,0.05)",
+                        borderWidth: 0,
+                        backgroundColor: {
+                            colors: ["rgba(255,255,255,0.05)", "rgba(0,0,0,0.1)"]
+                        }
+                    }
+                };
+
+                var data1 = GenerateSeries(0);
+                var data2 = GenerateSeries(300);
+                var dataset = [data1, data2];
+ 
+                $.plot($("#dashChartPayment"), dataset, options);
+
+
+
+                //var overview = $.plot($("#dashChartPayment"), [d1, d2], {
+                //    colors: ["#70b5dd", "#1083c7", "#1c638d"],
+                //    series: {
+                //        bars: {
+                //            show: true,
+                //            lineWidth: 6
+                //        },
+                //        shadowSize: 0,
+                //        grow: {
+                //            active: true,
+                //            steps: 30,
+                //            stepMode: "maximum",
+                //            stepDirection: "up"
+                //        },
+                //    },
+                //    xaxis: {
+                //        ticks: [],
+                //        mode: "time",
+                //        min: "1198710000000",
+                //        max: "1203894000000",
+                //    },
+                //    yaxis: {
+                //        ticks: [],
+                //        min: 0,
+                //        autoscaleMargin: 0.1
+                //    },
+                //    selection: {
+                //        mode: "x"
+                //    },
+                //    grid: {
+                //        color: "#D6D8DB",
+                //        borderColor: "rgba(255,255,255,0.05)",
+                //        borderWidth: 0,
+                //        backgroundColor: {
+                //            colors: ["rgba(255,255,255,0.05)", "rgba(0,0,0,0.2)"]
+                //        }
+                //    }
+                //});
+
+
+            });
+
+            // DATATABLE exampleDTC
+            // -------------------------------------------------------------------------------- * -->
+            $('#PIL, #SIL')
+                    .dataTable({
+                        oLanguage: {
+                            sSearch: "Global search: ",
+                            sLengthMenu: "Show _MENU_ entries",
+                            sZeroRecords: 'No record found <button class="btn btn-danger resetTable">Reset filter</button>'
+                        },
+                        iDisplayLength: 20,
+                        //aaSorting: [
+                        //        [6, 'asc']
+                        //],
+                        aoColumnDefs: [{
+                            "aTargets": [0],
+                            "bSortable": false,
+                        }, {
+                            "aTargets": [1],
+                            'sType': 'eu_date'
+                        }, {
+                            "aTargets": [2],
+                            'sClass': 'hidden-phone'
+                        }, {
+                            "aTargets": [3],
+                            'sClass': 'hidden-phone hidden-tablet',
+                            'sType': 'eu_date'
+                        }, {
+                            "aTargets": [4],
+                            'sClass': 'hidden-phone hidden-tablet'
+                        }, {
+                            "aTargets": [5]
+                        }, {
+                            "aTargets": [6]
+                        }],
+                        sPaginationType: 'full_numbers',
+                        sDom: "<'row-fluid' <'widget-header' <'span4'l> <'span8'f> > >  Rrt <'row-fluid' <'widget-footer' <'span4' <'table-action-wrapper'> i> <'span8'p> >",
+
+                    });
+
+            $('#PIL_length select, #SIL_length select').select2({
+                minimumResultsForSearch: 6,
+                width: "off"
+            });
+
+            // DUE LINE
+            // ----------------------------------------- * -->
+            // Composite line charts, the second using values supplied via javascript
+
+            var sparklineInvoice = function () {
+
+                $('#DueLine').sparkline([2.7, 3.1, 2.7, 2.5, 1.6, 1.7, 1.9, 2.1, 1.8, 2, 1.9, 2.1, 1.8], {
+                    type: 'line',
+                    width: '100%',
+                    height: '66px',
+                    lineColor: '#c83157',
+                    lineWidth: 2,
+                    fillColor: false,
+                    spotColor: false,
+                    minSpotColor: false,
+                    maxSpotColor: false
+                });
+                $('#DueLine').sparkline(dataLineDemo, {
+                    composite: true,
+                    type: 'line',
+                    width: '100%',
+                    height: '66px',
+                    lineColor: '#31bcc8',
+                    lineWidth: 2,
+                    fillColor: false,
+                    spotColor: false,
+                    minSpotColor: false,
+                    maxSpotColor: false
+                });
+            }
+
+            // Resize function to sparkline chart
+            var sparkResize;
+
+            $(window).resize(function (e) {
+                clearTimeout(sparkResize);
+                sparkResize = setTimeout(sparklineInvoice, 250);
+            });
+            sparklineInvoice();
+
+        });
+    </script>
+</body>
+
+<!-- Mirrored from themes.gootoboo.com/boo/v2/page-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jul 2021 05:57:45 GMT -->
+</html>
