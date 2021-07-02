@@ -31,8 +31,17 @@ namespace Models.Pathology
         public string PaymentTypeName { get; set; }
         public DateTime FromDate { get; set; }
         public DateTime ToDate { get; set; }
-        public DateTime BookingDate { get; set; }
-        public DateTime ReportDate { get; set; }
+        public string BookingDate { get; set; }
+        public int SrNo { get; set; }
+        public string TestResult { get; set; }
+        public string FromRange { get; set; }
+        public string ToRange { get; set; }
+        public string Unit { get; set; }
+        public string Interpretation { get; set; }
+        public string Note { get; set; }
+        public bool ResultStatus { get; set; }
+        public bool PrintResult { get; set; }
+        public bool PrintInterpretation { get; set; }
         public List<TestBookingModel> TestList { get; set; }
         public List<TestBookingModel> ProfileMasterList { get; set; }
         public List<DropDownModel> TestHeadMasterList { get; set; }

@@ -160,11 +160,11 @@ function TestBookingOperations(Id, Val) {
     var Delete = "D";
     model = {
         RowId: $("#RowId").val(),
-        PatientType:2,
+        PatientType:1,
         BalanceAmount: $("TitleId").val(),
         TitleId: $("#TitleId").val(),
         PatientName: $("#txtPatientName").val(),
-        GendarId: $("#GendarId").val(),
+        GenderId: $("#GenderId").val(),
         PatientAge: $("TitleId").val(),
         MobileNo: $("#txtMobileNo").val(),
         Email: $("#txtEmailId").val(),
@@ -186,7 +186,7 @@ function TestBookingOperations(Id, Val) {
         data: model,
 
     }).done(function (response) {
-        if (response.messageId == 1) {
+        if (response.messageId == 0) {
             alert(response.messageText);
         }
     });

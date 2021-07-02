@@ -12,5 +12,6 @@ namespace DAL.Pathology.Interface
         Task<DataSet> AddData(TestBookingModel model);
         Task<DataSet> TestBookingOperations(TestBookingModel model);
         Task<DataSet> SearchBookingData(TestBookingModel model);
+        Task<DataSet> SaveTestResult(TestBookingModel model);
     }
 }

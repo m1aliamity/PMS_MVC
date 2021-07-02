@@ -15,5 +15,6 @@ namespace PMS.Repository.Pathology.Interface
         Task AddData(TestBookingModel model);
         Task TestBookingOperations(TestBookingModel model);
         Task SearchBookingData(TestBookingModel model);
+        Task SaveTestResult(TestBookingModel model);
     }
 }

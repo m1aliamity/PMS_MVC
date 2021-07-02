@@ -68,5 +68,23 @@ namespace DAL.Pathology
                 };
             return await _objMySqlHelper.SP_DataSet("USP_SearchBookingData", cmdParams);
         }
+        public async Task<DataSet> SaveTestResult(TestBookingModel model)
+        {
+            MySqlParameter[] cmdParams = {
+                new MySqlParameter("@P_Id", model.RowId),
+                new MySqlParameter("@P_FromRange", model.FromRange),
+                new MySqlParameter("@P_ToRange", model.ToRange),
+                new MySqlParameter("@P_TestResult", model.TestResult),
+                new MySqlParameter("@P_Note", model.Note),
+                new MySqlParameter("@P_Interpretation", model.Interpretation),
+                new MySqlParameter("@P_Status", model.ResultStatus),
+                new MySqlParameter("@P_PrintTest", model.PrintResult),
+                new MySqlParameter("@P_PrintInterpretation", model.PrintInterpretation),
+                new MySqlParameter("@P_CID", model.CID),
+                new MySqlParameter("@P_UserId", model.UserId),
+                new MySqlParameter("@P_Action", model.Action),
+                };
+            return await _objMySqlHelper.SP_DataSet("USP_SaveTestResult", cmdParams);
+        }
     }
 }

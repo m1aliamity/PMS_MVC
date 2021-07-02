@@ -168,19 +168,61 @@ namespace PMS.Repository.Pathology
        public async Task SearchBookingData(TestBookingModel model)
         {
             DataSet ds = await _testBookingDAL.SearchBookingData(model);
-            if (model.Action=="1")
+            if (model.Action == "1")
             {
-                    model.TestList = (from DataRow row in ds.Tables[0].Rows
-                                      select new TestBookingModel
-                                      {
-                                          RowId = Convert.ToInt64(row["Id"]),
-                                          PatientName = Convert.ToString(row["PatientName"]),
-                                          PatientAge = Convert.ToString(row["Age"]),
-                                          GenderName = Convert.ToString(row["Gender"]),
-                                          SampleTypeName = Convert.ToString(row["SampleType"]),
-                                          Address = Convert.ToString(row["Address"]),
-                                          BookingDate = Convert.ToDateTime(row["BookingDate"]),
-                                      }).ToList();
+                model.TestList = (from DataRow row in ds.Tables[0].Rows
+                                  select new TestBookingModel
+                                  {
+                                      RowId = Convert.ToInt64(row["Id"]),
+                                      PatientName = Convert.ToString(row["PatientName"]),
+                                      PatientAge = Convert.ToString(row["Age"]),
+                                      GenderName = Convert.ToString(row["Gender"]),
+                                      SampleTypeName = Convert.ToString(row["SampleType"]),
+                                      Address = Convert.ToString(row["Address"]),
+                                      BookingDate = Convert.ToString(row["BookingDate"]),
+                                  }).ToList();
+            }
+            else if (model.Action == "2")
+            {
+                model.TestList = (from DataRow row in ds.Tables[0].Rows
+                                  select new TestBookingModel
+                                  {
+                                      SrNo = Convert.ToInt32(row["Sno"]),
+                                      RowId = Convert.ToInt64(row["Id"]),
+                                      TestName = Convert.ToString(row["TestName"]),
+                                      TestResult = Convert.ToString(row["Result"]),
+                                      ResultStatus = Convert.ToBoolean(row["ResultStatus"]),
+                                      PrintResult = Convert.ToBoolean(row["PrintTestResult"]),
+                                      PrintInterpretation = Convert.ToBoolean(row["PrintInterpretation"]),
+                                  }).ToList();
+            }
+            else if (model.Action == "3")
+            {
+                
+                model.RowId = Convert.ToInt64(ds.Tables[0].Rows[0]["Id"]);
+                model.TestResult = Convert.ToString(ds.Tables[0].Rows[0]["Result"]);
+                model.FromRange = Convert.ToString(ds.Tables[0].Rows[0]["RangeFrom"]);
+                model.ToRange = Convert.ToString(ds.Tables[0].Rows[0]["RangeTo"]);
+                model.Unit = Convert.ToString(ds.Tables[0].Rows[0]["Unit"]);
+                model.Note = Convert.ToString(ds.Tables[0].Rows[0]["Note"]);
+                model.Interpretation = Convert.ToString(ds.Tables[0].Rows[0]["InterPretation"]);
+            }
+        }
+        public async Task SaveTestResult(TestBookingModel model)
+        {
+            DataSet ds = await _testBookingDAL.SaveTestResult(model);
+            if (model.Action == "1")
+            {
+               
+            }
+            else { 
+                model.RowId = Convert.ToInt64(ds.Tables[0].Rows[0]["Id"]);
+                model.TestResult = Convert.ToString(ds.Tables[0].Rows[0]["Result"]);
+                model.FromRange = Convert.ToString(ds.Tables[0].Rows[0]["RangeFrom"]);
+                model.ToRange = Convert.ToString(ds.Tables[0].Rows[0]["RangeTo"]);
+                model.Unit = Convert.ToString(ds.Tables[0].Rows[0]["Unit"]);
+                model.Note = Convert.ToString(ds.Tables[0].Rows[0]["Note"]);
+                model.Interpretation = Convert.ToString(ds.Tables[0].Rows[0]["InterPretation"]);
             }
         }
     }

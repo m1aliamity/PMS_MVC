@@ -1,0 +1,83 @@
+﻿@model Models.Pathology.TestBookingModel;
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+    <div class="modal-body">
+        <div class="row">
+            @*<div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Name:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm" id="txtName" data-error="Please Enter Name." required>
+                    </div>
+                    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Print Name:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control form-control-sm" id="txtPrintName">
+                    </div>
+                </div>*@
+            <div class="form-group row">
+                @if (@Model.TestList.Count > 0)
+                {
+                    <table id="tblFillResults" class="display nowrap cell-border" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th scope="col">Test Name</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Result</th>
+                                <th scope="col">Print</th>
+                                <th scope="col">Interpretation</th>
+                                <th scope="col">Advance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in @Model.TestList)
+                            {
+                                <tr>
+                                    <td>@item.TestName<input type="hidden" id="rowId_@item.SrNo" value="@item.RowId" /></td>
+                                    <td><input type="checkbox" id="chkResultStatus_@item.SrNo" checked="@item.ResultStatus" disabled></td>
+                                    <td><input type="text" class="inputs" id="txtResult_@item.SrNo" onclick="this.select();" value="@item.TestResult"></td>
+                                    <td><input type="checkbox" id="chkResultStatus_@item.SrNo" checked="@item.PrintResult"></td>
+                                    <td><input type="checkbox" id="chkPrintInterpretation_@item.SrNo" checked="@item.PrintInterpretation"></td>
+                                    <td><input type="button" value="Advance" OnClick="DisplayTestDetails(@item.RowId,3)"></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-8">
+                    <button type="button" data-dismiss="modal" class="btn btn-outline-primary">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ </div>
+<script src="~/lib/Script/Local/Pathology/FillTestResults.js"></script>
+<script>
+    $('.inputs').keydown(function (e) {
+        if (e.which == 13) {
+            debugger;
+            var SN = $(this).attr('id');
+            SN = SN.replace("txtResult_", '');
+            var SerialNo = parseInt(SN);
+            var rowId = $("#rowId_" + SN).val();
+            var PrintTest = $("#chkResultStatus_" + SN).is(":checked");
+            var PrintInterpretations = $("#chkPrintInterpretation_" + SN).is(":checked");
+            $("#chkResultStatus_" + SN).prop("checked", true);
+            var status = $("#chkResultStatus_" + SN).is(":checked");
+            var result = $("#txtResult_" + SN).val();
+            SerialNo = SerialNo + 1;
+            $("#txtResult_" + SerialNo).focus().select();
+            var rows = $('#tblFillResults tbody tr').length;
+            if (SerialNo > rows) {
+                SerialNo = SerialNo - rows;
+                $("#txtResult_" + SerialNo).focus().select();
+            }
+            SaveTestResult(rowId,2,result,status,PrintTest,PrintInterpretations)
+        }
+    });
+</script>
+
+

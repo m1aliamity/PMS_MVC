@@ -25,5 +25,24 @@ namespace PMS.Controllers
             await _testBookingRepository.SearchBookingData(model);
             return Json(model);
         }
+        [HttpPost]
+        public async Task<IActionResult> GetTestDetails(TestBookingModel model)
+        {
+            await _testBookingRepository.SearchBookingData(model);
+            if (model.Action == "3")
+            {  
+            return PartialView("AdvanceFillResults", model);
+            }
+            else
+            {
+              return PartialView("FillResults", model);
+            }
+        }
+        [HttpPost]
+        public async Task<JsonResult> SaveTestResult(TestBookingModel model)
+        {
+            await _testBookingRepository.SaveTestResult(model);
+            return Json(model);
+        }
     }
 }
