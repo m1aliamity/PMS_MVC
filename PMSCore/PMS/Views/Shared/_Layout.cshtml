@@ -1,54 +1,170 @@
 ﻿<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
 <html>
+<!--<![endif]-->
+<!-- Mirrored from themes.gootoboo.com/boo/v2/form-demo.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jul 2021 05:57:26 GMT -->
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>PMS</title>
-    <link rel="stylesheet" href="~/lib/Script/Global/theme/css/style-2.3.0.css">
-    <link rel="stylesheet" href="~/lib/CSS/Global/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/lib/CSS/Global/jquery-ui.min.css" />
-    <link rel="stylesheet" href="~/lib/Script/DataTable/css/jquery.dataTables.min.css" />
-    <link rel="stylesheet" href="~/lib/Script/DataTable/css/responsive.dataTables.min.css" />
-    <link rel="stylesheet" href="~/lib/Script/DataTable/css/font-awesome.min.css" />
-    <script src="~/lib/Script/Global/jquery-3.5.1.min.js"></script>
-    <script src="~/lib/Script/DataTable/js/jquery.dataTables.min.js"></script>
-    <script src="~/lib/Script/DataTable/js/dataTables.responsive.min.js"></script>
-    <script src="~/lib/ckeditor/ckeditor.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <!-- Le styles -->
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="~/css/extension.css" rel="stylesheet">
+    @*<link href="~/fonts/ico-fontello/css/fontello.css" rel="stylesheet">
+        <link href="~/fonts/ico-fontello/css/animation.css" rel="stylesheet">*@
+    @*<link href="~/fonts/ico-awesome/css/font-awesome.css" rel="stylesheet">*@
+    @*<link href="~/fonts/ico-booico/booico.css" rel="stylesheet">*@
+    <link href="~/fonts/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/boo-less/boo.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="Content/libs/selectivizr/selectivizr-1.0.2/js/selectivizr.min.js"></script>
+        <script src="Content/libs/pl-visualization/excanvas/js/excanvas.min.js"></script>
+    <![endif]-->
+
+    <script src="~/lib/modernizr/modernizr-2.6.2/js/modernizr-2.6.2.js"></script>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="~/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/ico/boo-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/ico/boo-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/ico/boo-72.png">
+    <link rel="apple-touch-icon-precomposed" href="~/ico/boo-57.png">
 </head>
-<body>
-    @Html.RenderPartialAsync("_Header");
-    <div id="PageHeaderText">
-        <span>Testing pathology Lab</span>
-    </div>
-    @*<div id="PageHeaderText" class="col-sm-6">
-            <span>Master Data List</span>
-        </div>*@
-
-    <main id="main">
-        <div class="container">
-            <div class="page-content">
-                <input id="RowId" type="hidden" />
-                @RenderBody()
+<body class="sidebar-left">
+    <div class="page-container">
+        @Html.RenderPartialAsync("_Header");
+        <div id="main-container">
+            @Html.RenderPartialAsync("_SidebarMenu");
+            <div id="main-content" class="main-content container-fluid">
+                <div class="filler"></div>
+                @RenderSection("PageHead", required: false)
+                <!-- // page head -->
+                <div id="page-content" class="page-content tab-content overflow-y">
+                    <input id="RowId" type="hidden" />
+                    @RenderBody()
+                </div>
+                <!-- // page content -->
             </div>
+            <!-- // main-content -->
         </div>
-    </main>
-    <footer id="" style="position: fixed;left: 0;bottom: 0;width: 100%;text-align: center;border-top: 1px solid #3477b3;">
-        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-    </footer>
-    <script src="~/lib/Script/BootStrap/bootstrap.js"></script>
-    <script src="~/lib/Script/BootStrap/popper.min.js"></script>
-    <script src="~/lib/Script/Global/jquery-ui.min.js"></script>
-    @*<script src="~/lib/Script/Global/theme/js/main-2.3.0.js"></script>*@
-    <script>
-        $(document).ready(function () {
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
-    </script>
+        <!-- // main-container  -->
+        <footer id="footer-fix">
+            <div id="footer-sidebar" class="footer-sidebar">
+                <div class="navbar">
+                    <div class="btn-toolbar"><a class="btn btn-glyph btn-link" href="javascript:void(0);"><i class="fontello-icon-up-open-1"></i></a></div>
+                </div>
+            </div>
+            <!-- // footer sidebar -->
+
+            <div id="footer-content" class="footer-content">
+                <div class="navbar navbar-inverse">
+                    <div class="navbar-inner">
+                        <ul class="nav pull-left">
+                            <li class="divider-vertical hidden-phone"></li>
+                            <li><a id="btnToggleSidebar" class="btn-glyph fontello-icon-resize-full-2 tip hidden-phone" href="javascript:void(0);" title="show hide sidebar"></a></li>
+                            <li class="divider-vertical hidden-phone"></li>
+                            <li><a id="btnChangeSidebar" class="btn-glyph fontello-icon-login tip hidden-phone" href="javascript:void(0);" title="change sidebar position"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a id="btnChangeSidebarColor" class="btn-glyph fontello-icon-palette tip" href="javascript:void(0);" title="change sidebar color"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a class="btn-glyph fontello-icon-cw" href="javascript:void(0);"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a class="fontello-icon-home-3" href="dashboard-one.html"></a></li>
+                            <li class="divider-vertical"></li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li class="divider-vertical"></li>
+                            <li><a class="btn-glyph fontello-icon-help-2 tip" href="javascript:void(0);" title="help to page"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a class="btn-glyph fontello-icon-cog-4 tip" href="javascript:void(0);" title="settings app"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a id="btnLogout" class="btn-glyph fontello-icon-logout-1 tip" href="javascript:void(0);" title="logout"></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a id="btnScrollup" class="scrollup btn-glyph fontello-icon-up-open-1" href="javascript:void(0);"><span class="hidden-phone">Scroll</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- // footer content -->
+
+        </footer>
+        <!-- // footer-fix  -->
+    </div>
+    <!-- // page-container  -->
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Libraries -->
+    <script src="~/lib/jquery/jquery-1.9.1/jquery.min.js"></script>
+    <script src="~/lib/jquery/jquery.migrate-1.1.1/jquery-migrate.min.js"></script>
+    <script src="~/lib/jquery/jquery.ui.combined-1.10.2/jquery-ui.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- System -->
+    <script src="~/lib/pl-system/jquery.nicescroll/js/jquery.nicescroll.min.js"></script>
+    <script src="~/lib/pl-system/jquery-cookie/js/jquery.cookie.js"></script>
+    <script src="~/lib/pl-system/jquery-mousewheel/js/jquery.mousewheel.js"></script>
+    @*<script src="~/lib/pl-system/xbreadcrumbs/js/xbreadcrumbs.js"></script>*@
+    <!-- System info -->
+    <script src="~/lib/pl-system-info/bootstrapx-clickover/js/bootstrapx-clickover.js"></script>
+    <script src="~/lib/pl-system-info/gritter/js/jquery.gritter.min.js"></script>
+    <script src="~/lib/pl-system-info/jquery.notyfy/js/jquery.notyfy.js"></script>
+    <script src="~/lib/pl-system-info/qtip2/js/jquery.qtip.min.js"></script>
+    <!-- Form -->
+    <script src="~/lib/pl-form/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="~/lib/pl-form/select2/js/select2.js"></script>
+    <script src="~/lib/pl-form/uniform/js/jquery.uniform.min.js"></script>
+    <script src="~/lib/pl-form/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/lib/pl-form/bootstrap-daterangepicker/js/date.js"></script>
+    <script src="~/lib/pl-form/bootstrap-daterangepicker/js/bootstrap-daterangepicker.js"></script>
+    <script src="~/lib/pl-form/jquery.inputmask/js/jquery.inputmask.bundle.min.js"></script>
+    <script src="~/lib/pl-form/jquery.inputmask/js/jquery.inputmask.custom.extensions.js"></script>
+    <script src="~/lib/pl-form/jquery.elastic/js/jquery.elastic.js"></script>
+    <script src="~/lib/pl-form/jquery.validation/js/jquery.validate.js"></script>
+    <!-- Editors -->
+    @*<script src="~/lib/pl-editors/bootstrap-wysihtml5/js/lib/wysihtml5-0.3.0.min.js"></script>*@
+    <script src="~/lib/pl-editors/bootstrap-wysihtml5/js/bootstrap-wysihtml5.js"></script>
+    <!-- Content -->
+    <script src="~/lib/pl-content/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+    <script src="~/lib/pl-content/bootstrap-modal/js/bootstrap-modal.js"></script>
+    <script src="~/lib/pl-content/bootbox/js/bootbox.min.js"></script>
+    <!-- Component -->
+    <!-- File -->
+    <!-- Gallery -->
+    <!-- Tables -->
+    <script src="~/lib/bootstrap-jasny/js/bootstrap-rowlink.js"></script>
+    <script src="~/lib/pl-table/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/lib/pl-table/datatables/js/jquery.dataTables.plugins.js"></script>
+    <script src="~/lib/pl-table/datatables/js/jquery.dataTables.columnFilter.js"></script>
+    <script src="~/lib/pl-table/datatables/js/jquery.FixedColumns.plugins.js"></script>
+    <!-- Data Visualization -->
+    <!-- Only example -->
+    <script src="~/lib/google-code-prettify/js/prettify.js"></script>
+    <!-- Main js -->
+    <script src="~/js/app/core.js"></script>
+    <script src="~/js/app/demo-common.js"></script>
+
+    <!-- Only This Demo Page -->
+    <!-- Only This Demo Page -->
+    @*<script>
+            $(document).ready(function () {
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#example').DataTable();
+            });
+        </script>*@
     @RenderSection("scripts", required: false)
 </body>
 </html>

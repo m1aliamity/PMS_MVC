@@ -3,14 +3,150 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="wwwroot\fonts\forte\**" />
+    <Compile Remove="wwwroot\fonts\ico-awesome\**" />
+    <Compile Remove="wwwroot\fonts\ico-booico\**" />
+    <Compile Remove="wwwroot\fonts\ico-fontello\**" />
+    <Content Remove="wwwroot\fonts\forte\**" />
+    <Content Remove="wwwroot\fonts\ico-awesome\**" />
+    <Content Remove="wwwroot\fonts\ico-booico\**" />
+    <Content Remove="wwwroot\fonts\ico-fontello\**" />
+    <EmbeddedResource Remove="wwwroot\fonts\forte\**" />
+    <EmbeddedResource Remove="wwwroot\fonts\ico-awesome\**" />
+    <EmbeddedResource Remove="wwwroot\fonts\ico-booico\**" />
+    <EmbeddedResource Remove="wwwroot\fonts\ico-fontello\**" />
+    <None Remove="wwwroot\fonts\forte\**" />
+    <None Remove="wwwroot\fonts\ico-awesome\**" />
+    <None Remove="wwwroot\fonts\ico-booico\**" />
+    <None Remove="wwwroot\fonts\ico-fontello\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\js\app\core.js" />
+    <None Include="wwwroot\js\app\demo-bootstrap-progressbar.js" />
+    <None Include="wwwroot\js\app\demo-common.js" />
+    <None Include="wwwroot\js\app\demo-dashboard1.js" />
+    <None Include="wwwroot\js\app\demo-dashboard2.js" />
+    <None Include="wwwroot\js\app\demo-datatables.js" />
+    <None Include="wwwroot\js\app\demo-form.js" />
+    <None Include="wwwroot\js\app\demo-fullcalendar.js" />
+    <None Include="wwwroot\js\app\demo-modal.js" />
+    <None Include="wwwroot\js\app\demo-notification.js" />
+    <None Include="wwwroot\js\app\demo-statistic-flot.js" />
+    <None Include="wwwroot\js\app\demo-statistic-sparkline.js" />
+    <None Include="wwwroot\js\app\demo-wisyhtml5.js" />
+    <None Include="wwwroot\js\app\invoice.js" />
+    <None Include="wwwroot\lib\bootstrap-fuelux\js\combobox.js" />
+    <None Include="wwwroot\lib\bootstrap-fuelux\js\pillbox.js" />
+    <None Include="wwwroot\lib\bootstrap-fuelux\js\search.js" />
+    <None Include="wwwroot\lib\bootstrap-fuelux\js\spinner.js" />
+    <None Include="wwwroot\lib\bootstrap-jasny\js\bootstrap-fileupload.js" />
+    <None Include="wwwroot\lib\bootstrap-jasny\js\bootstrap-rowlink.js" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\google-code-prettify\js\prettify.js" />
+    <None Include="wwwroot\lib\jquery\jquery-1.9.1\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\jquery.migrate-1.1.1\jquery-migrate.min.js" />
+    <None Include="wwwroot\lib\jquery\jquery.ui.combined-1.10.2\jquery-ui.min.js" />
+    <None Include="wwwroot\lib\modernizr\modernizr-2.6.2\js\modernizr-2.6.2.js" />
+    <None Include="wwwroot\lib\pl-component\fullcalendar\js\fullcalendar.js" />
+    <None Include="wwwroot\lib\pl-component\jQRangeSlider\js\jQAllRangeSliders-withRuler-min.js" />
+    <None Include="wwwroot\lib\pl-content\bootbox\js\bootbox.min.js" />
+    <None Include="wwwroot\lib\pl-content\bootstrap-modal\js\bootstrap-modal.js" />
+    <None Include="wwwroot\lib\pl-content\bootstrap-modal\js\bootstrap-modalmanager.js" />
+    <None Include="wwwroot\lib\pl-content\bootstrap-wizard-2\js\bwizard.js" />
+    <None Include="wwwroot\lib\pl-content\bootstrap-wizard\js\jquery.bootstrap.wizard.js" />
+    <None Include="wwwroot\lib\pl-content\equalize\js\equalize.js" />
+    <None Include="wwwroot\lib\pl-content\jpages\js\jpages.js" />
+    <None Include="wwwroot\lib\pl-content\jquery.listnav\js\jquery.listnav.js" />
+    <None Include="wwwroot\lib\pl-content\jquery.toolbar\js\jquery.toolbar.min.js" />
+    <None Include="wwwroot\lib\pl-content\list\js\list.filter.min.js" />
+    <None Include="wwwroot\lib\pl-content\list\js\list.fuzzySearch.min.js" />
+    <None Include="wwwroot\lib\pl-content\list\js\list.js" />
+    <None Include="wwwroot\lib\pl-content\list\js\list.min.js" />
+    <None Include="wwwroot\lib\pl-content\list\js\list.paging.js" />
+    <None Include="wwwroot\lib\pl-content\list\js\list.paging.min.js" />
+    <None Include="wwwroot\lib\pl-content\rateit\js\jquery.rateit.js" />
+    <None Include="wwwroot\lib\pl-editors\bootstrap-wysihtml5\js\bootstrap-wysihtml5.js" />
+    <None Include="wwwroot\lib\pl-editors\bootstrap-wysihtml5\js\lib\wysihtml5-0.3.0.min.js" />
+    <None Include="wwwroot\lib\pl-editors\ckeditor\ckeditor.js" />
+    <None Include="wwwroot\lib\pl-file\jquery.file.upload\js\jquery.fileupload-fp.js" />
+    <None Include="wwwroot\lib\pl-file\jquery.file.upload\js\jquery.fileupload-ui.js" />
+    <None Include="wwwroot\lib\pl-file\jquery.file.upload\js\jquery.fileupload.js" />
+    <None Include="wwwroot\lib\pl-file\jquery.file.upload\js\jquery.iframe-transport.js" />
+    <None Include="wwwroot\lib\pl-file\jquery.file.upload\js\main-custom.js" />
+    <None Include="wwwroot\lib\pl-file\jquery.file.upload\js\main-default.js" />
+    <None Include="wwwroot\lib\pl-file\jquery.file.upload\js\main-dropzone.js" />
+    <None Include="wwwroot\lib\pl-file\jquery.file.upload\js\tmpl.min.js" />
+    <None Include="wwwroot\lib\pl-form\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <None Include="wwwroot\lib\pl-form\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <None Include="wwwroot\lib\pl-form\bootstrap-daterangepicker\js\bootstrap-daterangepicker.js" />
+    <None Include="wwwroot\lib\pl-form\bootstrap-daterangepicker\js\date.js" />
+    <None Include="wwwroot\lib\pl-form\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <None Include="wwwroot\lib\pl-form\bootstrap-multiselect\js\bootstrap-multiselect.js" />
+    <None Include="wwwroot\lib\pl-form\bootstrap-select\js\bootstrap-select.js" />
+    <None Include="wwwroot\lib\pl-form\bootstrap-select\js\bootstrap-select.min.js" />
+    <None Include="wwwroot\lib\pl-form\bootstrap-switch\js\bootstrapSwitch.js" />
+    <None Include="wwwroot\lib\pl-form\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <None Include="wwwroot\lib\pl-form\jquery.counter\js\jquery.counter.min.js" />
+    <None Include="wwwroot\lib\pl-form\jquery.dualListbox\js\jquery.dualListBox.min.js" />
+    <None Include="wwwroot\lib\pl-form\jquery.elastic\js\jquery.elastic.js" />
+    <None Include="wwwroot\lib\pl-form\jquery.inputmask\js\jquery.inputmask.bundle.min.js" />
+    <None Include="wwwroot\lib\pl-form\jquery.inputmask\js\jquery.inputmask.custom.extensions.js" />
+    <None Include="wwwroot\lib\pl-form\jquery.validation\js\jquery.validate.js" />
+    <None Include="wwwroot\lib\pl-form\multi-select\js\jquery.multi-select.js" />
+    <None Include="wwwroot\lib\pl-form\multi-select\js\jquery.quicksearch.js" />
+    <None Include="wwwroot\lib\pl-form\select2\js\select2.js" />
+    <None Include="wwwroot\lib\pl-form\tagmanager\js\bootstrap-tagmanager.js" />
+    <None Include="wwwroot\lib\pl-form\uniform\js\jquery.uniform.min.js" />
+    <None Include="wwwroot\lib\pl-gallery\bootstrap-image-gallery\js\bootstrap-image-gallery.min.js" />
+    <None Include="wwwroot\lib\pl-gallery\imagesloaded\js\jquery.imagesloaded.js" />
+    <None Include="wwwroot\lib\pl-gallery\load-image\js\load-image.js" />
+    <None Include="wwwroot\lib\pl-gallery\load-image\js\load-image.min.js" />
+    <None Include="wwwroot\lib\pl-gallery\nailthumb\js\jquery.nailthumb.js" />
+    <None Include="wwwroot\lib\pl-gallery\showloading\js\jquery.showLoading.js" />
+    <None Include="wwwroot\lib\pl-gallery\wookmark\js\jquery.wookmark.js" />
+    <None Include="wwwroot\lib\pl-system-info\bootstrapx-clickover\js\bootstrapx-clickover.js" />
+    <None Include="wwwroot\lib\pl-system-info\gritter\js\jquery.gritter.min.js" />
+    <None Include="wwwroot\lib\pl-system-info\jquery.notyfy\js\jquery.notyfy.js" />
+    <None Include="wwwroot\lib\pl-system-info\qtip2\js\jquery.qtip.min.js" />
+    <None Include="wwwroot\lib\pl-system\jquery-cookie\js\jquery.cookie.js" />
+    <None Include="wwwroot\lib\pl-system\jquery-mousewheel\js\jquery.mousewheel.js" />
+    <None Include="wwwroot\lib\pl-system\jquery.nicescroll\js\jquery.nicescroll.min.js" />
+    <None Include="wwwroot\lib\pl-system\xbreadcrumbs\js\xbreadcrumbs.js" />
+    <None Include="wwwroot\lib\pl-table\datatables\js\jquery.dataTables.columnFilter.js" />
+    <None Include="wwwroot\lib\pl-table\datatables\js\jquery.dataTables.js" />
+    <None Include="wwwroot\lib\pl-table\datatables\js\jquery.dataTables.plugins.js" />
+    <None Include="wwwroot\lib\pl-table\datatables\js\jquery.FixedColumns.plugins.js" />
+    <None Include="wwwroot\lib\pl-visualization\bootstrap-progressbar\js\bootstrap-progressbar.min.js" />
+    <None Include="wwwroot\lib\pl-visualization\easy-pie-chart\js\jquery.easy-pie-chart.js" />
+    <None Include="wwwroot\lib\pl-visualization\flot\js\jquery.flot.categories.js" />
+    <None Include="wwwroot\lib\pl-visualization\flot\js\jquery.flot.grow.js" />
+    <None Include="wwwroot\lib\pl-visualization\flot\js\jquery.flot.js" />
+    <None Include="wwwroot\lib\pl-visualization\flot\js\jquery.flot.orderBars.js" />
+    <None Include="wwwroot\lib\pl-visualization\flot\js\jquery.flot.pie.js" />
+    <None Include="wwwroot\lib\pl-visualization\flot\js\jquery.flot.resize.js" />
+    <None Include="wwwroot\lib\pl-visualization\flot\js\jquery.flot.selection.js" />
+    <None Include="wwwroot\lib\pl-visualization\flot\js\jquery.flot.stack.js" />
+    <None Include="wwwroot\lib\pl-visualization\flot\js\jquery.flot.stackpercent.js" />
+    <None Include="wwwroot\lib\pl-visualization\flot\js\jquery.flot.time.js" />
+    <None Include="wwwroot\lib\pl-visualization\jquery-knob\js\jquery.knob.js" />
+    <None Include="wwwroot\lib\pl-visualization\jquery.percentageloader\js\jquery.percentageloader.min.js" />
+    <None Include="wwwroot\lib\pl-visualization\sparkline\js\jquery.sparkline.min.js" />
+    <None Include="wwwroot\lib\Script\Local\Pathology\Company.js" />
+    <None Include="wwwroot\lib\Script\Local\Pathology\Doctor.js" />
+    <None Include="wwwroot\lib\Script\Local\Pathology\FillTestResults.js" />
+    <None Include="wwwroot\lib\Script\Local\Pathology\MaintainMaster.js" />
+    <None Include="wwwroot\lib\Script\Local\Pathology\ProfileMaster.js" />
+    <None Include="wwwroot\lib\Script\Local\Pathology\Staff.js" />
+    <None Include="wwwroot\lib\Script\Local\Pathology\TestBooking.js" />
+    <None Include="wwwroot\lib\Script\Local\Pathology\TestMaster.js" />
+    <None Include="wwwroot\lib\Script\Local\Pathology\UserLogin.js" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\ValidationMessage.resx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\lib\CSS\Local\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />

@@ -35,70 +35,66 @@
 
     }).done(function (response) {
         if (response.messageId == 1) {
-            alert(response.messageText);
+        /*bootbox.alert(response.messageText);*/
+            var box = bootbox.alert("Hello world!");
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-success"); // (thanks Mark B)
+            /*box.find(".btn-primary").removeClass("btn-primary").addClass("btn-danger");*/
+            //bootbox.dialog("Error in task", {
+            //    "label": "Ok",
+            //    "class": "success",   // or primary, or success, or nothing at all
+            //    "callback": function () {
+            //        //console.log("great success");
+            //    }
+            //});
+            //alert(response.messageText);
         }
-            if (value == "E") {
-                $("#RowId").val(response.rowId);
-                $("#txtName").val(response.name);
-                $("#txtRate").val(response.rate);
-                $("#txtPrintName").val(response.printName);
-                $("#dpdStatus").val(response.status);
-                $("#txtRemarks").val(response.remarks);
-            }
-            $("#tblMasterList").empty();
-            var ListHtml = '';
-            ListHtml += '<table id="example" class="display nowrap cell-border" style="width:100%"><thead><tr>';
-            /*            ListHtml += '<table id="example" class="display" style="width:100%"><thead><tr>';*/
-            ListHtml += '<th scope="col">Name</th>';
-            ListHtml += '<th scope="col">Print Name</th>';
-            if (MID == 7) {
-                ListHtml += '<th scope="col">Rate</th>';
-            }
-            ListHtml += '<th scope="col">Status</th>';
-            ListHtml += '<th scope="col">Remarks</th>';
-            ListHtml += '<th scope="col">Action</th>';
-            ListHtml += '</tr></thead> ';
-            ListHtml += '<tbody>';
-            if (response.masterDetailsList.length > 0) {
-                $.each(response.masterDetailsList, function () {
-                    ListHtml += '<tr><td>' + this.name + '</td>'
-                    ListHtml += '<td>' + this.printName + '</td>'
-                    if (MID == 7) {
-                        ListHtml += '<td> ' + this.rate + '</td >'
-                    }
-                    ListHtml += '<td>' + this.statusName + '</td><td>' + this.remarks + '</td ><td><a href="#" class="class="fa fa-pencil"" onclick="MaintainMasterOperation(' + this.rowId + ',\'' + Edit + '\');"> Edit</a> | <a href="#" class="class="fa fa-trash" onclick="MaintainMasterOperation(' + this.rowId + ',\'' + Delete + '\');"> Delete</a></td>';
-                    ListHtml += '</tr > ';
-
-                });
-                ListHtml += '</tbody> </table>';
-            }
-            else {
-                ListHtml += '<tr><td colspan="7"> Record Not Found ...</td></tr>';
-            }
-            ListHtml += '</tbody>';
-            ListHtml += '</table>';
-            $("#tblMasterList").html(ListHtml);
-            SetDataTable();
+        if (value == "E") {
+            $("#RowId").val(response.rowId);
+            $("#txtName").val(response.name);
+            $("#txtRate").val(response.rate);
+            $("#txtPrintName").val(response.printName);
+            $("#dpdStatus").val(response.status);
+            $("#txtRemarks").val(response.remarks);
+        }
+        $("#tblMasterList").empty();
+        var ListHtml = '';
+        ListHtml += ' <div class="widget widget-simple widget-table">';
+        ListHtml += '<table id="exampleDTC" class="table table-striped table-content table-condensed boo-table table-hover bg-green-light">';
+        ListHtml += '<caption class="caption-m"><span>Master List</span></caption>';
+        ListHtml += '<thead><tr><th scope="col">Name<span class="column-sorter"></span></th>';
+        ListHtml += '<th scope="col">Print Name<span class="column-sorter"></span></th>';
+        if (MID == 7) {
+            ListHtml += '<th scope="col">Rate<span class="column-sorter"></span></th>';
+        }
+        ListHtml += '<th scope="col">Status<span class="column-sorter"></span></th>';
+        ListHtml += '<th scope="col">Remarks<span class="column-sorter"></span></th>';
+        ListHtml += '<th scope="col">Action<span class="column-sorter"></span></th>';
+        ListHtml += '</tr></thead> ';
+        ListHtml += '<tbody>';
+        if (response.masterDetailsList.length > 0) {
+            $.each(response.masterDetailsList, function () {
+                ListHtml += '<tr><td style="font-size: 11px">' + this.name + '</td>'
+                ListHtml += '<td style="font-size: 11px">' + this.printName + '</td>'
+                if (MID == 7) {
+                    ListHtml += '<td> ' + this.rate + '</td >'
+                }
+                ListHtml += '<td>' + this.statusName + '</td><td>' + this.remarks + '</td><td><a title="Edit" data-toggle="tooltip" onclick="MaintainMasterOperation(' + this.rowId + ',\'' + Edit + '\');"><i class="fa fa-pencil"></i></a> | <a title="Delete" data-toggle="tooltip" onclick="MaintainMasterOperation(' + this.rowId + ',\'' + Delete + '\');"><i <i class="fa fa-trash"></i></i></a></td>';
+                ListHtml += '</tr > ';
+            });
+            ListHtml += '</tbody> </table>';
+        }
+        else {
+            ListHtml += '<tr><td colspan="7"> Record Not Found ...</td></tr>';
+        }
+        ListHtml += '</tbody>';
+        ListHtml += '</table>';
+        ListHtml += '</div>';
+        $("#tblMasterList").html(ListHtml);
+        //datatable();
         if (value == "I" || value == "U" || value == "D") {
             ClearField();
         }
         EnabledDisabled(value);
-    });
-}
-function SetDataTable() {
-    $('#example').DataTable({
-        responsive: {
-            details: {
-                display: $.fn.dataTable.Responsive.display.modal({
-                    header: function (row) {
-                        var data = row.data();
-                        // return 'Details for ' + data[0] + ' ' + data[1];
-                        return 'Details for ' + data[0];
-                    }
-                }),
-                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
-            }
-        }
     });
 }
 function ClearField() {
@@ -122,16 +118,10 @@ function EnabledDisabled(val) {
 function ColumnsAdjustment(mid) {
     debugger;
     if (mid == 7) {
-        $("#lblRate").show();
-        $("#divRate").show();
-        $("#lblStatus").removeClass("col-sm-3 col-form-label col-form-label-sm").addClass("col-sm-2 col-form-label col-form-label-sm");
-        $("#divStatus").removeClass("col-sm-9").addClass("col-sm-4");
+        $("#ListRate").show();
     }
     else {
-        $("#lblRate").hide();
-        $("#divRate").hide();
-        $("#lblStatus").removeClass("col-sm-2 col-form-label col-form-label-sm").addClass("col-sm-3 col-form-label col-form-label-sm");
-        $("#divStatus").removeClass("col-sm-4").addClass("col-sm-9");
+        $("#ListRate").hide();
     }
 }
 function MaintaiTestHeadOperation(Id, value) {
@@ -188,8 +178,8 @@ function MaintaiTestHeadOperation(Id, value) {
         ListHtml += '<tbody>';
         if (response.masterDetailsList.length > 0) {
             $.each(response.masterDetailsList, function () {
-                ListHtml += '<tr><td>' + this.name + '</td>'
-                ListHtml += '<td>' + this.printName + '</td>'
+                ListHtml += '<tr><td style="font-size: 11px">' + this.name + '</td>'
+                ListHtml += '<td style="font-size: 11px">' + this.printName + '</td>'
                 ListHtml += '<td>' + this.statusName + '</td><td><a href="#" class="class="fa fa-pencil"" onclick="MaintaiTestHeadOperation(' + this.rowId + ',\'' + Edit + '\');"> Edit</a> | <a href="#" class="class="fa fa-trash" onclick="MaintaiTestHeadOperation(' + this.rowId + ',\'' + Delete + '\');"> Delete</a></td>';
                 ListHtml += '</tr > ';
 
@@ -202,7 +192,7 @@ function MaintaiTestHeadOperation(Id, value) {
         ListHtml += '</tbody>';
         ListHtml += '</table>';
         $("#tblDepartmentDetailsList").html(ListHtml);
-        SetDataTable();
+        //SetDataTable();
         if (value == "I" || value == "U" || value == "D") {
             ClearTestHeadField();
         }
@@ -214,4 +204,13 @@ function ClearTestHeadField() {
     $("#txtName").val("");
     $("#txtPrintName").val("");
     $("#dpdStatus").prop('selectedIndex', 1);
+}
+function datatable() {
+    $('#exampleDTC').dataTable({
+        bAutoWidth: true,
+        sPaginationType: 'full_numbers',
+        paging: false,
+        bFilter: false,
+        bInfo: false
+    });
 }
