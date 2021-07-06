@@ -1,67 +1,89 @@
 ﻿@model Models.Pathology.DoctorModel;
-<div id="AddDoctor" class="modal fade" data-keyboard="false" role="dialog" data-backdrop="static">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="width:800px">
-            <div class="modal-header">
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="row">
-                        <div class="col-sm-12">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+        <h4>Add Doctor</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row-fluid">
+            <div class="span12 grider">
+                <div class="widget well well-nice">
+                    <div class="widget-header">
+                        <h4><i class="fa fa-list"></i>Add Doctor <small></small></h4>
+                    </div>
+                    <div class="widget-content">
+                        <div class="widget-body">
+                            <form id="itemForm" class="span12 form-horizontal">
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <fieldset>
+                                            <ul class="form-list label-left list-bordered dotted">
+                                                <li class="control-group">
+                                                    <div class="span6">
+                                                        <label for="DoctorName" class="control-label">Name: <span class="required">*</span></label>
+                                                        <div class="controls">
+                                                            <input id="txtDoctorName" class="input-block-level" type="text" data-error="Please Enter Name." required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="span6">
+                                                        <label for="GenderName" class="control-label">Gender: <span class="required">*</span></label>
+                                                        <div class="controls">
+                                                            @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--", new { @Class = "input-block-level" })
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- // form item -->
 
-                            <div class="form-group row">
-                                <label for="txtDoctorName" class="col-sm-2 col-form-label col-form-label-sm">Doctor Name:<span class="mandatory"><b>*</b></span></label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm" id="txtDoctorName">
-                                </div>
-                                <label for="dtpGender" class="col-sm-2 col-form-label col-form-label-sm">Gender:<span class="mandatory"><b>*</b></span></label>
-                                <div class="col-sm-4">
-                                    @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--",
-                                                                                                       new
-                                                                                                       {
-                                                                                                           @Class = "form-control form-control-sm"
-                                                                                                       })
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="txtMobileNo" class="col-sm-2 col-form-label col-form-label-sm">Mobile No.:<span class="mandatory"><b>*</b></span></label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm" id="txtMobileNo">
-                                </div>
-                                <label for="txtEmail" class="col-sm-2 col-form-label col-form-label-sm">Email Id:</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm" id="txtEmail">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="txtAddress" class="col-sm-2 col-form-label col-form-label-sm">Address:</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm" id="txtAddress">
-                                </div>
-                                <label for="dtpSpecialization" class="col-sm-2 col-form-label col-form-label-sm">Specialization:<span class="mandatory"><b>*</b></span></label>
-                                <div class="col-sm-4">
-                                    @Html.DropDownListFor(m => m.Specialization, new SelectList(Model.SpecializationList, "Value", "Text"), "--Select--",
-                                                                                                        new
-                                                                                                        {
-                                                                                                            @Class = "form-control form-control-sm"
-                                                                                                        })
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-5">
-                                </div>
-                                <div class="col-sm-7">
-                                    <button type="button" id="btnCreate" OnClick="DoctorOperations(0,'I')" class="btn btn-outline-primary">Save</button>
-                                    <button type="button" id="btnUpdate" OnClick="DoctorOperations(0,'U')" class="btn btn-outline-primary">Update</button>
-                                    <button type="button" id="btnExit" data-dismiss="modal" class="btn btn-outline-primary">Close</button>
-                                </div>
-                            </div>
+                                                <li class="control-group">
+                                                    <div class="span6">
+                                                        <label for="MobileNoAlias" class="control-label">Mobile No.: <span class="required">*</span></label>
+                                                        <div class="controls">
+                                                            <input id="txtMobileNo" class="input-block-level" type="text"  data-error="Please Enter Mobile No." required/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span6">
+                                                        <label for="EmailIdAlias" class="control-label">Email Id:</label>
+                                                        <div class="controls">
+                                                            <input id="txtEmail" class="input-block-level" type="text" />
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- // form item -->
+                                                <li class="control-group">
+                                                    <div class="span6">
+                                                        <label for="AddressAlias" class="control-label">Address: <span class="required">*</span></label>
+                                                        <div class="controls">
+                                                            <input id="txtAddress" class="input-block-level" type="text" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="span6">
+                                                        <label for="SpecializationAlias" class="control-label">Specialization:<span class="required">*</span></label>
+                                                        <div class="controls">
+                                                            @Html.DropDownListFor(m => m.Specialization, new SelectList(Model.SpecializationList, "Value", "Text"), "--Select--", new { @Class = "input-block-level" })
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- // form item -->
+                                                <li class="control-group">
+                                                    <div class="controls" style="text-align:center;">
+                                                        <button type="button" id="btnCreate" title="Save" data-toggle="tooltip" OnClick="DoctorOperations(0,'I')" class="btn btn-blue"><i class="fa fa-save"></i> Save</button>
+                                                        <button type="button" id="btnUpdate" title="Update" data-toggle="tooltip" OnClick="DoctorOperations(0,'U')" class="btn btn-blue" disabled><i class="fa fa-edit"></i> Update</button>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </fieldset>
+                                        <!-- // fieldset Input -->
+                                        <div class="form-actions">
 
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </form>
+                </div>
+                <!-- // Widget -->
             </div>
+            <!-- // Column -->
         </div>
     </div>
-</div>
-<script src="~/lib/Script/Local/Pathology/Doctor.js"></script>
+    <script src="~/lib/Script/Local/Pathology/Doctor.js"></script>

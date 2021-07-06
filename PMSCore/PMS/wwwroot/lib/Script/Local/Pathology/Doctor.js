@@ -1,5 +1,5 @@
 ﻿function AddNewDoctor() {
-   // $("#AddDoctor").modal('show');
+    // $("#AddDoctor").modal('show');
     //debugger;
     $.ajax({
         url: "../Doctor/AddDoctor",
@@ -10,6 +10,13 @@
         }
     });
 }
+function DeleteDoctorOperations(id, val) {
+    bootbox.confirm("Do you want to delete this recored.?", function (result) {
+        if (result) {
+            DoctorOperations(id, val);
+        }
+    });
+}
 function DoctorOperations(Id, value) {
     debugger;
     var Edit = "E";
@@ -17,14 +24,7 @@ function DoctorOperations(Id, value) {
     if (value == "D" || value == "E") {
         $("#RowId").val(Id);
     }
-    if (value == "D") {
-        status = confirm('Are you sure? want to delete');
-        if (!status) {
-            return false;
-        }
-    }
-    if (value == "E")
-    {
+    if (value == "E") {
         AddNewDoctor();
     }
     model = {
@@ -46,41 +46,26 @@ function DoctorOperations(Id, value) {
 
     }).done(function (response) {
         if (response.messageId == 1) {
-            alert(response.messageText);
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-danger");
         }
-        else {
-            if (value == "E") {
-                $("#RowId").val(response.rowId);
-                $("#txtDoctorName").val(response.doctorName);
-                $("#Gender").val(response.gender);
-                $("#txtMobileNo").val(response.mobileNo);
-                $("#txtEmail").val(response.emailId);
-                $("#txtAddress").val(response.address);
-                $("#Specialization").val(response.specialization);
-            }
-            //SetDataTable();
-            if (value == "I" || value == "U" || value == "D") {
-                alert(response.messageText);
-                ClearField();
-            }
-            EnabledDisabled(value);
+        else if (response.messageId == 2) {
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-success");
         }
-    });
-}
-function SetDataTable() {
-    $('#example').DataTable({
-        responsive: {
-            details: {
-                display: $.fn.dataTable.Responsive.display.modal({
-                    header: function (row) {
-                        var data = row.data();
-                        // return 'Details for ' + data[0] + ' ' + data[1];
-                        return 'Details for ' + data[0];
-                    }
-                }),
-                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
-            }
+        if (value == "E") {
+            $("#RowId").val(response.rowId);
+            $("#txtDoctorName").val(response.doctorName);
+            $("#Gender").val(response.gender);
+            $("#txtMobileNo").val(response.mobileNo);
+            $("#txtEmail").val(response.emailId);
+            $("#txtAddress").val(response.address);
+            $("#Specialization").val(response.specialization);
         }
+        if (value == "I" || value == "U" || value == "D") {
+            ClearField();
+        }
+        EnabledDisabled(value);
     });
 }
 function ClearField() {

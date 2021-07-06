@@ -25,7 +25,7 @@ namespace PMS.Controllers
         {
             await _doctorRepository.GetMasterData(model);
             //return View(model);
-            return PartialView("AddNewDoctor", model);
+            return PartialView("AddDoctor", model);
         }
         [HttpPost]
         public async Task<IActionResult> DoctorOperations(DoctorModel model)

@@ -52,17 +52,17 @@ namespace PMS.Repository.Pathology
             {
                 DataSet ds = await _doctorDAL.DoctorOperations(model); if (model.Action == "I")
                 {
-                    model.MessageId = 0;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Save;
                 }
                 else if (model.Action == "U")
                 {
-                    model.MessageId = 0;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Update;
                 }
                 else if (model.Action == "D")
                 {
-                    model.MessageId = 0;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Delete;
                 }
 

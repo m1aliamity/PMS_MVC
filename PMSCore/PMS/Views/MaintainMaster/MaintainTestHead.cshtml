@@ -1,61 +1,97 @@
 ﻿@model Models.Pathology.MaintainMasterModel;
-@{ ViewData["Title"] = "MaintainMaster";
-    }
+<div class="row-fluid">
+    <div class="span6 grider">
+        <div class="widget well well-nice">
+            <div class="widget-header">
+                <h4><i class="fa fa-plus"></i> Add Head <small></small></h4>
+            </div>
+            <div class="widget-content">
+                <div class="widget-body">
+                    <form id="itemForm" class="span12 form-horizontal">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <fieldset>
+                                    <ul class="form-list label-left list-bordered dotted">
+                                        <li class="control-group">
+                                            <label for="MasterTitle" class="control-label">Department: <span class="required">*</span></label>
+                                            <div class="controls">
+                                                @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.PathologyDepartmentList, "Value", "Text"), "--Select--", new { @Class = "input-block-level", @onchange = "MaintainTestHeadOperation(0,'S')" })
+                                            </div>
+                                        </li>
+                                        <!-- // form item -->
 
-<div class="row">
-    <div class="col-sm-5">
-        <form>
-            <div class="form-group row">
-                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Department:<span class="mandatory"><b>*</b></span></label>
-                <div class="col-sm-9">
-                    @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.PathologyDepartmentList, "Value", "Text"), "--Select--",
-                             new
-                             {
-                                 @Class = "form-control form-control-sm",
-                                 @onchange = "MaintaiTestHeadOperation(0,'S')"
-                             })
-                    @*@Html.DropDownListFor(m => m.MID, new SelectList(Model.MasterList, "Value", "Text"), "--Select--",
-                        new
-                        {
-                        @Class = "form-control form-control-sm",
-                        @onchange = "MaintainMasterOperation(0,'G')"
-                        })*@
+                                        <li class="control-group">
+                                            <label for="NameAlias" class="control-label">Name: <span class="required">*</span></label>
+                                            <div class="controls">
+                                                <input id="txtName" class="input-block-level" type="text" data-error="Please Enter Name." required />
+                                            </div>
+                                        </li>
+                                        <!-- // form item -->
+                                        <li class="control-group">
+                                            <label for="PrintNameAlias" class="control-label">Print Name: <span class="required">*</span></label>
+                                            <div class="controls">
+                                                <input id="txtPrintName" class="input-block-level" type="text" data-error="Please Enter Print Name." required />
+                                            </div>
+                                        </li>
+                                        <!-- // form item -->
+                                        <li class="control-group">
+                                            <label for="StatusAlias" class="control-label">Status: <span class="required">*</span></label>
+                                            <div class="controls clearfix">
+                                                <select class="input-block-level" id="dpdStatus" data-error="Please Select Status." data-class="btn-info" required>
+                                                    <option value="0">--Select--</option>
+                                                    <option value="1" selected>Active</option>
+                                                    <option value="2">Deactive</option>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <!-- // form item -->
+                                        <li class="control-group">
+                                            <div class="controls">
+                                                <button type="button" id="btnCreate" title="Save" data-toggle="tooltip" OnClick="MaintainTestHeadOperation(0,'I')" class="btn btn-blue"><i class="fa fa-save"></i> Save</button>
+                                                <button type="button" id="btnUpdate" title="Update" data-toggle="tooltip" OnClick="MaintainTestHeadOperation(0,'U')" class="btn btn-blue" disabled><i class="fa fa-edit"></i> Update</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </fieldset>
+                                <!-- // fieldset Input -->
+                                <div class="form-actions">
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Name:<span class="mandatory"><b>*</b></span></label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control form-control-sm" id="txtName" data-error="Please Enter Name." required>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Print Name:<span class="mandatory"><b>*</b></span></label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control form-control-sm" id="txtPrintName">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabelSm" id="lblStatus" class="col-sm-3 col-form-label col-form-label-sm">Status:<span class="mandatory"><b>*</b></span></label>
-                <div id="divStatus" class="col-sm-9">
-                    <select class="form-control form-control-sm" id="dpdStatus">
-                        <option value="0">--Select--</option>
-                        <option value="1" selected>Active</option>
-                        <option value="2">Deactive</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-4">
-                </div>
-                <div class="col-sm-8">
-                    <button type="button" id="btnCreate" OnClick="MaintaiTestHeadOperation(0,'I')" class="btn btn-outline-primary">Save</button>
-                    <button type="button" id="btnUpdate" OnClick="MaintaiTestHeadOperation(0,'U')" class="btn btn-outline-primary" disabled>Update</button>
-                    <button type="button" id="btnExit" class="btn btn-outline-primary">Exit</button>
-                </div>
-            </div>
-        </form>
+        </div>
+        <!-- // Widget -->
     </div>
-    <div class="col-sm-7" id="tblDepartmentDetailsList">
+    <!-- // Column -->
+
+    <div class="span6 grider">
+        <div class="widget widget-simple">
+            <div class="widget-header">
+                <h4><i class="fa fa-list glyph"></i> Head List</h4>
+            </div>
+            <div class="widget-content">
+                <div class="widget-body">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <fieldset>
+                                <ul class="form-list list-bordered dotted">
+                                    <li class="control-group" id="tblDepartmentDetailsList">
+
+                                    </li>
+                                    <!-- // form item -->
+                                </ul>
+                            </fieldset>
+                            <!-- // fieldset Input -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // Widget -->
     </div>
+    <!-- // Column -->
 </div>
 <script src="~/lib/Script/Local/Pathology/MaintainMaster.js"></script>

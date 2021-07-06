@@ -34,17 +34,17 @@ namespace PMS.Repository.Pathology
                 DataSet ds = await _maintainMasterDAL.MasterDetailOperations(model);
                 if (model.Action == "I")
                 {
-                    model.MessageId = 1;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Save;
                 }
                 else if (model.Action == "U")
                 {
-                    model.MessageId = 1;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Update;
                 }
                 else if(model.Action == "D")
                 {
-                    model.MessageId = 1;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Delete;
                 }
                 if (ds.Tables[0].Rows.Count >= 0)
@@ -105,17 +105,17 @@ namespace PMS.Repository.Pathology
                 DataSet ds = await _maintainMasterDAL.TestHeadOperations(model);
                 if (model.Action == "I")
                 {
-                    model.MessageId = 1;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Save;
                 }
                 else if (model.Action == "U")
                 {
-                    model.MessageId = 1;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Update;
                 }
                 else if (model.Action == "D")
                 {
-                    model.MessageId = 1;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Delete;
                 }
                 if (ds.Tables[0].Rows.Count >= 0)
