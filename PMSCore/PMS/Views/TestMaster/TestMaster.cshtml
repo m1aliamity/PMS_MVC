@@ -1,36 +1,52 @@
 ﻿@model Models.Pathology.TestMasterModel;
-<form>
-    <div class="row">
 
-        <div class="col-sm-12">
-            <div class="form-group row">
-                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Department:<span class="mandatory"><b>*</b></span></label>
-                <div class="col-sm-3">
-                    @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.PathologyDepartmentList, "Value", "Text"), "--Select--",
-                                                           new
-                                                           {
-                                                               @Class = "form-control form-control-sm",
-                                                               @onchange = "GetTestHeadMaster('M')"
-                                                           })
-                </div>
-                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Test Head:<span class="mandatory"><b>*</b></span></label>
-                <div class="col-sm-3">
-                    <select class="form-control form-control-sm" id="TestHeadId" onchange="TestOperations(0,'')">
-                        <option value="0" selected>--Select--</option>
-                    </select>
-                </div>
-                <div class="col-sm-2">
-                    <button type="button" id="btnAddNew" onclick="AddTest()" class="form-control form-control-sm">AddTest</button>
+<div class="row-fluid">
+    <div class="span12 grider">
+        <div class="widget well well-nice">
+            <div class="widget-header">
+                <h4><i class="fa fa-plus"></i>Add Doctor <small></small></h4>
+                <div class="widget-tool"><a class="btn btn-green btn-small btn-glyph" onclick="AddTest()"><i class="fa fa-plus"></i> Test</a></div>
+            </div>
+            <div class="widget-content">
+                <div class="widget-body">
+                    <form id="itemForm" class="span12 form-horizontal">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <fieldset>
+                                    <ul class="form-list label-left list-bordered dotted">
+                                        <li class="control-group">
+                                            <div class="span6">
+                                                <label for="departmntAlias" class="control-label">Department: <span class="required">*</span></label>
+                                                <div class="controls">
+                                                    @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.PathologyDepartmentList, "Value", "Text"), "--Select--", new { @Class = "input-block-level", @onchange = "GetTestHeadMaster('M')" })
+                                                </div>
+                                            </div>
+                                            <div class="span6">
+                                                <label for="htestAlias" class="control-label">Test Head: <span class="required">*</span></label>
+                                                <div class="controls">
+                                                    <select class="input-block-level" id="TestHeadId" onchange="TestOperations(0,'')">
+                                                        <option value="0" selected>--Select--</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="control-group" id="tblTestList">
+
+                                        </li>
+                                        <!-- // form item -->
+                                    </ul>
+                                    <div id="AddTest" class="modal hide fadee" data-keyboard="false" data-width="90%" data-backdrop="static">
+                                    </div>
+                                </fieldset>
+                                <!-- // fieldset Input -->
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="col-sm-12" id="tblTestList">
-                @*<tr>
-                    <td colspan="7"> Record Not Found ...</td></tr>
-                    </table>*@
-            </div>
         </div>
-        <div id="AddMaster" class="modal fade" data-keyboard="false" data-backdrop="static">
-        </div>
+        <!-- // Widget -->
     </div>
-</form>
+    <!-- // Column -->
+</div>
 <script src="~/lib/Script/Local/Pathology/TestMaster.js"></script>

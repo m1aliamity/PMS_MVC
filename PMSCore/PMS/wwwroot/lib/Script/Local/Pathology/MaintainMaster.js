@@ -79,7 +79,6 @@ function MaintainMasterOperation(Id, value) {
                     ListHtml += '<td>' + this.statusName + '</td><td>' + this.remarks + '</td><td><a title="Edit" data-toggle="tooltip" onclick="MaintainMasterOperation(' + this.rowId + ',\'' + Edit + '\');"><i class="fa fa-pencil"></i></a> | <a title="Delete" data-toggle="tooltip" onclick="DeleteMaintainMasterOperation(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i></a></td>';
                     ListHtml += '</tr > ';
                 });
-                ListHtml += '</tbody> </table>';
             }
             else {
                 ListHtml += '<tr><td colspan="4"> Record Not Found ...</td></tr>';
@@ -186,13 +185,12 @@ function MaintainTestHeadOperation(Id, value) {
                 ListHtml += '<tr><td>' + this.name + '</td>'
                 ListHtml += '<td>' + this.printName + '</td>'
                 ListHtml += '<td>' + this.statusName + '</td><td>' + this.remarks + '</td><td><a title="Edit" data-toggle="tooltip" onclick="MaintainTestHeadOperation(' + this.rowId + ',\'' + Edit + '\');"><i class="fa fa-pencil"></i></a> | <a title="Delete" data-toggle="tooltip" onclick="DeleteMaintainTestHeadOperation(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i></a></td>';
-                ListHtml += '</tr > ';
+                ListHtml += '</tr> ';
 
             });
-            ListHtml += '</tbody> </table>';
         }
         else {
-            ListHtml += '<tr><td colspan="4"> Record Not Found ...</td></tr>';
+            ListHtml += '<tr><td colspan="5"> Record Not Found ...</td></tr>';
         }
         ListHtml += '</tbody>';
         ListHtml += '</table>';

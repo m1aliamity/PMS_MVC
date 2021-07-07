@@ -38,43 +38,52 @@ function GetTestDetails(value) {
 
     }).done(function (response) {
         if (response.messageId == 1) {
-            alert(response.messageText);
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-danger");
+        }
+        else if (response.messageId == 3) {
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-success");
         }
         else {
             $("#tblTestList").empty();
             var ListHtml = '';
-            ListHtml += '<table id="example" class="display nowrap cell-border" style="width:100%"><thead><tr>';
-            ListHtml += '<th scope="col">Test Name</th>';
-            ListHtml += '<th scope="col">TestRate</th>';
-            ListHtml += '<th scope="col">Action</th>';
+            ListHtml += ' <div class="widget widget-simple widget-table">';
+            ListHtml += '<table id="tblTestList" class="table table-striped table-content table-condensed boo-table table-hover bg-green-light">';
+            ListHtml += '<caption class="caption-m"><span>Test List</span></caption>';
+            ListHtml += '<thead><tr>';
+            ListHtml += '<th scope="col">Test Name<span class="column-sorter"></span></th>';
+            ListHtml += '<th scope="col">TestRate<span class="column-sorter"></span></th>';
+            ListHtml += '<th scope="col">Action<span class="column-sorter"></span></th>';
             ListHtml += '</tr></thead> ';
             ListHtml += '<tbody>';
             if (response.testList.length > 0) {
                 $.each(response.testList, function () {
                     ListHtml += '<td>' + this.testName + '</td>';
-                    ListHtml += '<td>' + this.testRate + '</td><td>';
-                    ListHtml += '<a href="#" class="class=" fa fa-trash" onclick="ProfileOperations(' + this.rowId + ', \'' + Insert + '\');"> Send To Profile </a></td>';
+                    ListHtml += '<td>' + this.testRate + '</td>';
+                    ListHtml += '<td><a class="btn btn-green btn-small btn-glyph" title="Add to Profile" data-toggle="tooltip" onclick="ProfileOperations(' + this.rowId + ',\'' + Insert + '\');"><i class="fa fa-plus"></i></a> Add To Profile</td>';
                     ListHtml += '</tr > ';
                 });
-                ListHtml += '</tbody> </table>';
             }
             else {
                 ListHtml += '<tr><td colspan="7"> Record Not Found ...</td></tr>';
             }
             ListHtml += '</tbody>';
             ListHtml += '</table>';
+            ListHtml += '</div>';
             $("#tblTestList").html(ListHtml);
         }
     });
 }
-function ProfileOperations(Id,value) {
-    var Delete = "D";
-    if (value == "D") {
-        status = confirm('Are you sure? want to delete');
-        if (!status) {
-            return false;
+function DeleteProfileOperations(id, val) {
+    bootbox.confirm("Do you want to delete this test from profile.?", function (result) {
+        if (result) {
+            ProfileOperations(id, val);
         }
-    }
+    });
+}
+function ProfileOperations(Id, value) {
+    var Delete = "D";
     model = {
         RowId: Id,
         ProfileId: $("#ProfileId").val(),
@@ -90,31 +99,38 @@ function ProfileOperations(Id,value) {
 
     }).done(function (response) {
         if (response.messageId == 1) {
-            alert(response.messageText);
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-danger");
+        }
+        else if (response.messageId == 3) {
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-success");
         }
         else {
             $("#tblProfileDetailList").empty();
             var ListHtml = '';
-            ListHtml += '<table id="example" class="display nowrap cell-border" style="width:100%"><thead><tr>';
-            ListHtml += '<th scope="col">Profile Name</th>';
-            ListHtml += '<th scope="col">Test Name</th>';
-            ListHtml += '<th scope="col">Action</th>';
+            ListHtml += ' <div class="widget widget-simple widget-table">';
+            ListHtml += '<table id="tblProfileTest" class="table table-striped table-content table-condensed boo-table table-hover bg-green-light">';
+            ListHtml += '<caption class="caption-m"><span>Profile Test List</span></caption>';
+            ListHtml += '<th scope="col">Profile Name<span class="column-sorter"></span></th>';
+            ListHtml += '<th scope="col">Test Name<span class="column-sorter"></span></th>';
+            ListHtml += '<th scope="col">Action<span class="column-sorter"></span></th>';
             ListHtml += '</tr></thead> ';
             ListHtml += '<tbody>';
             if (response.testList.length > 0) {
                 $.each(response.testList, function () {
                     ListHtml += '<td>' + this.profileName + '</td>';
-                    ListHtml += '<td>' + this.testName + '</td><td>';
-                    ListHtml += '<a href="#" class="class=" fa fa-trash" onclick="ProfileOperations(' + this.rowId + ', \'' + Delete + '\');"> Delete</a></td>';
-                    ListHtml += '</tr > ';
+                    ListHtml += '<td>' + this.testName + '</td>';
+                    ListHtml += '<td><a class="btn btn-green btn-small btn-glyph" title="Delete From Profile" data-toggle="tooltip" onclick="DeleteProfileOperations(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i></a> Delete from Profile</td>';
+                    ListHtml += '</tr>';
                 });
-                ListHtml += '</tbody> </table>';
             }
             else {
-                ListHtml += '<tr><td colspan="7"> Record Not Found ...</td></tr>';
+                ListHtml += '<tr><td colspan="3"> Record Not Found ...</td></tr>';
             }
             ListHtml += '</tbody>';
             ListHtml += '</table>';
+            ListHtml += '</div>';
             $("#tblProfileDetailList").html(ListHtml);
         }
     });

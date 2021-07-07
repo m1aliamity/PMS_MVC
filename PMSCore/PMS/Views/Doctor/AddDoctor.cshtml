@@ -8,7 +8,7 @@
             <div class="span12 grider">
                 <div class="widget well well-nice">
                     <div class="widget-header">
-                        <h4><i class="fa fa-list"></i>Add Doctor <small></small></h4>
+                        <h4><i class="fa fa-plus"></i>Add Doctor <small></small></h4>
                     </div>
                     <div class="widget-content">
                         <div class="widget-body">
@@ -19,13 +19,13 @@
                                             <ul class="form-list label-left list-bordered dotted">
                                                 <li class="control-group">
                                                     <div class="span6">
-                                                        <label for="DoctorName" class="control-label">Name: <span class="required">*</span></label>
+                                                        <label for="DoctorNameAlias" class="control-label">Name: <span class="required">*</span></label>
                                                         <div class="controls">
                                                             <input id="txtDoctorName" class="input-block-level" type="text" data-error="Please Enter Name." required />
                                                         </div>
                                                     </div>
                                                     <div class="span6">
-                                                        <label for="GenderName" class="control-label">Gender: <span class="required">*</span></label>
+                                                        <label for="GenderNameAlias" class="control-label">Gender: <span class="required">*</span></label>
                                                         <div class="controls">
                                                             @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--", new { @Class = "input-block-level" })
                                                         </div>

@@ -10,6 +10,13 @@
         }
     });
 }
+function DeleteCompanyOperation(id, val) {
+    bootbox.confirm("Do you want to delete this recored.?", function (result) {
+        if (result) {
+            CompanyOperation(id, val);
+        }
+    });
+}
 function CompanyOperation(Id, value) {
     //var token = $('input[name="__RequestVerificationToken"]').val();
     //var headers = { '__RequestVerificationToken': token };
@@ -17,12 +24,6 @@ function CompanyOperation(Id, value) {
     var Delete = "D";
     if (value == "D" || value == "E") {
         $("#RowId").val(Id);
-    }
-    if (value == "D") {
-        status = confirm('Are you sure? want to delete');
-        if (!status) {
-            return false;
-        }
     }
     model = {
         RowId: $("#RowId").val(),
@@ -47,7 +48,12 @@ function CompanyOperation(Id, value) {
 
     }).done(function (response) {
         if (response.messageId == 1) {
-            alert(response.messageText);
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-danger");
+        }
+        else if (response.messageId == 2) {
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-success");
         }
         if (value == "E") {
             $("#RowId").val(response.rowId);
@@ -59,60 +65,10 @@ function CompanyOperation(Id, value) {
             $("#txtAddress").val(response.Address);
             $("#dpdStatus").val(response.status);
         }
-        $("#tblMasterList").empty();
-        var ListHtml = '';
-        ListHtml += '<table id="example" class="display nowrap cell-border" style="width:100%"><thead><tr>';
-        /*            ListHtml += '<table id="example" class="display" style="width:100%"><thead><tr>';*/
-        ListHtml += '<th scope="col">Name</th>';
-        ListHtml += '<th scope="col">Print Name</th>';
-        if (MID == 7) {
-            ListHtml += '<th scope="col">Rate</th>';
-        }
-        ListHtml += '<th scope="col">Status</th>';
-        ListHtml += '<th scope="col">Remarks</th>';
-        ListHtml += '<th scope="col">Action</th>';
-        ListHtml += '</tr></thead> ';
-        ListHtml += '<tbody>';
-        if (response.masterDetailsList.length > 0) {
-            $.each(response.masterDetailsList, function () {
-                ListHtml += '<tr><td>' + this.name + '</td>'
-                ListHtml += '<td>' + this.printName + '</td>'
-                if (MID == 7) {
-                    ListHtml += '<td> ' + this.rate + '</td >'
-                }
-                ListHtml += '<td>' + this.statusName + '</td><td>' + this.remarks + '</td ><td><a href="#" class="class="fa fa-pencil"" onclick="MaintainMasterOperation(' + this.rowId + ',\'' + Edit + '\');"> Edit</a> | <a href="#" class="class="fa fa-trash" onclick="MaintainMasterOperation(' + this.rowId + ',\'' + Delete + '\');"> Delete</a></td>';
-                ListHtml += '</tr > ';
-
-            });
-            ListHtml += '</tbody> </table>';
-        }
-        else {
-            ListHtml += '<tr><td colspan="7"> Record Not Found ...</td></tr>';
-        }
-        ListHtml += '</tbody>';
-        ListHtml += '</table>';
-        $("#tblMasterList").html(ListHtml);
-        SetDataTable();
         if (value == "I" || value == "U" || value == "D") {
             ClearField();
         }
         EnabledDisabled(value);
-    });
-}
-function SetDataTable() {
-    $('#example').DataTable({
-        responsive: {
-            details: {
-                display: $.fn.dataTable.Responsive.display.modal({
-                    header: function (row) {
-                        var data = row.data();
-                        // return 'Details for ' + data[0] + ' ' + data[1];
-                        return 'Details for ' + data[0];
-                    }
-                }),
-                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
-            }
-        }
     });
 }
 function ClearField() {

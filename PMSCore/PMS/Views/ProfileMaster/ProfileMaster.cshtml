@@ -1,48 +1,82 @@
 ﻿@model Models.Pathology.TestMasterModel;
-@{ ViewData["Title"] = "ProfileMaster";
-    Layout = "~/Views/Shared/_Layout.cshtml"; }
-<form>
-    <div class="row">
-        <div class="col-sm-5">
-            <div class="form-group row">
-                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Department:<span class="mandatory"><b>*</b></span></label>
-                <div class="col-sm-9">
-                    @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.PathologyDepartmentList, "Value", "Text"), "--Select--",
-                                                                     new
-                                                                     {
-                                                                         @Class = "form-control form-control-sm",
-                                                                         @onchange = "GetTestHeadMaster()"
-                                                                     })
-                </div>
+<div class="row-fluid">
+    <div class="span6 grider">
+        <div class="widget widget-simple">
+            <div class="widget-header">
+                <h4><i class="fa fa-list"></i> Test List<small></small></h4>
             </div>
-            <div class="form-group row">
-                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Test Head:<span class="mandatory"><b>*</b></span></label>
-                <div class="col-sm-9">
-                    <select class="form-control form-control-sm" id="TestHeadId" onchange="GetTestDetails('')">
-                        <option value="0" selected>--Select--</option>
-                    </select>
+            <div class="widget-content">
+                <div class="widget-body">
+                    <form id="itemForm" class="span12 form-horizontal">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <fieldset>
+                                    <ul class="form-list label-left list-bordered dotted">
+                                        <li class="control-group">
+                                            <label for="DepartmentAlias" class="control-label">Department: <span class="required">*</span></label>
+                                            <div class="controls">
+                                                @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.PathologyDepartmentList, "Value", "Text"), "--Select--", new { @Class = "input-block-level", @onchange = "GetTestHeadMaster()" })
+                                            </div>
+                                        </li>
+                                        <!-- // form item -->
+                                        <li class="control-group">
+                                            <label for="TestHeadAlias" class="control-label">Test Head: <span class="required">*</span></label>
+                                            <div class="controls">
+                                                <select class="input-block-level" id="TestHeadId" onchange="GetTestDetails('')">
+                                                    <option value="0" selected>--Select--</option>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li class="control-group" id="tblTestList">
+
+                                        </li>
+                                        <!-- // form item -->
+                                        <!-- // form item -->
+                                    </ul>
+                                </fieldset>
+                                <!-- // fieldset Input -->
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="form-group row" id="tblTestList">
-                
             </div>
         </div>
-        <div class="col-sm-5">
-            <div class="form-group row" style="margin-top:10px; margin-bottom:10px;">
-                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Profile:<span class="mandatory"><b>*</b></span></label>
-                <div class="col-sm-10">
-                    @Html.DropDownListFor(m => m.ProfileId, new SelectList(Model.ProfileList, "Value", "Text"), "--Select--",
-                                                                          new
-                                                                          {
-                                                                              @Class = "form-control form-control-sm",
-                                                                              @onchange = "ProfileOperations(0,'')"
-                                                                          })
-                </div>
-            </div>
-            <div class="form-group row" id="tblProfileDetailList">
-                
-            </div>
-        </div>
+        <!-- // Widget -->
     </div>
-</form>
-<script src="~/lib/Script/Local/Pathology/ProfileMaster.js"></script>
+    <!-- // Column -->
+    <div class="span6 grider">
+        <div class="widget widget-simple">
+            <div class="widget-header">
+                <h4><i class="fa fa-list"></i> Test List<small></small></h4>
+            </div>
+            <div class="widget-content">
+                <div class="widget-body">
+                    <form id="itemForm" class="span12 form-horizontal">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <fieldset>
+                                    <ul class="form-list label-left list-bordered dotted">
+                                        <li class="control-group">
+                                            <label for="DepartmentAlias" class="control-label">Profile: <span class="required">*</span></label>
+                                            <div class="controls">
+                                                @Html.DropDownListFor(m => m.ProfileId, new SelectList(Model.ProfileList, "Value", "Text"), "--Select--", new { @Class = "input-block-level", @onchange = "ProfileOperations(0,'')" })
+                                            </div>
+                                        </li>
+                                        <!-- // form item -->
+                                        <li class="control-group" id="tblProfileDetailList">
+
+                                        </li>
+                                    </ul>
+                                </fieldset>
+                                <!-- // fieldset Input -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- // Widget -->
+    </div>
+    <!-- // Column -->
+    </div>
+    <script src="~/lib/Script/Local/Pathology/ProfileMaster.js"></script>
