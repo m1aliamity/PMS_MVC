@@ -19,24 +19,24 @@
                                         <ul class="form-list label-left list-bordered dotted">
                                             <li class="control-group">
                                                 <div class="span6">
-                                                    <label for="FirstNameAlias" class="control-label">First Name: <span class="required">*</span></label>
+                                                    <label asp-for="FirstName" class="control-label">First Name: <span class="required">*</span></label>
                                                     <div class="controls">
-                                                        <input id="txtFname" class="input-block-level" type="text" data-error="Please Enter First Name." required />
+                                                        <input asp-for="FirstName" class="input-block-level" type="text" data-error="Please Enter First Name." required />
                                                     </div>
                                                 </div>
                                                 <div class="span6">
-                                                    <label for="LastNameAlias" class="control-label">Last Name: <span class="required">*</span></label>
+                                                    <label asp-for="LastName" class="control-label">Last Name: <span class="required">*</span></label>
                                                     <div class="controls">
-                                                        <input id="txtLname" class="input-block-level" type="text" data-error="Please Enter First Name." required />
+                                                        <input asp-for="LastName" class="input-block-level" type="text" data-error="Please Enter First Name." required />
                                                     </div>
                                                 </div>
                                             </li>
                                             <!-- // form item -->
                                             <li class="control-group">
                                                 <div class="span6">
-                                                    <label for="GenderAlias" class="control-label">Gender: <span class="required">*</span></label>
+                                                    <label asp-for="Gender" class="control-label">Gender: <span class="required">*</span></label>
                                                     <div class="controls">
-                                                        @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--", new { @Class = "input-block-level" })
+                                                        <select asp-for="Gender" class="input-block-level" asp-items="@(new SelectList(Model.GenderList, "Value", "Text",0))"></select>
                                                     </div>
                                                 </div>
                                                 <div class="span6">
@@ -64,15 +64,15 @@
                                             <!-- // form item -->
                                             <li class="control-group">
                                                 <div class="span6">
-                                                    <label for=">MeritalStatusAlias" class="control-label">>Merital Status: <span class="required">*</span></label>
+                                                    <label asp-for="MeritalStatus" class="control-label">Merital Status: <span class="required">*</span></label>
                                                     <div class="controls">
-                                                        @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--", new { @Class = "input-block-level" })
+                                                        <select asp-for="MeritalStatus" class="input-block-level" asp-items="@(new SelectList(Model.MeritalStatusList, "Value", "Text",0))"></select>
                                                     </div>
                                                 </div>
                                                 <div class="span6">
-                                                    <label for="EmployeeTypeAlias" class="control-label">Employee Type:</label>
+                                                    <label asp-for="MeritalStatus" class="control-label">Employee Type:</label>
                                                     <div class="controls">
-                                                        @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--", new { @Class = "input-block-level" })
+                                                        <select asp-for="EmployeeTypeId" class="input-block-level" asp-items="@(new SelectList(Model.EmployeeTypeList, "Value", "Text",0))"></select>
                                                     </div>
                                                 </div>
                                             </li>
@@ -116,4 +116,11 @@
         <!-- // Column -->
     </div>
 </div>
+@section scripts{
+    <script>
+        $(function () {
+            $("#txtDOB").datepicker();
+        });
+    </script>
+}
 <script src="~/lib/Script/Local/Pathology/Staff.js"></script>

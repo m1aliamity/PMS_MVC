@@ -28,6 +28,11 @@ namespace PMS.Controllers
             await _testBookingRepository.GetTestHeadMaster(model);
             return Json(model);
         }
+        [HttpPost]
+        public IActionResult SearchPatient(TestBookingModel model)
+        {
+            return PartialView("RegesteredPatentList", model);
+        }
         public async Task<JsonResult> GetTest(TestBookingModel model)
         {
             await _testBookingRepository.GetTest(model);

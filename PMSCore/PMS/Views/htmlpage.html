@@ -1,0 +1,174 @@
+﻿<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="row">
+                @*<div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Name:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm" id="txtName" data-error="Please Enter Name." required>
+                    </div>
+                    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Print Name:<span class="mandatory"><b>*</b></span></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control form-control-sm" id="txtPrintName">
+                    </div>
+                </div>*@
+                <div class="form-group row">
+                    @if (@Model.TestList.Count > 0)
+                    {
+                    <table id="tblFillResults" class="display nowrap cell-border" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th scope="col">Test Name</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Result</th>
+                                <th scope="col">Print</th>
+                                <th scope="col">Interpretation</th>
+                                <th scope="col">Advance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in @Model.TestList)
+                            {
+                            <tr>
+                                <td>@item.TestName<input type="hidden" id="rowId_@item.SrNo" value="@item.RowId" /></td>
+                                <td><input type="checkbox" id="chkResultStatus_@item.SrNo" checked="@item.ResultStatus" disabled></td>
+                                <td><input type="text" class="inputs" id="txtResult_@item.SrNo" onclick="this.select();" value="@item.TestResult"></td>
+                                <td><input type="checkbox" id="chkResultStatus_@item.SrNo" checked="@item.PrintResult"></td>
+                                <td><input type="checkbox" id="chkPrintInterpretation_@item.SrNo" checked="@item.PrintInterpretation"></td>
+                                <td><input type="button" value="Advance" OnClick="DisplayTestDetails(@item.RowId,3)"></td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                    }
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-8">
+                        <button type="button" data-dismiss="modal" class="btn btn-outline-primary">Exit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--fdgdsfgdsfgsdfgsdgf-->
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+    <h4>Add Doctor</h4>
+</div>
+<div class="modal-body">
+    <div class="row-fluid">
+        <div class="span12 grider">
+            <div class="widget well well-nice">
+                <div class="widget-header">
+                    <h4><i class="fa fa-list"></i>Add Staff <small></small></h4>
+                </div>
+                <div class="widget-content">
+                    <div class="widget-body">
+                        <form id="itemForm" class="span12 form-horizontal">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <fieldset>
+                                        <ul class="form-list label-left list-bordered dotted">
+                                            <li class="control-group">
+                                                <div class="span6">
+                                                    <label for="FirstNameAlias" class="control-label">First Name: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        <input id="txtFname" class="input-block-level" type="text" data-error="Please Enter First Name." required />
+                                                    </div>
+                                                </div>
+                                                <div class="span6">
+                                                    <label for="LastNameAlias" class="control-label">Last Name: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        <input id="txtLname" class="input-block-level" type="text" data-error="Please Enter First Name." required />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+                                            <li class="control-group">
+                                                <div class="span6">
+                                                    <label for="GenderAlias" class="control-label">Gender: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--", new { @Class = "input-block-level" })
+                                                    </div>
+                                                </div>
+                                                <div class="span6">
+                                                    <label for="DOBAlias" class="control-label">DOB: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        <input id="txtDOB" class="input-block-level" type="text" data-error="Please Enter First Name." required />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+                                            <li class="control-group">
+                                                <div class="span6">
+                                                    <label for="MobileNoAlias" class="control-label">Mobile No.: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        <input id="txtMobileNo" class="input-block-level" type="text" data-error="Please Enter Mobile No." required />
+                                                    </div>
+                                                </div>
+                                                <div class="span6">
+                                                    <label for="EmailIdAlias" class="control-label">Email Id:</label>
+                                                    <div class="controls">
+                                                        <input id="txtEmail" class="input-block-level" type="text" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+                                            <li class="control-group">
+                                                <div class="span6">
+                                                    <label for=">MeritalStatusAlias" class="control-label">>Merital Status: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--", new { @Class = "input-block-level" })
+                                                    </div>
+                                                </div>
+                                                <div class="span6">
+                                                    <label for="EmployeeTypeAlias" class="control-label">Employee Type:</label>
+                                                    <div class="controls">
+                                                        @Html.DropDownListFor(m => m.Gender, new SelectList(Model.GenderList, "Value", "Text"), "--Select--", new { @Class = "input-block-level" })
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+                                            <li class="control-group">
+                                                <div class="span6">
+                                                    <label for="AddressAlias" class="control-label">Address: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        <input id="txtAddress" class="input-block-level" type="text" />
+                                                    </div>
+                                                </div>
+                                                <div class="span6">
+                                                    <label for="StatusAlias" class="control-label">Status:<span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        <select class="input-block-level" id="dpdStatus">
+                                                            <option value="0" selected>--Select--</option>
+                                                            <option value="1">Active</option>
+                                                            <option value="2">Deactive</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+                                            <li class="control-group">
+                                                <div class="controls" style="text-align:center;">
+                                                    <button type="button" id="btnCreate" title="Save" data-toggle="tooltip" OnClick="LabStaffOperations(0,'I')" class="btn btn-blue"><i class="fa fa-save"></i> Save</button>
+                                                    <button type="button" id="btnUpdate" title="Update" data-toggle="tooltip" OnClick="LabStaffOperations(0,'U')" class="btn btn-blue" disabled><i class="fa fa-edit"></i> Update</button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </fieldset>
+                                    <!-- // fieldset Input -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- // Widget -->
+        </div>
+        <!-- // Column -->
+    </div>
+</div>

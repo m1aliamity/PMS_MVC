@@ -1,0 +1,52 @@
+﻿@model Models.Pathology.TestBookingModel;
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+    <h4>Search Patient</h4>
+</div>
+<div class="modal-body">
+    <div class="row-fluid">
+        <div class="span12 grider">
+            <div class="widget well well-nice">
+                <div class="widget-content">
+                    <div class="widget-body">
+                        <form id="itemForm" class="span12 form-horizontal">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <fieldset>
+                                        <ul class="form-list label-left list-bordered dotted">
+                                            <li class="control-group">
+                                                <div class="span5">
+                                                    <label for="DepartmentAlias" class="control-label">Name: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        <input id="txtTestName" class="input-block-level" type="text" />
+                                                    </div>
+                                                </div>
+                                                <div class="span5">
+                                                    <label for="TestHeadAlias" class="control-label">Mobile No.: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        <input id="txtTestName" class="input-block-level" type="text" />
+                                                    </div>
+                                                </div>
+                                                <div class="span2">
+                                                    <div class="widget-tool"><a class="btn btn-green btn-small btn-glyph"><i class="fa fa-search"></i> Search</a></div>
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+                                            <li class="control-group" id="tblPatientList">
+
+                                            </li>
+                                            <!-- // form item -->
+                                        </ul>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- // Widget -->
+        </div>
+        <!-- // Column -->
+    </div>
+</div>
+

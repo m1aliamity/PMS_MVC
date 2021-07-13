@@ -124,12 +124,12 @@ namespace PMS.Repository.Pathology
                 DataSet ds = await _testMasterDAL.TestProfileOperations(model);
                 if (model.Action == "I")
                 {
-                    model.MessageId = 0;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Save;
                 }
                 else if (model.Action == "D")
                 {
-                    model.MessageId = 0;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Delete;
                 }
                 model.TestList = (from DataRow row in ds.Tables[0].Rows

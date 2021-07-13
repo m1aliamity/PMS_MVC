@@ -19,9 +19,11 @@ namespace PMS.Controllers
             _companyRepository = companyRepository;
             _WebHostEnvironment = hostEnvironment;
         }
-        public IActionResult Company()
+        public IActionResult Company(CompanyModel model)
         {
-            return View();
+            model.Action = "S";
+            _companyRepository.CompanyOperations(model);
+            return View(model);
         }
         public IActionResult AddCompany(CompanyModel model)
         {
@@ -33,7 +35,6 @@ namespace PMS.Controllers
             await _companyRepository.CompanyOperations(model);
             return Json(model);
         }
-
         private string UploadedFile(CompanyModel model)
         {
             string uniqueFileName = null;

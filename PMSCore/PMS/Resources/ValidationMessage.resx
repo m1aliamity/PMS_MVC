@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CompanyAddress" xml:space="preserve">
-    <value>Please Enter Company Address</value>
+  <data name="Address" xml:space="preserve">
+    <value>Please Type Correct Address.</value>
   </data>
   <data name="CompanyName" xml:space="preserve">
     <value>Please Enter Company Name.</value>
@@ -132,14 +132,29 @@
   <data name="Department" xml:space="preserve">
     <value>Please Select Department.</value>
   </data>
+  <data name="DOB" xml:space="preserve">
+    <value>Please Set DOB.</value>
+  </data>
+  <data name="EmployeeType" xml:space="preserve">
+    <value>Please Select Employee Type.</value>
+  </data>
+  <data name="FName" xml:space="preserve">
+    <value>Please Enter First Name.</value>
+  </data>
   <data name="Gender" xml:space="preserve">
     <value>Please Select Gender.</value>
   </data>
   <data name="InvalidUserPassword" xml:space="preserve">
     <value>You have Enter Invalid User Name Or Password.</value>
   </data>
+  <data name="LName" xml:space="preserve">
+    <value>Please Enter Last Name.</value>
+  </data>
   <data name="Master" xml:space="preserve">
     <value>Please Select Master.</value>
+  </data>
+  <data name="MeritalStatus" xml:space="preserve">
+    <value>Please Select Merital Status.</value>
   </data>
   <data name="MobileNo" xml:space="preserve">
     <value>Please Enter Mobile No.</value>

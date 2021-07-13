@@ -8,7 +8,6 @@ namespace PMS.Repository.Pathology.Interface
 {
     public interface ICompanyRepository
     {
-        Task GetCompany(CompanyModel model);
         Task CompanyOperations(CompanyModel model);
     }
 }

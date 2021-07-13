@@ -9,7 +9,6 @@ namespace DAL.Pathology.Interface
 {
     public interface ICompanyDAL
     {
-        Task<DataTable> GetCompany(CompanyModel model);
         Task <DataSet> CompanyOperations(CompanyModel model);
     }
 }

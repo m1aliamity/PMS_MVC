@@ -61,7 +61,7 @@ function GetTestDetails(value) {
                 $.each(response.testList, function () {
                     ListHtml += '<td>' + this.testName + '</td>';
                     ListHtml += '<td>' + this.testRate + '</td>';
-                    ListHtml += '<td><a class="btn btn-green btn-small btn-glyph" title="Add to Profile" data-toggle="tooltip" onclick="ProfileOperations(' + this.rowId + ',\'' + Insert + '\');"><i class="fa fa-plus"></i></a> Add To Profile</td>';
+                    ListHtml += '<td><a class="btn btn-green btn-mini no-wrap" title="Add to Profile" data-toggle="tooltip" onclick="ProfileOperations(' + this.rowId + ',\'' + Insert + '\');"><i class="fa fa-plus"></i>Add To Profile</a></td>';
                     ListHtml += '</tr > ';
                 });
             }
@@ -102,7 +102,7 @@ function ProfileOperations(Id, value) {
             var box = bootbox.alert(response.messageText);
             box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-danger");
         }
-        else if (response.messageId == 3) {
+        else if (response.messageId == 2) {
             var box = bootbox.alert(response.messageText);
             box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-success");
         }
@@ -121,7 +121,7 @@ function ProfileOperations(Id, value) {
                 $.each(response.testList, function () {
                     ListHtml += '<td>' + this.profileName + '</td>';
                     ListHtml += '<td>' + this.testName + '</td>';
-                    ListHtml += '<td><a class="btn btn-green btn-small btn-glyph" title="Delete From Profile" data-toggle="tooltip" onclick="DeleteProfileOperations(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i></a> Delete from Profile</td>';
+                    ListHtml += '<td><a  class="btn btn-blue btn-mini no-wrap" title="Delete From Profile" data-toggle="tooltip" onclick="DeleteProfileOperations(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i> Delete from Profile</a></td>';
                     ListHtml += '</tr>';
                 });
             }

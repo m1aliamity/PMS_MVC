@@ -1,6 +1,5 @@
 ﻿function AddCompany() {
-    // $("#AddDoctor").modal('show');
-    //debugger;
+    debugger;
     $.ajax({
         url: "../Company/AddCompany",
         type: "POST",
@@ -18,12 +17,16 @@ function DeleteCompanyOperation(id, val) {
     });
 }
 function CompanyOperation(Id, value) {
+    debugger;
     //var token = $('input[name="__RequestVerificationToken"]').val();
     //var headers = { '__RequestVerificationToken': token };
     var Edit = "E";
     var Delete = "D";
     if (value == "D" || value == "E") {
         $("#RowId").val(Id);
+    }
+    if (value == "E") {
+        AddCompany();
     }
     model = {
         RowId: $("#RowId").val(),
@@ -42,8 +45,6 @@ function CompanyOperation(Id, value) {
         type: "POST",
         cache: false,
         async: true,
-        //dataType: 'json',
-        //contentType: dataType,
         data: model,
 
     }).done(function (response) {

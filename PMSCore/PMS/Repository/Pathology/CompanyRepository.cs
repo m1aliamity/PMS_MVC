@@ -16,10 +16,6 @@ namespace PMS.Repository.Pathology
         {
             _companyDAL = companyDAL;
         }
-        public async Task GetCompany(CompanyModel model)
-        {
-           DataTable dt= await _companyDAL.GetCompany(model);
-        }
         public async Task CompanyOperations(CompanyModel model)
         {
             if (model.Action == "I" || model.Action == "U")
@@ -52,32 +48,35 @@ namespace PMS.Repository.Pathology
                                                    select new CompanyModel
                                                    {
                                                        RowId = Convert.ToInt32(row["Id"]),
-                                                       CompanyName = Convert.ToString(row["CompanyName"]),
+                                                       CompanyName = Convert.ToString(row["LabName"]),
                                                        SloganName = Convert.ToString(row["SloganName"]),
                                                        PhoneNo = Convert.ToString(row["PhoneNo"]),
                                                        EmailId = Convert.ToString(row["EmailId"]),
-                                                       WebSite= Convert.ToString(row["WebSite"]),
+                                                       WebSite= Convert.ToString(row["Website"]),
+                                                       Address = Convert.ToString(row["Address"]),
                                                        StatusName = Convert.ToString(row["Status"]),
                                                    }).ToList();
                     }
                     else
                     {
                         model.RowId = Convert.ToInt64(ds.Tables[0].Rows[0]["Id"]);
-                        model.CompanyName = Convert.ToString(ds.Tables[0].Rows[0]["CompanyName"]);
+                        model.CompanyName = Convert.ToString(ds.Tables[0].Rows[0]["LabName"]);
                         model.SloganName = Convert.ToString(ds.Tables[0].Rows[0]["SloganName"]);
                         model.PhoneNo = Convert.ToString(ds.Tables[0].Rows[0]["PhoneNo"]);
                         model.EmailId = Convert.ToString(ds.Tables[0].Rows[0]["EmailId"]);
-                        model.WebSite = Convert.ToString(ds.Tables[0].Rows[0]["WebSite"]);
-                        model.Status = Convert.ToInt32(ds.Tables[0].Rows[0]["Status"]);
+                        model.WebSite = Convert.ToString(ds.Tables[0].Rows[0]["Website"]);
+                        model.Address = Convert.ToString(ds.Tables[0].Rows[0]["Address"]);
+                        model.Status = Convert.ToInt32(ds.Tables[0].Rows[0]["IsActive"]);
                         model.CompanyList = (from DataRow row in ds.Tables[1].Rows
                                              select new CompanyModel
                                              {
                                                  RowId = Convert.ToInt32(row["Id"]),
-                                                 CompanyName = Convert.ToString(row["CompanyName"]),
+                                                 CompanyName = Convert.ToString(row["LabName"]),
                                                  SloganName = Convert.ToString(row["SloganName"]),
                                                  PhoneNo = Convert.ToString(row["PhoneNo"]),
                                                  EmailId = Convert.ToString(row["EmailId"]),
-                                                 WebSite = Convert.ToString(row["WebSite"]),
+                                                 WebSite = Convert.ToString(row["Website"]),
+                                                 Address = Convert.ToString(row["Address"]),
                                                  StatusName = Convert.ToString(row["Status"]),
                                              }).ToList();
                     }
@@ -92,7 +91,7 @@ namespace PMS.Repository.Pathology
                 model.MessageId = 1;
                 model.MessageText = Resources.ValidationMessage.CompanyName;
             }
-            if (string.IsNullOrEmpty(model.SloganName) || string.IsNullOrWhiteSpace(model.SloganName))
+            else if (string.IsNullOrEmpty(model.SloganName) || string.IsNullOrWhiteSpace(model.SloganName))
             {
                 model.MessageId = 1;
                 model.MessageText = Resources.ValidationMessage.SloganName;
@@ -105,7 +104,7 @@ namespace PMS.Repository.Pathology
             else if (string.IsNullOrEmpty(model.Address) || string.IsNullOrWhiteSpace(model.Address))
             {
                 model.MessageId = 1;
-                model.MessageText = Resources.ValidationMessage.CompanyAddress;
+                model.MessageText = Resources.ValidationMessage.Address;
             }
             else if (model.Status == 0)
             {

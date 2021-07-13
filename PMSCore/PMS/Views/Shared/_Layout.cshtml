@@ -19,6 +19,7 @@
     <link href="~/css/bootstrap.css" rel="stylesheet">
     <link href="~/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="~/css/extension.css" rel="stylesheet">
+    <link href="~/css/jquery-ui.min.css" rel="stylesheet" />
     @*<link href="~/fonts/ico-fontello/css/fontello.css" rel="stylesheet">
         <link href="~/fonts/ico-fontello/css/animation.css" rel="stylesheet">*@
     @*<link href="~/fonts/ico-awesome/css/font-awesome.css" rel="stylesheet">*@
@@ -124,16 +125,18 @@
     <script src="~/lib/pl-form/bootstrap-select/js/bootstrap-select.js"></script>
     <script src="~/lib/pl-form/select2/js/select2.js"></script>
     <script src="~/lib/pl-form/uniform/js/jquery.uniform.min.js"></script>
-    <script src="~/lib/pl-form/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-    <script src="~/lib/pl-form/bootstrap-daterangepicker/js/date.js"></script>
-    <script src="~/lib/pl-form/bootstrap-daterangepicker/js/bootstrap-daterangepicker.js"></script>
+    @*<script src="~/lib/pl-form/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>*@
+    @*<script src="~/lib/pl-form/bootstrap-daterangepicker/js/date.js"></script>*@
+    @*<script src="~/lib/pl-form/bootstrap-daterangepicker/js/bootstrap-daterangepicker.js"></script>*@
     <script src="~/lib/pl-form/jquery.inputmask/js/jquery.inputmask.bundle.min.js"></script>
     <script src="~/lib/pl-form/jquery.inputmask/js/jquery.inputmask.custom.extensions.js"></script>
     <script src="~/lib/pl-form/jquery.elastic/js/jquery.elastic.js"></script>
     <script src="~/lib/pl-form/jquery.validation/js/jquery.validate.js"></script>
+
     <!-- Editors -->
+    <script src="~/lib/ckeditor/ckeditor.js"></script>
     @*<script src="~/lib/pl-editors/bootstrap-wysihtml5/js/lib/wysihtml5-0.3.0.min.js"></script>*@
-    <script src="~/lib/pl-editors/bootstrap-wysihtml5/js/bootstrap-wysihtml5.js"></script>
+    @*<script src="~/lib/pl-editors/bootstrap-wysihtml5/js/bootstrap-wysihtml5.js"></script>*@
     <!-- Content -->
     <script src="~/lib/pl-content/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
     <script src="~/lib/pl-content/bootstrap-modal/js/bootstrap-modal.js"></script>
@@ -157,15 +160,23 @@
     <script src="~/lib/pl-content/bootstrap-wizard-2/js/bwizard.js"></script>
     <!-- Only This Demo Page -->
     <!-- Only This Demo Page -->
+    <script>
+        $(function () {
+            $("#txtDOB").datepicker();
+        });
+    </script>
     @*<script>
-            $(document).ready(function () {
-            });
-        </script>
-        <script>
             $(document).ready(function () {
                 $('#example').DataTable();
             });
         </script>*@
+    <script>
+        $(document).ready(function () {
+            $("#mainSideMenu").on('click', 'li', function () {
+                $(this).addClass("active");  // adding active class
+            });
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

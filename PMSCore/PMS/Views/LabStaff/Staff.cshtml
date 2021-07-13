@@ -1,4 +1,4 @@
-﻿
+﻿@model Models.Pathology.LabStaffModel;
 <div class="row-fluid">
     <div class="span12 grider">
         <div class="widget widget-simple">
@@ -18,41 +18,45 @@
                                                 <caption class="caption-m"><span>Staff List</span></caption>
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Doctore Name<span class="column-sorter"></span></th>
+                                                        <th scope="col">Name<span class="column-sorter"></span></th>
                                                         <th scope="col">Gender<span class="column-sorter"></span></th>
                                                         <th scope="col">Mobile No.<span class="column-sorter"></span></th>
-                                                        <th scope="col">Specialization<span class="column-sorter"></span></th>
+                                                        <th scope="col">DOB<span class="column-sorter"></span></th>
+                                                        <th scope="col">Employee Type<span class="column-sorter"></span></th>
+                                                        <th scope="col">Merital Status<span class="column-sorter"></span></th>
                                                         <th scope="col">Address<span class="column-sorter"></span></th>
+                                                        <th scope="col">Status<span class="column-sorter"></span></th>
                                                         <th scope="col">Action<span class="column-sorter"></span></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @if (Model.DoctorList.Count > 0)
+                                                    @if (Model.LabStaffList.Count > 0)
                                                     {
-                                                        foreach (var item in Model.DoctorList)
+                                                        foreach (var item in Model.LabStaffList)
                                                         {
                                         <tr>
-                                            <td>@item.DoctorName</td>
+                                            <td>@item.FirstName @item.LastName</td>
                                             <td>@item.GenderText</td>
                                             <td>@item.MobileNo</td>
-                                            <td>@item.SpecializationText</td>
+                                            <td>@item.DOB</td>
+                                            <td>@item.EmployeeTypeText</td>
+                                            <td>@item.MeritalStatusText</td>
                                             <td>@item.Address</td>
-                                            <td><a title="Edit" data-toggle="tooltip" onclick="DoctorOperations(@item.RowId,'E');"><i class="fa fa-pencil"></i></a> | <a title="Delete" data-toggle="tooltip" onclick="DeleteDoctorOperations(@item.RowId,'D');"><i class="fa fa-trash"></i></a></td>
+                                            <td>@item.StatusName</td>
+                                            <td><a title="Edit" data-toggle="tooltip" class="btn btn-yellow btn-mini no-wrap" onclick="LabStaffOperations(@item.RowId,'E');"><i class="fa fa-pencil"></i> Edit</a> <a title="Delete" data-toggle="tooltip" class="btn btn-blue btn-mini no-wrap" onclick="DeleteLabStaffOperations(@item.RowId,'D');"><i class="fa fa-trash"></i> Delete</a></td>
                                         </tr> }
                                                     }
                                                     else
                                                     {
                                         <tr><td colspan="6"> Record Not Found ...</td></tr>
-                                        }
+}
                                                 </tbody>
                                             </table>
                                         </div>
                                     </li>
                                     <!-- // form item -->
-                                    <li>
-                                        <div id="AddStaff" class="modal hide fadee" data-keyboard="false" data-width="90%" data-backdrop="static">
-                                        </div>
-                                    </li>
+                                    <li><div id="AddStaff" class="modal hide fadee" data-keyboard="false" data-width="90%" data-backdrop="static">
+                                    </div></li>
                                 </ul>
                             </fieldset>
                             <!-- // fieldset Input -->

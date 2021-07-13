@@ -56,7 +56,7 @@ function MaintainMasterOperation(Id, value) {
             }
             $("#tblMasterList").empty();
             var ListHtml = '';
-            ListHtml += ' <div class="widget widget-simple widget-table">';
+            ListHtml += '<div class="widget widget-simple widget-table">';
             ListHtml += '<table id="exampleDTC" class="table table-striped table-content table-condensed boo-table table-hover bg-green-light">';
             ListHtml += '<caption class="caption-m"><span>Master List</span></caption>';
             ListHtml += '<thead><tr><th scope="col">Name<span class="column-sorter"></span></th>';
@@ -76,7 +76,7 @@ function MaintainMasterOperation(Id, value) {
                     if (MID == 7) {
                         ListHtml += '<td> ' + this.rate + '</td >'
                     }
-                    ListHtml += '<td>' + this.statusName + '</td><td>' + this.remarks + '</td><td><a title="Edit" data-toggle="tooltip" onclick="MaintainMasterOperation(' + this.rowId + ',\'' + Edit + '\');"><i class="fa fa-pencil"></i></a> | <a title="Delete" data-toggle="tooltip" onclick="DeleteMaintainMasterOperation(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i></a></td>';
+                    ListHtml += '<td>' + this.statusName + '</td><td>' + this.remarks + '</td><td><a  class="btn btn-yellow btn-mini no-wrap" title="Edit" data-toggle="tooltip" onclick="MaintainMasterOperation(' + this.rowId + ',\'' + Edit + '\');"><i class="fa fa-pencil"></i> Edit</a> <a  class="btn btn-blue btn-mini no-wrap" title="Delete" data-toggle="tooltip" onclick="DeleteMaintainMasterOperation(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i> Delete</a></td>';
                     ListHtml += '</tr > ';
                 });
             }
@@ -184,8 +184,8 @@ function MaintainTestHeadOperation(Id, value) {
             $.each(response.masterDetailsList, function () {
                 ListHtml += '<tr><td>' + this.name + '</td>'
                 ListHtml += '<td>' + this.printName + '</td>'
-                ListHtml += '<td>' + this.statusName + '</td><td>' + this.remarks + '</td><td><a title="Edit" data-toggle="tooltip" onclick="MaintainTestHeadOperation(' + this.rowId + ',\'' + Edit + '\');"><i class="fa fa-pencil"></i></a> | <a title="Delete" data-toggle="tooltip" onclick="DeleteMaintainTestHeadOperation(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i></a></td>';
-                ListHtml += '</tr> ';
+                ListHtml += '<td>' + this.statusName + '</td><td><a class="btn btn-yellow btn-mini no-wrap" title="Edit" data-toggle="tooltip" onclick="MaintainTestHeadOperation(' + this.rowId + ',\'' + Edit + '\');"><i class="fa fa-pencil"></i> Edit</a> <a class="btn btn-blue btn-mini no-wrap" title="Delete" data-toggle="tooltip" onclick="DeleteMaintainTestHeadOperation(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i> Delete</a></td>';
+                ListHtml += '</tr>';
 
             });
         }

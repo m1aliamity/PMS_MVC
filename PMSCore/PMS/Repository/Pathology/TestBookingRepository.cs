@@ -70,6 +70,14 @@ namespace PMS.Repository.Pathology
             }
             else
             {
+                model.MessageId = 2;
+                if (model.Action == "2")
+                {
+                    model.MessageText = "Test Removed from Booking.";
+                }
+                else { 
+                model.MessageText = "Test Added In Booking.";
+                }
                 model.TestList = (from DataRow row in ds.Tables[1].Rows
                                   select new TestBookingModel
                                   {
@@ -92,17 +100,17 @@ namespace PMS.Repository.Pathology
                 DataSet ds = await _testBookingDAL.TestBookingOperations(model);
                 if (model.Action == "1")
                 {
-                    model.MessageId = 0;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Save;
                 }
                 else if (model.Action == "2")
                 {
-                    model.MessageId = 0;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Update;
                 }
                 else if (model.Action == "3")
                 {
-                    model.MessageId = 0;
+                    model.MessageId = 2;
                     model.MessageText = Resources.ValidationMessage.Delete;
                 }
                 else

@@ -17,11 +17,6 @@ namespace DAL.Pathology
         {
             _objMySqlHelper = new MySqlHelperClass();
         }
-        public async Task<DataTable> GetCompany(CompanyModel model)
-        {
-            return await _objMySqlHelper.DataTable_return("USP_GetMaster");
-        }
-
         public async Task<DataSet> CompanyOperations(CompanyModel model)
         {
             MySqlParameter[] cmdParams = {

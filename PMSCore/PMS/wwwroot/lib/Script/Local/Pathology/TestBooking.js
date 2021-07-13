@@ -44,26 +44,28 @@ function GetTestDetails(value) {
         else {
             $("#tblTestList").empty();
             var ListHtml = '';
-            ListHtml += '<table id="example12" class="display nowrap cell-border" style="width:100%"><thead><tr>';
-            ListHtml += '<th scope="col">Test Name</th>';
-            ListHtml += '<th scope="col">TestRate</th>';
-            ListHtml += '<th scope="col">Action</th>';
+            ListHtml += '<div class="widget widget-simple widget-table">';
+            ListHtml += '<table id="exampleDTC" class="table table-striped table-content table-condensed boo-table table-hover bg-green-light">';
+            ListHtml += '<caption class="caption-m"><span>Test List</span></caption>';
+            ListHtml += '<th scope="col">Test Name<span class="column-sorter"></span></th>';
+            ListHtml += '<th scope="col">TestRate<span class="column-sorter"></span></th>';
+            ListHtml += '<th scope="col">Action<span class="column-sorter"></span></th>';
             ListHtml += '</tr></thead> ';
             ListHtml += '<tbody>';
             if (response.testList.length > 0) {
                 $.each(response.testList, function () {
                     ListHtml += '<td>' + this.testName + '</td>';
                     ListHtml += '<td>' + this.rate + '</td><td>';
-                    ListHtml += '<a href="#" onclick="AddData(' + Id + ', \'' + this.rowId + '\', \'' + this.headId + '\', \'' + Id + '\', \'' + Insert + '\');"> Add </a></td>';
-                    ListHtml += '</tr > ';
+                    ListHtml += '<a title="Add Test To Booking Detail" data-toggle="tooltip" class="btn btn-green btn-mini no-wrap" onclick="AddData(' + Id + ', \'' + this.rowId + '\', \'' + this.headId + '\', \'' + Id + '\', \'' + Insert + '\');"><i class="fa fa-plus"></i> Add</a></td>';
+                    ListHtml += '</tr> ';
                 });
-                ListHtml += '</tbody> </table>';
             }
             else {
                 ListHtml += '<tr><td colspan="7"> Record Not Found ...</td></tr>';
             }
             ListHtml += '</tbody>';
             ListHtml += '</table>';
+            ListHtml += '</div>';
             $("#tblTestList").html(ListHtml);
         }
     });
@@ -89,31 +91,36 @@ function AddData(id, testId, headId, profileId, action) {
 
     }).done(function (response) {
         if (response.messageId == 1) {
-            alert(response.messageText);
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-danger");
         }
-        else {
+        else if (response.messageId == 2) {
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-success");
             $("#tblTestBookingList").empty();
             var ListHtml = '';
-            ListHtml += '<table id="example12" class="display nowrap cell-border" style="width:100%"><thead><tr>';
-            ListHtml += '<th scope="col">Test Name</th>';
-            ListHtml += '<th scope="col">TestRate</th>';
-            ListHtml += '<th scope="col">Action</th>';
+            ListHtml += '<div class="widget widget-simple widget-table">';
+            ListHtml += '<table id="exampleDTC" class="table table-striped table-content table-condensed boo-table table-hover bg-green-light">';
+            ListHtml += '<caption class="caption-m"><span>Test Details</span></caption>';
+            ListHtml += '<th scope="col">Test Name<span class="column-sorter"></span></th>';
+            ListHtml += '<th scope="col">TestRate<span class="column-sorter"></span></th>';
+            ListHtml += '<th scope="col">Action<span class="column-sorter"></span></th>';
             ListHtml += '</tr></thead> ';
             ListHtml += '<tbody>';
             if (response.testList.length > 0) {
                 $.each(response.testList, function () {
                     ListHtml += '<td>' + this.testName + '</td>';
                     ListHtml += '<td>' + this.rate + '</td><td>';
-                    ListHtml += '<a href="#" onclick="AddData(' + this.rowId + ',\'' + val + '\',\'' + val + '\',\'' + val + '\', \'' + Delete + '\');"> Delete </a></td>';
+                    ListHtml += '<a title="Delete Test From Booking Detail" data-toggle="tooltip" class="btn btn-blue btn-mini no-wrap" onclick="AddData(' + this.rowId + ',\'' + val + '\',\'' + val + '\',\'' + val + '\', \'' + Delete + '\');"><i class="fa fa-trash"></i> Delete</a></td>';
                     ListHtml += '</tr > ';
                 });
-                ListHtml += '</tbody> </table>';
             }
             else {
                 ListHtml += '<tr><td colspan="7"> Record Not Added ...</td></tr>';
             }
             ListHtml += '</tbody>';
             ListHtml += '</table>';
+            ListHtml += '</div>';
             $("#tblTestBookingList").html(ListHtml);
             $("#txtTotalAmount").val(response.totalAmount);
             $("#txtPaidAmount").val(response.totalAmount);
@@ -186,8 +193,32 @@ function TestBookingOperations(Id, Val) {
         data: model,
 
     }).done(function (response) {
-        if (response.messageId == 0) {
-            alert(response.messageText);
+        if (response.messageId == 1) {
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-danger");
+        }
+        else if (response.messageId == 2) {
+            var box = bootbox.alert(response.messageText);
+            box.find('.modal-body').removeClass(".modal-content").addClass(".modal-content alert-success");
         }
     });
 }
+function SelectPatientType(val) {
+    debugger;
+    if (val == "1") {
+        $("#btnNewPatient").removeClass("btn").addClass("btn btn-green active");
+        $("#btnRegisteredPatient").removeClass("btn btn-green active").addClass("btn");
+    }
+    else if (val == "2") {
+        $("#btnNewPatient").removeClass("btn btn-green active").addClass("btn");
+        $("#btnRegisteredPatient").removeClass("btn").addClass("btn btn-green active");
+        $.ajax({
+            url: "../TestBooking/SearchPatient",
+            type: "POST",
+            success: function (Response) {
+                $("#PatientList").html(Response);
+                $("#PatientList").modal("show");
+            }
+        })
+    }
+ }

@@ -1,6 +1,4 @@
-﻿
-@{ ViewData["Title"] = "Company";
-                Layout = "~/Views/Shared/_Layout.cshtml"; }
+﻿@model Models.Pathology.CompanyModel;
 <div class="row-fluid">
     <div class="span12 grider">
         <div class="widget widget-simple">
@@ -20,33 +18,35 @@
                                                 <caption class="caption-m"><span>Company List</span></caption>
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Doctore Name<span class="column-sorter"></span></th>
-                                                        <th scope="col">Gender<span class="column-sorter"></span></th>
-                                                        <th scope="col">Mobile No.<span class="column-sorter"></span></th>
-                                                        <th scope="col">Specialization<span class="column-sorter"></span></th>
+                                                        <th scope="col">Lab Name<span class="column-sorter"></span></th>
+                                                        <th scope="col">Lab Slogan Name<span class="column-sorter"></span></th>
+                                                        <th scope="col">Phone No.<span class="column-sorter"></span></th>
+                                                        <th scope="col">EmailId<span class="column-sorter"></span></th>
+                                                        <th scope="col">WebSite<span class="column-sorter"></span></th>
                                                         <th scope="col">Address<span class="column-sorter"></span></th>
+                                                        <th scope="col">Status<span class="column-sorter"></span></th>
                                                         <th scope="col">Action<span class="column-sorter"></span></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @if (Model.DoctorList.Count > 0)
+                                                    @if (Model.CompanyList.Count > 0)
                                                     {
-                                                        foreach (var item in Model.DoctorList)
+                                                        foreach (var item in Model.CompanyList)
                                                         {
-                                        <tr>
-                                            <td>@item.DoctorName</td>
-                                            <td>@item.GenderText</td>
-                                            <td>@item.MobileNo</td>
-                                            <td>@item.SpecializationText</td>
-                                            <td>@item.Address</td>
-                                            <td><a title="Edit" data-toggle="tooltip" onclick="DoctorOperations(@item.RowId,'E');"><i class="fa fa-pencil"></i></a> | <a title="Delete" data-toggle="tooltip" onclick="DeleteDoctorOperations(@item.RowId,'D');"><i class="fa fa-trash"></i></a></td>
-                                        </tr>
- }
-                                }
-                                else
-                                {
-                    <tr><td colspan="6"> Record Not Found ...</td></tr>
-}
+                                                    <tr>
+                                                        <td>@item.CompanyName</td>
+                                                        <td>@item.SloganName</td>
+                                                        <td>@item.PhoneNo</td>
+                                                        <td>@item.EmailId</td>
+                                                        <td>@item.WebSite</td>
+                                                        <td>@item.Address</td>
+                                                        <td>@item.StatusName</td>
+                                                        <td><a title="Edit" data-toggle="tooltip" class="btn btn-yellow btn-mini no-wrap" onclick="CompanyOperation(@item.RowId,'E');"><i class="fa fa-pencil"></i> Edit</a> <a title="Delete" data-toggle="tooltip" class="btn btn-blue btn-mini no-wrap" onclick="DeleteCompanyOperation(@item.RowId,'D');"><i class="fa fa-trash"></i> Delete</a></td>
+                                                    </tr> }
+                                                    }
+                                                    else
+                                                    {
+                                        <tr><td colspan="6"> Record Not Found ...</td></tr>}
                                                 </tbody>
                                             </table>
                                         </div>

@@ -1,48 +1,77 @@
 ﻿@model Models.Pathology.TestBookingModel;
-<div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-        <div class="modal-body">
-            <div class="row">
-                <div class="form-group row">
-                    <input type="hidden" id="rowId" />
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">From Range:</label>
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(m => m.FromRange, new { @class = "form-control-sm" })
-                    </div>
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">To Range:</label>
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(m => m.ToRange, new { @class = "form-control-sm" })
-                        @*<input type="text" class="form-control form-control-sm" id="txtToRange">*@
-                    </div>
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+    <h4>Fill Advanced Result</h4>
+</div>
+<div class="modal-body">
+    <div class="row-fluid">
+        <div class="span12 grider">
+            <div class="widget well well-nice">
+                <div class="widget-header">
+                    <h4><i class="fa fa-list"></i> Advance Filling</h4>
                 </div>
-                <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Result:</label>
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(m => m.TestResult, new { @class = "form-control-sm" })
-                        @*<input type="text" class="form-control form-control-sm" id="txtResult">*@
-                    </div>
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Note:</label>
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(m => m.Note, new { @class = "form-control-sm" })
-                        @*<input type="text" class="form-control form-control-sm" id="txtNote">*@
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Interpretation:</label>
-                    <div class="col-sm-10">
-                        @Html.TextAreaFor(m => m.Interpretation, new { @class = "form-control-sm" })
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-4">
-                    </div>
-                    <div class="col-sm-8">
-                        <button type="button" data-dismiss="modal" OnClick="SaveTestResult(@Model.RowId,1,0,0,0,0)" class="btn btn-outline-primary">Save</button>
-                        <button type="button" data-dismiss="modal" class="btn btn-outline-primary">Exit</button>
+                <div class="widget-content">
+                    <div class="widget-body">
+                        <form id="itemForm" class="span12 form-horizontal">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <fieldset>
+                                        <ul class="form-list label-left list-bordered dotted">
+                                            <li class="control-group">
+                                                <div class="span6">
+                                                    <label for="FirstNameAlias" class="control-label">From Range: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        @Html.TextBoxFor(m => m.FromRange, new { @class = "input-block-level" })
+                                                    </div>
+                                                </div>
+                                                <div class="span6">
+                                                    <label for="LastNameAlias" class="control-label">To Range: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        @Html.TextBoxFor(m => m.ToRange, new { @class = "input-block-level" })
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+                                            <li class="control-group">
+                                                <div class="span6">
+                                                    <label for="GenderAlias" class="control-label">Result: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        @Html.TextBoxFor(m => m.TestResult, new { @class = "input-block-level" })
+                                                    </div>
+                                                </div>
+                                                <div class="span6">
+                                                    <label for="DOBAlias" class="control-label">Note: <span class="required">*</span></label>
+                                                    <div class="controls">
+                                                        @Html.TextBoxFor(m => m.Note, new { @class = "input-block-level" })
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+                                            <li class="control-group">
+                                                <label for="MobileNoAlias" class="control-label">Interpretation: <span class="required">*</span></label>
+                                                <div class="controls">
+                                                    @Html.TextBoxFor(m => m.Interpretation, new { @class = "input-block-level" })
+                                                </div>
+                                            </li>
+                                            <li class="control-group">
+                                                <div class="controls" style="text-align:center;">
+                                                    <button type="button" id="btnCreate" title="Save" data-toggle="tooltip" OnClick="SaveTestResult(@Model.RowId,1,0,0,0,0)" class="btn btn-blue"><i class="fa fa-save"></i> Save</button>
+                                                    <button type="button" id="btnUpdate" title="Close Model" data-toggle="tooltip" data-dismiss="modal" class="btn btn-blue"><i class="fa fa-close"></i> Close</button>
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+                                        </ul>
+                                    </fieldset>
+                                    <!-- // fieldset Input -->
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
+            <!-- // Widget -->
         </div>
+        <!-- // Column -->
     </div>
 </div>
 <script>

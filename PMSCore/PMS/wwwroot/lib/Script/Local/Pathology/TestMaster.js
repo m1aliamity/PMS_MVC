@@ -110,6 +110,7 @@ function TestOperations(Id, value) {
         ListHtml += '<div class="widget widget-simple widget-table">';
         ListHtml += '<table id="TestMasterList" class="table table-striped table-content table-condensed boo-table table-hover bg-green-light">';
         ListHtml += '<caption class="caption-m"><span>Test List</span></caption>';
+        ListHtml += '<thead><tr>';
         ListHtml += '<th scope="col">Department<span class="column-sorter"></span></th>';
         ListHtml += '<th scope="col">Test Head<span class="column-sorter"></span></th>';
         ListHtml += '<th scope="col">Test Name<span class="column-sorter"></span></th>';
@@ -123,7 +124,7 @@ function TestOperations(Id, value) {
                 ListHtml += '<td>' + this.testHeadName + '</td>';
                 ListHtml += '<td>' + this.testName + '</td>';
                 ListHtml += '<td>' + this.testRate + '</td>';
-                ListHtml += '<td><a title="Edit" data-toggle="tooltip" onclick="TestOperations(' + this.rowId + ',\'' + Edit + '\');"><i class="fa fa-pencil"></i></a> | <a title="Delete" data-toggle="tooltip" onclick="DeleteTestOperations(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i></a></td>';
+                ListHtml += '<td><a class="btn btn-yellow btn-mini no-wrap" title="Edit" data-toggle="tooltip" onclick="TestOperations(' + this.rowId + ',\'' + Edit + '\');"><i class="fa fa-pencil"></i> Edit</a> <a class="btn btn-blue btn-mini no-wrap" title="Delete" data-toggle="tooltip" onclick="DeleteTestOperations(' + this.rowId + ',\'' + Delete + '\');"><i class="fa fa-trash"></i> Delete</a></td>';
                 ListHtml += '</tr> ';
 
             });

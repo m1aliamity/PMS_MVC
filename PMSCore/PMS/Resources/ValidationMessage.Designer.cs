@@ -61,11 +61,11 @@ namespace PMS.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please Enter Company Address.
+        ///   Looks up a localized string similar to Please Type Correct Address..
         /// </summary>
-        public static string CompanyAddress {
+        public static string Address {
             get {
-                return ResourceManager.GetString("CompanyAddress", resourceCulture);
+                return ResourceManager.GetString("Address", resourceCulture);
             }
         }
         
@@ -106,6 +106,33 @@ namespace PMS.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please Set DOB..
+        /// </summary>
+        public static string DOB {
+            get {
+                return ResourceManager.GetString("DOB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Select Employee Type..
+        /// </summary>
+        public static string EmployeeType {
+            get {
+                return ResourceManager.GetString("EmployeeType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Enter First Name..
+        /// </summary>
+        public static string FName {
+            get {
+                return ResourceManager.GetString("FName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please Select Gender..
         /// </summary>
         public static string Gender {
@@ -124,11 +151,29 @@ namespace PMS.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please Enter Last Name..
+        /// </summary>
+        public static string LName {
+            get {
+                return ResourceManager.GetString("LName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please Select Master..
         /// </summary>
         public static string Master {
             get {
                 return ResourceManager.GetString("Master", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Select Merital Status..
+        /// </summary>
+        public static string MeritalStatus {
+            get {
+                return ResourceManager.GetString("MeritalStatus", resourceCulture);
             }
         }
         

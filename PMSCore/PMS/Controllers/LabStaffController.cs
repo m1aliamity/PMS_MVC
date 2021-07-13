@@ -17,11 +17,14 @@ namespace PMS.Controllers
         }
         public IActionResult Staff(LabStaffModel model)
         {
-            return View();
+            model.Action = "S";
+            model.DOB = DateTime.Now;
+            _labStaffRepository.LabStaffOperations(model);
+            return View(model);
         }
-        public IActionResult AddStaff(TestMasterModel model)
+        public async Task<IActionResult> AddStaff(LabStaffModel model)
         {
-            //_labStaffRepository.GetMasterData(model);
+            await _labStaffRepository.GetMasterData(model);
             return PartialView("AddStaff", model);
         }
         [HttpPost]

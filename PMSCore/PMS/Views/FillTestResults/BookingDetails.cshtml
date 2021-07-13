@@ -1,94 +1,64 @@
 ﻿@model Models.Pathology.TestBookingModel;
-<form>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="form-group row">
-                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">From Date:<span class="mandatory"><b>*</b></span></label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control form-control-sm" id="txtFromDate">
-                </div>
-                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">To Date:<span class="mandatory"><b>*</b></span></label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control form-control-sm" id="txtToDate">
-                </div>
-                <div class="col-sm-1">
-                    <button type="button" id="btnAddNew" onclick="SearchBookingData(0,1)" class="form-control form-control-sm">Search</button>
-                </div>
-                <div class="col-sm-1">
-                    <button type="button" id="btnAddNew" onclick="AddTest()" class="form-control form-control-sm">Booking</button>
+<div class="row-fluid">
+    <div class="span12 grider">
+        <div class="widget well well-nice">
+            <div class="widget-header">
+                <h4><i class="fa fa-list"></i> Booking List <small></small></h4>
+                <div class="widget-tool"><a href="../TestBooking/TestBooking"class="btn btn-green btn-small btn-glyph"><i class="fa fa-plus"></i> New Booking</a></div>
+            </div>
+            <div class="widget-content">
+                <div class="widget-body">
+                    <form id="itemForm" class="span12 form-horizontal">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <fieldset>
+                                    <ul class="form-list label-left list-bordered dotted">
+                                        <li class="control-group">
+                                            <div class="span5">
+                                                <label for="FromdateAlias" class="control-label">From Date: <span class="required">*</span></label>
+                                                <div class="controls">
+                                                    <input type="text" class="input-block-level" id="txtFromDate">
+                                                </div>
+                                            </div>
+                                            <div class="span5">
+                                                <label for="ToDateAlias" class="control-label">To Date: <span class="required">*</span></label>
+                                                <div class="controls">
+                                                    <input type="text" class="input-block-level" id="txtToDate">
+                                                </div>
+                                            </div>
+                                            <div class="span2">
+                                                <div class="widget-tool"><a class="btn btn-green btn-small btn-glyph" onclick="SearchBookingData(0,1)"><i class="fa fa-search"></i> Search</a></div>
+                                            </div>
+                                        </li>
+                                        <li class="control-group" id="tblTestBookingList">
+
+                                        </li>
+                                        <!-- // form item -->
+                                    </ul>
+                                    <div id="FillTestResult" class="modal hide fadee" data-keyboard="false" data-width="90%" data-backdrop="static">
+
+                                    </div>
+                                    <div id="advanceDetails" class="modal hide fadee" data-keyboard="false" data-width="90%" data-backdrop="static">
+                                    </div>
+
+                                </fieldset>
+                                <!-- // fieldset Input -->
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="form-group row">
-                <div class="col-sm-12" id="tblTestDetailList">
-
-                </div>
-            </div>
         </div>
-        <div id="FillTestResult" class="modal fade" tabindex="-1" data-focus-on="input:first" style="display: none;" data-keyboard="false">
-        </div>
-        <div id="advanceDetails" class="modal fade" tabindex="-1" data-focus-on="input:first" style="display: none;" data-keyboard="false">
-        </div>
+        <!-- // Widget -->
     </div>
-    @*//Stackable model*@
-    @*<div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first" style="display: none;">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title">Stack One</h4>
-        </div>
-        <div class="modal-body">
-            <p>One fine body…</p>
-            <p>One fine body…</p>
-            <p>One fine body…</p>
-            <input class="form-control" type="text" data-tabindex="1">
-            <input class="form-control" type="text" data-tabindex="2">
-            <button class="btn btn-default" data-toggle="modal" href="#stack2">Launch modal</button>
-        </div>
-        <div class="modal-footer">
-            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
-            <button type="button" class="btn btn-primary">Ok</button>
-        </div>
-    </div>
-
-    <div id="stack2" class="modal fade" tabindex="-1" data-focus-on="input:first" style="display: none;">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title">Stack Two</h4>
-        </div>
-        <div class="modal-body">
-            <p>One fine body…</p>
-            <p>One fine body…</p>
-            <input class="form-control" type="text" data-tabindex="1">
-            <input class="form-control" type="text" data-tabindex="2">
-            <button class="btn btn-default" data-toggle="modal" href="#stack3">Launch modal</button>
-        </div>
-        <div class="modal-footer">
-            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
-            <button type="button" class="btn btn-primary">Ok</button>
-        </div>
-    </div>
-
-    <div id="stack3" class="modal fade" tabindex="-1" data-focus-on="input:first" style="display: none;">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title">Stack Three</h4>
-        </div>
-        <div class="modal-body">
-            <p>One fine body…</p>
-            <input class="form-control" type="text" data-tabindex="1">
-            <input class="form-control" type="text" data-tabindex="2">
-        </div>
-        <div class="modal-footer">
-            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
-            <button type="button" class="btn btn-primary">Ok</button>
-        </div>
-    </div>
-    <button class="btn btn-default" data-toggle="modal" href="#stack1">Launch modalstack1</button>*@
-</form>
-<script>
-    $(function () {
-        $("#txtFromDate").datepicker().datepicker("setDate", new Date());
-        $("#txtToDate").datepicker().datepicker("setDate", new Date());
-    });
-</script>
+    <!-- // Column -->
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $("#txtFromDate,#txtToDate").datepicker().datepicker("setDate", new Date());
+        });
+    </script>
+}
 <script src="~/lib/Script/Local/Pathology/FillTestResults.js"></script>
 

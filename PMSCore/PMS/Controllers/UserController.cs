@@ -37,7 +37,7 @@ namespace PMS.Controllers
             }
             return View("UserLogin");
         }
-        public IActionResult CreateUser()
+        public IActionResult Users()
         {
             return View();
         }

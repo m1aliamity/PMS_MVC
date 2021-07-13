@@ -1,5 +1,5 @@
 ﻿
-@model Models.Pathology.DoctorModel;
+@model Models.Pathology.CompanyModel;
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
     <h4>Add Doctor</h4>
@@ -20,13 +20,13 @@
                                         <ul class="form-list label-left list-bordered dotted">
                                             <li class="control-group">
                                                 <div class="span6">
-                                                    <label for="LabNameAlias" class="control-label">Lab Name:: <span class="required">*</span></label>
+                                                    <label for="txtLabName" class="control-label">Lab Name: <span class="required">*</span></label>
                                                     <div class="controls">
                                                         <input id="txtLabName" class="input-block-level" type="text" data-error="Please Enter Lab Name." required />
                                                     </div>
                                                 </div>
                                                 <div class="span6">
-                                                    <label for="SloganNameAlias" class="control-label">Slogan Name: <span class="required">*</span></label>
+                                                    <label for="txtLabSloganName" class="control-label">Slogan Name: <span class="required">*</span></label>
                                                     <div class="controls">
                                                         <input id="txtLabSloganName" class="input-block-level" type="text" data-error="Please Enter Lab Name." required />
                                                     </div>
@@ -36,13 +36,13 @@
 
                                             <li class="control-group">
                                                 <div class="span6">
-                                                    <label for="phoneNoAlias" class="control-label">Phone No:: <span class="required">*</span></label>
+                                                    <label for="txtPhoneNo" class="control-label">Phone No: <span class="required">*</span></label>
                                                     <div class="controls">
                                                         <input id="txtPhoneNo" class="input-block-level" type="text" data-error="Please Enter Phone No." required />
                                                     </div>
                                                 </div>
                                                 <div class="span6">
-                                                    <label for="EmailIdAlias" class="control-label">Email Id:</label>
+                                                    <label for="txtEmailId" class="control-label">Email Id:</label>
                                                     <div class="controls">
                                                         <input id="txtEmailId" class="input-block-level" type="text" />
                                                     </div>
@@ -51,13 +51,13 @@
                                             <!-- // form item -->
                                             <li class="control-group">
                                                 <div class="span6">
-                                                    <label for="WebSiteAlias" class="control-label">WebSite: <span class="required">*</span></label>
+                                                    <label for="txtWebSite" class="control-label">WebSite: <span class="required">*</span></label>
                                                     <div class="controls">
                                                         <input id="txtWebSite" class="input-block-level" type="text" />
                                                     </div>
                                                 </div>
                                                 <div class="span6">
-                                                    <label for="StatusAlias" class="control-label">Status:<span class="required">*</span></label>
+                                                    <label for="dpdStatus" class="control-label">Status:<span class="required">*</span></label>
                                                     <div class="controls">
                                                         <select class="input-block-level" id="dpdStatus">
                                                             <option value="0">--Select--</option>

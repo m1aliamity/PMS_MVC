@@ -9,6 +9,7 @@ namespace PMS.Repository.Pathology.Interface
 {
    public interface ILabStaffRepository
     {
+        Task GetMasterData(LabStaffModel model);
         Task LabStaffOperations(LabStaffModel model);
     }
 }

@@ -1,6 +1,4 @@
 ﻿function AddNewDoctor() {
-    // $("#AddDoctor").modal('show');
-    //debugger;
     $.ajax({
         url: "../Doctor/AddDoctor",
         type: "POST",

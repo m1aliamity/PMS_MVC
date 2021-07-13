@@ -26,6 +26,7 @@ namespace Models.Pathology
         public List<DropDownModel> SampleByList { get; set; }
         public List<DropDownModel> SampleTypeList { get; set; }
         public List<DropDownModel> PaymentTypeList { get; set; }
+        public List<DropDownModel> EmployeeTypeList { get; set; }
         public List<DropDownModel> NamePrefixList { get; set; }
         public List<DropDownModel> ReferredByList { get; set; }
         public List<TestBookingModel> ProfileMasterList { get; set; }

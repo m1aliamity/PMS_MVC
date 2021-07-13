@@ -116,7 +116,7 @@ namespace PMS.Repository.Pathology
                 {
                     expression = "MID=" + (int)Keys.MasterData.EmployeeType;
                     DataRow[] foundRows = ds.Tables[0].Select(expression);
-                    model.StaffTypeList = (from DataRow row in foundRows
+                    model.EmployeeTypeList = (from DataRow row in foundRows
                                               select new DropDownModel
                                               {
                                                   Value = Convert.ToString(row["Id"]),
