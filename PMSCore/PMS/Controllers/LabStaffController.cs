@@ -17,22 +17,52 @@ namespace PMS.Controllers
         }
         public IActionResult Staff(LabStaffModel model)
         {
-            model.Action = "S";
-            model.DOB = DateTime.Now;
-            _labStaffRepository.LabStaffOperations(model);
+            _labStaffRepository.GetDeleteLabStaff(model);
             return View(model);
         }
-        public async Task<IActionResult> AddStaff(LabStaffModel model)
+        public async Task<IActionResult> DisplayStaffForm(long Id, LabStaffModel model)
         {
-            await _labStaffRepository.GetMasterData(model);
+            if (Id == 0)
+            {
+                await _labStaffRepository.GetMasterData(model);
+            }
+            else
+            {
+                await _labStaffRepository.GetMasterData(model);
+                model.Action = "E";
+                model.RowId = Id;
+                await _labStaffRepository.GetDeleteLabStaff(model);
+            }
             return PartialView("AddStaff", model);
         }
-        [HttpPost]
-        public async Task<JsonResult> CompanyOperatons(LabStaffModel model)
+        public async Task<IActionResult> DeleteStaffData(LabStaffModel model)
         {
-            await _labStaffRepository.LabStaffOperations(model);
-            return Json(model);
-            //return View("Hello");
+            if (model.RowId != 0)
+            {
+                await _labStaffRepository.GetDeleteLabStaff(model);
+                return Json(new { MessageId = model.MessageId, MessageText = model.MessageText, Result = "D", Url = Url.Action("Staff", "LabStaff") });
+            }
+            else
+            {
+                return Json(new { MessageId = 1, MessageText = "Data Not Found Please Try Again.", Result = "Error" });
+            }
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddUpdateLabStaff(LabStaffModel model)
+        {
+            if (model.RowId!= 0)
+            {
+                model.Action = "U";
+                await _labStaffRepository.AddUpdate(model);
+                return Json(new { MessageId = model.MessageId, MessageText = model.MessageText, Result = "U", Url = Url.Action("Staff", "LabStaff") });
+            }
+            else
+            {
+                model.Action = "I";
+                await _labStaffRepository.AddUpdate(model);
+                return Json(new { MessageId = model.MessageId, MessageText = model.MessageText, Result = "I" });
+            }
         }
     }
 }

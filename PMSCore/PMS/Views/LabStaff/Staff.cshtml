@@ -4,7 +4,7 @@
         <div class="widget widget-simple">
             <div class="widget-header">
                 <h4><i class="fa fa-list glyph"></i> Staff List</h4>
-                <div class="widget-tool"><a class="btn btn-green btn-small btn-glyph" onclick="AddStaff()"><i class="fa fa-plus"></i> Add Staff</a></div>
+                <div class="widget-tool"><a class="btn btn-green btn-small btn-glyph" onclick="AddStaff(0)"><i class="fa fa-plus"></i> Add Staff</a></div>
             </div>
             <div class="widget-content">
                 <div class="widget-body">
@@ -43,7 +43,7 @@
                                             <td>@item.MeritalStatusText</td>
                                             <td>@item.Address</td>
                                             <td>@item.StatusName</td>
-                                            <td><a title="Edit" data-toggle="tooltip" class="btn btn-yellow btn-mini no-wrap" onclick="LabStaffOperations(@item.RowId,'E');"><i class="fa fa-pencil"></i> Edit</a> <a title="Delete" data-toggle="tooltip" class="btn btn-blue btn-mini no-wrap" onclick="DeleteLabStaffOperations(@item.RowId,'D');"><i class="fa fa-trash"></i> Delete</a></td>
+                                            <td><a title="Edit" data-toggle="tooltip" class="btn btn-yellow btn-mini no-wrap" onclick="AddStaff(@item.RowId);"><i class="fa fa-pencil"></i> Edit</a> <a title="Delete" data-toggle="tooltip" class="btn btn-blue btn-mini no-wrap" onclick="DeleteLabStaffData(@item.RowId,'D');"><i class="fa fa-trash"></i> Delete</a></td>
                                         </tr> }
                                                     }
                                                     else

@@ -200,6 +200,18 @@ namespace PMS.Repository.Pathology
                                              Text = Convert.ToString(row["Name"]),
                                          }).ToList();
                 }
+                else if (value == Convert.ToString((int)Keys.MasterData.RecordStatus))
+                {
+                    expression = "MID=" + (int)Keys.MasterData.RecordStatus;
+                    DataRow[] foundRows = ds.Tables[0].Select(expression);
+                    model.StatusList = (from DataRow row in foundRows
+                                            select new DropDownModel
+                                            {
+                                                Value = Convert.ToString(row["Id"]),
+                                                Text = Convert.ToString(row["Name"]),
+                                            }).ToList();
+                }
+                
             }
             if (model.IsTestBooking)
             {

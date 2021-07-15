@@ -13,8 +13,9 @@ namespace Models.Pathology
         public int CID { get; set; }
         public int MessageId { get; set; }
         public string MessageText { get; set; }
-        public int Status { get; set; }
+        public long Status { get; set; }
         public string StatusName { get; set; }
+        public List<DropDownModel> StatusList { get; set; }
 
     }
 }

@@ -17,7 +17,16 @@ namespace DAL.Pathology
         {
             _objMySqlHelper = new MySqlHelperClass();
         }
-        public async Task<DataSet> LabStaffOperations(LabStaffModel model)
+        public async Task<DataSet> GetDeleteLabStaff(LabStaffModel model)
+        {
+            MySqlParameter[] cmdParams = {
+                new MySqlParameter("@P_Id", model.RowId),
+                new MySqlParameter("@P_CID", model.CID),
+                new MySqlParameter("@P_UserId", model.UserId),
+                new MySqlParameter("@P_Action", model.Action),};
+            return await _objMySqlHelper.SP_DataSet("USP_GetDeleteLabStaff", cmdParams);
+        }
+        public async Task<DataSet> AddUpdateLabStaff(LabStaffModel model)
         {
             MySqlParameter[] cmdParams = {
                 new MySqlParameter("@P_Id", model.RowId),
@@ -34,7 +43,7 @@ namespace DAL.Pathology
                 new MySqlParameter("@P_CID", model.CID),
                 new MySqlParameter("@P_UserId", model.UserId),
                 new MySqlParameter("@P_Action", model.Action),};
-            return await _objMySqlHelper.SP_DataSet("USP_HospitalStafOperation", cmdParams);
+            return await _objMySqlHelper.SP_DataSet("USP_AddUpdateLabStaff", cmdParams);
         }
     }
 }

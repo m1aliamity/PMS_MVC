@@ -9,6 +9,7 @@ namespace DAL.Pathology.Interface
 {
     public interface ILabStaffDAL
     {
-        Task<DataSet> LabStaffOperations(LabStaffModel model);
+        Task<DataSet> GetDeleteLabStaff(LabStaffModel model);
+        Task<DataSet> AddUpdateLabStaff(LabStaffModel model);
     }
 }

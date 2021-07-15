@@ -1,24 +1,25 @@
 ﻿@model Models.Pathology.LabStaffModel;
 <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
-    <h4>Add Doctor</h4>
+    @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>*@
+    @*<h4> Add Staff</h4>*@
 </div>
 <div class="modal-body">
     <div class="row-fluid">
         <div class="span12 grider">
             <div class="widget well well-nice">
                 <div class="widget-header">
-                    <h4><i class="fa fa-list"></i>Add Staff <small></small></h4>
+                    <h5><i class="fa fa-plus"></i> Add Staff <small></small></h5>
                 </div>
                 <div class="widget-content">
                     <div class="widget-body">
-                        <form id="itemForm" class="span12 form-horizontal">
+                        <form id="frmData" asp-controller="LabStaff" asp-action="AddUpdateLabStaff" asp-route-id="@Model.RowId" onsubmit="return AjaxAddOrUpdateData(this);" class="span12 form-horizontal">
                             <div class="row-fluid">
                                 <div class="span12">
                                     <fieldset>
                                         <ul class="form-list label-left list-bordered dotted">
                                             <li class="control-group">
                                                 <div class="span6">
+                                                    <input asp-for="RowId" type="hidden" />
                                                     <label asp-for="FirstName" class="control-label">First Name: <span class="required">*</span></label>
                                                     <div class="controls">
                                                         <input asp-for="FirstName" class="input-block-level" type="text" data-error="Please Enter First Name." required />
@@ -42,7 +43,7 @@
                                                 <div class="span6">
                                                     <label for="DOBAlias" class="control-label">DOB: <span class="required">*</span></label>
                                                     <div class="controls">
-                                                        <input id="txtDOB" class="input-block-level" type="text" data-error="Please Enter First Name." required />
+                                                        <input asp-for="DOB" class="input-block-level" data-error="Please Enter First Name." required />
                                                     </div>
                                                 </div>
                                             </li>
@@ -51,13 +52,13 @@
                                                 <div class="span6">
                                                     <label for="MobileNoAlias" class="control-label">Mobile No.: <span class="required">*</span></label>
                                                     <div class="controls">
-                                                        <input id="txtMobileNo" class="input-block-level" type="text" data-error="Please Enter Mobile No." required />
+                                                        <input asp-for="MobileNo" class="input-block-level" data-error="Please Enter Mobile No." required />
                                                     </div>
                                                 </div>
                                                 <div class="span6">
                                                     <label for="EmailIdAlias" class="control-label">Email Id:</label>
                                                     <div class="controls">
-                                                        <input id="txtEmail" class="input-block-level" type="text" />
+                                                        <input asp-for="EmailId" class="input-block-level" />
                                                     </div>
                                                 </div>
                                             </li>
@@ -81,25 +82,21 @@
                                                 <div class="span6">
                                                     <label for="AddressAlias" class="control-label">Address: <span class="required">*</span></label>
                                                     <div class="controls">
-                                                        <input id="txtAddress" class="input-block-level" type="text" />
+                                                        <input asp-for="Address" class="input-block-level" data-error="Please Enter Address." required />
                                                     </div>
                                                 </div>
                                                 <div class="span6">
-                                                    <label for="StatusAlias" class="control-label">Status:<span class="required">*</span></label>
+                                                    <label for="Status" class="control-label">Status:<span class="required">*</span></label>
                                                     <div class="controls">
-                                                        <select class="input-block-level" id="dpdStatus">
-                                                            <option value="0" selected>--Select--</option>
-                                                            <option value="1">Active</option>
-                                                            <option value="2">Deactive</option>
-                                                        </select>
+                                                        <select asp-for="Status" class="input-block-level" asp-items="@(new SelectList(Model.StatusList, "Value", "Text",0))"></select>
                                                     </div>
                                                 </div>
                                             </li>
                                             <!-- // form item -->
                                             <li class="control-group">
                                                 <div class="controls" style="text-align:center;">
-                                                    <button type="button" id="btnCreate" title="Save" data-toggle="tooltip" OnClick="LabStaffOperations(0,'I')" class="btn btn-blue"><i class="fa fa-save"></i> Save</button>
-                                                    <button type="button" id="btnUpdate" title="Update" data-toggle="tooltip" OnClick="LabStaffOperations(0,'U')" class="btn btn-blue" disabled><i class="fa fa-edit"></i> Update</button>
+                                                    <button type="submit" id="btnCreate" title="Save" data-toggle="tooltip" class="btn btn-blue"><i class="fa fa-save"></i> Save</button>
+                                                    <button type="button" id="btnUpdate" title="Close Model" data-dismiss="modal" data-toggle="tooltip" class="btn btn-blue"><i class="fa fa-close"></i> Close</button>
                                                 </div>
                                             </li>
                                         </ul>

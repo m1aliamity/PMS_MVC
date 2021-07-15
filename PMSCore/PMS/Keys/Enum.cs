@@ -5,12 +5,6 @@ using System.Threading.Tasks;
 
 namespace PMS.Keys
 {
-    public enum AlertType
-    {
-        SUCCESS,
-        DANGER,
-        WARNING
-    }
     public enum MasterData
     {
         Gender = 1,
@@ -26,17 +20,6 @@ namespace PMS.Keys
         MritalStatus = 11,
         TestType = 12,
         SampleType = 13,
-    }
-    public static class AlertColor
-    {
-        //public static string SUCCESS = "BootstrapDialog.TYPE_SUCCESS";
-        //public static string WARNING = "BootstrapDialog.TYPE_WARNING";
-        //public static string ERROR = "BootstrapDialog.TYPE_DANGER";
-        //DEFAULT = "BootstrapDialog.TYPE_DEFAULT", // 'Information';
-        //INFO = "BootstrapDialog.TYPE_INFO", //'Information';
-        //PRIMAR = "BootstrapDialog.TYPE_PRIMARY", //= 'Information';
-        //SUCCESS = "BootstrapDialog.TYPE_SUCCESS",// = 'Success';
-        //WARNING = "BootstrapDialog.TYPE_WARNING", //= 'Warning';
-        //ERROR = "BootstrapDialog.TYPE_DANGER"// = 'Danger';
+        RecordStatus=14,
     }
 }
